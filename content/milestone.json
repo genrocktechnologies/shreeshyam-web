@@ -1,0 +1,941 @@
+{
+  "url": "https://shreeshyamfoundation.in/milestone.php",
+  "slug": "milestone",
+  "finalUrl": "https://shreeshyamfoundation.in/milestone.php",
+  "httpStatus": 200,
+  "capturedAt": "2026-10-31T12:34:01.424Z",
+  "counters": {
+    "count": 0,
+    "settled": true
+  },
+  "meta": {
+    "title": "Our Milestone || Shree Shyam Small Growth Foundation",
+    "description": null,
+    "keywords": null,
+    "author": null,
+    "robots": null,
+    "viewport": "width=device-width, initial-scale=1.0",
+    "themeColor": null,
+    "canonical": null,
+    "lang": "en",
+    "og": {},
+    "twitter": {},
+    "icons": [
+      {
+        "rel": "shortcut icon",
+        "href": "assets/images/favicon.ico",
+        "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+        "sizes": null,
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "icon",
+        "href": "assets/images/favicon.ico",
+        "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+        "sizes": null,
+        "type": "image/x-icon"
+      }
+    ],
+    "all": [
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": "content-type",
+        "charset": null,
+        "content": "text/html;charset=UTF-8"
+      },
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": null,
+        "charset": "UTF-8",
+        "content": null
+      },
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": "X-UA-Compatible",
+        "charset": null,
+        "content": "IE=edge"
+      },
+      {
+        "name": "viewport",
+        "property": null,
+        "httpEquiv": null,
+        "charset": null,
+        "content": "width=device-width, initial-scale=1.0"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "index": 0,
+      "kind": "scroll-to-top",
+      "tag": "div",
+      "id": null,
+      "className": "paginacontainer",
+      "headings": [],
+      "blocks": [],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "inline-svg",
+          "url": null,
+          "alt": null,
+          "ariaHidden": null,
+          "localPath": "assets/original/milestone/inline-svg-01.svg"
+        }
+      ],
+      "icons": [
+        "ri-arrow-up-s-line"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 1,
+      "kind": "header",
+      "tag": "header",
+      "id": "sticky-menu",
+      "className": "site-header optech-header-section site-header--menu-right optech-header-two sticky-menu",
+      "headings": [],
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+              "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "shreeshyamfoundation2026@gmail.com",
+              "href": "mailto:shreeshyamfoundation2026@gmail.com"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "mobile-menu-close",
+          "text": "×"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "site-menu-main light-color",
+          "items": [
+            {
+              "text": "Home",
+              "href": "index.php"
+            },
+            {
+              "text": "About",
+              "href": "javascript:void(0)",
+              "children": [
+                {
+                  "text": "About Us",
+                  "href": "about-us.php"
+                },
+                {
+                  "text": "Our Mission",
+                  "href": "our-mission.php"
+                },
+                {
+                  "text": "Our Vision",
+                  "href": "our-vision.php"
+                },
+                {
+                  "text": "Our Team",
+                  "href": "team.php"
+                },
+                {
+                  "text": "Our Gallery",
+                  "href": "gallery.php"
+                },
+                {
+                  "text": "Our Milestone",
+                  "href": "milestone.php"
+                }
+              ]
+            },
+            {
+              "text": "Products",
+              "href": "#",
+              "children": [
+                {
+                  "text": "Women Empowerment Loan",
+                  "href": "women-empowerment-loan.php"
+                },
+                {
+                  "text": "Micro Business Loan",
+                  "href": "micro-business-loan.php"
+                },
+                {
+                  "text": "Agriculture Livelihood Loan",
+                  "href": "agriculture-rural-livelihood-loan.php"
+                },
+                {
+                  "text": "Livestock Loan",
+                  "href": "livestock-loan.php"
+                }
+              ]
+            },
+            {
+              "text": "Our Policy",
+              "href": "our-policy.php"
+            },
+            {
+              "text": "Career",
+              "href": "career.php"
+            },
+            {
+              "text": "Registration",
+              "href": "registration.php"
+            },
+            {
+              "text": "Registration Process",
+              "href": "registration-process.php"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "tag": "span",
+          "className": "btn-wraper",
+          "text": "Registration"
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true,
+          "element": "a",
+          "className": "optech-default-btn optech-header-btn"
+        }
+      ],
+      "links": [
+        {
+          "label": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+          "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "url": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "shreeshyamfoundation2026@gmail.com",
+          "href": "mailto:shreeshyamfoundation2026@gmail.com",
+          "url": null,
+          "kind": "mailto",
+          "target": null,
+          "icons": [
+            "ri-mail-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Home",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "About",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [
+            "ri-arrow-down-s-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "About Us",
+          "href": "about-us.php",
+          "url": "https://shreeshyamfoundation.in/about-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Mission",
+          "href": "our-mission.php",
+          "url": "https://shreeshyamfoundation.in/our-mission.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Vision",
+          "href": "our-vision.php",
+          "url": "https://shreeshyamfoundation.in/our-vision.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Team",
+          "href": "team.php",
+          "url": "https://shreeshyamfoundation.in/team.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Gallery",
+          "href": "gallery.php",
+          "url": "https://shreeshyamfoundation.in/gallery.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Milestone",
+          "href": "milestone.php",
+          "url": "https://shreeshyamfoundation.in/milestone.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Products",
+          "href": "#",
+          "url": null,
+          "kind": "empty-anchor",
+          "target": null,
+          "icons": [
+            "ri-arrow-down-s-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Women Empowerment Loan",
+          "href": "women-empowerment-loan.php",
+          "url": "https://shreeshyamfoundation.in/women-empowerment-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Micro Business Loan",
+          "href": "micro-business-loan.php",
+          "url": "https://shreeshyamfoundation.in/micro-business-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Agriculture Livelihood Loan",
+          "href": "agriculture-rural-livelihood-loan.php",
+          "url": "https://shreeshyamfoundation.in/agriculture-rural-livelihood-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Livestock Loan",
+          "href": "livestock-loan.php",
+          "url": "https://shreeshyamfoundation.in/livestock-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Policy",
+          "href": "our-policy.php",
+          "url": "https://shreeshyamfoundation.in/our-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Career",
+          "href": "career.php",
+          "url": "https://shreeshyamfoundation.in/career.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration Process",
+          "href": "registration-process.php",
+          "url": "https://shreeshyamfoundation.in/registration-process.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        }
+      ],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/logo/logo-white.webp",
+          "url": "https://shreeshyamfoundation.in/assets/images/logo/logo-white.webp",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1094,
+          "height": 469,
+          "className": "light-version-logo",
+          "localPath": "assets/original/milestone/logo-white.webp"
+        }
+      ],
+      "icons": [
+        "ri-map-pin-2-fill",
+        "ri-mail-fill",
+        "fa fa-angle-left",
+        "ri-arrow-down-s-fill"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 2,
+      "kind": "breadcrumb",
+      "tag": "div",
+      "id": null,
+      "className": "optech-breadcrumb optech-breadcrumb-contact",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Our Milestone"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Our Milestone"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "Home",
+              "href": "index.php"
+            },
+            {
+              "text": "Our Milestone",
+              "href": null
+            }
+          ]
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [
+        {
+          "label": "Home",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        }
+      ],
+      "images": [
+        {
+          "kind": "css-background",
+          "url": "https://shreeshyamfoundation.in/assets/images/breadcrumb/contact_us.jpg",
+          "element": "div.optech-breadcrumb.optech-breadcrumb-contact",
+          "alt": null,
+          "localPath": "assets/original/milestone/contact_us.jpg"
+        }
+      ],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 3,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "container-fluid my-4 my-lg-5",
+      "headings": [
+        {
+          "level": 3,
+          "text": "A Proud Milestone, A Greater Responsibility"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "A Proud Milestone, A Greater Responsibility"
+        },
+        {
+          "type": "paragraph",
+          "text": "An award is not just a recognition, it is a reflection of dedication, hard work, and the trust of our people. Receiving the Iconic Business Award 2026 for Shree Shyam Small Growth Foundation is a proud and emotional moment for me as MD, CEO & Founder.",
+          "html": "An award is not just a recognition, it is a reflection of dedication, hard work, and the trust of our people.\n\n                            Receiving the <strong>Iconic Business Award 2026</strong> for Shree Shyam Small Growth Foundation is a proud and emotional moment for me as MD, CEO &amp; Founder."
+        },
+        {
+          "type": "paragraph",
+          "text": "This achievement belongs to my entire team, our supporters, and everyone who believed in our vision. This is not the destination, but a new beginning towards creating greater impact, empowering people, and building a stronger future. With the blessings of Baba Shyam, we will continue our journey with more passion, commitment, and responsibility.",
+          "html": "This achievement belongs to my entire team, our supporters, and everyone who believed in our vision. This is not the destination, but a new beginning towards creating greater impact, empowering people, and building a stronger future.\n\n                            With the blessings of Baba Shyam, we will continue our journey with more passion, commitment, and responsibility."
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "img",
+          "src": "./assets/images/our-awards.jpeg",
+          "url": "https://shreeshyamfoundation.in/assets/images/our-awards.jpeg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1600,
+          "height": 869,
+          "className": "w-100 rounded",
+          "localPath": "assets/original/milestone/our-awards.jpeg"
+        }
+      ],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 4,
+      "kind": "footer",
+      "tag": "footer",
+      "id": null,
+      "className": "optech-footer-section dark-bg optech-section-padding-top",
+      "headings": [
+        {
+          "level": 5,
+          "text": "Quick Links"
+        },
+        {
+          "level": 5,
+          "text": "Contact Us"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Shree Shyam Small Growth Foundation is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities.",
+          "html": "<b> Shree Shyam Small Growth Foundation </b> is a socially driven organization committed to promoting financial\n                                  inclusion, economic empowerment, and sustainable livelihoods for underserved communities."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Quick Links"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "About Us",
+              "href": "about-us.php"
+            },
+            {
+              "text": "Mission",
+              "href": "our-mission.php"
+            },
+            {
+              "text": "Our Policy",
+              "href": "our-policy.php"
+            },
+            {
+              "text": "Contact Us",
+              "href": "contact-us.php"
+            },
+            {
+              "text": "Register",
+              "href": "registration.php"
+            },
+            {
+              "text": "Privacy Policy",
+              "href": "privacy-policy.php"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Contact Us"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+              "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7"
+            },
+            {
+              "text": "shreeshyamfoundation2026@gmail.com",
+              "href": "mailto:shreeshyamfoundation2026@gmail.com"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Copyright © 2026 Shree Shyam Small Growth Foundation .",
+          "html": "Copyright © 2026 <a href=\"./index.php\" class=\" text-white\"> Shree Shyam Small Growth Foundation </a>."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.facebook.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [
+        {
+          "label": "",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": false
+        },
+        {
+          "label": "About Us",
+          "href": "about-us.php",
+          "url": "https://shreeshyamfoundation.in/about-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Mission",
+          "href": "our-mission.php",
+          "url": "https://shreeshyamfoundation.in/our-mission.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Policy",
+          "href": "our-policy.php",
+          "url": "https://shreeshyamfoundation.in/our-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Contact Us",
+          "href": "contact-us.php",
+          "url": "https://shreeshyamfoundation.in/contact-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Register",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "privacy-policy.php",
+          "url": "https://shreeshyamfoundation.in/privacy-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+          "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "url": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "shreeshyamfoundation2026@gmail.com",
+          "href": "mailto:shreeshyamfoundation2026@gmail.com",
+          "url": null,
+          "kind": "mailto",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Shree Shyam Small Growth Foundation",
+          "href": "./index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.facebook.com/",
+          "url": "https://www.facebook.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-facebook-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        }
+      ],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/logo/white_img_2.png",
+          "url": "https://shreeshyamfoundation.in/assets/images/logo/white_img_2.png",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1094,
+          "height": 469,
+          "className": "light-version-logo",
+          "localPath": "assets/original/milestone/white_img_2.png"
+        }
+      ],
+      "icons": [
+        "fa fa-location-arrow text-white",
+        "fa fa-envelope text-white",
+        "ri-facebook-fill",
+        "ri-linkedin-fill",
+        "ri-twitter-fill",
+        "ri-instagram-fill"
+      ],
+      "iframes": []
+    }
+  ],
+  "forms": [],
+  "orphanFields": [],
+  "assets": [
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/logo/logo-white.webp",
+      "localPath": "assets/original/milestone/logo-white.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 162338,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/breadcrumb/contact_us.jpg",
+      "localPath": "assets/original/milestone/contact_us.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 138940,
+      "kinds": [
+        "css-background",
+        "network"
+      ],
+      "alts": [
+        null,
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/our-awards.jpeg",
+      "localPath": "assets/original/milestone/our-awards.jpeg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 215119,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/logo/white_img_2.png",
+      "localPath": "assets/original/milestone/white_img_2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 424866,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+      "localPath": "assets/original/milestone/favicon.ico",
+      "status": 200,
+      "contentType": "image/x-icon",
+      "bytes": 15406,
+      "kinds": [
+        "head-icon"
+      ],
+      "alts": [
+        null,
+        null
+      ]
+    }
+  ],
+  "htmlComments": [
+    "/.Mobile Menu Hamburger Ends",
+    "<li class=\"d-flex \">\n<div class=\"pe-2\">\n<i class=\"fa fa-phone-alt text-white\"></i>\n</div>\n<div>\n<a href=\"tel: +91 xxxxxxxxxx\" target=\"_blank\">+91 xxxxxxxxxx\n</a>\n</div>\n</li>"
+  ],
+  "screenshots": [
+    "docs/screenshots/milestone-1440.png",
+    "docs/screenshots/milestone-390.png"
+  ]
+}

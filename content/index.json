@@ -1,0 +1,3632 @@
+{
+  "url": "https://shreeshyamfoundation.in/index.php",
+  "slug": "index",
+  "finalUrl": "https://shreeshyamfoundation.in/index.php",
+  "httpStatus": 200,
+  "capturedAt": "2026-10-31T12:32:28.340Z",
+  "counters": {
+    "count": 3,
+    "settled": true
+  },
+  "meta": {
+    "title": "Shree Shyam Small Growth Foundation | Financial Inclusion & Community Development",
+    "description": null,
+    "keywords": null,
+    "author": null,
+    "robots": null,
+    "viewport": "width=device-width, initial-scale=1.0",
+    "themeColor": null,
+    "canonical": null,
+    "lang": "en",
+    "og": {},
+    "twitter": {},
+    "icons": [
+      {
+        "rel": "shortcut icon",
+        "href": "assets/images/favicon.ico",
+        "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+        "sizes": null,
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "icon",
+        "href": "assets/images/favicon.ico",
+        "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+        "sizes": null,
+        "type": "image/x-icon"
+      }
+    ],
+    "all": [
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": "content-type",
+        "charset": null,
+        "content": "text/html;charset=UTF-8"
+      },
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": null,
+        "charset": "UTF-8",
+        "content": null
+      },
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": "X-UA-Compatible",
+        "charset": null,
+        "content": "IE=edge"
+      },
+      {
+        "name": "viewport",
+        "property": null,
+        "httpEquiv": null,
+        "charset": null,
+        "content": "width=device-width, initial-scale=1.0"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "index": 0,
+      "kind": "scroll-to-top",
+      "tag": "div",
+      "id": null,
+      "className": "paginacontainer",
+      "headings": [],
+      "blocks": [],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "inline-svg",
+          "url": null,
+          "alt": null,
+          "ariaHidden": null,
+          "localPath": "assets/original/index/inline-svg-01.svg"
+        }
+      ],
+      "icons": [
+        "ri-arrow-up-s-line"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 1,
+      "kind": "header",
+      "tag": "header",
+      "id": "sticky-menu",
+      "className": "site-header optech-header-section site-header--menu-right optech-header-two sticky-menu",
+      "headings": [],
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+              "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "shreeshyamfoundation2026@gmail.com",
+              "href": "mailto:shreeshyamfoundation2026@gmail.com"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "mobile-menu-close",
+          "text": "×"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "site-menu-main light-color",
+          "items": [
+            {
+              "text": "Home",
+              "href": "index.php"
+            },
+            {
+              "text": "About",
+              "href": "javascript:void(0)",
+              "children": [
+                {
+                  "text": "About Us",
+                  "href": "about-us.php"
+                },
+                {
+                  "text": "Our Mission",
+                  "href": "our-mission.php"
+                },
+                {
+                  "text": "Our Vision",
+                  "href": "our-vision.php"
+                },
+                {
+                  "text": "Our Team",
+                  "href": "team.php"
+                },
+                {
+                  "text": "Our Gallery",
+                  "href": "gallery.php"
+                },
+                {
+                  "text": "Our Milestone",
+                  "href": "milestone.php"
+                }
+              ]
+            },
+            {
+              "text": "Products",
+              "href": "#",
+              "children": [
+                {
+                  "text": "Women Empowerment Loan",
+                  "href": "women-empowerment-loan.php"
+                },
+                {
+                  "text": "Micro Business Loan",
+                  "href": "micro-business-loan.php"
+                },
+                {
+                  "text": "Agriculture Livelihood Loan",
+                  "href": "agriculture-rural-livelihood-loan.php"
+                },
+                {
+                  "text": "Livestock Loan",
+                  "href": "livestock-loan.php"
+                }
+              ]
+            },
+            {
+              "text": "Our Policy",
+              "href": "our-policy.php"
+            },
+            {
+              "text": "Career",
+              "href": "career.php"
+            },
+            {
+              "text": "Registration",
+              "href": "registration.php"
+            },
+            {
+              "text": "Registration Process",
+              "href": "registration-process.php"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "tag": "span",
+          "className": "btn-wraper",
+          "text": "Registration"
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true,
+          "element": "a",
+          "className": "optech-default-btn optech-header-btn"
+        }
+      ],
+      "links": [
+        {
+          "label": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+          "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "url": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "shreeshyamfoundation2026@gmail.com",
+          "href": "mailto:shreeshyamfoundation2026@gmail.com",
+          "url": null,
+          "kind": "mailto",
+          "target": null,
+          "icons": [
+            "ri-mail-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Home",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "About",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [
+            "ri-arrow-down-s-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "About Us",
+          "href": "about-us.php",
+          "url": "https://shreeshyamfoundation.in/about-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Mission",
+          "href": "our-mission.php",
+          "url": "https://shreeshyamfoundation.in/our-mission.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Vision",
+          "href": "our-vision.php",
+          "url": "https://shreeshyamfoundation.in/our-vision.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Team",
+          "href": "team.php",
+          "url": "https://shreeshyamfoundation.in/team.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Gallery",
+          "href": "gallery.php",
+          "url": "https://shreeshyamfoundation.in/gallery.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Milestone",
+          "href": "milestone.php",
+          "url": "https://shreeshyamfoundation.in/milestone.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Products",
+          "href": "#",
+          "url": null,
+          "kind": "empty-anchor",
+          "target": null,
+          "icons": [
+            "ri-arrow-down-s-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Women Empowerment Loan",
+          "href": "women-empowerment-loan.php",
+          "url": "https://shreeshyamfoundation.in/women-empowerment-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Micro Business Loan",
+          "href": "micro-business-loan.php",
+          "url": "https://shreeshyamfoundation.in/micro-business-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Agriculture Livelihood Loan",
+          "href": "agriculture-rural-livelihood-loan.php",
+          "url": "https://shreeshyamfoundation.in/agriculture-rural-livelihood-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Livestock Loan",
+          "href": "livestock-loan.php",
+          "url": "https://shreeshyamfoundation.in/livestock-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Policy",
+          "href": "our-policy.php",
+          "url": "https://shreeshyamfoundation.in/our-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Career",
+          "href": "career.php",
+          "url": "https://shreeshyamfoundation.in/career.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration Process",
+          "href": "registration-process.php",
+          "url": "https://shreeshyamfoundation.in/registration-process.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        }
+      ],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/logo/logo-white.webp",
+          "url": "https://shreeshyamfoundation.in/assets/images/logo/logo-white.webp",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1094,
+          "height": 469,
+          "className": "light-version-logo",
+          "localPath": "assets/original/index/logo-white.webp"
+        }
+      ],
+      "icons": [
+        "ri-map-pin-2-fill",
+        "ri-mail-fill",
+        "fa fa-angle-left",
+        "ri-arrow-down-s-fill"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 2,
+      "kind": "hero",
+      "tag": "div",
+      "id": null,
+      "className": "optech-hero-section6",
+      "headings": [
+        {
+          "level": 5,
+          "text": "Building Better Futures Together"
+        },
+        {
+          "level": 1,
+          "text": "Creating Opportunities for Every Family Through Financial Inclusion Today"
+        },
+        {
+          "level": 5,
+          "text": "Empowering Communities With Confidence"
+        },
+        {
+          "level": 1,
+          "text": "Creating Brighter Futures Through Inclusive Finance and Sustainable Community Development"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Building Better Futures Together"
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Creating Opportunities for Every Family Through Financial Inclusion Today"
+        },
+        {
+          "type": "text",
+          "tag": "span",
+          "className": "btn-wraper",
+          "text": "Contact Us"
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Empowering Communities With Confidence"
+        },
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Creating Brighter Futures Through Inclusive Finance and Sustainable Community Development"
+        },
+        {
+          "type": "text",
+          "tag": "span",
+          "className": "btn-wraper",
+          "text": "About Us"
+        }
+      ],
+      "cards": [
+        {
+          "className": "optech-hero-slider-item",
+          "headings": [
+            {
+              "level": 5,
+              "text": "Building Better Futures Together"
+            },
+            {
+              "level": 1,
+              "text": "Creating Opportunities for Every Family Through Financial Inclusion Today"
+            }
+          ],
+          "paragraphs": [],
+          "listItems": [],
+          "images": [],
+          "backgrounds": [
+            "https://shreeshyamfoundation.in/assets/images/hero/finance_banner.jpg"
+          ],
+          "icons": [],
+          "links": [
+            {
+              "label": "Contact Us",
+              "href": "contact-us.php",
+              "url": "https://shreeshyamfoundation.in/contact-us.php",
+              "kind": "internal",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        },
+        {
+          "className": "optech-hero-slider-item",
+          "headings": [
+            {
+              "level": 5,
+              "text": "Empowering Communities With Confidence"
+            },
+            {
+              "level": 1,
+              "text": "Creating Brighter Futures Through Inclusive Finance and Sustainable Community Development"
+            }
+          ],
+          "paragraphs": [],
+          "listItems": [],
+          "images": [],
+          "backgrounds": [
+            "https://shreeshyamfoundation.in/assets/images/hero/best_hrms_banner.jpg"
+          ],
+          "icons": [],
+          "links": [
+            {
+              "label": "About Us",
+              "href": "contact-us.php",
+              "url": "https://shreeshyamfoundation.in/contact-us.php",
+              "kind": "internal",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        }
+      ],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [
+        {
+          "label": "Contact Us",
+          "href": "contact-us.php",
+          "url": "https://shreeshyamfoundation.in/contact-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true,
+          "element": "a",
+          "className": "optech-default-btn"
+        },
+        {
+          "label": "About Us",
+          "href": "contact-us.php",
+          "url": "https://shreeshyamfoundation.in/contact-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true,
+          "element": "a",
+          "className": "optech-default-btn"
+        }
+      ],
+      "links": [
+        {
+          "label": "Contact Us",
+          "href": "contact-us.php",
+          "url": "https://shreeshyamfoundation.in/contact-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "About Us",
+          "href": "contact-us.php",
+          "url": "https://shreeshyamfoundation.in/contact-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        }
+      ],
+      "images": [
+        {
+          "kind": "css-background",
+          "url": "https://shreeshyamfoundation.in/assets/images/hero/finance_banner.jpg",
+          "element": "div.optech-hero-slider-item",
+          "alt": null,
+          "localPath": "assets/original/index/finance_banner.jpg"
+        },
+        {
+          "kind": "css-background",
+          "url": "https://shreeshyamfoundation.in/assets/images/hero/best_hrms_banner.jpg",
+          "element": "div.optech-hero-slider-item",
+          "alt": null,
+          "localPath": "assets/original/index/best_hrms_banner.jpg"
+        }
+      ],
+      "icons": [
+        "ri-arrow-left-s-line",
+        "ri-arrow-right-s-line"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 3,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "section large-padding-tb4 overflow-hidden",
+      "headings": [
+        {
+          "level": 2,
+          "text": "About the Foundation"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "About the Foundation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Shree Shyam Small Growth Foundation is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities. Our mission is to provide responsible financial services, financial literacy, and skill development opportunities that help individuals and families build a secure and self-reliant future.",
+          "html": "<b> Shree Shyam Small Growth Foundation </b> is a socially driven organization committed to promoting financial\n              inclusion, economic empowerment, and sustainable livelihoods for underserved communities. Our mission is\n              to provide responsible financial services, financial literacy, and skill development opportunities that help\n              individuals and families build a secure and self-reliant future."
+        },
+        {
+          "type": "paragraph",
+          "text": "We believe that access to affordable financial services is a fundamental step toward reducing poverty and encouraging entrepreneurship. Through transparent practices and a customer-centric approach, we aim to support women, small entrepreneurs, farmers, and low-income households by helping them achieve financial independence.",
+          "html": "We believe that access to affordable financial services is a fundamental step toward reducing poverty and\n              encouraging entrepreneurship. Through transparent practices and a customer-centric approach, we aim to\n              support women, small entrepreneurs, farmers, and low-income households by helping them achieve\n              financial independence."
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/Home/about_me.jpg",
+          "url": "https://shreeshyamfoundation.in/assets/images/Home/about_me.jpg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 400,
+          "height": 424,
+          "className": "w-100",
+          "localPath": "assets/original/index/about_me.jpg"
+        }
+      ],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 4,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "section optech-section-padding-bottom px-2 px-md-0",
+      "headings": [],
+      "blocks": [
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "optech-counter-number",
+          "text": "1200+"
+        },
+        {
+          "type": "paragraph",
+          "text": "Women Entrepreneurs Supported",
+          "html": "Women Entrepreneurs Supported"
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "optech-counter-number",
+          "text": "150+"
+        },
+        {
+          "type": "paragraph",
+          "text": "Financial Literacy Programs",
+          "html": "Financial Literacy Programs"
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "optech-counter-number",
+          "text": "98%"
+        },
+        {
+          "type": "paragraph",
+          "text": "Community Trust & Satisfaction",
+          "html": "Community Trust &amp; Satisfaction"
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [
+        {
+          "value": "1200+",
+          "number": 1200,
+          "target": "1200",
+          "label": "Women Entrepreneurs Supported",
+          "icons": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/v2/icon2.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/v2/icon2.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 36,
+              "height": 36,
+              "className": null
+            }
+          ]
+        },
+        {
+          "value": "150+",
+          "number": 150,
+          "target": "150",
+          "label": "Financial Literacy Programs",
+          "icons": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/v2/icon3.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/v2/icon3.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 37,
+              "height": 36,
+              "className": null
+            }
+          ]
+        },
+        {
+          "value": "98%",
+          "number": 98,
+          "target": "98",
+          "label": "Community Trust & Satisfaction",
+          "icons": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/v2/icon4.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/v2/icon4.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 37,
+              "height": 36,
+              "className": null
+            }
+          ]
+        }
+      ],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/v2/icon2.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/v2/icon2.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 36,
+          "height": 36,
+          "className": null,
+          "localPath": "assets/original/index/icon2.svg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/v2/icon3.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/v2/icon3.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 37,
+          "height": 36,
+          "className": null,
+          "localPath": "assets/original/index/icon3.svg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/v2/icon4.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/v2/icon4.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 37,
+          "height": 36,
+          "className": null,
+          "localPath": "assets/original/index/icon4.svg"
+        },
+        {
+          "kind": "css-background",
+          "url": "https://shreeshyamfoundation.in/assets/images/v2/counter-bg.png",
+          "element": "div.optech-counter-wrap.row",
+          "alt": null,
+          "localPath": "assets/original/index/counter-bg.png"
+        }
+      ],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 5,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "section bg-light1 optech-section-padding2",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Our Services for Financial Inclusion and Community Empowerment"
+        },
+        {
+          "level": 5,
+          "text": "Financial Inclusion\nServices"
+        },
+        {
+          "level": 5,
+          "text": "Women Empowerment\nPrograms"
+        },
+        {
+          "level": 5,
+          "text": "Financial Literacy &\nAwareness"
+        },
+        {
+          "level": 5,
+          "text": "Entrepreneurship\nDevelopment"
+        },
+        {
+          "level": 5,
+          "text": "Livelihood Promotion\nPrograms"
+        },
+        {
+          "level": 5,
+          "text": "Community Welfare\nInitiatives"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Our Services for Financial Inclusion and Community Empowerment"
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Financial Inclusion\nServices"
+        },
+        {
+          "type": "paragraph",
+          "text": "Providing responsible and affordable financial solutions to underserved individuals and communities.",
+          "html": "Providing responsible and affordable financial solutions to underserved individuals and communities."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Women Empowerment\nPrograms"
+        },
+        {
+          "type": "paragraph",
+          "text": "Supporting women entrepreneurs and self-help groups through financial assistance and guidance.",
+          "html": "Supporting women entrepreneurs and self-help groups through financial assistance and guidance."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Financial Literacy &\nAwareness"
+        },
+        {
+          "type": "paragraph",
+          "text": "Conducting education programs that promote responsible borrowing, savings, and financial planning.",
+          "html": "Conducting education programs that promote responsible borrowing, savings, and financial planning."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Entrepreneurship\nDevelopment"
+        },
+        {
+          "type": "paragraph",
+          "text": "Encouraging small businesses and self-employment through training and livelihood support.",
+          "html": "Encouraging small businesses and self-employment through training and livelihood support."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Livelihood Promotion\nPrograms"
+        },
+        {
+          "type": "paragraph",
+          "text": "Supporting sustainable livelihood opportunities for farmers, rural entrepreneurs, and families.",
+          "html": "Supporting sustainable livelihood opportunities for farmers, rural entrepreneurs, and families."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Community Welfare\nInitiatives"
+        },
+        {
+          "type": "paragraph",
+          "text": "Promoting education, health, skill development, and social welfare for sustainable community growth.",
+          "html": "Promoting education, health, skill development, and social welfare for sustainable community growth."
+        }
+      ],
+      "cards": [
+        {
+          "className": "optech-iconbox-wrap style-two",
+          "headings": [
+            {
+              "level": 5,
+              "text": "Financial Inclusion\nServices"
+            }
+          ],
+          "paragraphs": [
+            "Providing responsible and affordable financial solutions to underserved individuals and communities."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/iconbox/financial.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/iconbox/financial.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 800,
+              "height": 800,
+              "className": null,
+              "localPath": "assets/original/index/financial.svg"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        },
+        {
+          "className": "optech-iconbox-wrap style-two",
+          "headings": [
+            {
+              "level": 5,
+              "text": "Women Empowerment\nPrograms"
+            }
+          ],
+          "paragraphs": [
+            "Supporting women entrepreneurs and self-help groups through financial assistance and guidance."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/iconbox/empowerment.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/iconbox/empowerment.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 800,
+              "height": 800,
+              "className": null,
+              "localPath": "assets/original/index/empowerment.svg"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        },
+        {
+          "className": "optech-iconbox-wrap style-two",
+          "headings": [
+            {
+              "level": 5,
+              "text": "Financial Literacy &\nAwareness"
+            }
+          ],
+          "paragraphs": [
+            "Conducting education programs that promote responsible borrowing, savings, and financial planning."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/iconbox/financial.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/iconbox/financial.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 800,
+              "height": 800,
+              "className": null,
+              "localPath": "assets/original/index/financial.svg"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        },
+        {
+          "className": "optech-iconbox-wrap style-two",
+          "headings": [
+            {
+              "level": 5,
+              "text": "Entrepreneurship\nDevelopment"
+            }
+          ],
+          "paragraphs": [
+            "Encouraging small businesses and self-employment through training and livelihood support."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/iconbox/Entrepreneurship.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Entrepreneurship.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 800,
+              "height": 800,
+              "className": null,
+              "localPath": "assets/original/index/Entrepreneurship.svg"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        },
+        {
+          "className": "optech-iconbox-wrap style-two",
+          "headings": [
+            {
+              "level": 5,
+              "text": "Livelihood Promotion\nPrograms"
+            }
+          ],
+          "paragraphs": [
+            "Supporting sustainable livelihood opportunities for farmers, rural entrepreneurs, and families."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/iconbox/Promotion.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Promotion.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 800,
+              "height": 800,
+              "className": null,
+              "localPath": "assets/original/index/Promotion.svg"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        },
+        {
+          "className": "optech-iconbox-wrap style-two",
+          "headings": [
+            {
+              "level": 5,
+              "text": "Community Welfare\nInitiatives"
+            }
+          ],
+          "paragraphs": [
+            "Promoting education, health, skill development, and social welfare for sustainable community growth."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/iconbox/Welfare.svg",
+              "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Welfare.svg",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 800,
+              "height": 800,
+              "className": null,
+              "localPath": "assets/original/index/Welfare.svg"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        }
+      ],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/iconbox/financial.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/iconbox/financial.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 800,
+          "height": 800,
+          "className": null,
+          "localPath": "assets/original/index/financial.svg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/iconbox/empowerment.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/iconbox/empowerment.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 800,
+          "height": 800,
+          "className": null,
+          "localPath": "assets/original/index/empowerment.svg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/iconbox/financial.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/iconbox/financial.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 800,
+          "height": 800,
+          "className": null,
+          "localPath": "assets/original/index/financial.svg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/iconbox/Entrepreneurship.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Entrepreneurship.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 800,
+          "height": 800,
+          "className": null,
+          "localPath": "assets/original/index/Entrepreneurship.svg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/iconbox/Promotion.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Promotion.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 800,
+          "height": 800,
+          "className": null,
+          "localPath": "assets/original/index/Promotion.svg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/iconbox/Welfare.svg",
+          "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Welfare.svg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 800,
+          "height": 800,
+          "className": null,
+          "localPath": "assets/original/index/Welfare.svg"
+        }
+      ],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 6,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "section optech-section-padding",
+      "headings": [
+        {
+          "level": 2,
+          "text": "What Our Members Say"
+        },
+        {
+          "level": 4,
+          "text": "Sunita Devi"
+        },
+        {
+          "level": 4,
+          "text": "Rajesh Kumar"
+        },
+        {
+          "level": 4,
+          "text": "Anita Sharma"
+        },
+        {
+          "level": 4,
+          "text": "Mahesh Yadav"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "What Our Members Say"
+        },
+        {
+          "type": "paragraph",
+          "text": "Real experiences from individuals and families empowered through our financial inclusion initiatives.",
+          "html": "Real experiences from individuals and families empowered through our financial inclusion initiatives."
+        },
+        {
+          "type": "paragraph",
+          "text": "\"The Foundation supported my small business with financial guidance and assistance. Today, I have improved my income and created a better future for my family.\"",
+          "html": "\"The Foundation supported my small business with financial guidance and assistance.\n                Today, I have improved my income and created a better future for my family.\""
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Sunita Devi"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"The Foundation's transparent services and financial awareness programs helped me grow my business and achieve greater financial stability.\"",
+          "html": "\"The Foundation's transparent services and financial awareness programs helped me grow\n                my business and achieve greater financial stability.\""
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Rajesh Kumar"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"The financial literacy initiatives helped me learn savings, planning, and better ways to manage my personal and family finances.\"",
+          "html": "\"The financial literacy initiatives helped me learn savings, planning,\n                and better ways to manage my personal and family finances.\""
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Anita Sharma"
+        },
+        {
+          "type": "paragraph",
+          "text": "\"The Foundation provided valuable support for my farming activities and helped create better livelihood opportunities for my family.\"",
+          "html": "\"The Foundation provided valuable support for my farming activities and helped\n                create better livelihood opportunities for my family.\""
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Mahesh Yadav"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "1",
+              "href": null
+            },
+            {
+              "text": "2",
+              "href": null
+            },
+            {
+              "text": "3",
+              "href": null
+            },
+            {
+              "text": "4",
+              "href": null
+            }
+          ]
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [
+        {
+          "quote": "\"The Foundation supported my small business with financial guidance and assistance. Today, I have improved my income and created a better future for my family.\"",
+          "name": "Sunita Devi",
+          "role": null,
+          "rating": 4,
+          "photo": null
+        },
+        {
+          "quote": "\"The Foundation's transparent services and financial awareness programs helped me grow my business and achieve greater financial stability.\"",
+          "name": "Rajesh Kumar",
+          "role": null,
+          "rating": 4,
+          "photo": null
+        },
+        {
+          "quote": "\"The financial literacy initiatives helped me learn savings, planning, and better ways to manage my personal and family finances.\"",
+          "name": "Anita Sharma",
+          "role": null,
+          "rating": 4,
+          "photo": null
+        },
+        {
+          "quote": "\"The Foundation provided valuable support for my farming activities and helped create better livelihood opportunities for my family.\"",
+          "name": "Mahesh Yadav",
+          "role": null,
+          "rating": 4,
+          "photo": null
+        }
+      ],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [],
+      "icons": [
+        "fa fa-star text-warning"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 7,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "section bg-light1 optech-section-padding5",
+      "headings": [
+        {
+          "level": 3,
+          "text": "Our Process for Empowering Communities Through Financial Inclusion"
+        },
+        {
+          "level": 4,
+          "text": "Member Registration & Assessment"
+        },
+        {
+          "level": 4,
+          "text": "Financial Support & Capacity Building"
+        },
+        {
+          "level": 4,
+          "text": "Monitoring & Community Development"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Our Process for Empowering Communities Through Financial Inclusion"
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "optech-numberbox-data",
+          "text": "01"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Member Registration & Assessment"
+        },
+        {
+          "type": "paragraph",
+          "text": "We understand community needs, verify eligibility, and assess financial requirements through a transparent and customer-centric approach.",
+          "html": "We understand community needs, verify eligibility, and assess financial requirements through a transparent and customer-centric approach."
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "optech-numberbox-data",
+          "text": "02"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Financial Support & Capacity Building"
+        },
+        {
+          "type": "paragraph",
+          "text": "We provide responsible financial services, financial literacy, entrepreneurship guidance, and skill development for sustainable growth.",
+          "html": "We provide responsible financial services, financial literacy, entrepreneurship guidance, and skill development for sustainable growth."
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "optech-numberbox-data",
+          "text": "03"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "text": "Monitoring & Community Development"
+        },
+        {
+          "type": "paragraph",
+          "text": "We continuously support members through guidance, awareness programs, livelihood promotion, and community welfare initiatives.",
+          "html": "We continuously support members through guidance, awareness programs, livelihood promotion, and community welfare initiatives."
+        }
+      ],
+      "cards": [
+        {
+          "className": "optech-numberbox-wrap",
+          "headings": [
+            {
+              "level": 4,
+              "text": "Member Registration & Assessment"
+            }
+          ],
+          "paragraphs": [
+            "We understand community needs, verify eligibility, and assess financial requirements through a transparent and customer-centric approach."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/Home/Registration.png",
+              "url": "https://shreeshyamfoundation.in/assets/images/Home/Registration.png",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 399,
+              "height": 385,
+              "className": "w-75",
+              "localPath": "assets/original/index/Registration.png"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        },
+        {
+          "className": "optech-numberbox-wrap",
+          "headings": [
+            {
+              "level": 4,
+              "text": "Financial Support & Capacity Building"
+            }
+          ],
+          "paragraphs": [
+            "We provide responsible financial services, financial literacy, entrepreneurship guidance, and skill development for sustainable growth."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/Home/support.png",
+              "url": "https://shreeshyamfoundation.in/assets/images/Home/support.png",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 228,
+              "height": 220,
+              "className": "w-75",
+              "localPath": "assets/original/index/support.png"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        },
+        {
+          "className": "optech-numberbox-wrap",
+          "headings": [
+            {
+              "level": 4,
+              "text": "Monitoring & Community Development"
+            }
+          ],
+          "paragraphs": [
+            "We continuously support members through guidance, awareness programs, livelihood promotion, and community welfare initiatives."
+          ],
+          "listItems": [],
+          "images": [
+            {
+              "kind": "img",
+              "src": "assets/images/Home/Community.png",
+              "url": "https://shreeshyamfoundation.in/assets/images/Home/Community.png",
+              "dataSrc": null,
+              "srcset": null,
+              "alt": "",
+              "altMissing": false,
+              "title": null,
+              "width": 399,
+              "height": 385,
+              "className": "w-75",
+              "localPath": "assets/original/index/Community.png"
+            }
+          ],
+          "backgrounds": [],
+          "icons": [],
+          "links": []
+        }
+      ],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/Home/Registration.png",
+          "url": "https://shreeshyamfoundation.in/assets/images/Home/Registration.png",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 399,
+          "height": 385,
+          "className": "w-75",
+          "localPath": "assets/original/index/Registration.png"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/Home/support.png",
+          "url": "https://shreeshyamfoundation.in/assets/images/Home/support.png",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 228,
+          "height": 220,
+          "className": "w-75",
+          "localPath": "assets/original/index/support.png"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/Home/Community.png",
+          "url": "https://shreeshyamfoundation.in/assets/images/Home/Community.png",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 399,
+          "height": 385,
+          "className": "w-75",
+          "localPath": "assets/original/index/Community.png"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/v2/line.png",
+          "url": "https://shreeshyamfoundation.in/assets/images/v2/line.png",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1296,
+          "height": 1,
+          "className": null,
+          "localPath": "assets/original/index/line.png"
+        }
+      ],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 8,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "container-fluid my-4 my-lg-5",
+      "headings": [
+        {
+          "level": 3,
+          "text": "A Proud Milestone, A Greater Responsibility"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "A Proud Milestone, A Greater Responsibility"
+        },
+        {
+          "type": "paragraph",
+          "text": "An award is not just a recognition, it is a reflection of dedication, hard work, and the trust of our people. Receiving the Iconic Business Award 2026 for Shree Shyam Small Growth Foundation is a proud and emotional moment for me as MD, CEO & Founder.",
+          "html": "An award is not just a recognition, it is a reflection of dedication, hard work, and the trust of our people.\n\n              Receiving the <strong>Iconic Business Award 2026</strong> for Shree Shyam Small Growth Foundation is a proud and emotional moment for me as MD, CEO &amp; Founder."
+        },
+        {
+          "type": "paragraph",
+          "text": "This achievement belongs to my entire team, our supporters, and everyone who believed in our vision. This is not the destination, but a new beginning towards creating greater impact, empowering people, and building a stronger future. With the blessings of Baba Shyam, we will continue our journey with more passion, commitment, and responsibility.",
+          "html": "This achievement belongs to my entire team, our supporters, and everyone who believed in our vision. This is not the destination, but a new beginning towards creating greater impact, empowering people, and building a stronger future.\n\n              With the blessings of Baba Shyam, we will continue our journey with more passion, commitment, and responsibility."
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "img",
+          "src": "./assets/images/our-awards.jpeg",
+          "url": "https://shreeshyamfoundation.in/assets/images/our-awards.jpeg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1600,
+          "height": 869,
+          "className": "w-100 rounded",
+          "localPath": "assets/original/index/our-awards.jpeg"
+        }
+      ],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 9,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "section accordion-page",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "level": 5,
+          "text": "Q1. What services does Shree Shyam Small Growth Foundation provide?"
+        },
+        {
+          "level": 5,
+          "text": "Q2. Who can benefit from Foundation programs?"
+        },
+        {
+          "level": 5,
+          "text": "Q3. How does the Foundation promote financial inclusion?"
+        },
+        {
+          "level": 5,
+          "text": "Q4. What documents are required for membership registration?"
+        },
+        {
+          "level": 5,
+          "text": "Q5. How does the Foundation support entrepreneurship?"
+        },
+        {
+          "level": 5,
+          "text": "Q6. How can I become a member of the Foundation?"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Q1. What services does Shree Shyam Small Growth Foundation provide?"
+        },
+        {
+          "type": "paragraph",
+          "text": "We provide financial inclusion support, financial literacy programs, livelihood development, entrepreneurship guidance, and community welfare initiatives for underserved communities.",
+          "html": "We provide financial inclusion support, financial literacy programs, livelihood development, entrepreneurship guidance, and community welfare initiatives for underserved communities."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Q2. Who can benefit from Foundation programs?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Our programs support women entrepreneurs, small business owners, farmers, self-help groups, and low-income households seeking financial empowerment and sustainable growth opportunities.",
+          "html": "Our programs support women entrepreneurs, small business owners, farmers, self-help groups, and low-income households seeking financial empowerment and sustainable growth opportunities."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Q3. How does the Foundation promote financial inclusion?"
+        },
+        {
+          "type": "paragraph",
+          "text": "We promote financial inclusion through responsible financial services, awareness programs, savings encouragement, financial literacy, and support for income-generating activities.",
+          "html": "We promote financial inclusion through responsible financial services, awareness programs, savings encouragement, financial literacy, and support for income-generating activities."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Q4. What documents are required for membership registration?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Applicants generally need identity proof, address proof, Aadhaar Card, PAN Card where applicable, photographs, bank details, and other required documents.",
+          "html": "Applicants generally need identity proof, address proof, Aadhaar Card, PAN Card where applicable, photographs, bank details, and other required documents."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Q5. How does the Foundation support entrepreneurship?"
+        },
+        {
+          "type": "paragraph",
+          "text": "We encourage entrepreneurship by providing financial guidance, skill development opportunities, business awareness, and livelihood support for individuals and small enterprises.",
+          "html": "We encourage entrepreneurship by providing financial guidance, skill development opportunities, business awareness, and livelihood support for individuals and small enterprises."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Q6. How can I become a member of the Foundation?"
+        },
+        {
+          "type": "paragraph",
+          "text": "Individuals above 18 years of age can apply for membership by completing the registration process and submitting valid identity and address documents.",
+          "html": "Individuals above 18 years of age can apply for membership by completing the registration process and submitting valid identity and address documents."
+        }
+      ],
+      "cards": [],
+      "faqs": [
+        {
+          "question": "Q1. What services does Shree Shyam Small Growth Foundation provide?",
+          "answer": "We provide financial inclusion support, financial literacy programs, livelihood development, entrepreneurship guidance, and community welfare initiatives for underserved communities.",
+          "answerHtml": "<p>We provide financial inclusion support, financial literacy programs, livelihood development, entrepreneurship guidance, and community welfare initiatives for underserved communities.</p>"
+        },
+        {
+          "question": "Q2. Who can benefit from Foundation programs?",
+          "answer": "Our programs support women entrepreneurs, small business owners, farmers, self-help groups, and low-income households seeking financial empowerment and sustainable growth opportunities.",
+          "answerHtml": "<p>Our programs support women entrepreneurs, small business owners, farmers, self-help groups, and low-income households seeking financial empowerment and sustainable growth opportunities.</p>"
+        },
+        {
+          "question": "Q3. How does the Foundation promote financial inclusion?",
+          "answer": "We promote financial inclusion through responsible financial services, awareness programs, savings encouragement, financial literacy, and support for income-generating activities.",
+          "answerHtml": "<p>We promote financial inclusion through responsible financial services, awareness programs, savings encouragement, financial literacy, and support for income-generating activities.</p>"
+        },
+        {
+          "question": "Q4. What documents are required for membership registration?",
+          "answer": "Applicants generally need identity proof, address proof, Aadhaar Card, PAN Card where applicable, photographs, bank details, and other required documents.",
+          "answerHtml": "<p>Applicants generally need identity proof, address proof, Aadhaar Card, PAN Card where applicable, photographs, bank details, and other required documents.</p>"
+        },
+        {
+          "question": "Q5. How does the Foundation support entrepreneurship?",
+          "answer": "We encourage entrepreneurship by providing financial guidance, skill development opportunities, business awareness, and livelihood support for individuals and small enterprises.",
+          "answerHtml": "<p>We encourage entrepreneurship by providing financial guidance, skill development opportunities, business awareness, and livelihood support for individuals and small enterprises.</p>"
+        },
+        {
+          "question": "Q6. How can I become a member of the Foundation?",
+          "answer": "Individuals above 18 years of age can apply for membership by completing the registration process and submitting valid identity and address documents.",
+          "answerHtml": "<p>Individuals above 18 years of age can apply for membership by completing the registration process and submitting valid identity and address documents.</p>"
+        }
+      ],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 10,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "section py-5 optech-section-padding",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Our team Members"
+        },
+        {
+          "level": 5,
+          "text": "Satyam pushkar"
+        },
+        {
+          "level": 5,
+          "text": "Ranjeet Kumar"
+        },
+        {
+          "level": 5,
+          "text": "Sumit kumar"
+        },
+        {
+          "level": 5,
+          "text": "Saurav Prakash"
+        },
+        {
+          "level": 5,
+          "text": "Vikram Sinha"
+        },
+        {
+          "level": 5,
+          "text": "Sonu Kumar"
+        },
+        {
+          "level": 5,
+          "text": "Shishir kumar"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Our team Members"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Satyam pushkar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Head Business Development",
+          "html": "<b>Head Business Development</b>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Ranjeet Kumar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Executive Director Business",
+          "html": "<b>Executive Director Business</b>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Sumit kumar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Executive Director Finance",
+          "html": "<b> Executive Director Finance</b>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Saurav Prakash"
+        },
+        {
+          "type": "paragraph",
+          "text": "MD, CEO, Founder",
+          "html": "<b>MD, CEO, Founder</b>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Vikram Sinha"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chairman",
+          "html": "<b>Chairman</b>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Sonu Kumar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Head IT",
+          "html": "<b>Head IT</b>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Shishir kumar"
+        },
+        {
+          "type": "paragraph",
+          "text": "Chief Information Officer",
+          "html": "<b>Chief Information Officer</b>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "1",
+              "href": null
+            },
+            {
+              "text": "2",
+              "href": null
+            },
+            {
+              "text": "3",
+              "href": null
+            },
+            {
+              "text": "4",
+              "href": null
+            },
+            {
+              "text": "5",
+              "href": null
+            },
+            {
+              "text": "6",
+              "href": null
+            },
+            {
+              "text": "7",
+              "href": null
+            }
+          ]
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [
+        {
+          "name": "Satyam pushkar",
+          "role": "Head Business Development",
+          "photo": {
+            "src": "assets/images/team/satyam.jpg",
+            "url": "https://shreeshyamfoundation.in/assets/images/team/satyam.jpg",
+            "alt": "",
+            "localPath": "assets/original/index/satyam.jpg"
+          },
+          "links": [
+            {
+              "label": "",
+              "href": "https://www.linkedin.com/",
+              "url": "https://www.linkedin.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-linkedin-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://twitter.com/",
+              "url": "https://twitter.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-twitter-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://www.instagram.com/",
+              "url": "https://www.instagram.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-instagram-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "Satyam pushkar\nHead Business Development",
+              "href": "javascript:void(0)",
+              "url": null,
+              "kind": "javascript",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        },
+        {
+          "name": "Ranjeet Kumar",
+          "role": "Executive Director Business",
+          "photo": {
+            "src": "assets/images/team/Ranjeet.jpg",
+            "url": "https://shreeshyamfoundation.in/assets/images/team/Ranjeet.jpg",
+            "alt": "",
+            "localPath": "assets/original/index/Ranjeet.jpg"
+          },
+          "links": [
+            {
+              "label": "",
+              "href": "https://www.linkedin.com/",
+              "url": "https://www.linkedin.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-linkedin-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://twitter.com/",
+              "url": "https://twitter.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-twitter-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://www.instagram.com/",
+              "url": "https://www.instagram.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-instagram-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "Ranjeet Kumar\nExecutive Director Business",
+              "href": "javascript:void(0)",
+              "url": null,
+              "kind": "javascript",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        },
+        {
+          "name": "Sumit kumar",
+          "role": "Executive Director Finance",
+          "photo": {
+            "src": "assets/images/team/sumit.jpg",
+            "url": "https://shreeshyamfoundation.in/assets/images/team/sumit.jpg",
+            "alt": "",
+            "localPath": "assets/original/index/sumit.jpg"
+          },
+          "links": [
+            {
+              "label": "",
+              "href": "https://www.linkedin.com/",
+              "url": "https://www.linkedin.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-linkedin-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://twitter.com/",
+              "url": "https://twitter.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-twitter-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://www.instagram.com/",
+              "url": "https://www.instagram.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-instagram-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "Sumit kumar\nExecutive Director Finance",
+              "href": "javascript:void(0)",
+              "url": null,
+              "kind": "javascript",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        },
+        {
+          "name": "Saurav Prakash",
+          "role": "MD, CEO, Founder",
+          "photo": {
+            "src": "assets/images/team/saurav.jpg",
+            "url": "https://shreeshyamfoundation.in/assets/images/team/saurav.jpg",
+            "alt": "",
+            "localPath": "assets/original/index/saurav.jpg"
+          },
+          "links": [
+            {
+              "label": "",
+              "href": "https://www.linkedin.com/",
+              "url": "https://www.linkedin.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-linkedin-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://twitter.com/",
+              "url": "https://twitter.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-twitter-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://www.instagram.com/",
+              "url": "https://www.instagram.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-instagram-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "Saurav Prakash\nMD, CEO, Founder",
+              "href": "javascript:void(0)",
+              "url": null,
+              "kind": "javascript",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        },
+        {
+          "name": "Vikram Sinha",
+          "role": "Chairman",
+          "photo": {
+            "src": "assets/images/team/vikram-kumar.jpg",
+            "url": "https://shreeshyamfoundation.in/assets/images/team/vikram-kumar.jpg",
+            "alt": "",
+            "localPath": "assets/original/index/vikram-kumar.jpg"
+          },
+          "links": [
+            {
+              "label": "",
+              "href": "https://www.linkedin.com/",
+              "url": "https://www.linkedin.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-linkedin-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://twitter.com/",
+              "url": "https://twitter.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-twitter-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://www.instagram.com/",
+              "url": "https://www.instagram.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-instagram-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "Vikram Sinha\nChairman",
+              "href": "javascript:void(0)",
+              "url": null,
+              "kind": "javascript",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        },
+        {
+          "name": "Sonu Kumar",
+          "role": "Head IT",
+          "photo": {
+            "src": "assets/images/team/sonu-kumar.jpg",
+            "url": "https://shreeshyamfoundation.in/assets/images/team/sonu-kumar.jpg",
+            "alt": "",
+            "localPath": "assets/original/index/sonu-kumar.jpg"
+          },
+          "links": [
+            {
+              "label": "",
+              "href": "https://www.linkedin.com/",
+              "url": "https://www.linkedin.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-linkedin-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://twitter.com/",
+              "url": "https://twitter.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-twitter-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://www.instagram.com/",
+              "url": "https://www.instagram.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-instagram-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "Sonu Kumar\nHead IT",
+              "href": "javascript:void(0)",
+              "url": null,
+              "kind": "javascript",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        },
+        {
+          "name": "Shishir kumar",
+          "role": "Chief Information Officer",
+          "photo": {
+            "src": "assets/images/team/Shishir.jpg",
+            "url": "https://shreeshyamfoundation.in/assets/images/team/Shishir.jpg",
+            "alt": "",
+            "localPath": "assets/original/index/Shishir.jpg"
+          },
+          "links": [
+            {
+              "label": "",
+              "href": "https://www.linkedin.com/",
+              "url": "https://www.linkedin.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-linkedin-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://twitter.com/",
+              "url": "https://twitter.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-twitter-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "",
+              "href": "https://www.instagram.com/",
+              "url": "https://www.instagram.com/",
+              "kind": "external",
+              "target": "_blank",
+              "icons": [
+                "ri-instagram-fill"
+              ],
+              "hasVisibleText": false
+            },
+            {
+              "label": "Shishir kumar\nChief Information Officer",
+              "href": "javascript:void(0)",
+              "url": null,
+              "kind": "javascript",
+              "target": null,
+              "icons": [],
+              "hasVisibleText": true
+            }
+          ]
+        }
+      ],
+      "stats": [],
+      "ctas": [],
+      "links": [
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Satyam pushkar\nHead Business Development",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Ranjeet Kumar\nExecutive Director Business",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Sumit kumar\nExecutive Director Finance",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Saurav Prakash\nMD, CEO, Founder",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Vikram Sinha\nChairman",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Sonu Kumar\nHead IT",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Shishir kumar\nChief Information Officer",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        }
+      ],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/team/satyam.jpg",
+          "url": "https://shreeshyamfoundation.in/assets/images/team/satyam.jpg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 481,
+          "height": 481,
+          "className": null,
+          "localPath": "assets/original/index/satyam.jpg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/team/Ranjeet.jpg",
+          "url": "https://shreeshyamfoundation.in/assets/images/team/Ranjeet.jpg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 481,
+          "height": 480,
+          "className": null,
+          "localPath": "assets/original/index/Ranjeet.jpg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/team/sumit.jpg",
+          "url": "https://shreeshyamfoundation.in/assets/images/team/sumit.jpg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 481,
+          "height": 480,
+          "className": null,
+          "localPath": "assets/original/index/sumit.jpg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/team/saurav.jpg",
+          "url": "https://shreeshyamfoundation.in/assets/images/team/saurav.jpg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 481,
+          "height": 480,
+          "className": null,
+          "localPath": "assets/original/index/saurav.jpg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/team/vikram-kumar.jpg",
+          "url": "https://shreeshyamfoundation.in/assets/images/team/vikram-kumar.jpg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 481,
+          "height": 480,
+          "className": null,
+          "localPath": "assets/original/index/vikram-kumar.jpg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/team/sonu-kumar.jpg",
+          "url": "https://shreeshyamfoundation.in/assets/images/team/sonu-kumar.jpg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 481,
+          "height": 480,
+          "className": null,
+          "localPath": "assets/original/index/sonu-kumar.jpg"
+        },
+        {
+          "kind": "img",
+          "src": "assets/images/team/Shishir.jpg",
+          "url": "https://shreeshyamfoundation.in/assets/images/team/Shishir.jpg",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 481,
+          "height": 480,
+          "className": null,
+          "localPath": "assets/original/index/Shishir.jpg"
+        }
+      ],
+      "icons": [
+        "ri-linkedin-fill",
+        "ri-twitter-fill",
+        "ri-instagram-fill"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 11,
+      "kind": "footer",
+      "tag": "footer",
+      "id": null,
+      "className": "optech-footer-section dark-bg optech-section-padding-top",
+      "headings": [
+        {
+          "level": 5,
+          "text": "Quick Links"
+        },
+        {
+          "level": 5,
+          "text": "Contact Us"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Shree Shyam Small Growth Foundation is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities.",
+          "html": "<b> Shree Shyam Small Growth Foundation </b> is a socially driven organization committed to promoting financial\n                                  inclusion, economic empowerment, and sustainable livelihoods for underserved communities."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Quick Links"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "About Us",
+              "href": "about-us.php"
+            },
+            {
+              "text": "Mission",
+              "href": "our-mission.php"
+            },
+            {
+              "text": "Our Policy",
+              "href": "our-policy.php"
+            },
+            {
+              "text": "Contact Us",
+              "href": "contact-us.php"
+            },
+            {
+              "text": "Register",
+              "href": "registration.php"
+            },
+            {
+              "text": "Privacy Policy",
+              "href": "privacy-policy.php"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Contact Us"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+              "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7"
+            },
+            {
+              "text": "shreeshyamfoundation2026@gmail.com",
+              "href": "mailto:shreeshyamfoundation2026@gmail.com"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Copyright © 2026 Shree Shyam Small Growth Foundation .",
+          "html": "Copyright © 2026 <a href=\"./index.php\" class=\" text-white\"> Shree Shyam Small Growth Foundation </a>."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.facebook.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [
+        {
+          "label": "",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": false
+        },
+        {
+          "label": "About Us",
+          "href": "about-us.php",
+          "url": "https://shreeshyamfoundation.in/about-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Mission",
+          "href": "our-mission.php",
+          "url": "https://shreeshyamfoundation.in/our-mission.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Policy",
+          "href": "our-policy.php",
+          "url": "https://shreeshyamfoundation.in/our-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Contact Us",
+          "href": "contact-us.php",
+          "url": "https://shreeshyamfoundation.in/contact-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Register",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "privacy-policy.php",
+          "url": "https://shreeshyamfoundation.in/privacy-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+          "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "url": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "shreeshyamfoundation2026@gmail.com",
+          "href": "mailto:shreeshyamfoundation2026@gmail.com",
+          "url": null,
+          "kind": "mailto",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Shree Shyam Small Growth Foundation",
+          "href": "./index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.facebook.com/",
+          "url": "https://www.facebook.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-facebook-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        }
+      ],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/logo/white_img_2.png",
+          "url": "https://shreeshyamfoundation.in/assets/images/logo/white_img_2.png",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1094,
+          "height": 469,
+          "className": "light-version-logo",
+          "localPath": "assets/original/index/white_img_2.png"
+        }
+      ],
+      "icons": [
+        "fa fa-location-arrow text-white",
+        "fa fa-envelope text-white",
+        "ri-facebook-fill",
+        "ri-linkedin-fill",
+        "ri-twitter-fill",
+        "ri-instagram-fill"
+      ],
+      "iframes": []
+    }
+  ],
+  "forms": [],
+  "orphanFields": [],
+  "assets": [
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/logo/logo-white.webp",
+      "localPath": "assets/original/index/logo-white.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 162338,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/hero/finance_banner.jpg",
+      "localPath": "assets/original/index/finance_banner.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 248499,
+      "kinds": [
+        "css-background",
+        "network"
+      ],
+      "alts": [
+        null,
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/hero/best_hrms_banner.jpg",
+      "localPath": "assets/original/index/best_hrms_banner.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 364058,
+      "kinds": [
+        "css-background",
+        "network"
+      ],
+      "alts": [
+        null,
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/Home/about_me.jpg",
+      "localPath": "assets/original/index/about_me.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 66312,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/v2/icon2.svg",
+      "localPath": "assets/original/index/icon2.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 1286,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/v2/icon3.svg",
+      "localPath": "assets/original/index/icon3.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 1943,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/v2/icon4.svg",
+      "localPath": "assets/original/index/icon4.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 612,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/v2/counter-bg.png",
+      "localPath": "assets/original/index/counter-bg.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 21967,
+      "kinds": [
+        "css-background",
+        "network"
+      ],
+      "alts": [
+        null,
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/iconbox/financial.svg",
+      "localPath": "assets/original/index/financial.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 1521,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/iconbox/empowerment.svg",
+      "localPath": "assets/original/index/empowerment.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 1069,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Entrepreneurship.svg",
+      "localPath": "assets/original/index/Entrepreneurship.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 2052,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Promotion.svg",
+      "localPath": "assets/original/index/Promotion.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 1900,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/iconbox/Welfare.svg",
+      "localPath": "assets/original/index/Welfare.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "bytes": 1916,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/Home/Registration.png",
+      "localPath": "assets/original/index/Registration.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 54757,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/Home/support.png",
+      "localPath": "assets/original/index/support.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 49263,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/Home/Community.png",
+      "localPath": "assets/original/index/Community.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 66524,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/v2/line.png",
+      "localPath": "assets/original/index/line.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 167,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/our-awards.jpeg",
+      "localPath": "assets/original/index/our-awards.jpeg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 215119,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/team/satyam.jpg",
+      "localPath": "assets/original/index/satyam.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 40016,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/team/Ranjeet.jpg",
+      "localPath": "assets/original/index/Ranjeet.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 27857,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/team/sumit.jpg",
+      "localPath": "assets/original/index/sumit.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 25219,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/team/saurav.jpg",
+      "localPath": "assets/original/index/saurav.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 33139,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/team/vikram-kumar.jpg",
+      "localPath": "assets/original/index/vikram-kumar.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 37519,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/team/sonu-kumar.jpg",
+      "localPath": "assets/original/index/sonu-kumar.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 33023,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/team/Shishir.jpg",
+      "localPath": "assets/original/index/Shishir.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 29976,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/logo/white_img_2.png",
+      "localPath": "assets/original/index/white_img_2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 424866,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+      "localPath": "assets/original/index/favicon.ico",
+      "status": 200,
+      "contentType": "image/x-icon",
+      "bytes": 15406,
+      "kinds": [
+        "head-icon"
+      ],
+      "alts": [
+        null,
+        null
+      ]
+    }
+  ],
+  "htmlComments": [
+    "/.Mobile Menu Hamburger Ends",
+    "<a class=\"optech-icon-btn\" href=\"javascript:void(0)\">\n<i class=\"icon-show ri-arrow-right-line\"></i>\n<span>Learn More</span>\n<i class=\"icon-hide ri-arrow-right-line\"></i>\n</a>",
+    "<a class=\"optech-icon-btn\" href=\"javascript:void(0)\">\n<i class=\"icon-show ri-arrow-right-line\"></i>\n<span>Learn More</span>\n<i class=\"icon-hide ri-arrow-right-line\"></i>\n</a>",
+    "<a class=\"optech-icon-btn\" href=\"javascript:void(0)\">\n<i class=\"icon-show ri-arrow-right-line\"></i>\n<span>Learn More</span>\n<i class=\"icon-hide ri-arrow-right-line\"></i>\n</a>",
+    "<a class=\"optech-icon-btn\" href=\"javascript:void(0)\">\n<i class=\"icon-show ri-arrow-right-line\"></i>\n<span>Learn More</span>\n<i class=\"icon-hide ri-arrow-right-line\"></i>\n</a>",
+    "<a class=\"optech-icon-btn\" href=\"javascript:void(0)\">\n<i class=\"icon-show ri-arrow-right-line\"></i>\n<span>Learn More</span>\n<i class=\"icon-hide ri-arrow-right-line\"></i>\n</a>",
+    "<a class=\"optech-icon-btn\" href=\"javascript:void(0)\">\n<i class=\"icon-show ri-arrow-right-line\"></i>\n<span>Learn More</span>\n<i class=\"icon-hide ri-arrow-right-line\"></i>\n</a>",
+    "<div class=\"section optech-section-padding\">\n<div class=\"container\">\n<div class=\"optech-section-title center\">\n<h2>Our recent blog & articles</h2>\n</div>\n<div class=\"row\">\n<div class=\"col-xl-4 col-md-6\" data-aos=\"fade-up\" data-aos-duration=\"500\">\n<div class=\"optech-blog-wrap2\">\n<div class=\"optech-blog-thumb2\">\n<img src=\"assets/images/blog/blog15.png\" alt=\"\">\n<div class=\"optech-blog-content2\">\n<div class=\"optech-blog-meta\">\n<ul>\n<li><a href='single-blog.php'>Technology</a></li>\n<li><a href='single-blog.php'>26 June 2023</a></li>\n</ul>\n</div>\n<a href='single-blog.php'>\n<h4>Boost your startup business with our digital agency</h4>\n</a>\n<a class='optech-icon-btn' href='single-blog.php'><i class=\"icon-show ri-arrow-right-line\"></i> <span>Learn More</span> <i class=\"icon-hide ri-arrow-right-line\"></i></a>\n</div>\n</div>\n</div>\n</div>\n<div class=\"col-xl-4 col-md-6\" data-aos=\"fade-up\" data-aos-duration=\"700\">\n<div class=\"optech-blog-wrap2\">\n<div class=\"optech-blog-thumb2\">\n<img src=\"assets/images/blog/blog16.png\" alt=\"\">\n<div class=\"optech-blog-content2\">\n<div class=\"optech-blog-meta\">\n<ul>\n<li><a href='single-blog.php'>Technology</a></li>\n<li><a href='single-blog.php'>26 June 2023</a></li>\n</ul>\n</div>\n<a href='single-blog.php'>\n<h4>Boost your startup business with our digital agency</h4>\n</a>\n<a class='optech-icon-btn' href='single-blog.php'><i class=\"icon-show ri-arrow-right-line\"></i> <span>Learn More</span> <i class=\"icon-hide ri-arrow-right-line\"></i></a>\n</div>\n</div>\n</div>\n</d …[truncated]",
+    "<li class=\"d-flex \">\n<div class=\"pe-2\">\n<i class=\"fa fa-phone-alt text-white\"></i>\n</div>\n<div>\n<a href=\"tel: +91 xxxxxxxxxx\" target=\"_blank\">+91 xxxxxxxxxx\n</a>\n</div>\n</li>"
+  ],
+  "screenshots": [
+    "docs/screenshots/index-1440.png",
+    "docs/screenshots/index-390.png"
+  ]
+}

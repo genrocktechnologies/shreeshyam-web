@@ -1,0 +1,1917 @@
+{
+  "url": "https://shreeshyamfoundation.in/our-policy.php",
+  "slug": "our-policy",
+  "finalUrl": "https://shreeshyamfoundation.in/our-policy.php",
+  "httpStatus": 200,
+  "capturedAt": "2026-10-31T12:34:54.694Z",
+  "counters": {
+    "count": 0,
+    "settled": true
+  },
+  "meta": {
+    "title": "Human Resource Policy | Shree Shyam Small Growth Foundation",
+    "description": null,
+    "keywords": null,
+    "author": null,
+    "robots": null,
+    "viewport": "width=device-width, initial-scale=1.0",
+    "themeColor": null,
+    "canonical": null,
+    "lang": "en",
+    "og": {},
+    "twitter": {},
+    "icons": [
+      {
+        "rel": "shortcut icon",
+        "href": "assets/images/favicon.ico",
+        "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+        "sizes": null,
+        "type": "image/x-icon"
+      },
+      {
+        "rel": "icon",
+        "href": "assets/images/favicon.ico",
+        "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+        "sizes": null,
+        "type": "image/x-icon"
+      }
+    ],
+    "all": [
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": "content-type",
+        "charset": null,
+        "content": "text/html;charset=UTF-8"
+      },
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": null,
+        "charset": "UTF-8",
+        "content": null
+      },
+      {
+        "name": null,
+        "property": null,
+        "httpEquiv": "X-UA-Compatible",
+        "charset": null,
+        "content": "IE=edge"
+      },
+      {
+        "name": "viewport",
+        "property": null,
+        "httpEquiv": null,
+        "charset": null,
+        "content": "width=device-width, initial-scale=1.0"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "index": 0,
+      "kind": "scroll-to-top",
+      "tag": "div",
+      "id": null,
+      "className": "paginacontainer",
+      "headings": [],
+      "blocks": [],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [],
+      "images": [
+        {
+          "kind": "inline-svg",
+          "url": null,
+          "alt": null,
+          "ariaHidden": null,
+          "localPath": "assets/original/our-policy/inline-svg-01.svg"
+        }
+      ],
+      "icons": [
+        "ri-arrow-up-s-line"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 1,
+      "kind": "header",
+      "tag": "header",
+      "id": "sticky-menu",
+      "className": "site-header optech-header-section site-header--menu-right optech-header-two sticky-menu",
+      "headings": [],
+      "blocks": [
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+              "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7"
+            }
+          ]
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "shreeshyamfoundation2026@gmail.com",
+              "href": "mailto:shreeshyamfoundation2026@gmail.com"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "mobile-menu-close",
+          "text": "×"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "site-menu-main light-color",
+          "items": [
+            {
+              "text": "Home",
+              "href": "index.php"
+            },
+            {
+              "text": "About",
+              "href": "javascript:void(0)",
+              "children": [
+                {
+                  "text": "About Us",
+                  "href": "about-us.php"
+                },
+                {
+                  "text": "Our Mission",
+                  "href": "our-mission.php"
+                },
+                {
+                  "text": "Our Vision",
+                  "href": "our-vision.php"
+                },
+                {
+                  "text": "Our Team",
+                  "href": "team.php"
+                },
+                {
+                  "text": "Our Gallery",
+                  "href": "gallery.php"
+                },
+                {
+                  "text": "Our Milestone",
+                  "href": "milestone.php"
+                }
+              ]
+            },
+            {
+              "text": "Products",
+              "href": "#",
+              "children": [
+                {
+                  "text": "Women Empowerment Loan",
+                  "href": "women-empowerment-loan.php"
+                },
+                {
+                  "text": "Micro Business Loan",
+                  "href": "micro-business-loan.php"
+                },
+                {
+                  "text": "Agriculture Livelihood Loan",
+                  "href": "agriculture-rural-livelihood-loan.php"
+                },
+                {
+                  "text": "Livestock Loan",
+                  "href": "livestock-loan.php"
+                }
+              ]
+            },
+            {
+              "text": "Our Policy",
+              "href": "our-policy.php"
+            },
+            {
+              "text": "Career",
+              "href": "career.php"
+            },
+            {
+              "text": "Registration",
+              "href": "registration.php"
+            },
+            {
+              "text": "Registration Process",
+              "href": "registration-process.php"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "tag": "span",
+          "className": "btn-wraper",
+          "text": "Registration"
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true,
+          "element": "a",
+          "className": "optech-default-btn optech-header-btn"
+        }
+      ],
+      "links": [
+        {
+          "label": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+          "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "url": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "shreeshyamfoundation2026@gmail.com",
+          "href": "mailto:shreeshyamfoundation2026@gmail.com",
+          "url": null,
+          "kind": "mailto",
+          "target": null,
+          "icons": [
+            "ri-mail-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": false
+        },
+        {
+          "label": "Home",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "About",
+          "href": "javascript:void(0)",
+          "url": null,
+          "kind": "javascript",
+          "target": null,
+          "icons": [
+            "ri-arrow-down-s-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "About Us",
+          "href": "about-us.php",
+          "url": "https://shreeshyamfoundation.in/about-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Mission",
+          "href": "our-mission.php",
+          "url": "https://shreeshyamfoundation.in/our-mission.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Vision",
+          "href": "our-vision.php",
+          "url": "https://shreeshyamfoundation.in/our-vision.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Team",
+          "href": "team.php",
+          "url": "https://shreeshyamfoundation.in/team.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Gallery",
+          "href": "gallery.php",
+          "url": "https://shreeshyamfoundation.in/gallery.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Milestone",
+          "href": "milestone.php",
+          "url": "https://shreeshyamfoundation.in/milestone.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Products",
+          "href": "#",
+          "url": null,
+          "kind": "empty-anchor",
+          "target": null,
+          "icons": [
+            "ri-arrow-down-s-fill"
+          ],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Women Empowerment Loan",
+          "href": "women-empowerment-loan.php",
+          "url": "https://shreeshyamfoundation.in/women-empowerment-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Micro Business Loan",
+          "href": "micro-business-loan.php",
+          "url": "https://shreeshyamfoundation.in/micro-business-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Agriculture Livelihood Loan",
+          "href": "agriculture-rural-livelihood-loan.php",
+          "url": "https://shreeshyamfoundation.in/agriculture-rural-livelihood-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Livestock Loan",
+          "href": "livestock-loan.php",
+          "url": "https://shreeshyamfoundation.in/livestock-loan.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Policy",
+          "href": "our-policy.php",
+          "url": "https://shreeshyamfoundation.in/our-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Career",
+          "href": "career.php",
+          "url": "https://shreeshyamfoundation.in/career.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration Process",
+          "href": "registration-process.php",
+          "url": "https://shreeshyamfoundation.in/registration-process.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Registration",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        }
+      ],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/logo/logo-white.webp",
+          "url": "https://shreeshyamfoundation.in/assets/images/logo/logo-white.webp",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1094,
+          "height": 469,
+          "className": "light-version-logo",
+          "localPath": "assets/original/our-policy/logo-white.webp"
+        }
+      ],
+      "icons": [
+        "ri-map-pin-2-fill",
+        "ri-mail-fill",
+        "fa fa-angle-left",
+        "ri-arrow-down-s-fill"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 2,
+      "kind": "breadcrumb",
+      "tag": "div",
+      "id": null,
+      "className": "optech-breadcrumb optech-breadcrumb-contact",
+      "headings": [
+        {
+          "level": 1,
+          "text": "Our Policy"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 1,
+          "text": "Our Policy"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "Home",
+              "href": "index.php"
+            },
+            {
+              "text": "Our Policy",
+              "href": null
+            }
+          ]
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [
+        {
+          "label": "Home",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        }
+      ],
+      "images": [
+        {
+          "kind": "css-background",
+          "url": "https://shreeshyamfoundation.in/assets/images/breadcrumb/contact_us.jpg",
+          "element": "div.optech-breadcrumb.optech-breadcrumb-contact",
+          "alt": null,
+          "localPath": "assets/original/our-policy/contact_us.jpg"
+        }
+      ],
+      "icons": [],
+      "iframes": []
+    },
+    {
+      "index": 3,
+      "kind": "content",
+      "tag": "div",
+      "id": null,
+      "className": "section my-2 my-md-5",
+      "headings": [
+        {
+          "level": 2,
+          "text": "Human Resource Policy"
+        },
+        {
+          "level": 3,
+          "text": "1. Introduction"
+        },
+        {
+          "level": 3,
+          "text": "2. Vision"
+        },
+        {
+          "level": 3,
+          "text": "3. Mission"
+        },
+        {
+          "level": 3,
+          "text": "4. Core Values"
+        },
+        {
+          "level": 3,
+          "text": "5. Equal Employment Opportunity"
+        },
+        {
+          "level": 3,
+          "text": "6. Recruitment & Selection"
+        },
+        {
+          "level": 3,
+          "text": "7. Appointment"
+        },
+        {
+          "level": 3,
+          "text": "8. Probation"
+        },
+        {
+          "level": 3,
+          "text": "9. Working Hours"
+        },
+        {
+          "level": 3,
+          "text": "10. Attendance"
+        },
+        {
+          "level": 3,
+          "text": "11. Leave Policy"
+        },
+        {
+          "level": 3,
+          "text": "12. Salary & Benefits"
+        },
+        {
+          "level": 3,
+          "text": "13. Code of Conduct"
+        },
+        {
+          "level": 3,
+          "text": "14. Anti-Harassment Policy"
+        },
+        {
+          "level": 3,
+          "text": "15. Confidentiality"
+        },
+        {
+          "level": 3,
+          "text": "16. Performance Management"
+        },
+        {
+          "level": 3,
+          "text": "17. Training & Development"
+        },
+        {
+          "level": 3,
+          "text": "18. Health & Safety"
+        },
+        {
+          "level": 3,
+          "text": "19. Disciplinary Action"
+        },
+        {
+          "level": 3,
+          "text": "20. Resignation"
+        },
+        {
+          "level": 3,
+          "text": "21. Termination"
+        },
+        {
+          "level": 3,
+          "text": "22. Grievance Redressal"
+        },
+        {
+          "level": 3,
+          "text": "23. Compliance"
+        },
+        {
+          "level": 3,
+          "text": "24. Policy Amendments"
+        },
+        {
+          "level": 3,
+          "text": "Contact Details"
+        },
+        {
+          "level": 5,
+          "text": "Office Address"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Human Resource Policy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Establishing professional standards, ethical practices, and an inclusive workplace culture for sustainable organizational growth.",
+          "html": "Establishing professional standards, ethical practices, and an inclusive workplace culture\n                    for sustainable organizational growth."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "1. Introduction"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Human Resource (HR) Policy of Shree Shyam Small Growth Foundation establishes the principles, standards, and procedures for recruiting, developing, managing, and retaining employees while promoting a professional, ethical, and inclusive work environment.",
+          "html": "The Human Resource (HR) Policy of Shree Shyam Small Growth Foundation establishes\n                    the principles, standards, and procedures for recruiting, developing, managing, and\n                    retaining employees while promoting a professional, ethical, and inclusive work environment."
+        },
+        {
+          "type": "paragraph",
+          "text": "This policy applies to all permanent employees, contractual staff, probationary employees, temporary staff, consultants, interns, volunteers, and field staff working with the Foundation.",
+          "html": "This policy applies to all permanent employees, contractual staff, probationary employees,\n                    temporary staff, consultants, interns, volunteers, and field staff working with the Foundation."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "2. Vision"
+        },
+        {
+          "type": "paragraph",
+          "text": "To build a motivated, skilled, ethical, and service-oriented workforce committed to financial inclusion, community development, and creating a positive social impact.",
+          "html": "To build a motivated, skilled, ethical, and service-oriented workforce committed to\n                        financial inclusion, community development, and creating a positive social impact."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "3. Mission"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Human Resource department aims to create a supportive workplace by focusing on:",
+          "html": "The Human Resource department aims to create a supportive workplace by focusing on:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Recruiting talented and committed professionals.",
+              "href": null
+            },
+            {
+              "text": "Promoting equal employment opportunities for all.",
+              "href": null
+            },
+            {
+              "text": "Ensuring employee welfare, growth, and development.",
+              "href": null
+            },
+            {
+              "text": "Encouraging transparency, accountability, and teamwork.",
+              "href": null
+            },
+            {
+              "text": "Maintaining a safe, respectful, and inclusive workplace environment.",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "4. Core Values"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Foundation follows strong values that guide employee behavior, organizational culture, and community service:",
+          "html": "The Foundation follows strong values that guide employee behavior, organizational culture,\n                        and community service:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Integrity",
+              "href": null
+            },
+            {
+              "text": "Transparency",
+              "href": null
+            },
+            {
+              "text": "Professionalism",
+              "href": null
+            },
+            {
+              "text": "Respect",
+              "href": null
+            },
+            {
+              "text": "Teamwork",
+              "href": null
+            },
+            {
+              "text": "Accountability",
+              "href": null
+            },
+            {
+              "text": "Customer Service",
+              "href": null
+            },
+            {
+              "text": "Social Responsibility",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "5. Equal Employment Opportunity"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Foundation provides equal employment opportunities without discrimination based on:",
+          "html": "The Foundation provides equal employment opportunities without discrimination based on:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Gender",
+              "href": null
+            },
+            {
+              "text": "Religion",
+              "href": null
+            },
+            {
+              "text": "Caste",
+              "href": null
+            },
+            {
+              "text": "Race",
+              "href": null
+            },
+            {
+              "text": "Disability",
+              "href": null
+            },
+            {
+              "text": "Marital Status",
+              "href": null
+            },
+            {
+              "text": "Age (Where Permitted By Law)",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Employment decisions are based on merit, qualifications, and organizational needs.",
+          "html": "Employment decisions are based on merit, qualifications, and organizational needs."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "6. Recruitment & Selection"
+        },
+        {
+          "type": "paragraph",
+          "text": "Recruitment shall be conducted fairly and transparently.",
+          "html": "Recruitment shall be conducted fairly and transparently."
+        },
+        {
+          "type": "paragraph",
+          "text": "The selection process may include:",
+          "html": "The selection process may include:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Application Screening",
+              "href": null
+            },
+            {
+              "text": "Written Test (If Required)",
+              "href": null
+            },
+            {
+              "text": "Personal Interview",
+              "href": null
+            },
+            {
+              "text": "Background Verification",
+              "href": null
+            },
+            {
+              "text": "Reference Check",
+              "href": null
+            },
+            {
+              "text": "Final Approval",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "7. Appointment"
+        },
+        {
+          "type": "paragraph",
+          "text": "Every selected employee shall receive:",
+          "html": "Every selected employee shall receive:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Appointment Letter",
+              "href": null
+            },
+            {
+              "text": "Job Description",
+              "href": null
+            },
+            {
+              "text": "Salary Structure",
+              "href": null
+            },
+            {
+              "text": "HR Policy",
+              "href": null
+            },
+            {
+              "text": "Code of Conduct",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "8. Probation"
+        },
+        {
+          "type": "paragraph",
+          "text": "New employees may be placed on probation for 0-3 months, subject to the terms of their appointment letter. Confirmation of employment will be based on satisfactory performance.",
+          "html": "New employees may be placed on probation for 0-3 months, subject to the terms of their appointment letter.\n                        Confirmation of employment will be based on satisfactory performance."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "9. Working Hours"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 my-3 list-order",
+          "items": [
+            {
+              "text": "Monday – Saturday: 10:00 AM – 6:00 PM",
+              "href": null
+            },
+            {
+              "text": "Lunch Break: 1:30 PM – 2:00 PM",
+              "href": null
+            },
+            {
+              "text": "Sunday: Weekly Off",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Note:- Field staff may follow different schedules based on operational requirements.",
+          "html": "<b>Note:-</b> Field staff may follow different schedules based on operational requirements."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "10. Attendance"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employees Shall :",
+          "html": "Employees Shall :"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Report on time",
+              "href": null
+            },
+            {
+              "text": "Record attendance through prescribed systems",
+              "href": null
+            },
+            {
+              "text": "Inform supervisors regarding delay or absence",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Unauthorized absence may result in disciplinary action.",
+          "html": "Unauthorized absence may result in disciplinary action."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "11. Leave Policy"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employees may be eligible for:",
+          "html": "Employees may be eligible for:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Casual Leave",
+              "href": null
+            },
+            {
+              "text": "Sick Leave",
+              "href": null
+            },
+            {
+              "text": "Earned Leave",
+              "href": null
+            },
+            {
+              "text": "Maternity Leave(as per applicable law)",
+              "href": null
+            },
+            {
+              "text": "Paternity Leave (if adopted by the Foundation)",
+              "href": null
+            },
+            {
+              "text": "Special Leave (Management Approval)",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Leave must be approved before availing except in emergency situations.",
+          "html": "Leave must be approved before availing except in emergency situations."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "12. Salary & Benefits"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employees shall receive:",
+          "html": "Employees shall receive:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Monthly Salary",
+              "href": null
+            },
+            {
+              "text": "Statutory Benefits (Where Applicable)",
+              "href": null
+            },
+            {
+              "text": "Performance Incentives (if applicable)",
+              "href": null
+            },
+            {
+              "text": "Travel Reimbursement (as approved)",
+              "href": null
+            },
+            {
+              "text": "Training Opportunities",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Salary payments are normally processed through bank transfer.",
+          "html": "Salary payments are normally processed through bank transfer."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "13. Code of Conduct"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employees shall:",
+          "html": "Employees shall:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 my-3 list-order",
+          "items": [
+            {
+              "text": "Maintain honesty and integrity",
+              "href": null
+            },
+            {
+              "text": "Respect colleagues and customers",
+              "href": null
+            },
+            {
+              "text": "Protect confidential information",
+              "href": null
+            },
+            {
+              "text": "Avoid conflicts of interest",
+              "href": null
+            },
+            {
+              "text": "Follow organizational policies",
+              "href": null
+            },
+            {
+              "text": "Use Foundation resources responsibly",
+              "href": null
+            },
+            {
+              "text": "Provide quality customer service",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "14. Anti-Harassment Policy"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Foundation maintains a workplace free from:",
+          "html": "The Foundation maintains a workplace free from:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Sexual Harassment",
+              "href": null
+            },
+            {
+              "text": "Workplace Bullying",
+              "href": null
+            },
+            {
+              "text": "Discrimination",
+              "href": null
+            },
+            {
+              "text": "Abuse",
+              "href": null
+            },
+            {
+              "text": "Intimidation",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Complaints will be investigated confidentially and appropriate action will be taken.",
+          "html": "Complaints will be investigated confidentially and appropriate action will be taken."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "15. Confidentiality"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employees shall not disclose:",
+          "html": "Employees shall not disclose:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Customer Information",
+              "href": null
+            },
+            {
+              "text": "Financial Records",
+              "href": null
+            },
+            {
+              "text": "Business Strategies",
+              "href": null
+            },
+            {
+              "text": "Employee Records",
+              "href": null
+            },
+            {
+              "text": "Internal Documents",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Confidentiality obligations remain applicable even after employment ends.",
+          "html": "Confidentiality obligations remain applicable even after employment ends."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "16. Performance Management"
+        },
+        {
+          "type": "paragraph",
+          "text": "Performance shall be reviewed periodically based on:",
+          "html": "Performance shall be reviewed periodically based on:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Work Quality",
+              "href": null
+            },
+            {
+              "text": "Productivity",
+              "href": null
+            },
+            {
+              "text": "Customer Service",
+              "href": null
+            },
+            {
+              "text": "Teamwork",
+              "href": null
+            },
+            {
+              "text": "Discipline",
+              "href": null
+            },
+            {
+              "text": "Attendance",
+              "href": null
+            },
+            {
+              "text": "Professional Behaviour",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "17. Training & Development"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Foundation encourages continuous learning through:",
+          "html": "The Foundation encourages continuous learning through:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Induction Training",
+              "href": null
+            },
+            {
+              "text": "Financial Literacy Programs",
+              "href": null
+            },
+            {
+              "text": "Leadership Development",
+              "href": null
+            },
+            {
+              "text": "Customer Service Training",
+              "href": null
+            },
+            {
+              "text": "Digital Skills Training",
+              "href": null
+            },
+            {
+              "text": "Compliance Training",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "18. Health & Safety"
+        },
+        {
+          "type": "paragraph",
+          "text": "The Foundation is committed to providing:",
+          "html": "The Foundation is committed to providing:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Safe Workplace Environment",
+              "href": null
+            },
+            {
+              "text": "Emergency Preparedness",
+              "href": null
+            },
+            {
+              "text": "First-Aid Facilities",
+              "href": null
+            },
+            {
+              "text": "Safe Working Conditions",
+              "href": null
+            },
+            {
+              "text": "Occupational Health Awareness",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Employees are expected to follow all workplace safety guidelines.",
+          "html": "Employees are expected to follow all workplace safety guidelines."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "19. Disciplinary Action"
+        },
+        {
+          "type": "paragraph",
+          "text": "Misconduct may include:",
+          "html": "Misconduct may include:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Fraud",
+              "href": null
+            },
+            {
+              "text": "Theft",
+              "href": null
+            },
+            {
+              "text": "Misuse of Foundation Assets",
+              "href": null
+            },
+            {
+              "text": "Harassment",
+              "href": null
+            },
+            {
+              "text": "Violence",
+              "href": null
+            },
+            {
+              "text": "Breach of Confidentiality",
+              "href": null
+            },
+            {
+              "text": "Falsification of Records",
+              "href": null
+            },
+            {
+              "text": "Unauthorized Absence",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Disciplinary measures may include:",
+          "html": "Disciplinary measures may include:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Verbal Warning",
+              "href": null
+            },
+            {
+              "text": "Written Warning",
+              "href": null
+            },
+            {
+              "text": "Suspension",
+              "href": null
+            },
+            {
+              "text": "Termination of Employment",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "20. Resignation"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employees intending to resign must submit a written resignation and complete the notice period mentioned in their appointment letter unless waived by the Foundation.",
+          "html": "Employees intending to resign must submit a written resignation and complete the notice period\n                        mentioned in their appointment letter unless waived by the Foundation."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "21. Termination"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employment may be terminated under the following circumstances:",
+          "html": "Employment may be terminated under the following circumstances:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Misconduct",
+              "href": null
+            },
+            {
+              "text": "Unsatisfactory Performance",
+              "href": null
+            },
+            {
+              "text": "Organizational Restructuring",
+              "href": null
+            },
+            {
+              "text": "Mutual Agreement",
+              "href": null
+            },
+            {
+              "text": "Other Lawful Reasons",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "The Foundation will follow applicable legal requirements.",
+          "html": "<b> The Foundation will follow applicable legal requirements.</b>"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "22. Grievance Redressal"
+        },
+        {
+          "type": "paragraph",
+          "text": "Employees may raise workplace concerns through the HR Department or designated authority.",
+          "html": "Employees may raise workplace concerns through the HR Department or designated authority."
+        },
+        {
+          "type": "paragraph",
+          "text": "All grievances will be handled fairly, confidentially, and without retaliation.",
+          "html": "All grievances will be handled fairly, confidentially, and without retaliation."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "23. Compliance"
+        },
+        {
+          "type": "paragraph",
+          "text": "All employees must comply with:",
+          "html": "All employees must comply with:"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Applicable Laws of India",
+              "href": null
+            },
+            {
+              "text": "Foundation Policies",
+              "href": null
+            },
+            {
+              "text": "Internal Operational Procedures",
+              "href": null
+            },
+            {
+              "text": "Ethical Standards",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Where the Foundation carries out regulated financial activities, employees must also comply with all applicable regulatory requirements.",
+          "html": "Where the Foundation carries out regulated financial activities, employees must also comply with all applicable\n                        regulatory requirements."
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "24. Policy Amendments"
+        },
+        {
+          "type": "paragraph",
+          "text": "Shree Shyam-Baba Micro Growth Foundation reserves the right to review and update this HR Policy whenever required to meet organizational and regulatory needs.",
+          "html": "Shree Shyam-Baba Micro Growth Foundation reserves the right to review and update this HR Policy\n                        whenever required to meet organizational and regulatory needs."
+        },
+        {
+          "type": "paragraph",
+          "text": "Any revised policy updates will be communicated to all employees through appropriate channels.",
+          "html": "Any revised policy updates will be communicated to all employees through appropriate channels."
+        },
+        {
+          "type": "text",
+          "tag": "div",
+          "className": "my-3",
+          "text": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Contact Details"
+        },
+        {
+          "type": "paragraph",
+          "text": "Shree Shyam-Baba Micro Growth Foundation",
+          "html": "<strong>Shree Shyam-Baba Micro Growth Foundation</strong>"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": "ps-md-4 list-order",
+          "items": [
+            {
+              "text": "Managing Director: Saurav Prakash",
+              "href": null
+            },
+            {
+              "text": "Directors:\nVikram Kumar Sinha\nSumit Kumar\nPravin Kumar Singh",
+              "href": null
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Office Address"
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [
+        {
+          "label": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+          "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "url": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        }
+      ],
+      "images": [],
+      "icons": [
+        "fa fa-dot-circle text-black"
+      ],
+      "iframes": []
+    },
+    {
+      "index": 4,
+      "kind": "footer",
+      "tag": "footer",
+      "id": null,
+      "className": "optech-footer-section dark-bg optech-section-padding-top",
+      "headings": [
+        {
+          "level": 5,
+          "text": "Quick Links"
+        },
+        {
+          "level": 5,
+          "text": "Contact Us"
+        }
+      ],
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Shree Shyam Small Growth Foundation is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities.",
+          "html": "<b> Shree Shyam Small Growth Foundation </b> is a socially driven organization committed to promoting financial\n                                  inclusion, economic empowerment, and sustainable livelihoods for underserved communities."
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Quick Links"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "About Us",
+              "href": "about-us.php"
+            },
+            {
+              "text": "Mission",
+              "href": "our-mission.php"
+            },
+            {
+              "text": "Our Policy",
+              "href": "our-policy.php"
+            },
+            {
+              "text": "Contact Us",
+              "href": "contact-us.php"
+            },
+            {
+              "text": "Register",
+              "href": "registration.php"
+            },
+            {
+              "text": "Privacy Policy",
+              "href": "privacy-policy.php"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 5,
+          "text": "Contact Us"
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+              "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7"
+            },
+            {
+              "text": "shreeshyamfoundation2026@gmail.com",
+              "href": "mailto:shreeshyamfoundation2026@gmail.com"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Copyright © 2026 Shree Shyam Small Growth Foundation .",
+          "html": "Copyright © 2026 <a href=\"./index.php\" class=\" text-white\"> Shree Shyam Small Growth Foundation </a>."
+        },
+        {
+          "type": "list",
+          "ordered": false,
+          "className": null,
+          "items": [
+            {
+              "text": "",
+              "href": "https://www.facebook.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.linkedin.com/"
+            },
+            {
+              "text": "",
+              "href": "https://twitter.com/"
+            },
+            {
+              "text": "",
+              "href": "https://www.instagram.com/"
+            }
+          ]
+        }
+      ],
+      "cards": [],
+      "faqs": [],
+      "testimonials": [],
+      "team": [],
+      "stats": [],
+      "ctas": [],
+      "links": [
+        {
+          "label": "",
+          "href": "index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": false
+        },
+        {
+          "label": "About Us",
+          "href": "about-us.php",
+          "url": "https://shreeshyamfoundation.in/about-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Mission",
+          "href": "our-mission.php",
+          "url": "https://shreeshyamfoundation.in/our-mission.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Our Policy",
+          "href": "our-policy.php",
+          "url": "https://shreeshyamfoundation.in/our-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Contact Us",
+          "href": "contact-us.php",
+          "url": "https://shreeshyamfoundation.in/contact-us.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Register",
+          "href": "registration.php",
+          "url": "https://shreeshyamfoundation.in/registration.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "privacy-policy.php",
+          "url": "https://shreeshyamfoundation.in/privacy-policy.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+          "href": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "url": "https://maps.app.goo.gl/CE8evf9puHXMrTCe7",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "shreeshyamfoundation2026@gmail.com",
+          "href": "mailto:shreeshyamfoundation2026@gmail.com",
+          "url": null,
+          "kind": "mailto",
+          "target": "_blank",
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "Shree Shyam Small Growth Foundation",
+          "href": "./index.php",
+          "url": "https://shreeshyamfoundation.in/index.php",
+          "kind": "internal",
+          "target": null,
+          "icons": [],
+          "hasVisibleText": true
+        },
+        {
+          "label": "",
+          "href": "https://www.facebook.com/",
+          "url": "https://www.facebook.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-facebook-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.linkedin.com/",
+          "url": "https://www.linkedin.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-linkedin-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://twitter.com/",
+          "url": "https://twitter.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-twitter-fill"
+          ],
+          "hasVisibleText": false
+        },
+        {
+          "label": "",
+          "href": "https://www.instagram.com/",
+          "url": "https://www.instagram.com/",
+          "kind": "external",
+          "target": "_blank",
+          "icons": [
+            "ri-instagram-fill"
+          ],
+          "hasVisibleText": false
+        }
+      ],
+      "images": [
+        {
+          "kind": "img",
+          "src": "assets/images/logo/white_img_2.png",
+          "url": "https://shreeshyamfoundation.in/assets/images/logo/white_img_2.png",
+          "dataSrc": null,
+          "srcset": null,
+          "alt": "",
+          "altMissing": false,
+          "title": null,
+          "width": 1094,
+          "height": 469,
+          "className": "light-version-logo",
+          "localPath": "assets/original/our-policy/white_img_2.png"
+        }
+      ],
+      "icons": [
+        "fa fa-location-arrow text-white",
+        "fa fa-envelope text-white",
+        "ri-facebook-fill",
+        "ri-linkedin-fill",
+        "ri-twitter-fill",
+        "ri-instagram-fill"
+      ],
+      "iframes": []
+    }
+  ],
+  "forms": [],
+  "orphanFields": [],
+  "assets": [
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/logo/logo-white.webp",
+      "localPath": "assets/original/our-policy/logo-white.webp",
+      "status": 200,
+      "contentType": "image/webp",
+      "bytes": 162338,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/breadcrumb/contact_us.jpg",
+      "localPath": "assets/original/our-policy/contact_us.jpg",
+      "status": 200,
+      "contentType": "image/jpeg",
+      "bytes": 138940,
+      "kinds": [
+        "css-background",
+        "network"
+      ],
+      "alts": [
+        null,
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/logo/white_img_2.png",
+      "localPath": "assets/original/our-policy/white_img_2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "bytes": 424866,
+      "kinds": [
+        "img",
+        "network"
+      ],
+      "alts": [
+        "",
+        null
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/images/favicon.ico",
+      "localPath": "assets/original/our-policy/favicon.ico",
+      "status": 200,
+      "contentType": "image/x-icon",
+      "bytes": 15406,
+      "kinds": [
+        "head-icon"
+      ],
+      "alts": [
+        null,
+        null
+      ]
+    }
+  ],
+  "htmlComments": [
+    "/.Mobile Menu Hamburger Ends",
+    "<li class=\"d-flex \">\n<div class=\"pe-2\">\n<i class=\"fa fa-phone-alt text-white\"></i>\n</div>\n<div>\n<a href=\"tel: +91 xxxxxxxxxx\" target=\"_blank\">+91 xxxxxxxxxx\n</a>\n</div>\n</li>"
+  ],
+  "screenshots": [
+    "docs/screenshots/our-policy-1440.png",
+    "docs/screenshots/our-policy-390.png"
+  ]
+}

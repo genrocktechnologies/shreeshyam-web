@@ -1,0 +1,35 @@
+{
+  "url": "https://shreeshyamfoundation.in/gallery.php",
+  "slug": "gallery",
+  "finalUrl": "https://shreeshyamfoundation.in/gallery.php",
+  "httpStatus": 500,
+  "capturedAt": "2026-10-31T12:33:52.342Z",
+  "counters": {
+    "count": 0,
+    "settled": true
+  },
+  "meta": {
+    "title": null,
+    "description": null,
+    "keywords": null,
+    "author": null,
+    "robots": null,
+    "viewport": null,
+    "themeColor": null,
+    "canonical": null,
+    "lang": null,
+    "og": {},
+    "twitter": {},
+    "icons": [],
+    "all": []
+  },
+  "sections": [],
+  "forms": [],
+  "orphanFields": [],
+  "assets": [],
+  "htmlComments": [],
+  "screenshots": [
+    "docs/screenshots/gallery-1440.png",
+    "docs/screenshots/gallery-390.png"
+  ]
+}

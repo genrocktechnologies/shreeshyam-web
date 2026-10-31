@@ -1,0 +1,688 @@
+{
+  "origin": "https://shreeshyamfoundation.in",
+  "crawledAt": "2026-10-31T12:36:34.921Z",
+  "pages": [
+    {
+      "url": "https://shreeshyamfoundation.in/index.php",
+      "slug": "index",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/about-us.php",
+      "slug": "about-us",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/our-mission.php",
+      "slug": "our-mission",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/our-vision.php",
+      "slug": "our-vision",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/team.php",
+      "slug": "team",
+      "httpStatus": 500,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/gallery.php",
+      "slug": "gallery",
+      "httpStatus": 500,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/milestone.php",
+      "slug": "milestone",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/women-empowerment-loan.php",
+      "slug": "women-empowerment-loan",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/micro-business-loan.php",
+      "slug": "micro-business-loan",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/agriculture-rural-livelihood-loan.php",
+      "slug": "agriculture-rural-livelihood-loan",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/livestock-loan.php",
+      "slug": "livestock-loan",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/our-policy.php",
+      "slug": "our-policy",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/career.php",
+      "slug": "career",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/registration.php",
+      "slug": "registration",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/registration-process.php",
+      "slug": "registration-process",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/contact-us.php",
+      "slug": "contact-us",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/privacy-policy.php",
+      "slug": "privacy-policy",
+      "httpStatus": 200,
+      "captured": true,
+      "seed": true,
+      "linkedFrom": [
+        "seed",
+        "index",
+        "about-us",
+        "our-mission",
+        "our-vision",
+        "milestone",
+        "women-empowerment-loan",
+        "micro-business-loan",
+        "agriculture-rural-livelihood-loan",
+        "livestock-loan",
+        "our-policy",
+        "career",
+        "registration",
+        "registration-process",
+        "contact-us",
+        "privacy-policy"
+      ]
+    }
+  ],
+  "iconFonts": [
+    {
+      "url": "https://shreeshyamfoundation.in/assets/fonts/remixiconb704.woff2?t=1720054838745",
+      "localPath": "assets/original/_icon-fonts/remixiconb704.woff2"
+    },
+    {
+      "url": "https://shreeshyamfoundation.in/assets/fonts/fa-solid-900.woff2",
+      "localPath": "assets/original/_icon-fonts/fa-solid-900.woff2"
+    }
+  ],
+  "linkStatus": {
+    "https://shreeshyamfoundation.in/about-us.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/agriculture-rural-livelihood-loan.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/assets/images/Home/Community.png": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/Home/Registration.png": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/Home/about_me.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/Home/support.png": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/Home/vision.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/breadcrumb/about_us_hero.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/breadcrumb/contact_us.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/career.png": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/favicon.ico": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/hero/best_hrms_banner.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/hero/finance_banner.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/Entrepreneurship.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/Promotion.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/Welfare.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/empowerment.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/financial.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/icon1.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/icon10.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/icon2.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/icon4.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/icon5.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/iconbox/icon6.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/logo/logo-white.webp": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/logo/white_img_2.png": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/our-awards.jpeg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/team/Ranjeet.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/team/Shishir.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/team/satyam.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/team/saurav.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/team/sonu-kumar.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/team/sumit.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/team/vikram-kumar.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/v2/counter-bg.png": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/v2/icon2.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/career.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/contact-us.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/gallery.php": {
+      "status": 500,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/index.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/livestock-loan.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/micro-business-loan.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/milestone.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/our-mission.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/our-policy.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/our-vision.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/privacy-policy.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/registration-process.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/registration.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/team.php": {
+      "status": 500,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/women-empowerment-loan.php": {
+      "status": 200,
+      "via": "crawl"
+    },
+    "https://shreeshyamfoundation.in/assets/images/v2/icon3.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/v2/icon4.svg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/v2/line.png": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://shreeshyamfoundation.in/assets/images/v2/thumb1.jpg": {
+      "status": 200,
+      "via": "asset-download"
+    },
+    "https://www.facebook.com/": {
+      "status": 400,
+      "finalUrl": "https://www.facebook.com/",
+      "via": "request"
+    },
+    "https://www.instagram.com/": {
+      "status": 200,
+      "finalUrl": "https://www.instagram.com/",
+      "via": "request"
+    },
+    "https://www.linkedin.com/": {
+      "status": 200,
+      "finalUrl": "https://www.linkedin.com/",
+      "via": "request"
+    },
+    "https://twitter.com/": {
+      "status": 403,
+      "finalUrl": "https://x.com/",
+      "via": "request"
+    },
+    "https://maps.app.goo.gl/CE8evf9puHXMrTCe7": {
+      "status": null,
+      "error": "apiRequestContext.get: Timeout 20000ms exceeded.",
+      "via": "request"
+    }
+  }
+}
