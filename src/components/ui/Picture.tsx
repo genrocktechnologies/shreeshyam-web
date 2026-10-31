@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- next/image optimisation is off in static export */
 import type { CSSProperties } from 'react';
+import * as ReactDOM from 'react-dom';
 import { images, objectPosition, type ImageKey } from '@/data/images';
 import { cn } from '@/lib/cn';
 
@@ -24,6 +25,19 @@ export function Picture({ image, alt, sizes = '100vw', priority = false, classNa
   const entry = images[image];
   const largest = entry.widths[entry.widths.length - 1];
   const srcSet = (ext: 'avif' | 'webp') => entry.widths.map((w) => `${entry.base}-${w}.${ext} ${w}w`).join(', ');
+  // Above-the-fold images: preload the AVIF variant set at high priority. React's automatic
+  // image preload skips an <img> inside <picture>, so without this the hero waits for
+  // CSS/JS discovery. (`preload` is in Next's bundled react-dom; @types/react-dom 18 lacks it.)
+  if (priority) {
+    (ReactDOM as unknown as { preload: (href: string, opts: Record<string, string>) => void }).preload(`${entry.base}-${entry.widths[entry.widths.length - 1]}.avif`, {
+      as: 'image',
+      type: 'image/avif',
+      imageSrcSet: srcSet('avif'),
+      imageSizes: sizes,
+      fetchPriority: 'high',
+    });
+  }
+
   // The focal point (src/data/images.ts) keeps the subject in view whenever a frame crops.
   const position = objectPosition(image);
   const style: CSSProperties = entry.blur

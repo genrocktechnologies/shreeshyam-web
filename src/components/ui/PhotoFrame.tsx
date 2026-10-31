@@ -10,7 +10,10 @@ type FrameMotion =
   | 'reveal'
   /** Reveal + gentle parallax inside the frame (desktop). */
   | 'reveal-parallax'
-  /** Above the fold: CSS mask + settle from first paint (no JS wait), parallax on desktop. Arch only. */
+  /**
+   * Above the fold, possibly the LCP element: fully painted on the first frame (no clip,
+   * no opacity), it only settles from scale.imageFrom via CSS; parallax on desktop. Arch only.
+   */
   | 'hero';
 
 interface PhotoFrameProps {
@@ -60,7 +63,7 @@ export function PhotoFrame({ image, alt, sizes, priority = false, motion = 'reve
   }
 
   return (
-    <div data-photo-frame={frame} style={style} className={cn('overflow-hidden', shape, motion === 'hero' && 'animate-hero-arch', className)}>
+    <div data-photo-frame={frame} style={style} className={cn('overflow-hidden', shape, className)}>
       {motion === 'hero' ? (
         <Parallax className="h-full">
           <div className="h-full animate-hero-settle">{picture}</div>

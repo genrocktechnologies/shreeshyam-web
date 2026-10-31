@@ -3,7 +3,7 @@
  * used by the site lives here, so tuning the feel is a one-file change:
  * - GSAP code (src/components/motion, sections) imports these directly.
  * - CSS transitions/animations get them through tailwind.config.ts (classes such as
- *   `duration-press`, `ease-growth` and `animate-hero-arch`, plus `theme(...)` in
+ *   `duration-press`, `ease-growth` and `animate-hero-title`, plus `theme(...)` in
  *   globals.css).
  * Units: seconds for GSAP values, milliseconds in `ui` (CSS), px for distances.
  */

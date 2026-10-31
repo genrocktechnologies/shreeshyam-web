@@ -21,6 +21,9 @@ const APP = path.join(ROOT, 'src', 'app');
 const LOGOS: [string, string, string | null, number][] = [
   ['logo-full', 'logo-full.png', 'logo-white.webp', 640], // full colour, for light backgrounds
   ['logo-white', 'logo-white.png', 'white_img_2.png', 640], // reversed, for rani/plum backgrounds
+  // Display sizes used by <Logo> (header ≈56px tall, footer ≈80px; 2× for retina).
+  ['logo-full-240', 'logo-full.png', 'logo-white.webp', 240],
+  ['logo-white-320', 'logo-white.png', 'white_img_2.png', 320],
   ['logo-mark', 'logo-mark.png', null, 512],
   ['logo-wordmark', 'logo-wordmark.png', null, 640],
   ['logo-wordmark-white', 'logo-wordmark-white.png', null, 640],

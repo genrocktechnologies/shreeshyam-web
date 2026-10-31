@@ -2,7 +2,6 @@ import type { Config } from 'tailwindcss';
 import { distance, dur, ease, hero, scale, ui } from './src/lib/motion';
 
 const ms = (v: number) => `${v}ms`;
-const ARCH = 'round 999px 999px 28px 28px';
 
 /** Tokens from docs/design-system.md ("Marigold Thread"). Components use only these colours. */
 const config: Config = {
@@ -47,7 +46,9 @@ const config: Config = {
       // Fluid sizes: mobile → desktop values from the type scale. Hindi line-heights are
       // raised in globals.css under :lang(hi).
       fontSize: {
-        display: ['clamp(2.5rem, 1.75rem + 3.2vw, 4.75rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
+        // Display (h1): 40px on phones → capped at 60px (≈1200px+), so the hero headline
+        // stays within 4 lines in its 7/12 column at 1280 and 1440.
+        display: ['clamp(2.5rem, 1.9rem + 2.4vw, 3.75rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
         h2: ['clamp(1.875rem, 1.5rem + 1.6vw, 3rem)', { lineHeight: '1.1' }],
         h3: ['clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem)', { lineHeight: '1.3' }],
         body: ['clamp(1.0625rem, 1.04rem + 0.1vw, 1.125rem)', { lineHeight: '1.65' }],
@@ -86,21 +87,18 @@ const config: Config = {
       // Hero load sequence runs as CSS (from first paint, before hydration) so the hero
       // photo, the LCP element, never waits for JavaScript.
       keyframes: {
-        'arch-open': {
-          from: { clipPath: `inset(100% 0 0 0 ${ARCH})` },
-          to: { clipPath: `inset(0 0 0 0 ${ARCH})` },
-        },
         settle: { from: { transform: `scale(${scale.imageFrom})` }, to: { transform: 'none' } },
         'fade-up': { from: { opacity: '0', transform: `translateY(${distance.reveal}px)` }, to: { opacity: '1', transform: 'none' } },
+        // Transform only: for LCP elements, which must be fully opaque and unclipped on the first frame.
+        rise: { from: { transform: `translateY(${distance.reveal}px)` }, to: { transform: 'none' } },
         'scale-in': { from: { opacity: '0', transform: `scale(${scale.cta})` }, to: { opacity: '1', transform: 'none' } },
       },
       animation: {
-        'hero-arch': `arch-open ${dur.slow}s ${ease.growth} ${hero.image}s both`,
         'hero-settle': `settle ${dur.slow}s ${ease.growth} ${hero.image}s both`,
         'hero-eyebrow': `fade-up ${dur.base}s ${ease.growth} ${hero.eyebrow}s both`,
         // The h1 is the largest above-the-fold element on mobile (LCP), so it rises via
         // CSS from first paint instead of waiting for JS + SplitText.
-        'hero-title': `fade-up ${dur.base}s ${ease.growth} ${hero.title}s both`,
+        'hero-title': `rise ${dur.base}s ${ease.growth} ${hero.title}s both`,
         'hero-ctas': `scale-in ${dur.base}s ${ease.growth} ${hero.ctas}s both`,
       },
       minHeight: { tap: '48px' },
