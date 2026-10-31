@@ -1,11 +1,11 @@
 'use client';
 
-import { useRef, type ReactNode } from 'react';
+import { useRef, type HTMLAttributes, type ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
 import { dur, REVEAL_START, scale } from '@/lib/motion';
 
-interface ImageRevealProps {
+interface ImageRevealProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'className'> {
   children: ReactNode;
   /** `arch` = jharokha mask (999px 999px 28px 28px); `rounded` = 20px card radius. */
   shape?: 'arch' | 'rounded';
@@ -20,7 +20,7 @@ const ROUND = { arch: 'round 999px 999px 28px 28px', rounded: 'round 20px' } as 
  * Opens the image's mask from the bottom up (clip-path inset 100% → 0) while the image
  * settles from scale.imageFrom to 1. Reduced motion: a plain fade.
  */
-export function ImageReveal({ children, shape = 'arch', trigger = 'scroll', delay = 0, className }: ImageRevealProps) {
+export function ImageReveal({ children, shape = 'arch', trigger = 'scroll', delay = 0, className, ...rest }: ImageRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useGSAP(
@@ -49,6 +49,7 @@ export function ImageReveal({ children, shape = 'arch', trigger = 'scroll', dela
     <div
       ref={ref}
       data-image-reveal={shape}
+      {...rest}
       className={cn('overflow-hidden', shape === 'arch' ? 'rounded-arch' : 'rounded-2xl', className)}
     >
       {children}

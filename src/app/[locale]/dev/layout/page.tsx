@@ -28,7 +28,7 @@ export default async function LayoutDemo({ params: { locale } }: { params: { loc
         eyebrow={t('home.aboutIntro.eyebrow')}
         breadcrumbs={[{ label: t('about.title') }]}
         intro={<p>{t('home.aboutIntro.title')}</p>}
-        image={{ key: 'membersCircle', alt: t(altKeyFor('membersCircle')) }}
+        image={{ key: 'aboutArch', alt: t(altKeyFor('aboutArch')) }}
       />
       <section className="container-site section-pad">
         <Reveal className="mx-auto grid max-w-prose gap-5">

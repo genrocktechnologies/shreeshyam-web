@@ -5,7 +5,7 @@ export type ImageKey = keyof typeof manifest;
 
 export interface ImageEntry {
   kind: 'photo' | 'illustration';
-  /** Intrinsic size of the source image. */
+  /** Intrinsic size of the (cropped) source image. */
   width: number;
   height: number;
   /** Widths available in public/images as `${base}-${w}.avif|webp`. */
@@ -17,6 +17,82 @@ export interface ImageEntry {
 }
 
 export const images = manifest as Record<ImageKey, ImageEntry>;
+
+/**
+ * Frame shapes (design-system, "Photo frames"):
+ * - arch: the jharokha arch, 4:5. Single subject or a tight group, faces in the upper half.
+ * - wide: rounded rectangle, 4:3. Wide group shots and two-person shots (e.g. the award).
+ * - banner: rounded strip, 16:5. Very wide scenes with no people.
+ * - illustration: NEVER placed in a photo frame. Cut-outs on white, transparent
+ *   illustrations and drawings are shown whole (object-contain) in illustration slots.
+ */
+export type Frame = 'arch' | 'wide' | 'banner' | 'illustration';
+
+export const FRAMES: Record<Exclude<Frame, 'illustration'>, { aspect: string; radius: 'arch' | 'rounded' }> = {
+  arch: { aspect: '4 / 5', radius: 'arch' },
+  wide: { aspect: '4 / 3', radius: 'rounded' },
+  banner: { aspect: '16 / 5', radius: 'rounded' },
+};
+
+/** Point (in %) that must stay in view when the frame crops the image: object-position. */
+export interface Focal {
+  x: number;
+  y: number;
+}
+
+interface ImageMeta {
+  frame: Frame;
+  focal: Focal;
+}
+
+/**
+ * Framing per image: data, not CSS. Every key in the manifest must be listed (the
+ * `satisfies` check fails otherwise). Focal points were set by checking each placement
+ * at 1440px and 390px (docs/screenshots/phase3-checkpoint/frames-*).
+ */
+export const IMAGE_META = {
+  // Home crops (docs/photo-candidates.html).
+  heroArch: { frame: 'arch', focal: { x: 50, y: 30 } },
+  aboutArch: { frame: 'arch', focal: { x: 45, y: 25 } },
+  processStepRegistration: { frame: 'wide', focal: { x: 45, y: 40 } },
+  processStepSupport: { frame: 'wide', focal: { x: 40, y: 35 } },
+  processStepMonitoring: { frame: 'wide', focal: { x: 50, y: 30 } },
+  // Full source photos.
+  heroWomenCards: { frame: 'wide', focal: { x: 55, y: 40 } },
+  fieldMeeting: { frame: 'wide', focal: { x: 45, y: 35 } },
+  // Two people: presenter (≈ x 37–58%) and awardee (≈ x 62–90%); keep both whole.
+  award: { frame: 'wide', focal: { x: 62, y: 40 } },
+  bannerAbout: { frame: 'banner', focal: { x: 50, y: 50 } },
+  bannerContact: { frame: 'banner', focal: { x: 50, y: 50 } },
+  // Cut-outs on white (torn/blob edges): illustration slots only.
+  membersLedger: { frame: 'illustration', focal: { x: 50, y: 50 } },
+  membersCircle: { frame: 'illustration', focal: { x: 50, y: 50 } },
+  visionGroup: { frame: 'illustration', focal: { x: 50, y: 50 } },
+  // Transparent illustrations.
+  processRegistration: { frame: 'illustration', focal: { x: 50, y: 50 } },
+  processSupport: { frame: 'illustration', focal: { x: 50, y: 50 } },
+  processCommunity: { frame: 'illustration', focal: { x: 50, y: 50 } },
+  careers: { frame: 'illustration', focal: { x: 50, y: 50 } },
+  // Team portraits (square sources, face upper-centre): arch.
+  teamSatyamPushkar: { frame: 'arch', focal: { x: 50, y: 25 } },
+  teamRanjeetKumar: { frame: 'arch', focal: { x: 50, y: 25 } },
+  teamSumitKumar: { frame: 'arch', focal: { x: 50, y: 25 } },
+  teamSauravPrakash: { frame: 'arch', focal: { x: 50, y: 25 } },
+  teamVikramSinha: { frame: 'arch', focal: { x: 50, y: 20 } },
+  teamSonuKumar: { frame: 'arch', focal: { x: 50, y: 20 } },
+  teamShishirKumar: { frame: 'arch', focal: { x: 50, y: 25 } },
+} as const satisfies Record<ImageKey, ImageMeta>;
+
+type Meta = typeof IMAGE_META;
+
+/** Images allowed in a photo frame (PhotoFrame). Illustrations are excluded at compile time. */
+export type PhotoKey = { [K in ImageKey]: Meta[K]['frame'] extends 'illustration' ? never : K }[ImageKey];
+/** Images for illustration slots only. */
+export type IllustrationKey = Exclude<ImageKey, PhotoKey>;
+
+export const frameOf = (key: ImageKey): Frame => IMAGE_META[key].frame;
+export const focalOf = (key: ImageKey): Focal => IMAGE_META[key].focal;
+export const objectPosition = (key: ImageKey) => `${focalOf(key).x}% ${focalOf(key).y}%`;
 
 export const isTeamPortrait = (key: ImageKey) => key.startsWith('team');
 

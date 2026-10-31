@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- next/image optimisation is off in static export */
 import type { CSSProperties } from 'react';
-import { images, type ImageKey } from '@/data/images';
+import { images, objectPosition, type ImageKey } from '@/data/images';
 import { cn } from '@/lib/cn';
 
 interface PictureProps {
@@ -24,9 +24,11 @@ export function Picture({ image, alt, sizes = '100vw', priority = false, classNa
   const entry = images[image];
   const largest = entry.widths[entry.widths.length - 1];
   const srcSet = (ext: 'avif' | 'webp') => entry.widths.map((w) => `${entry.base}-${w}.${ext} ${w}w`).join(', ');
-  const style: CSSProperties | undefined = entry.blur
-    ? { backgroundImage: `url(${entry.blur})`, backgroundSize: 'cover', backgroundPosition: 'center' }
-    : undefined;
+  // The focal point (src/data/images.ts) keeps the subject in view whenever a frame crops.
+  const position = objectPosition(image);
+  const style: CSSProperties = entry.blur
+    ? { objectPosition: position, backgroundImage: `url(${entry.blur})`, backgroundSize: 'cover', backgroundPosition: position }
+    : { objectPosition: position };
 
   return (
     <picture className={className}>

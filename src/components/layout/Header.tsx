@@ -2,7 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/Button';
 import { HandCoins, Mail, MapPin, MessageCircle, Milk, Phone, Sprout, Store, type IconComponent } from '@/components/ui/icons';
 import { Logo } from '@/components/ui/Logo';
-import { Picture } from '@/components/ui/Picture';
+import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { altKeyFor } from '@/data/images';
 import { loans, loansHubHref } from '@/data/loans';
 import { site } from '@/data/site';
@@ -62,15 +62,10 @@ export async function Header({ locale }: { locale: Locale }) {
         prefetch={false}
         data-stagger
         style={{ ['--i' as string]: ABOUT_LINKS.length }}
-        className="group grid grid-cols-[7rem_1fr] items-center gap-4 rounded-2xl border border-rani-100 bg-white p-3 shadow-soft transition-shadow duration-card hover:shadow-lift"
+        className="group grid grid-cols-[8.5rem_1fr] items-center gap-4 rounded-2xl border border-rani-100 bg-white p-3 shadow-soft transition-shadow duration-card hover:shadow-lift"
       >
-        <Picture
-          image="award"
-          alt={t(altKeyFor('award'))}
-          sizes="112px"
-          className="block aspect-square overflow-hidden rounded-xl"
-          imgClassName="h-full w-full object-cover object-[60%_center]"
-        />
+        {/* Two-person photo: wide frame (data), so neither person is cut off. */}
+        <PhotoFrame image="award" alt={t(altKeyFor('award'))} motion="none" sizes="136px" className="w-full" />
         <span>
           <span className="eyebrow block">{t('common.nav.milestones')}</span>
           <span className="mt-1 block font-bold leading-snug text-plum-900 group-hover:text-rani-700">{t('milestones.award.heading')}</span>
@@ -167,7 +162,7 @@ export async function Header({ locale }: { locale: Locale }) {
 
       <div data-bar className="relative">
         <div data-bar-inner className="container-site flex h-[var(--bar-h)] items-center justify-between gap-4">
-          <Link href="/" prefetch={false} className="shrink-0 rounded-lg">
+          <Link id="site-logo" href="/" prefetch={false} className="shrink-0 rounded-lg">
             <Logo alt={t('common.alt.logo')} priority className="h-12 lg:h-14" />
           </Link>
 

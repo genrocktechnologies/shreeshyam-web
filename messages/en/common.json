@@ -94,7 +94,8 @@
     "whatsApp": "WhatsApp",
     "openInMaps": "Open in Maps",
     "showMap": "Show map",
-    "backToHome": "Back to home"
+    "backToHome": "Back to home",
+    "backToTop": "Back to top"
   },
   "contact": {
     "address": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
@@ -108,6 +109,7 @@
   "footer": {
     "blurb": "<b>Shree Shyam Small Growth Foundation</b> is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities.",
     "contactHeading": "Contact Us",
+    "help": "Help",
     "copyright": "Copyright © {year} Shree Shyam Small Growth Foundation."
   },
   "form": {

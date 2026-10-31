@@ -97,3 +97,30 @@ success:'#1F8A5B', danger:'#C62828',
   - A seed/sprout mark
   - A faint *alpana* dot pattern at 6% opacity for section backgrounds
 - **Logo:** the client's existing logo, used unchanged. Use the white version on rani or plum backgrounds.
+
+## Photo frames (data, not CSS)
+Every content photo is placed with `<PhotoFrame>` (`src/components/ui/PhotoFrame.tsx`). Its shape, aspect ratio and focal point come from `IMAGE_META` in `src/data/images.ts`:
+
+| Frame | Aspect | Corners | Use for |
+|---|---|---|---|
+| `arch` | 4:5 | 999px 999px 28px 28px (jharokha) | One person, or a tight group with faces in the upper half (hero, About, team portraits) |
+| `wide` | 4:3 | 20px | Wide group shots and two-person shots, e.g. the award photo (an arch would slice the presenter) |
+| `banner` | 16:5 | 20px | Very wide scenes with no people |
+| `illustration` | natural | none | Cut-outs on white, transparent drawings. **Never placed in a photo frame.** `PhotoFrame` only accepts `PhotoKey`, so passing one is a type error. |
+
+- **Focal point:** `focal: { x, y }` in % becomes `object-position` (and the blur placeholder's position). Set it so faces and the main subject stay inside the frame at 390px and 1440px.
+- **No empty edges:** the image always covers the frame (`object-cover`). Parallax over-scales by `scale.parallaxCover` and caps its travel at the spare margin. The reveal mask uses the frame's own corners. Verified by scrolling every frame and checking that the image layer covers its box at each step.
+- **To add a photo:** process it with `scripts/images.ts` (with a `crop` if needed), add its frame and focal point to `IMAGE_META`, then screenshot the placement at both widths.
+
+## Footer
+`src/components/layout/Footer.tsx`, with `FooterWatermark` and `BackToTop`.
+
+- **Surface:** `plum-900` with two soft rani radial glows (`.footer-surface`) plus the grain texture.
+- **Watermark:** the complete logo emblem (`public/brand/logo-mark.webp`) at 7% opacity, `aria-hidden`, `pointer-events: none`. It is a deity image, so it is always shown **whole**:
+  - **Desktop:** in a right-hand column reserved for it (content has `lg:pr-[25rem] xl:pr-[30rem]`), so no text is laid across the face. Up to 420px tall at lg and 520px at xl; vertically centred above the bottom bar; never cropped by an edge.
+  - **Mobile:** about 260px, centred behind the top area.
+  - **Motion:** a slow drift on desktop only (`watermark.drift`, `watermark.scrub` in motion.ts); static on mobile and under reduced motion.
+- **Top row:** the white logo, the foundation blurb, contact chips (phone, email, address linking to Maps in a new tab, office hours 9 AM – 9 PM; icons from `ui/icons`), and a Register button (primary, lg).
+- **Link columns:** About, Loans (4 products + All loans), Help (How to Join, Register, Contact, Careers), Legal (Privacy Policy, HR Policy, plus hidden slots for legal and grievance details). 2 columns on mobile and up to xl; 4 at xl. Every link has a 48px tap target. The columns Reveal (stagger) on scroll.
+- **Bottom bar:** copyright with the year from the build date, social icons (placeholders for now, 48px), and a "Back to top" button that scrolls up and moves focus to the header logo. On mobile, extra bottom padding clears the fixed MobileActionBar.
+- **Contrast:** checked against the brightest point of glow plus watermark. The dimmest text (ivory-100 at 80%) measures at least 8.6:1, and axe reports no issues.

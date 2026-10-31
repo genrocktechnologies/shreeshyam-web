@@ -1,9 +1,9 @@
 import { getTranslations } from 'next-intl/server';
-import { GoldenThread, MagneticButton, Parallax, ScrollDrift, ThreadSeed } from '@/components/motion';
+import { GoldenThread, MagneticButton, ScrollDrift, ThreadSeed } from '@/components/motion';
 import { accentTags } from '@/components/ui/Accent';
 import { Button } from '@/components/ui/Button';
 import { Eyebrow } from '@/components/ui/Eyebrow';
-import { Picture } from '@/components/ui/Picture';
+import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { altKeyFor } from '@/data/images';
 import { trigger } from '@/lib/motion';
 import { HeroTitle } from './HeroTitle';
@@ -64,20 +64,14 @@ export async function Hero() {
 
         {/* Arch photo: above the text on mobile. */}
         <div className="order-first md:order-none md:self-center md:pb-16">
-          <div className="mx-auto aspect-[4/5] w-full max-w-[19rem] animate-hero-arch overflow-hidden rounded-arch shadow-lift sm:max-w-[22rem] md:max-w-[28rem]">
-            <Parallax className="h-full">
-              <div className="h-full animate-hero-settle">
-                <Picture
-                  image="heroArch"
-                  alt={t(altKeyFor('heroArch'))}
-                  priority
-                  sizes="(min-width: 1024px) 28rem, (min-width: 640px) 22rem, 19rem"
-                  className="block h-full w-full"
-                  imgClassName="h-full w-full object-cover"
-                />
-              </div>
-            </Parallax>
-          </div>
+          <PhotoFrame
+            image="heroArch"
+            alt={t(altKeyFor('heroArch'))}
+            priority
+            motion="hero"
+            sizes="(min-width: 1024px) 28rem, (min-width: 640px) 22rem, 19rem"
+            className="mx-auto w-full max-w-[19rem] shadow-lift sm:max-w-[22rem] md:max-w-[28rem]"
+          />
         </div>
       </div>
     </section>

@@ -1,9 +1,10 @@
 import type { ReactNode } from 'react';
-import { GoldenThread, ImageReveal, Reveal, SplitHeading } from '@/components/motion';
+import { GoldenThread, Reveal, SplitHeading } from '@/components/motion';
 import { Breadcrumbs, type Crumb } from '@/components/ui/Breadcrumbs';
-import { Picture } from '@/components/ui/Picture';
-import type { ImageKey } from '@/data/images';
+import { PhotoFrame } from '@/components/ui/PhotoFrame';
+import type { PhotoKey } from '@/data/images';
 import { cn } from '@/lib/cn';
+import { pageHero } from '@/lib/motion';
 
 interface PageHeroProps {
   /** The page's single <h1>. */
@@ -12,7 +13,8 @@ interface PageHeroProps {
   /** Crumbs after "Home"; the last one is the current page. */
   breadcrumbs: Crumb[];
   intro?: ReactNode;
-  image?: { key: ImageKey; alt: string };
+  /** Photos only (cut-outs/illustrations are rejected); the frame shape comes from the image data. */
+  image?: { key: PhotoKey; alt: string };
   className?: string;
 }
 
@@ -31,36 +33,35 @@ export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className 
         )}
       >
         {/* Inside the container so it sits on the shared thread rail (--thread-x). */}
-        <GoldenThread d="M50 0 C 50 30, 30 55, 50 100" className="thread-col bottom-0 top-[var(--header-total)]" />
+        {/* Explicit height: an absolute <svg> doesn't stretch between top and bottom. */}
+        <GoldenThread d="M50 0 C 50 30, 30 55, 50 100" className="thread-col top-[var(--header-total)] h-[calc(100%-var(--header-total))]" />
         <div>
-          <Reveal>
+          <Reveal delay={pageHero.breadcrumb}>
             <Breadcrumbs items={breadcrumbs} className="mb-6" />
           </Reveal>
           {eyebrow && (
-            <Reveal delay={0.05}>
+            <Reveal delay={pageHero.eyebrow}>
               <p className="eyebrow mb-3">{eyebrow}</p>
             </Reveal>
           )}
-          <SplitHeading as="h1" trigger="load" delay={0.1} className="text-balance">
+          <SplitHeading as="h1" trigger="load" delay={pageHero.title} className="text-balance">
             {title}
           </SplitHeading>
           {intro && (
-            <Reveal delay={0.2} className="mt-6 text-body text-ink-muted">
+            <Reveal delay={pageHero.intro} className="mt-6 text-body text-ink-muted">
               {intro}
             </Reveal>
           )}
         </div>
         {image && (
-          <ImageReveal trigger="load" delay={0.2} className="mx-auto aspect-[4/5] w-full max-w-[22rem]">
-            <Picture
-              image={image.key}
-              alt={image.alt}
-              priority
-              sizes="(min-width: 768px) 22rem, 90vw"
-              className="block h-full w-full"
-              imgClassName="h-full w-full object-cover"
-            />
-          </ImageReveal>
+          <PhotoFrame
+            image={image.key}
+            alt={image.alt}
+            priority
+            motion="reveal"
+            sizes="(min-width: 768px) 22rem, 90vw"
+            className="mx-auto w-full max-w-[22rem]"
+          />
         )}
       </div>
     </section>

@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { HeaderSpacer } from '@/components/layout/HeaderSpacer';
-import { CountUp, GoldenThread, ImageReveal, MagneticButton, Parallax, Reveal, SplitHeading } from '@/components/motion';
-import { Picture } from '@/components/ui/Picture';
+import { CountUp, GoldenThread, MagneticButton, Reveal, SplitHeading } from '@/components/motion';
+import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { altKeyFor } from '@/data/images';
 import { MotionStatus } from './MotionStatus';
 
@@ -93,16 +93,14 @@ export default async function MotionPlayground({ params: { locale } }: { params:
           </div>
           <div className="pl-8 md:pl-0">
             <Label>{t('primitives.imageReveal')}</Label>
-            <ImageReveal trigger="load" delay={0.2} className="mx-auto aspect-[400/424] w-full max-w-[400px]">
-              <Picture
-                image="membersLedger"
-                alt={tAll(altKeyFor('membersLedger'))}
-                sizes="(min-width: 768px) 400px, 100vw"
-                priority
-                className="block h-full w-full"
-                imgClassName="h-full w-full object-cover"
-              />
-            </ImageReveal>
+            <PhotoFrame
+              image="heroArch"
+              alt={tAll(altKeyFor('heroArch'))}
+              motion="reveal"
+              priority
+              sizes="(min-width: 768px) 400px, 100vw"
+              className="mx-auto w-full max-w-[400px]"
+            />
           </div>
         </div>
       </section>
@@ -147,15 +145,13 @@ export default async function MotionPlayground({ params: { locale } }: { params:
         <div className="container-site section-pad grid items-center gap-10 pl-12 md:grid-cols-2 md:pl-8">
           <div>
             <Label>{t('primitives.parallax')}</Label>
-            <Parallax className="mask-arch aspect-[4/5] w-full max-w-[460px]">
-              <Picture
-                image="award"
-                alt={tAll(altKeyFor('award'))}
-                sizes="(min-width: 768px) 460px, 100vw"
-                className="block h-full w-full"
-                imgClassName="h-full w-full object-cover object-[60%_center]"
-              />
-            </Parallax>
+            <PhotoFrame
+              image="award"
+              alt={tAll(altKeyFor('award'))}
+              motion="reveal-parallax"
+              sizes="(min-width: 768px) 460px, 100vw"
+              className="w-full max-w-[460px]"
+            />
           </div>
           <div>
             <SplitHeading className="text-balance">{t('demo.milestoneHeading')}</SplitHeading>

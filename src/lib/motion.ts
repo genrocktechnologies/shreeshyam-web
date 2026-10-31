@@ -72,8 +72,12 @@ export const opacity = {
    * values look more dramatic but fail contrast (axe: color-contrast, serious).
    */
   highlightFrom: 0.62,
-  /** Hero text fades to this as it drifts away. */
-  driftTo: 0.5,
+  /**
+   * Hero text opacity at the end of its drift. Kept at 1: any fade drops the eyebrow
+   * (rani-600, ≈5.3:1) and the CTA labels below WCAG AA while they are still on screen
+   * (axe color-contrast, serious). The drift is movement only.
+   */
+  driftTo: 1,
 } as const;
 
 /** ScrollTrigger scrub smoothing (s); `true` = locked to scroll. */
@@ -105,6 +109,12 @@ export const hero = {
   /** Gap between the title's last line landing and the underline starting. */
   underlineGap: 0.05,
 } as const;
+
+/** Inner-page hero (PageHero) load sequence: delays (s). */
+export const pageHero = { breadcrumb: 0, eyebrow: 0.05, title: 0.1, intro: 0.2 } as const;
+
+/** Footer emblem watermark: slow drift (px, each way) while the footer scrolls into view. Desktop only. */
+export const watermark = { drift: 40, scrub: 0.8 } as const;
 
 /** CSS transitions (ms), exposed as Tailwind `duration-<name>` and theme('transitionDuration.<name>'). */
 export const ui = {

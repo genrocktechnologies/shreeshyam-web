@@ -1,8 +1,8 @@
 import { getTranslations } from 'next-intl/server';
-import { GoldenThread, ImageReveal, Parallax, ReadingHighlight, Reveal, SplitHeading } from '@/components/motion';
+import { GoldenThread, ReadingHighlight, Reveal, SplitHeading } from '@/components/motion';
 import { Button } from '@/components/ui/Button';
 import { Eyebrow } from '@/components/ui/Eyebrow';
-import { Picture } from '@/components/ui/Picture';
+import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { altKeyFor } from '@/data/images';
 import { richTags } from '@/lib/rich';
 
@@ -22,17 +22,13 @@ export async function AboutIntro() {
       <div className="container-site thread-gutter section-pad relative grid items-center gap-12 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
         <GoldenThread d="M50 0 C 50 22, 22 38, 28 55 S 50 80, 50 100" className="thread-col-wide inset-y-0 h-full" />
 
-        <ImageReveal className="mx-auto aspect-[4/5] w-full max-w-[22rem] shadow-soft md:max-w-[26rem]">
-          <Parallax className="h-full">
-            <Picture
-              image="aboutArch"
-              alt={t(altKeyFor('aboutArch'))}
-              sizes="(min-width: 768px) 26rem, 22rem"
-              className="block h-full w-full"
-              imgClassName="h-full w-full object-cover"
-            />
-          </Parallax>
-        </ImageReveal>
+        <PhotoFrame
+          image="aboutArch"
+          alt={t(altKeyFor('aboutArch'))}
+          motion="reveal-parallax"
+          sizes="(min-width: 768px) 26rem, 22rem"
+          className="mx-auto w-full max-w-[22rem] shadow-soft md:max-w-[26rem]"
+        />
 
         <div>
           <Reveal>

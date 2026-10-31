@@ -316,6 +316,14 @@
     background-size: 160px 160px;
   }
 
+  /* Footer surface: plum-900 with two soft rani radial glows (design-system, Footer). */
+  .footer-surface {
+    background-color: theme('colors.plum.900');
+    background-image:
+      radial-gradient(ellipse 60% 55% at 88% 8%, theme('colors.rani.700 / 0.38'), transparent 70%),
+      radial-gradient(ellipse 45% 50% at 0% 100%, theme('colors.rani.800 / 0.3'), transparent 70%);
+  }
+
   .mask-arch {
     border-radius: 999px 999px 28px 28px;
     overflow: hidden;

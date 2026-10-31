@@ -21,6 +21,7 @@ const OUT = path.join(ROOT, 'src', 'components', 'ui', 'icons.tsx');
 /** lucide file name → exported component name. */
 const ICONS: Record<string, string> = {
   'arrow-right': 'ArrowRight',
+  'arrow-up': 'ArrowUp',
   'chevron-down': 'ChevronDown',
   'chevron-right': 'ChevronRight',
   clock: 'Clock',
