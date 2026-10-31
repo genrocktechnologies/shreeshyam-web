@@ -97,8 +97,8 @@
     "optional": "(optional)",
     "fields": {
       "name": "Name",
-      "mobile": "Mobile No",
-      "email": "EmailId",
+      "mobile": "Mobile number",
+      "email": "Email",
       "address": "Address",
       "state": "State",
       "district": "District",
