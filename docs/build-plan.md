@@ -94,7 +94,7 @@ How to Join, Register, Contact, Careers, HR Policy, Privacy. Forms are wired to 
 - **Launch checklist: delete the motion playground.** Remove all of these, then rebuild and confirm `/en/dev/motion/` returns 404:
   - [ ] `src/app/[locale]/dev/`
   - [ ] `messages/en/dev.json` and `messages/hi/dev.json` (also remove `'dev'` from `namespaces` in `src/i18n/routing.ts`)
-  - [ ] `public/dev/`
+  - (`public/dev/` was already removed in Phase 1, when the playground switched to `<Picture>` with the real images.)
 - Create a GitHub repo, import it into Vercel, add the env var, and set the custom domain.
 - Verify all old `.php` URLs 301 correctly on the preview deployment before switching DNS.
 

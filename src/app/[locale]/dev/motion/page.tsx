@@ -1,13 +1,16 @@
-/* eslint-disable @next/next/no-img-element -- dev playground; the <Picture> component arrives in Phase 1 */
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { CountUp, GoldenThread, ImageReveal, MagneticButton, Parallax, Reveal, SplitHeading } from '@/components/motion';
+import { Picture } from '@/components/ui/Picture';
+import { altKeyFor } from '@/data/images';
+import { pickMessages } from '@/i18n/pick';
 import { MotionStatus } from './MotionStatus';
 
 /**
  * Hidden motion playground: one demo per primitive from docs/motion-spec.md.
  * Not linked, noindex, excluded from the sitemap. DELETE BEFORE LAUNCH (Phase 8),
- * together with messages/<locale>/dev.json and public/dev/.
+ * together with messages/<locale>/dev.json.
  */
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: 'dev.meta' });
@@ -37,6 +40,7 @@ function ThreadColumn() {
 export default async function MotionPlayground({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = await getTranslations('dev');
+  const tAll = await getTranslations();
 
   return (
     <main id="main">
@@ -48,7 +52,9 @@ export default async function MotionPlayground({ params: { locale } }: { params:
               {t('ui.scrollHint')} {t('ui.replay')}
             </p>
           </div>
-          <MotionStatus />
+          <NextIntlClientProvider messages={pickMessages(await getMessages(), ['dev.ui'])}>
+            <MotionStatus />
+          </NextIntlClientProvider>
         </div>
       </div>
 
@@ -79,7 +85,14 @@ export default async function MotionPlayground({ params: { locale } }: { params:
           <div className="pl-8 md:pl-0">
             <Label>{t('primitives.imageReveal')}</Label>
             <ImageReveal trigger="load" delay={0.2} className="mx-auto aspect-[400/424] w-full max-w-[400px]">
-              <img src="/dev/members.webp" alt={t('demo.alt.members')} width={400} height={424} className="h-full w-full object-cover" />
+              <Picture
+                image="membersLedger"
+                alt={tAll(altKeyFor('membersLedger'))}
+                sizes="(min-width: 768px) 400px, 100vw"
+                priority
+                className="block h-full w-full"
+                imgClassName="h-full w-full object-cover"
+              />
             </ImageReveal>
           </div>
         </div>
@@ -126,13 +139,12 @@ export default async function MotionPlayground({ params: { locale } }: { params:
           <div>
             <Label>{t('primitives.parallax')}</Label>
             <Parallax className="mask-arch aspect-[4/5] w-full max-w-[460px]">
-              <img
-                src="/dev/award.webp"
-                alt={t('demo.alt.award')}
-                width={1200}
-                height={652}
-                loading="lazy"
-                className="h-full w-full object-cover object-[60%_center]"
+              <Picture
+                image="award"
+                alt={tAll(altKeyFor('award'))}
+                sizes="(min-width: 768px) 460px, 100vw"
+                className="block h-full w-full"
+                imgClassName="h-full w-full object-cover object-[60%_center]"
               />
             </Parallax>
           </div>

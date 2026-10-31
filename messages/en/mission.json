@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Our Mission || Shree Shyam Small Growth Foundation"
+  },
+  "title": "Our Mission",
+  "heading": "Our Mission",
+  "intro": "Shree Shyam MicroFinance is committed to empowering communities through responsible and transparent financial services while fostering sustainable economic development.",
+  "goals": {
+    "heading": "Our mission is to:",
+    "items": {
+      "provideAccessibleAffordable": "Provide accessible and affordable microfinance solutions to underserved communities.",
+      "promoteFinancialInclusion": "Promote financial inclusion by reaching individuals who have limited access to formal banking services.",
+      "empowerWomenFinancial": "Empower women through financial support, entrepreneurship, and self-help group development.",
+      "encourageSmallBusinesses": "Encourage small businesses and rural entrepreneurs by providing financial assistance and business guidance.",
+      "improveFinancialLiteracy": "Improve financial literacy through education, awareness, and capacity-building programs.",
+      "supportSustainableLivelihood": "Support sustainable livelihood opportunities that contribute to long-term economic growth.",
+      "deliverCustomerCentric": "Deliver customer-centric services with integrity, transparency, and accountability.",
+      "buildStrongPartnerships": "Build strong partnerships with communities, institutions, and stakeholders to maximize social impact.",
+      "contributeCommunityDevelopment": "Contribute to community development through initiatives in education, healthcare, skill development, and social welfare."
+    }
+  },
+  "coreValues": {
+    "heading": "Our Core Values",
+    "items": {
+      "integrity": "Integrity- Honest, transparent, and ethical operations.",
+      "trust": "Trust – Building lasting relationships with our members and communities.",
+      "empowerment": "Empowerment – Enabling individuals to become financially independent.",
+      "innovation": "Innovation – Delivering modern and accessible financial solutions.",
+      "respect": "Respect – Treating every customer with dignity and fairness.",
+      "socialResponsibility": "Social Responsibility – Creating positive and sustainable community impact."
+    }
+  }
+}

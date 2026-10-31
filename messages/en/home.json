@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "title": "Shree Shyam Small Growth Foundation | Financial Inclusion & Community Development"
+  },
+  "hero": {
+    "eyebrow": "Building Better Futures Together",
+    "title": "Creating Opportunities for Every Family Through Financial Inclusion Today"
+  },
+  "aboutIntro": {
+    "eyebrow": "Empowering Communities With Confidence",
+    "title": "Creating Brighter Futures Through Inclusive Finance and Sustainable Community Development"
+  },
+  "stats": {
+    "women": {
+      "value": "1200+",
+      "label": "Women Entrepreneurs Supported"
+    },
+    "literacy": {
+      "value": "150+",
+      "label": "Financial Literacy Programs"
+    },
+    "trust": {
+      "value": "98%",
+      "label": "Community Trust & Satisfaction"
+    }
+  },
+  "services": {
+    "heading": "Our Services for Financial Inclusion and Community Empowerment",
+    "items": {
+      "financialInclusion": {
+        "title": "Financial Inclusion Services",
+        "text": "Providing responsible and affordable financial solutions to underserved individuals and communities."
+      },
+      "womenEmpowerment": {
+        "title": "Women Empowerment Programs",
+        "text": "Supporting women entrepreneurs and self-help groups through financial assistance and guidance."
+      },
+      "financialLiteracy": {
+        "title": "Financial Literacy & Awareness",
+        "text": "Conducting education programs that promote responsible borrowing, savings, and financial planning."
+      },
+      "entrepreneurshipDevelopment": {
+        "title": "Entrepreneurship Development",
+        "text": "Encouraging small businesses and self-employment through training and livelihood support."
+      },
+      "livelihoodPromotion": {
+        "title": "Livelihood Promotion Programs",
+        "text": "Supporting sustainable livelihood opportunities for farmers, rural entrepreneurs, and families."
+      },
+      "communityWelfare": {
+        "title": "Community Welfare Initiatives",
+        "text": "Promoting education, health, skill development, and social welfare for sustainable community growth."
+      }
+    }
+  },
+  "testimonials": {
+    "heading": "What Our Members Say",
+    "lead": "Real experiences from individuals and families empowered through our financial inclusion initiatives.",
+    "items": {
+      "sunitaDevi": {
+        "quote": "\"The Foundation supported my small business with financial guidance and assistance. Today, I have improved my income and created a better future for my family.\"",
+        "name": "Sunita Devi"
+      },
+      "rajeshKumar": {
+        "quote": "\"The Foundation's transparent services and financial awareness programs helped me grow my business and achieve greater financial stability.\"",
+        "name": "Rajesh Kumar"
+      },
+      "anitaSharma": {
+        "quote": "\"The financial literacy initiatives helped me learn savings, planning, and better ways to manage my personal and family finances.\"",
+        "name": "Anita Sharma"
+      },
+      "maheshYadav": {
+        "quote": "\"The Foundation provided valuable support for my farming activities and helped create better livelihood opportunities for my family.\"",
+        "name": "Mahesh Yadav"
+      }
+    }
+  },
+  "process": {
+    "heading": "Our Process for Empowering Communities Through Financial Inclusion",
+    "steps": {
+      "registration": {
+        "title": "Member Registration & Assessment",
+        "text": "We understand community needs, verify eligibility, and assess financial requirements through a transparent and customer-centric approach."
+      },
+      "support": {
+        "title": "Financial Support & Capacity Building",
+        "text": "We provide responsible financial services, financial literacy, entrepreneurship guidance, and skill development for sustainable growth."
+      },
+      "monitoring": {
+        "title": "Monitoring & Community Development",
+        "text": "We continuously support members through guidance, awareness programs, livelihood promotion, and community welfare initiatives."
+      }
+    }
+  },
+  "faq": {
+    "heading": "Frequently Asked Questions",
+    "items": {
+      "services": {
+        "question": "Q1. What services does Shree Shyam Small Growth Foundation provide?",
+        "answer": "We provide financial inclusion support, financial literacy programs, livelihood development, entrepreneurship guidance, and community welfare initiatives for underserved communities."
+      },
+      "whoCanBenefit": {
+        "question": "Q2. Who can benefit from Foundation programs?",
+        "answer": "Our programs support women entrepreneurs, small business owners, farmers, self-help groups, and low-income households seeking financial empowerment and sustainable growth opportunities."
+      },
+      "financialInclusion": {
+        "question": "Q3. How does the Foundation promote financial inclusion?",
+        "answer": "We promote financial inclusion through responsible financial services, awareness programs, savings encouragement, financial literacy, and support for income-generating activities."
+      },
+      "documents": {
+        "question": "Q4. What documents are required for membership registration?",
+        "answer": "Applicants generally need identity proof, address proof, Aadhaar Card, PAN Card where applicable, photographs, bank details, and other required documents."
+      },
+      "entrepreneurship": {
+        "question": "Q5. How does the Foundation support entrepreneurship?",
+        "answer": "We encourage entrepreneurship by providing financial guidance, skill development opportunities, business awareness, and livelihood support for individuals and small enterprises."
+      },
+      "membership": {
+        "question": "Q6. How can I become a member of the Foundation?",
+        "answer": "Individuals above 18 years of age can apply for membership by completing the registration process and submitting valid identity and address documents."
+      }
+    }
+  }
+}

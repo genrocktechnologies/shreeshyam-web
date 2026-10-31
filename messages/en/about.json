@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "About Us | Shree Shyam Small Growth Foundation"
+  },
+  "title": "About Us",
+  "foundation": {
+    "heading": "About the Foundation",
+    "body1": "<b>Shree Shyam Small Growth Foundation</b> is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities. Our mission is to provide responsible financial services, financial literacy, and skill development opportunities that help individuals and families build a secure and self-reliant future.",
+    "body2": "We believe that access to affordable financial services is a fundamental step toward reducing poverty and encouraging entrepreneurship. Through transparent practices and a customer-centric approach, we aim to support women, small entrepreneurs, farmers, and low-income households by helping them achieve financial independence."
+  },
+  "whyChoose": {
+    "heading": "Why Choose Shree Shyam Small Growth Foundation ?",
+    "items": {
+      "trustedFinancial": {
+        "title": "Trusted Financial Services",
+        "text": "Transparent financial solutions designed for underserved individuals and local communities."
+      },
+      "womenEmpowerment": {
+        "title": "Women Empowerment",
+        "text": "Supporting women through entrepreneurship, financial literacy, and livelihood development programs."
+      },
+      "customerCentric": {
+        "title": "Customer-Centric Approach",
+        "text": "Delivering ethical, reliable, and community-focused financial assistance with complete transparency."
+      },
+      "financialLiteracy": {
+        "title": "Financial Literacy",
+        "text": "Building financial awareness through education, training, and responsible borrowing practices."
+      },
+      "sustainableGrowth": {
+        "title": "Sustainable Growth",
+        "text": "Creating lasting economic opportunities through inclusive and sustainable community development."
+      },
+      "transparentOperations": {
+        "title": "Transparent Operations",
+        "text": "Ensuring ethical practices, accountability, and trust in every community initiative."
+      }
+    }
+  }
+}

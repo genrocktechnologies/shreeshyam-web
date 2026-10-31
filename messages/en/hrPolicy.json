@@ -1,0 +1,277 @@
+{
+  "meta": {
+    "title": "Human Resource Policy | Shree Shyam Small Growth Foundation"
+  },
+  "title": "Our Policy",
+  "heading": "Human Resource Policy",
+  "lead": "Establishing professional standards, ethical practices, and an inclusive workplace culture for sustainable organizational growth.",
+  "sections": {
+    "introduction": {
+      "heading": "1. Introduction",
+      "p1": "The Human Resource (HR) Policy of Shree Shyam Small Growth Foundation establishes the principles, standards, and procedures for recruiting, developing, managing, and retaining employees while promoting a professional, ethical, and inclusive work environment.",
+      "p2": "This policy applies to all permanent employees, contractual staff, probationary employees, temporary staff, consultants, interns, volunteers, and field staff working with the Foundation."
+    },
+    "vision": {
+      "heading": "2. Vision",
+      "p1": "To build a motivated, skilled, ethical, and service-oriented workforce committed to financial inclusion, community development, and creating a positive social impact."
+    },
+    "mission": {
+      "heading": "3. Mission",
+      "p1": "The Human Resource department aims to create a supportive workplace by focusing on:",
+      "list1": {
+        "recruitingTalentedCommitted": "Recruiting talented and committed professionals.",
+        "promotingEqualEmployment": "Promoting equal employment opportunities for all.",
+        "ensuringEmployeeWelfare": "Ensuring employee welfare, growth, and development.",
+        "encouragingTransparencyAccountability": "Encouraging transparency, accountability, and teamwork.",
+        "maintainingSafeRespectful": "Maintaining a safe, respectful, and inclusive workplace environment."
+      }
+    },
+    "coreValues": {
+      "heading": "4. Core Values",
+      "p1": "The Foundation follows strong values that guide employee behavior, organizational culture, and community service:",
+      "list1": {
+        "integrity": "Integrity",
+        "transparency": "Transparency",
+        "professionalism": "Professionalism",
+        "respect": "Respect",
+        "teamwork": "Teamwork",
+        "accountability": "Accountability",
+        "customerService": "Customer Service",
+        "socialResponsibility": "Social Responsibility"
+      }
+    },
+    "equalEmployment": {
+      "heading": "5. Equal Employment Opportunity",
+      "p1": "The Foundation provides equal employment opportunities without discrimination based on:",
+      "list1": {
+        "gender": "Gender",
+        "religion": "Religion",
+        "caste": "Caste",
+        "race": "Race",
+        "disability": "Disability",
+        "maritalStatus": "Marital Status",
+        "agePermittedLaw": "Age (Where Permitted By Law)"
+      },
+      "p2": "Employment decisions are based on merit, qualifications, and organizational needs."
+    },
+    "recruitmentSelection": {
+      "heading": "6. Recruitment & Selection",
+      "p1": "Recruitment shall be conducted fairly and transparently.",
+      "p2": "The selection process may include:",
+      "list1": {
+        "applicationScreening": "Application Screening",
+        "writtenTestRequired": "Written Test (If Required)",
+        "personalInterview": "Personal Interview",
+        "backgroundVerification": "Background Verification",
+        "referenceCheck": "Reference Check",
+        "finalApproval": "Final Approval"
+      }
+    },
+    "appointment": {
+      "heading": "7. Appointment",
+      "p1": "Every selected employee shall receive:",
+      "list1": {
+        "appointmentLetter": "Appointment Letter",
+        "jobDescription": "Job Description",
+        "salaryStructure": "Salary Structure",
+        "hrPolicy": "HR Policy",
+        "codeConduct": "Code of Conduct"
+      }
+    },
+    "probation": {
+      "heading": "8. Probation",
+      "p1": "New employees may be placed on probation for 0-3 months, subject to the terms of their appointment letter. Confirmation of employment will be based on satisfactory performance."
+    },
+    "workingHours": {
+      "heading": "9. Working Hours",
+      "list1": {
+        "mondaySaturdayAm": "Monday – Saturday: 10:00 AM – 6:00 PM",
+        "lunchBreakPm": "Lunch Break: 1:30 PM – 2:00 PM",
+        "sundayWeeklyOff": "Sunday: Weekly Off"
+      },
+      "p1": "Note:- Field staff may follow different schedules based on operational requirements."
+    },
+    "attendance": {
+      "heading": "10. Attendance",
+      "p1": "Employees Shall :",
+      "list1": {
+        "reportTime": "Report on time",
+        "recordAttendancePrescribed": "Record attendance through prescribed systems",
+        "informSupervisorsRegarding": "Inform supervisors regarding delay or absence"
+      },
+      "p2": "Unauthorized absence may result in disciplinary action."
+    },
+    "leavePolicy": {
+      "heading": "11. Leave Policy",
+      "p1": "Employees may be eligible for:",
+      "list1": {
+        "casualLeave": "Casual Leave",
+        "sickLeave": "Sick Leave",
+        "earnedLeave": "Earned Leave",
+        "maternityLeavePer": "Maternity Leave(as per applicable law)",
+        "paternityLeaveAdopted": "Paternity Leave (if adopted by the Foundation)",
+        "specialLeaveManagement": "Special Leave (Management Approval)"
+      },
+      "p2": "Leave must be approved before availing except in emergency situations."
+    },
+    "salaryBenefits": {
+      "heading": "12. Salary & Benefits",
+      "p1": "Employees shall receive:",
+      "list1": {
+        "monthlySalary": "Monthly Salary",
+        "statutoryBenefitsApplicable": "Statutory Benefits (Where Applicable)",
+        "performanceIncentivesApplicable": "Performance Incentives (if applicable)",
+        "travelReimbursementApproved": "Travel Reimbursement (as approved)",
+        "trainingOpportunities": "Training Opportunities"
+      },
+      "p2": "Salary payments are normally processed through bank transfer."
+    },
+    "codeConduct": {
+      "heading": "13. Code of Conduct",
+      "p1": "Employees shall:",
+      "list1": {
+        "maintainHonestyIntegrity": "Maintain honesty and integrity",
+        "respectColleaguesCustomers": "Respect colleagues and customers",
+        "protectConfidentialInformation": "Protect confidential information",
+        "avoidConflictsInterest": "Avoid conflicts of interest",
+        "followOrganizationalPolicies": "Follow organizational policies",
+        "useFoundationResources": "Use Foundation resources responsibly",
+        "provideQualityCustomer": "Provide quality customer service"
+      }
+    },
+    "antiHarassment": {
+      "heading": "14. Anti-Harassment Policy",
+      "p1": "The Foundation maintains a workplace free from:",
+      "list1": {
+        "sexualHarassment": "Sexual Harassment",
+        "workplaceBullying": "Workplace Bullying",
+        "discrimination": "Discrimination",
+        "abuse": "Abuse",
+        "intimidation": "Intimidation"
+      },
+      "p2": "Complaints will be investigated confidentially and appropriate action will be taken."
+    },
+    "confidentiality": {
+      "heading": "15. Confidentiality",
+      "p1": "Employees shall not disclose:",
+      "list1": {
+        "customerInformation": "Customer Information",
+        "financialRecords": "Financial Records",
+        "businessStrategies": "Business Strategies",
+        "employeeRecords": "Employee Records",
+        "internalDocuments": "Internal Documents"
+      },
+      "p2": "Confidentiality obligations remain applicable even after employment ends."
+    },
+    "performanceManagement": {
+      "heading": "16. Performance Management",
+      "p1": "Performance shall be reviewed periodically based on:",
+      "list1": {
+        "workQuality": "Work Quality",
+        "productivity": "Productivity",
+        "customerService": "Customer Service",
+        "teamwork": "Teamwork",
+        "discipline": "Discipline",
+        "attendance": "Attendance",
+        "professionalBehaviour": "Professional Behaviour"
+      }
+    },
+    "trainingDevelopment": {
+      "heading": "17. Training & Development",
+      "p1": "The Foundation encourages continuous learning through:",
+      "list1": {
+        "inductionTraining": "Induction Training",
+        "financialLiteracyPrograms": "Financial Literacy Programs",
+        "leadershipDevelopment": "Leadership Development",
+        "customerServiceTraining": "Customer Service Training",
+        "digitalSkillsTraining": "Digital Skills Training",
+        "complianceTraining": "Compliance Training"
+      }
+    },
+    "healthSafety": {
+      "heading": "18. Health & Safety",
+      "p1": "The Foundation is committed to providing:",
+      "list1": {
+        "safeWorkplaceEnvironment": "Safe Workplace Environment",
+        "emergencyPreparedness": "Emergency Preparedness",
+        "firstAidFacilities": "First-Aid Facilities",
+        "safeWorkingConditions": "Safe Working Conditions",
+        "occupationalHealthAwareness": "Occupational Health Awareness"
+      },
+      "p2": "Employees are expected to follow all workplace safety guidelines."
+    },
+    "disciplinaryAction": {
+      "heading": "19. Disciplinary Action",
+      "p1": "Misconduct may include:",
+      "list1": {
+        "fraud": "Fraud",
+        "theft": "Theft",
+        "misuseFoundationAssets": "Misuse of Foundation Assets",
+        "harassment": "Harassment",
+        "violence": "Violence",
+        "breachConfidentiality": "Breach of Confidentiality",
+        "falsificationRecords": "Falsification of Records",
+        "unauthorizedAbsence": "Unauthorized Absence"
+      },
+      "p2": "Disciplinary measures may include:",
+      "list2": {
+        "verbalWarning": "Verbal Warning",
+        "writtenWarning": "Written Warning",
+        "suspension": "Suspension",
+        "terminationEmployment": "Termination of Employment"
+      }
+    },
+    "resignation": {
+      "heading": "20. Resignation",
+      "p1": "Employees intending to resign must submit a written resignation and complete the notice period mentioned in their appointment letter unless waived by the Foundation."
+    },
+    "termination": {
+      "heading": "21. Termination",
+      "p1": "Employment may be terminated under the following circumstances:",
+      "list1": {
+        "misconduct": "Misconduct",
+        "unsatisfactoryPerformance": "Unsatisfactory Performance",
+        "organizationalRestructuring": "Organizational Restructuring",
+        "mutualAgreement": "Mutual Agreement",
+        "otherLawfulReasons": "Other Lawful Reasons"
+      },
+      "p2": "The Foundation will follow applicable legal requirements."
+    },
+    "grievanceRedressal": {
+      "heading": "22. Grievance Redressal",
+      "p1": "Employees may raise workplace concerns through the HR Department or designated authority.",
+      "p2": "All grievances will be handled fairly, confidentially, and without retaliation."
+    },
+    "compliance": {
+      "heading": "23. Compliance",
+      "p1": "All employees must comply with:",
+      "list1": {
+        "applicableLawsIndia": "Applicable Laws of India",
+        "foundationPolicies": "Foundation Policies",
+        "internalOperationalProcedures": "Internal Operational Procedures",
+        "ethicalStandards": "Ethical Standards"
+      },
+      "p2": "Where the Foundation carries out regulated financial activities, employees must also comply with all applicable regulatory requirements."
+    },
+    "policyAmendments": {
+      "heading": "24. Policy Amendments",
+      "p1": "Shree Shyam-Baba Micro Growth Foundation reserves the right to review and update this HR Policy whenever required to meet organizational and regulatory needs.",
+      "p2": "Any revised policy updates will be communicated to all employees through appropriate channels."
+    }
+  },
+  "contact": {
+    "address": "Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401",
+    "heading": "Contact Details",
+    "organisation": "Shree Shyam-Baba Micro Growth Foundation",
+    "managingDirector": "Managing Director: Saurav Prakash",
+    "directors": {
+      "label": "Directors:",
+      "names": {
+        "vikramKumar": "Vikram Kumar Sinha",
+        "sumitKumar": "Sumit Kumar",
+        "pravinKumar": "Pravin Kumar Singh"
+      }
+    },
+    "addressHeading": "Office Address"
+  }
+}

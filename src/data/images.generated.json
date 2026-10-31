@@ -1,0 +1,221 @@
+{
+  "heroWomenCards": {
+    "kind": "photo",
+    "width": 1920,
+    "height": 1024,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "base": "/images/hero-women-cards",
+    "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQAAkAA4BaJZgCdAED/PcxmZoAAP7bpdEQMr5eEn7ndWLio4LXN9IEyu9qt3Jo6FHYD2Teo0G2ixd4QdS2gNTJOZCrFd6qt3MfjXWMIAAAAA==",
+    "source": "assets/original/index/finance_banner.jpg"
+  },
+  "fieldMeeting": {
+    "kind": "photo",
+    "width": 1920,
+    "height": 1024,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "base": "/images/field-meeting",
+    "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQAgCdASoQAAkAA4BaJagCdAYtzBKr2sIAAP6bqVqVa4jq/CGGSdvDGMRS/a9zHN3fc9PR+4maL01tfsp/sLpBty0695Bo22Z0DV3D+eWer27WvlwaL1wfbdYjjjOSFqZRfqAA",
+    "source": "assets/original/index/best_hrms_banner.jpg"
+  },
+  "membersLedger": {
+    "kind": "photo",
+    "width": 400,
+    "height": 424,
+    "widths": [
+      400
+    ],
+    "base": "/images/members-ledger",
+    "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBACdASoQABEAPu1iqU2ppaOiMAgBMB2JYgCdACDpjN5Ep67rxv6U7wAA/rgMyWbPhYch+/pOyc8lWDJNLcvui0Wqdp9Ld+6bmdzDg0S1v8p9uo8JdcivuXDTEpLj8FSVSg5HiN5/dmJ+6vo77zujm5Q7JkvHOKCgmWzkm2qx68Dd6z3ci+AA",
+    "source": "assets/original/index/about_me.jpg"
+  },
+  "membersCircle": {
+    "kind": "photo",
+    "width": 481,
+    "height": 481,
+    "widths": [
+      480
+    ],
+    "base": "/images/members-circle",
+    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwAgCdASoQABAAA4BaJbACdAYrxaluziO8qAD++BnhfO3vOzCdYru4YMiU7ieZqo/WPXBwIZelKJbRoZk682q2Iq1vzPjp0t8iv+J88Vusle4upU+mT0+1ucwWYTzs8CLS86mSDhMzzvnI2IKUPG+YNI8k4SbtkI1yPJJ0K5X0UUEKQXilvl0hLu+TEo8or+NtAAAA",
+    "source": "assets/original/about-us/thumb1.jpg"
+  },
+  "visionGroup": {
+    "kind": "photo",
+    "width": 481,
+    "height": 481,
+    "widths": [
+      480
+    ],
+    "base": "/images/vision-group",
+    "blur": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABQAgCdASoQABAAA4BaJaACdAYtpgFaRXLPWgAA/pvzeKqGwl3AFnDb3Kncv14hqVvRX38ku4c2eeyMS1y+98DlaW9ecAzBljVSNw7N3bu67EOQ4RXcjku6n9Qm+tbY0zTQuSLQthqyThBlqrNAp10NJOPJrpON8iFMvqi0d+uJmiWUwAA=",
+    "source": "assets/original/our-vision/vision.jpg"
+  },
+  "award": {
+    "kind": "photo",
+    "width": 1600,
+    "height": 869,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "base": "/images/award",
+    "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoQAAkAA4BaJYgCdAD7Bqq1I1GAAP59Y64HNRLGdVxaffPWXNIP2tD13vzJ4J0VRFrO8qk/TcsYmFzghQVqOANfWGEKDn4wAAA=",
+    "source": "assets/original/index/our-awards.jpeg"
+  },
+  "bannerAbout": {
+    "kind": "photo",
+    "width": 1920,
+    "height": 450,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "base": "/images/banner-about",
+    "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoQAAQAA4BaJQBOgBjMCgQgAP7iUxnhs5Y2+pJyEmbrebA7GqnrfS8G/1Muv3uWXHyCqrbxdaHZWzCAAAA=",
+    "source": "assets/original/about-us/about_us_hero.jpg"
+  },
+  "bannerContact": {
+    "kind": "photo",
+    "width": 1920,
+    "height": 450,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "base": "/images/banner-contact",
+    "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoQAAQAA4BaJQBOgCKJFTKIAPl3A15ZA789+4eTIo8+wZmez0tr26fb8w8eZ7O+KMm1i7lRkCMNZB497xAgAA==",
+    "source": "assets/original/contact-us/contact_us.jpg"
+  },
+  "processRegistration": {
+    "kind": "illustration",
+    "width": 399,
+    "height": 385,
+    "widths": [
+      399
+    ],
+    "base": "/images/process-registration",
+    "blur": null,
+    "source": "assets/original/index/Registration.png"
+  },
+  "processSupport": {
+    "kind": "illustration",
+    "width": 228,
+    "height": 220,
+    "widths": [
+      228
+    ],
+    "base": "/images/process-support",
+    "blur": null,
+    "source": "assets/original/index/support.png"
+  },
+  "processCommunity": {
+    "kind": "illustration",
+    "width": 399,
+    "height": 385,
+    "widths": [
+      399
+    ],
+    "base": "/images/process-community",
+    "blur": null,
+    "source": "assets/original/index/Community.png"
+  },
+  "careers": {
+    "kind": "illustration",
+    "width": 500,
+    "height": 500,
+    "widths": [
+      480
+    ],
+    "base": "/images/careers",
+    "blur": null,
+    "source": "assets/original/career/career.png"
+  },
+  "teamSatyamPushkar": {
+    "kind": "photo",
+    "width": 481,
+    "height": 481,
+    "widths": [
+      480
+    ],
+    "base": "/images/team-satyam-pushkar",
+    "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQABAAA4BaJZgCdAYsZqiOFfQAAPcrnLS1SD7XWC6osCdxkBr4B2kPTgZOrgqdlahz6fhvrdM2YRujCWpgh4cHTKHCUC95TIz93vcsQQ3Sfos1uAA=",
+    "source": "assets/original/index/satyam.jpg"
+  },
+  "teamRanjeetKumar": {
+    "kind": "photo",
+    "width": 481,
+    "height": 480,
+    "widths": [
+      480
+    ],
+    "base": "/images/team-ranjeet-kumar",
+    "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAwAgCdASoQABAAA4BaJQBOgMXr6ZLjSy57gAD+9xKJJbafIkYRB43zhepdfTi++zGqgRdWMKKY6QViDXETbCbR1w1O8iMJnRahoU/LscYG16Wbp4TU/PiJAm7Ie34Tk1FD4f0Cqiv3yBcp0DYKPgAA",
+    "source": "assets/original/index/Ranjeet.jpg"
+  },
+  "teamSumitKumar": {
+    "kind": "photo",
+    "width": 481,
+    "height": 480,
+    "widths": [
+      480
+    ],
+    "base": "/images/team-sumit-kumar",
+    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABwAgCdASoQABAAA4BaJZQCdH8AgtSwj51Vs5oAAPhdFsSzJCYVjJFxVHk38ouYDKJAKkBWoSkzfqNudX8/YOw9u/0zOe/o6X19mcWx3xqVScoZEg1hX0Ue+SJhvFEXxtK30gQAAAA=",
+    "source": "assets/original/index/sumit.jpg"
+  },
+  "teamSauravPrakash": {
+    "kind": "photo",
+    "width": 481,
+    "height": 480,
+    "widths": [
+      480
+    ],
+    "base": "/images/team-saurav-prakash",
+    "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQAgCdASoQABAAA4BaJZgCdAYr72VFTIocpSwAy0+bgK0sGTSyu4I1TescmEMN5x3sl5pp47H4I2WD+xAbggECcHvFnlS8rkWrOD7yJqPFNofrhPr7basB2EODXKsNMBUPHHirOkAU6ZCy5HAvcwSHfHr9ndfqTrP73D/MCAAAAA==",
+    "source": "assets/original/index/saurav.jpg"
+  },
+  "teamVikramSinha": {
+    "kind": "photo",
+    "width": 481,
+    "height": 480,
+    "widths": [
+      480
+    ],
+    "base": "/images/team-vikram-sinha",
+    "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAQCdASoQABAAA4BaJZACdADHY85RXoAA/thxqHWDMl5CLkU8vxmCc0+uZzeUU64mndQmwI3V4GwjJ22i853/UzshvQNUhZidPA4tCTVBTx21fV0ow4Bh7Xl8wSLhWognVK3Om4QtIQI8S4zpQikCAAA=",
+    "source": "assets/original/index/vikram-kumar.jpg"
+  },
+  "teamSonuKumar": {
+    "kind": "photo",
+    "width": 481,
+    "height": 480,
+    "widths": [
+      480
+    ],
+    "base": "/images/team-sonu-kumar",
+    "blur": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAABwAgCdASoQABAAA4BaJYgCdAYtBd0gfwi5RnfAAP4LAjW4w12fefyoYm0jhss2HLGsd5FL+pmfe2fjG8j69FwJr/xyuf+74c8601+svMNdbAS3W+zWvffjD0i/gtPPCWGGyNWZGXgNn1KVRwidkqfygt4w+Ucecmp2g6VJejjvJ4QwsAA=",
+    "source": "assets/original/index/sonu-kumar.jpg"
+  },
+  "teamShishirKumar": {
+    "kind": "photo",
+    "width": 481,
+    "height": 480,
+    "widths": [
+      480
+    ],
+    "base": "/images/team-shishir-kumar",
+    "blur": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACQAgCdASoQABAAA4BaJQBOkGQQVZjLC4solztIAAD+888nXCH62MSoWFUN8kjFq2r/hmILFSZp6Ow/ZOyH8BN5/2x+YeyPMn3SKFjb6k1rsShXyIwEpLPWnlpm7JxjuxJKt4W+k/Tvr1f0qLPBM9erv7RUQYiiZLhcl9lxRwC3qbAAAAA=",
+    "source": "assets/original/index/Shishir.jpg"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "heading": "Our team Members",
+  "members": {
+    "satyamPushkar": {
+      "name": "Satyam pushkar",
+      "role": "Head Business Development"
+    },
+    "ranjeetKumar": {
+      "name": "Ranjeet Kumar",
+      "role": "Executive Director Business"
+    },
+    "sumitKumar": {
+      "name": "Sumit kumar",
+      "role": "Executive Director Finance"
+    },
+    "sauravPrakash": {
+      "name": "Saurav Prakash",
+      "role": "MD, CEO, Founder"
+    },
+    "vikramSinha": {
+      "name": "Vikram Sinha",
+      "role": "Chairman"
+    },
+    "sonuKumar": {
+      "name": "Sonu Kumar",
+      "role": "Head IT"
+    },
+    "shishirKumar": {
+      "name": "Shishir kumar",
+      "role": "Chief Information Officer"
+    }
+  }
+}

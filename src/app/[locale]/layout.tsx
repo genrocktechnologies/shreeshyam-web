@@ -2,10 +2,11 @@ import type { Metadata, Viewport } from 'next';
 import { Fraunces, Kalam, Mukta, Tiro_Devanagari_Hindi } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
 import { MotionScript, SmoothScroll } from '@/components/motion';
-import { routing } from '@/i18n/routing';
+import { pickMessages } from '@/i18n/pick';
+import { clientNamespaces, routing } from '@/i18n/routing';
 import { cn } from '@/lib/cn';
 import '../globals.css';
 
@@ -75,7 +76,7 @@ export default async function LocaleLayout({ children, params: { locale } }: { c
         >
           {t('a11y.skipToContent')}
         </a>
-        <NextIntlClientProvider>
+        <NextIntlClientProvider messages={pickMessages(await getMessages(), clientNamespaces)}>
           <SmoothScroll>{children}</SmoothScroll>
         </NextIntlClientProvider>
       </body>

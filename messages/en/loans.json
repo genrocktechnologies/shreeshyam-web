@@ -1,0 +1,151 @@
+{
+  "products": {
+    "womenEmpowerment": {
+      "meta": {
+        "title": "Women Empowerment Loan"
+      },
+      "name": "Women Empowerment Loan",
+      "intro": "Financial support for women entrepreneurs, Self Help Groups (SHGs), and income-generating activities.",
+      "facts": {
+        "purpose": {
+          "label": "Purpose",
+          "value": "Support women entrepreneurs, Self Help Groups (SHGs), and income-generating activities."
+        },
+        "amount": {
+          "label": "Loan Amount",
+          "value": "₹10,000 – ₹30,000"
+        },
+        "tenure": {
+          "label": "Tenure",
+          "value": "Up to 6 Months"
+        }
+      },
+      "lists": {
+        "keyFeatures": {
+          "label": "Key Features",
+          "items": {
+            "businessExpansion": "Business Expansion",
+            "homeBasedEnterprises": "Home-based Enterprises",
+            "flexibleRepaymentOptions": "Flexible Repayment Options"
+          }
+        }
+      }
+    },
+    "microBusiness": {
+      "meta": {
+        "title": "Micro Business Loan"
+      },
+      "name": "Micro Business Loan",
+      "facts": {
+        "purpose": {
+          "label": "Purpose",
+          "value": "Financial assistance for small businesses and micro-enterprises."
+        },
+        "amount": {
+          "label": "Loan Amount",
+          "value": "₹10,000 – ₹1,00,000"
+        },
+        "tenure": {
+          "label": "Tenure",
+          "value": "0 to 12 Months"
+        }
+      },
+      "lists": {
+        "suitableFor": {
+          "label": "Suitable For:",
+          "items": {
+            "retailShops": "Retail shops",
+            "streetVendors": "Street vendors",
+            "smallTraders": "Small traders",
+            "serviceBusinesses": "Service businesses"
+          }
+        }
+      }
+    },
+    "agricultureLivelihood": {
+      "meta": {
+        "title": "Agriculture & Rural Livelihood Loan"
+      },
+      "name": "Agriculture & Rural Livelihood Loan",
+      "facts": {
+        "purpose": {
+          "label": "Purpose",
+          "value": "Support farmers and rural entrepreneurs."
+        },
+        "amount": {
+          "label": "Loan Amount",
+          "value": "₹10,000 – ₹25,000"
+        }
+      },
+      "lists": {
+        "uses": {
+          "label": "Uses:",
+          "items": {
+            "seedsFertilizers": "Seeds and fertilizers",
+            "irrigation": "Irrigation",
+            "dairyFarming": "Dairy farming",
+            "poultry": "Poultry",
+            "goatFarming": "Goat farming",
+            "farmEquipment": "Farm equipment"
+          }
+        }
+      }
+    },
+    "livestock": {
+      "meta": {
+        "title": "Livestock Loan"
+      },
+      "name": "Livestock Loan",
+      "facts": {
+        "purpose": {
+          "label": "Purpose",
+          "value": "Finance for dairy, poultry, fisheries, and animal husbandry."
+        },
+        "amount": {
+          "label": "Loan Amount",
+          "value": "₹10,000 – ₹30,000"
+        }
+      },
+      "lists": {
+        "benefits": {
+          "label": "Benefits:",
+          "items": {
+            "purchaseLivestock": "Purchase of livestock",
+            "expansionDairyFarms": "Expansion of dairy farms",
+            "poultryFisheriesDevelopment": "Poultry and fisheries development"
+          }
+        },
+        "commonFeatures": {
+          "label": "Common Features :",
+          "items": {
+            "transparentLoanProcess": "Transparent loan process",
+            "competitiveInterestRates": "Competitive interest rates (as applicable)",
+            "simpleDocumentation": "Simple documentation",
+            "flexibleRepaymentOptions": "Flexible repayment options",
+            "customerSupportFinancial": "Customer support and financial guidance",
+            "responsibleLendingPractices": "Responsible lending practices"
+          }
+        },
+        "eligibility": {
+          "label": "Basic Eligibility :",
+          "items": {
+            "indianCitizen": "Indian citizen",
+            "ageYearsAbove": "Age: 18 years or above",
+            "validIdentityAddress": "Valid identity and address proof (Aadhaar Card, PAN Card, Bank Account, Income or Business Proof, Additional document as required)"
+          }
+        },
+        "documents": {
+          "label": "Required Documents :",
+          "items": {
+            "aadhaarCard": "Aadhaar Card",
+            "panCardApplicable": "PAN Card (if applicable)",
+            "passportSizePhotographs": "Passport-size photographs",
+            "addressProof": "Address proof",
+            "bankPassbookStatement": "Bank passbook or statement",
+            "incomeBusinessProof": "Income/business proof (where applicable)"
+          }
+        }
+      }
+    }
+  }
+}

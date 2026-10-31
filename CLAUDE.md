@@ -37,7 +37,10 @@ A static, bilingual (English + Hindi) marketing site for a microfinance / financ
 - `pnpm build`: static export to `out/`
 - `pnpm exec tsx scripts/crawl.ts [pages]`: re-crawl the old site
 - `pnpm exec tsx scripts/audit.ts`: regenerate `docs/content-audit.md`
-- `pnpm exec tsx scripts/images.ts`: optimise `assets/original` into `public/images`
+- `pnpm exec tsx scripts/images.ts`: optimise `assets/original` into `public/images` and regenerate `src/data/images.generated.json`
+- `pnpm exec tsx scripts/brand.ts`: export logos to `public/brand/` and app icons to `src/app/`
+- `pnpm exec tsx scripts/verify-content.ts`: check every crawled string is in `messages/en`, all messages parse, and all adapter keys resolve. It writes `docs/content-verification.md`. Run it after any edit to `messages/en`.
+- `pnpm exec tsx scripts/content-to-messages.ts`: one-off generator, already run. `messages/` is now the content source; don't regenerate (`--force`) unless the crawl changes.
 - `pnpm exec playwright test`: tests
 
 pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNORED_BUILDS`, stop and tell the user to run `pnpm approve-builds`. Do not work around it.
@@ -114,6 +117,12 @@ Measured with mobile Lighthouse (Moto G-class throttling):
   - `src/data`: typed content adapters
   - `src/lib`: utilities
 - Server components by default. Use `"use client"` only for animation, forms and interactive widgets.
+- **Messages:**
+  - There is one namespace per file in `messages/<locale>/`, listed in `namespaces` in `src/i18n/routing.ts`.
+  - Only `common` is sent to the browser. A client component needing other keys wraps itself in a nested `NextIntlClientProvider` with `pickMessages(await getMessages(), ['ns.path'])`.
+  - Some messages keep the old site's emphasis as `<b>…</b>`. Render those with `t.rich(key, richTags)` from `src/lib/rich.tsx`, never with plain `t()`.
+- **Data adapters** (`src/data/*.ts`) hold order, links, images and facts. They reference message keys (`…Key` fields) rather than copying text; `verify-content.ts` checks every key exists.
+- **Images:** use `<Picture image="…" alt={t(altKeyFor(image))} />` from `src/components/ui/Picture.tsx`. Mark the hero `priority`. Never use a raw `<img>` for content images.
 - Motion primitives live in `src/components/motion/`: `Reveal`, `SplitHeading`, `CountUp`, `GoldenThread`, `Parallax`, `MagneticButton`, `SmoothScroll`. Sections compose these; they don't write raw GSAP unless the choreography is unique.
 - Before saying a phase is done, run `pnpm build` and `pnpm exec tsc --noEmit`. Both must pass.
 - Commit at the end of each phase with a clear message.

@@ -40,16 +40,21 @@
       "communityWelfare": "Community Welfare Initiatives"
     },
     "stats": {
-      "women": { "value": "1200+", "label": "Women Entrepreneurs Supported" },
-      "literacy": { "value": "150+", "label": "Financial Literacy Programs" },
-      "trust": { "value": "98%", "label": "Community Trust & Satisfaction" }
+      "women": {
+        "value": "1200+",
+        "label": "Women Entrepreneurs Supported"
+      },
+      "literacy": {
+        "value": "150+",
+        "label": "Financial Literacy Programs"
+      },
+      "trust": {
+        "value": "98%",
+        "label": "Community Trust & Satisfaction"
+      }
     },
     "milestoneHeading": "A Proud Milestone, A Greater Responsibility",
     "processHeading": "Our Process for Empowering Communities Through Financial Inclusion",
-    "cta": "Registration",
-    "alt": {
-      "members": "Two women reviewing cash and handwritten account ledgers at an outdoor table",
-      "award": "A trophy and certificate being presented on stage at the Iconic Business Awards 2026"
-    }
+    "cta": "Registration"
   }
 }
