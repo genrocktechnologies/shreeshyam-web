@@ -8,6 +8,8 @@ export { Parallax } from './Parallax';
 export { ReadingHighlight } from './ReadingHighlight';
 export { Reveal } from './Reveal';
 export { ScrollDrift } from './ScrollDrift';
+export { Shine } from './Shine';
 export { SmoothScroll, useLenis } from './SmoothScroll';
 export { SplitHeading } from './SplitHeading';
+export { ThreadBloom } from './ThreadBloom';
 export { ThreadSeed } from './ThreadSeed';

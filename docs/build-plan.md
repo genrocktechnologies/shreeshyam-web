@@ -106,6 +106,7 @@ How to Join, Register, Contact, Careers, HR Policy, Privacy. Forms are wired to 
   - **Links:** no internal 404s, no `#` or placeholder links.
   - **Visual:** screenshots at 390 and 1440.
 - Lighthouse on Home, a loan page and Register (mobile).
+- **Font preloads:** confirm the Vercel (Linux) build emits `<link rel="preload" as="font">` for Fraunces, Mukta and Kalam (Latin). Local Windows builds emit none: Next 14's font manifest looks for the loader by a `/`-separated path, which seems not to match Windows paths. Without preloads Fraunces swaps late, and Lighthouse shows LCP outliers of about 8s.
 - **Launch checklist: delete the motion playground.** Remove all of these, then rebuild and confirm `/en/dev/motion/` returns 404:
   - [ ] `src/app/[locale]/dev/` (the motion playground and the Phase 2 layout demo)
   - [ ] Point `tests/chrome.spec.ts` (`PAGES` and the `/dev/layout/` tests) at real routes

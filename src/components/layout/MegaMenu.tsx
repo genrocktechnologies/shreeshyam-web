@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type ReactNode } from 'react';
 import { ChevronDown } from '@/components/ui/icons';
-import { cn } from '@/lib/cn';
+import { cx } from '@/lib/cx';
 import { scroll } from '@/lib/motion';
 import { useHeaderMenu } from './HeaderShell';
 
@@ -73,7 +73,7 @@ export function MegaMenu({ id, label, children }: MegaMenuProps) {
           window.clearTimeout(timer.current);
           setOpen((cur) => (mouse ? id : cur === id ? null : id));
         }}
-        className={cn(
+        className={cx(
           'link-draw inline-flex min-h-tap items-center gap-1 px-3 font-bold text-plum-900',
           isOpen && 'text-rani-700',
         )}
@@ -81,7 +81,7 @@ export function MegaMenu({ id, label, children }: MegaMenuProps) {
         {label}
         <ChevronDown
           strokeWidth={2}
-          className={cn('h-4 w-4 transition-transform duration-press ease-growth', isOpen && 'rotate-180')}
+          className={cx('h-4 w-4 transition-transform duration-press ease-growth', isOpen && 'rotate-180')}
         />
       </button>
       <div id={panelId} data-open={isOpen} className="mega-panel absolute inset-x-0 top-full border-t border-rani-100 bg-ivory shadow-lift">

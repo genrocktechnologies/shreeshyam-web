@@ -2,7 +2,7 @@
 
 import { useLocale } from 'next-intl';
 import { useRef, type ReactNode } from 'react';
-import { gsap, motionEnabled, MM, readConditions, SplitText, useGSAP } from '@/lib/gsap';
+import { gsap, motionEnabled, MM, readConditions, SplitText, useGSAP, whenNear } from '@/lib/gsap';
 import { distance, dur, REVEAL_START, stagger } from '@/lib/motion';
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'p';
@@ -41,40 +41,43 @@ export function SplitHeading({ children, as: Tag = 'h2', trigger = 'scroll', del
       const scrollTrigger = trigger === 'scroll' ? { trigger: el, start: REVEAL_START, once: true } : undefined;
 
       mm.add(MM, (ctx) => {
-        if (readConditions(ctx).reduce) {
-          gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: dur.reduce, delay, scrollTrigger });
-          return;
-        }
+        const setup = () => {
+          if (readConditions(ctx).reduce) {
+            gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: dur.reduce, delay, scrollTrigger });
+            return;
+          }
 
-        let split: SplitText | undefined;
-        // Line breaks depend on the web font, so wait for it before measuring. ctx.add keeps
-        // the deferred tweens inside the context so they are reverted on unmount.
-        document.fonts.ready.then(() =>
-          ctx.add(() => {
-            if (!el.isConnected) return;
-            split = SplitText.create(el, {
-              type: byWords ? 'words' : 'lines',
-              mask: byWords ? 'words' : 'lines',
-              aria: 'auto',
-            });
-            gsap.set(el, { opacity: 1 });
-            gsap.from(byWords ? split.words : split.lines, {
-              yPercent: distance.splitRise,
-              duration: dur.base,
-              ease: 'growth',
-              stagger: stagger.tight,
-              delay,
-              scrollTrigger,
-              onComplete: () => {
-                split?.revert();
-                split = undefined;
-                done.current?.();
-              },
-            });
-          }),
-        );
+          let split: SplitText | undefined;
+          // Line breaks depend on the web font, so wait for it before measuring. ctx.add keeps
+          // the deferred tweens inside the context so they are reverted on unmount.
+          document.fonts.ready.then(() =>
+            ctx.add(() => {
+              if (!el.isConnected) return;
+              split = SplitText.create(el, {
+                type: byWords ? 'words' : 'lines',
+                mask: byWords ? 'words' : 'lines',
+                aria: 'auto',
+              });
+              gsap.set(el, { opacity: 1 });
+              gsap.from(byWords ? split.words : split.lines, {
+                yPercent: distance.splitRise,
+                duration: dur.base,
+                ease: 'growth',
+                stagger: stagger.tight,
+                delay,
+                scrollTrigger,
+                onComplete: () => {
+                  split?.revert();
+                  split = undefined;
+                  done.current?.();
+                },
+              });
+            }),
+          );
 
-        return () => split?.revert();
+          return () => split?.revert();
+        };
+        return trigger === 'scroll' ? whenNear(el, ctx, setup) : setup();
       });
     },
     { scope: ref, dependencies: [byWords, trigger, delay] },

@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, type PointerEvent, type ReactNode } from 'react';
-import { cn } from '@/lib/cn';
+import { cx } from '@/lib/cx';
 import { distance, media, spring } from '@/lib/motion';
 
 interface MagneticButtonProps {
@@ -68,7 +68,7 @@ export function MagneticButton({ children, strength = distance.magnetic, classNa
   const reset = () => pullTo(0, 0);
 
   return (
-    <span ref={ref} onPointerMove={onMove} onPointerLeave={reset} onBlur={reset} className={cn('inline-block', className)}>
+    <span ref={ref} onPointerMove={onMove} onPointerLeave={reset} onBlur={reset} className={cx('inline-block', className)}>
       {children}
     </span>
   );

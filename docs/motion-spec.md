@@ -72,6 +72,17 @@ All values below live in `src/lib/motion.ts` (durations, distances, eases, delay
 - **Hero text drift:** the text moves up as the hero scrolls away, but doesn't fade (`opacity.driftTo` = 1). Any fade put the eyebrow and CTA labels below AA contrast while still visible.
 - **About reading highlight:** words start at 62% opacity (`opacity.highlightFrom`), not ink-faint. That is the lowest value that keeps WCAG AA 4.5:1 while words are mid-scrub; lower values fail axe color-contrast.
 - **Thread column:** `--thread-x` is measured inside `.container-site` (20px mobile, 24px from md), not 8% of the viewport. It works out to about 8% at 1440px, and it keeps the thread clear of the text at every width.
+- **Lazy motion setup (`whenNear` in `lib/gsap.ts`):** every scroll primitive (Reveal, SplitHeading, ImageReveal, CountUp, DrawLine, GoldenThread, Parallax, ReadingHighlight, ThreadBloom, Shine, the footer watermark) builds its tweens and ScrollTriggers only when it comes within half a screen of the viewport (`trigger.nearMargin`), each in its own task. Set up eagerly, they ran inside React's hydration commit as one ~0.5s long task on a 4×-throttled phone. Pins (Loans, Process) stay eager, because they change the page height.
+- **Thread stroke:** `vector-effect: non-scaling-stroke` applies only to the unmeasured no-JS fallback. Once measured, the thread draws 1:1 in pixels; leaving it on made DrawSVG call `getScreenCTM` and `getTotalLength` on every scroll frame (about 30% of main-thread time while scrolling).
+- **Height changes re-measure the triggers:** `SmoothScroll` refreshes ScrollTrigger once the page height settles at a new value (`scroll.refreshSettleMs`). Without it, everything below the FAQ fired about 600px late after the accordion collapsed on hydration.
+- **Horizontal clip on `<main>`:** `overflow-x: clip` lives on `<main>`, not on the pinned Loans section. An overflow clip on a pinned element made Chrome report each pin start and end as a full-viewport layout shift (CLS 1.9 while scrolling).
+- **Language switch is a full page load:** a client-side locale change remounts the root layout and drops `html.js-motion`, which left motion off afterwards (content stayed visible, but the pins and reveals were gone).
+- **Loans (§6):** there are no loan photos, so the panels' image counter-parallax is skipped; each panel has its icon instead. Thread story step 3 is a rail leaving the thread with 4 branches; on phones each stacked card gets its own branch.
+- **Process (§7):** the rail badges sit beside the steps; their positions are measured, so the fill reaches badge k exactly as step k arrives.
+- **Award (§8):** the wrap path is computed from the photo frame's box (`GoldenThread wrap`); without JS it isn't drawn.
+- **Testimonials (§9):** one native scroll-snap track at every width. Desktop adds peek scaling (transform only, from scroll position), mouse drag, and a 7s auto-advance with a pause button (WCAG 2.2.2). The track is focusable for keyboard scrolling.
+- **Team (§10):** grayscale uses a `backdrop-filter` overlay faded with opacity (no grey colour token is needed), and only on hover-capable devices. Touch devices always show colour.
+- **FAQ (§11):** without JS every answer is open; after hydration only the first stays open.
 
 ## Home page choreography
 | # | Section | Desktop | Mobile |

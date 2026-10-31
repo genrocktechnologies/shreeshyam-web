@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { fontVariables } from '@/app/fonts';
 import { SiteDocument } from '@/components/layout/SiteDocument';
 import { NotFoundContent } from '@/components/sections/NotFoundContent';
 import { routing } from '@/i18n/routing';
@@ -16,7 +17,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootNotFound() {
   setRequestLocale(locale);
   return (
-    <SiteDocument locale={locale}>
+    <SiteDocument locale={locale} fonts={fontVariables}>
       <NotFoundContent locale={locale} />
     </SiteDocument>
   );

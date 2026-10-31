@@ -31,6 +31,10 @@ export const dur = {
   seed: 0.5,
   /** Stats band: marigold dividers drawing vertically. */
   divider: 0.9,
+  /** Award frame: one gradient shine sweeping across, once (desktop). */
+  shine: 1.2,
+  /** Final CTA bloom: each petal scaling in. */
+  petal: 0.6,
 } as const;
 
 export const stagger = {
@@ -40,6 +44,8 @@ export const stagger = {
   reduce: 0.03,
   /** Reading highlight: per-word offset inside the scrub (relative; the scrub sets the pace). */
   highlight: 0.1,
+  /** Final CTA bloom: petals one after another, radially. */
+  petal: 0.08,
 } as const;
 
 /** Distances in px (splitRise is % of the line height). */
@@ -63,6 +69,8 @@ export const scale = {
   /** Parallax: content is over-scaled so its edges never show. */
   parallaxCover: 1.12,
   seedFrom: 0,
+  /** Testimonial deck: cards beside the active one shrink to this. */
+  peek: 0.92,
 } as const;
 
 export const opacity = {
@@ -95,6 +103,45 @@ export const trigger = {
   highlightEnd: 'bottom 60%',
   driftStart: 'top top',
   driftEnd: 'bottom top',
+  /** Pinned sections (Loans, Process) pin when their top meets the viewport top. */
+  pinStart: 'top top',
+  /** Award frame wrap: the thread draws around the photo as the band scrolls through. */
+  wrapStart: 'top 75%',
+  wrapEnd: 'center 45%',
+  /** Award shine plays once the frame is well inside the viewport. */
+  shineStart: 'top 45%',
+  /** Final CTA: the bloom opens when the band is this far in. */
+  bloomStart: 'top 70%',
+  /** Phone loan cards: each card's branch grows from the thread as it scrolls in. */
+  branchStart: 'top 85%',
+  branchEnd: 'top 55%',
+  /**
+   * IntersectionObserver margin for lazy motion setup (lib/gsap whenNear): a primitive
+   * builds its tweens/ScrollTriggers once it is within half a screen of the viewport.
+   */
+  nearMargin: '50% 0px 50% 0px',
+} as const;
+
+/** Pin lengths for the storytelling sections, in viewport heights of extra scroll. */
+export const pin = {
+  /** Process: 3 steps over 1.5 extra screens (≈250vh with the pinned screen itself). */
+  process: 1.5,
+  /** Share of a pinned timeline a rail node (loan branch, process badge) takes to open. */
+  node: 0.08,
+  /** Process: share of one step's scroll that a text cross-fade / image wipe takes. */
+  stepFade: 0.3,
+} as const;
+
+/** Testimonial deck (desktop). */
+export const deck = {
+  /** Auto-advance interval (s); paused on hover, focus, off-screen, or by the pause button. */
+  interval: 7,
+} as const;
+
+/** Rotations (deg). */
+export const rotate = {
+  /** Service card icon on hover. */
+  icon: 8,
 } as const;
 
 export const spring = { stiffness: 300, damping: 20, rest: 0.01 } as const;
@@ -131,6 +178,8 @@ export const ui = {
   sheetStagger: 40,
   sheetDelay: 80,
   sheetLink: 400,
+  accordion: 350, // FAQ panel grid-template-rows 0fr → 1fr
+  portrait: 500, // team photo grayscale → colour
   megaLink: 350,
   reduce: 200,
 } as const;
@@ -146,6 +195,8 @@ export const scroll = {
   /** Mega menu hover intent (ms). */
   hoverOpenMs: 80,
   hoverCloseMs: 160,
+  /** Re-measure scroll triggers once the page height has been still this long (ms). */
+  refreshSettleMs: 150,
 } as const;
 
 /** Reveals fire once when the element's top passes 82% of the viewport. */

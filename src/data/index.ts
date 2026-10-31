@@ -1,6 +1,7 @@
 export * from './faqs';
 export * from './images';
 export * from './loans';
+export * from './process';
 export * from './services';
 export * from './site';
 export * from './stats';

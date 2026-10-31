@@ -4,7 +4,7 @@ import { Menu, X } from '@/components/ui/icons';
 import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type ReactNode } from 'react';
 import { useLenis } from '@/components/motion';
 import { usePathname } from '@/i18n/navigation';
-import { cn } from '@/lib/cn';
+import { cx } from '@/lib/cx';
 import { ui } from '@/lib/motion';
 
 interface MobileMenuProps {
@@ -101,7 +101,7 @@ export function MobileMenu({ children, openLabel, closeLabel, dialogLabel, class
       >
         <div
           data-open={shown}
-          className={cn(
+          className={cx(
             'mobile-sheet flex h-full flex-col overflow-y-auto bg-ivory shadow-lift transition-transform duration-sheet ease-growth',
             shown ? 'translate-x-0' : 'translate-x-full',
           )}

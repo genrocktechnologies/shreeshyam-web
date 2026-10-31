@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef, type HTMLAttributes, type ReactNode } from 'react';
-import { cn } from '@/lib/cn';
-import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
+import { cx } from '@/lib/cx';
+import { gsap, motionEnabled, MM, readConditions, useGSAP, whenNear } from '@/lib/gsap';
 import { dur, REVEAL_START, scale } from '@/lib/motion';
 
 interface ImageRevealProps extends Omit<HTMLAttributes<HTMLDivElement>, 'children' | 'className'> {
@@ -33,13 +33,16 @@ export function ImageReveal({ children, shape = 'arch', trigger = 'scroll', dela
       const mm = gsap.matchMedia();
 
       mm.add(MM, (ctx) => {
-        if (readConditions(ctx).reduce) {
-          gsap.fromTo(el, { opacity: 0, clipPath: open }, { opacity: 1, duration: dur.reduce, delay, scrollTrigger });
-          return;
-        }
-        const tl = gsap.timeline({ delay, scrollTrigger, defaults: { duration: dur.slow, ease: 'growth' } });
-        tl.fromTo(el, { clipPath: `inset(100% 0% 0% 0% ${ROUND[shape]})` }, { clipPath: open });
-        if (media) tl.fromTo(media, { scale: scale.imageFrom }, { scale: 1, clearProps: 'transform' }, 0);
+        const setup = () => {
+          if (readConditions(ctx).reduce) {
+            gsap.fromTo(el, { opacity: 0, clipPath: open }, { opacity: 1, duration: dur.reduce, delay, scrollTrigger });
+            return;
+          }
+          const tl = gsap.timeline({ delay, scrollTrigger, defaults: { duration: dur.slow, ease: 'growth' } });
+          tl.fromTo(el, { clipPath: `inset(100% 0% 0% 0% ${ROUND[shape]})` }, { clipPath: open });
+          if (media) tl.fromTo(media, { scale: scale.imageFrom }, { scale: 1, clearProps: 'transform' }, 0);
+        };
+        return trigger === 'scroll' ? whenNear(el, ctx, setup) : setup();
       });
     },
     { scope: ref, dependencies: [shape, trigger, delay] },
@@ -50,7 +53,7 @@ export function ImageReveal({ children, shape = 'arch', trigger = 'scroll', dela
       ref={ref}
       data-image-reveal={shape}
       {...rest}
-      className={cn('overflow-hidden', shape === 'arch' ? 'rounded-arch' : 'rounded-2xl', className)}
+      className={cx('overflow-hidden', shape === 'arch' ? 'rounded-arch' : 'rounded-2xl', className)}
     >
       {children}
     </div>

@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import { distance, dur, ease, hero, scale, ui } from './src/lib/motion';
+import { distance, dur, ease, hero, rotate, scale, ui } from './src/lib/motion';
 
 const ms = (v: number) => `${v}ms`;
 
@@ -101,6 +101,8 @@ const config: Config = {
         'hero-title': `rise ${dur.base}s ${ease.growth} ${hero.title}s both`,
         'hero-ctas': `scale-in ${dur.base}s ${ease.growth} ${hero.ctas}s both`,
       },
+      rotate: { icon: `${rotate.icon}deg` },
+      scale: { peek: String(scale.peek) },
       minHeight: { tap: '48px' },
       minWidth: { tap: '48px' },
     },

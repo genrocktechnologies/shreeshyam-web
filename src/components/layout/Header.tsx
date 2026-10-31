@@ -1,6 +1,7 @@
 import { getTranslations } from 'next-intl/server';
 import { Button } from '@/components/ui/Button';
-import { HandCoins, Mail, MapPin, MessageCircle, Milk, Phone, Sprout, Store, type IconComponent } from '@/components/ui/icons';
+import { Mail, MapPin, MessageCircle, Phone } from '@/components/ui/icons';
+import { LOAN_ICONS } from '@/components/ui/loan-icons';
 import { Logo } from '@/components/ui/Logo';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { altKeyFor } from '@/data/images';
@@ -29,12 +30,6 @@ const TOP_LINKS = [
   { href: '/contact/', key: 'contact' },
 ] as const;
 
-export const LOAN_ICONS: Record<(typeof loans)[number]['id'], IconComponent> = {
-  womenEmpowerment: HandCoins,
-  microBusiness: Store,
-  agricultureLivelihood: Sprout,
-  livestock: Milk,
-};
 
 export async function Header({ locale }: { locale: Locale }) {
   const t = await getTranslations({ locale });

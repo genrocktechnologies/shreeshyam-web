@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { cn } from '@/lib/cn';
+import { cx } from '@/lib/cx';
 import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
 import { dur, hero, scale } from '@/lib/motion';
 
@@ -40,7 +40,7 @@ export function ThreadSeed({ delay = hero.seed, className }: { delay?: number; c
       viewBox="0 0 24 24"
       aria-hidden="true"
       focusable="false"
-      className={cn('pointer-events-none h-6 w-6 overflow-visible', className)}
+      className={cx('pointer-events-none h-6 w-6 overflow-visible', className)}
     >
       <circle cx="12" cy="12" r="11" className="fill-marigold-200/60" />
       <circle cx="12" cy="12" r="5.5" className="fill-marigold-400" />

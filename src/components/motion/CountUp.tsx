@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef } from 'react';
-import { cn } from '@/lib/cn';
-import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
+import { cx } from '@/lib/cx';
+import { gsap, motionEnabled, MM, readConditions, useGSAP, whenNear } from '@/lib/gsap';
 import { dur, ease, REVEAL_START } from '@/lib/motion';
 
 interface CountUpProps {
@@ -33,11 +33,12 @@ export function CountUp({ value, duration = dur.count, className }: CountUpProps
       const decimals = digits.split('.')[1]?.length ?? 0;
       const mm = gsap.matchMedia();
 
-      mm.add(MM, (ctx) => {
-        if (readConditions(ctx).reduce) return;
-        const counter = { n: 0 };
-        const render = () => {
-          el.textContent = `${prefix}${counter.n.toFixed(decimals)}${suffix}`;
+      mm.add(MM, (ctx) =>
+        whenNear(el, ctx, () => {
+          if (readConditions(ctx).reduce) return;
+          const counter = { n: 0 };
+          const render = () => {
+            el.textContent = `${prefix}${counter.n.toFixed(decimals)}${suffix}`;
         };
         render();
         gsap.to(counter, {
@@ -50,7 +51,7 @@ export function CountUp({ value, duration = dur.count, className }: CountUpProps
         return () => {
           el.textContent = value;
         };
-      });
+      }));
     },
     { scope: ref, dependencies: [value, duration] },
   );
@@ -58,7 +59,7 @@ export function CountUp({ value, duration = dur.count, className }: CountUpProps
   return (
     <span
       data-final={value}
-      className={cn(
+      className={cx(
         'inline-grid tabular-nums before:invisible before:content-[attr(data-final)] before:[grid-area:1/1]',
         className,
       )}

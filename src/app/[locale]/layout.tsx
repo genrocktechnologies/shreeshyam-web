@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import type { ReactNode } from 'react';
+import { fontVariables } from '@/app/fonts';
 import { SiteDocument } from '@/components/layout/SiteDocument';
 import { routing } from '@/i18n/routing';
 
@@ -22,11 +23,14 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   const t = await getTranslations({ locale, namespace: 'common' });
   return {
     title: { default: t('siteName'), template: `%s | ${t('siteName')}` },
+    // The crawled site has no meta description, so the default reuses the footer's
+    // published blurb (copy is never invented). Pages may override it.
+    description: t.markup('footer.blurb', { b: (chunks) => chunks }),
   };
 }
 
 export default function LocaleLayout({ children, params: { locale } }: { children: ReactNode; params: { locale: string } }) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
-  return <SiteDocument locale={locale}>{children}</SiteDocument>;
+  return <SiteDocument locale={locale} fonts={fontVariables}>{children}</SiteDocument>;
 }

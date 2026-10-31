@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, type ReactNode } from 'react';
-import { cn } from '@/lib/cn';
+import { cx } from '@/lib/cx';
 import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
 import { dur, hero } from '@/lib/motion';
 
@@ -37,7 +37,7 @@ export function HeroTitle({ children, className }: { children: ReactNode; classN
   );
 
   return (
-    <h1 ref={ref} className={cn('animate-hero-title', className)}>
+    <h1 ref={ref} className={cx('animate-hero-title', className)}>
       {children}
     </h1>
   );

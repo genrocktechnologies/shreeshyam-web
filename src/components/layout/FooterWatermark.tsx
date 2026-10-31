@@ -2,7 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element -- decorative brand file from public/brand */
 import { useRef } from 'react';
-import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
+import { gsap, motionEnabled, MM, readConditions, useGSAP, whenNear } from '@/lib/gsap';
 import { watermark } from '@/lib/motion';
 
 /**
@@ -24,14 +24,16 @@ export function FooterWatermark() {
       if (!img || !motionEnabled()) return;
       const footer = img.closest('footer') ?? img;
       const mm = gsap.matchMedia();
-      mm.add(MM, (ctx) => {
-        if (!readConditions(ctx).isDesktop) return;
-        gsap.fromTo(
-          img,
-          { y: watermark.drift },
-          { y: -watermark.drift, ease: 'none', scrollTrigger: { trigger: footer, start: 'top bottom', end: 'bottom bottom', scrub: watermark.scrub } },
-        );
-      });
+      mm.add(MM, (ctx) =>
+        whenNear(footer, ctx, () => {
+          if (!readConditions(ctx).isDesktop) return;
+          gsap.fromTo(
+            img,
+            { y: watermark.drift },
+            { y: -watermark.drift, ease: 'none', scrollTrigger: { trigger: footer, start: 'top bottom', end: 'bottom bottom', scrub: watermark.scrub } },
+          );
+        })
+      );
     },
     { scope: desktop },
   );

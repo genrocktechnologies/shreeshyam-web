@@ -38,7 +38,14 @@ interface CommonProps extends Variants {
   className?: string;
 }
 
-type LinkButtonProps = CommonProps & { href: string; /** Internal links only. */ prefetch?: boolean } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className' | 'children'>;
+type LinkButtonProps = CommonProps & {
+  href: string;
+  /**
+   * Internal links only. Off by default: most visitors are on metered, patchy 4G, so we
+   * don't spend their data on pages they may never open.
+   */
+  prefetch?: boolean;
+} & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className' | 'children'>;
 type NativeButtonProps = CommonProps & { href?: undefined } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'children'>;
 
 const isInternal = (href: string) => href.startsWith('/') && !href.startsWith('//');
@@ -64,7 +71,7 @@ export function Button(props: LinkButtonProps | NativeButtonProps) {
   );
 
   if (rest.href !== undefined) {
-    const { href, prefetch, ...anchor } = rest as LinkButtonProps;
+    const { href, prefetch = false, ...anchor } = rest as LinkButtonProps;
     return isInternal(href) ? (
       <Link href={href} prefetch={prefetch} className={classes} {...anchor}>
         {content}

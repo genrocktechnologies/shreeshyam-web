@@ -127,6 +127,35 @@
   }
 }
 
+/* Lenis base styles (lenis/dist/lenis.css, v1.3), inlined here: as a separate import
+ * it became its own render-blocking stylesheet request for 456 bytes. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch],
+.lenis [data-lenis-prevent-vertical],
+.lenis [data-lenis-prevent-horizontal] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
+
 /* ---------------------------------------------------------- components */
 @layer components {
   .container-site {
@@ -349,7 +378,8 @@
 }
 
 .js-motion [data-accent-underline],
-.js-motion [data-thread-seed] {
+.js-motion [data-thread-seed],
+.js-motion [data-bloom] {
   opacity: 0;
 }
 

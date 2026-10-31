@@ -18,6 +18,8 @@
     "next": "Next",
     "slideOf": "{current} of {total}",
     "goToSlide": "Go to item {number}",
+    "pauseSlides": "Pause automatic slides",
+    "playSlides": "Play automatic slides",
     "readingProgress": "Reading progress",
     "onThisPage": "On this page",
     "backToTop": "Back to top",

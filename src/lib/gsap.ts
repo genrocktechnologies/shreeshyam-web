@@ -6,7 +6,7 @@ import { CustomEase } from 'gsap/CustomEase';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SplitText } from 'gsap/SplitText';
-import { isLowEnd, media } from './motion';
+import { isLowEnd, media, trigger } from './motion';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText, DrawSVGPlugin, CustomEase);
@@ -60,6 +60,46 @@ export function motionEnabled(): boolean {
 /** Marks motion as booted so the inline safety timeout keeps `html.js-motion`. */
 export function markMotionReady() {
   if (typeof window !== 'undefined') (window as Window & { __motionReady?: boolean }).__motionReady = true;
+}
+
+/**
+ * Runs a primitive's motion setup only once `el` is within `trigger.nearMargin` of the
+ * viewport (or already scrolled past it), inside `ctx` so it is still reverted on
+ * unmount. Use it as the return value of a `gsap.matchMedia().add()` callback:
+ *
+ *   mm.add(MM, (ctx) => whenNear(el, ctx, () => { gsap.fromTo(...); }));
+ *
+ * Why: useGSAP runs in React's layout-effect phase, so eager setup for every primitive
+ * on the page (≈60 tweens and ScrollTriggers on the home page) landed inside the
+ * hydration task as one ~0.5 s long task on a 4×-throttled phone. Deferred, load does
+ * almost no GSAP work, and each primitive sets up in its own small task as it approaches.
+ * `setup` may return a cleanup; the returned function disconnects and runs it.
+ */
+export function whenNear(el: Element, ctx: gsap.Context, setup: () => void | (() => void)): () => void {
+  let cleanup: void | (() => void);
+  let task = 0;
+  const io = new IntersectionObserver(
+    (entries) => {
+      const e = entries[entries.length - 1];
+      if (!e.isIntersecting && e.boundingClientRect.top > 0) return; // still below
+      io.disconnect();
+      // IntersectionObserver delivers every observer's callback in the same task, so all
+      // primitives already near the viewport at load would set up in one long task. A
+      // macrotask hop gives each its own short task.
+      task = window.setTimeout(() =>
+        ctx.add(() => {
+          cleanup = setup();
+        }),
+      );
+    },
+    { rootMargin: trigger.nearMargin },
+  );
+  io.observe(el);
+  return () => {
+    io.disconnect();
+    window.clearTimeout(task);
+    cleanup?.();
+  };
 }
 
 export { gsap, ScrollTrigger, SplitText, useGSAP };

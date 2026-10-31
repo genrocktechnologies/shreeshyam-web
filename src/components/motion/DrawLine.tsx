@@ -1,8 +1,8 @@
 'use client';
 
 import { useRef } from 'react';
-import { cn } from '@/lib/cn';
-import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
+import { cx } from '@/lib/cx';
+import { gsap, motionEnabled, MM, readConditions, useGSAP, whenNear } from '@/lib/gsap';
 import { dur, REVEAL_START, stagger } from '@/lib/motion';
 
 interface DrawLineProps {
@@ -28,20 +28,22 @@ export function DrawLine({ axis = 'y', index = 0, className }: DrawLineProps) {
       const prop = axis === 'y' ? 'scaleY' : 'scaleX';
       const scrollTrigger = { trigger: el, start: REVEAL_START, once: true };
       const mm = gsap.matchMedia();
-      mm.add(MM, (ctx) => {
-        if (readConditions(ctx).reduce) {
-          gsap.fromTo(el, { [prop]: 1, opacity: 0 }, { opacity: 1, duration: dur.reduce, scrollTrigger });
-          return;
-        }
-        gsap.fromTo(
-          el,
-          { [prop]: 0, transformOrigin: axis === 'y' ? '50% 0%' : '0% 50%' },
-          { [prop]: 1, duration: dur.divider, delay: index * stagger.base, ease: 'growth', scrollTrigger },
-        );
-      });
+      mm.add(MM, (ctx) =>
+        whenNear(el, ctx, () => {
+          if (readConditions(ctx).reduce) {
+            gsap.fromTo(el, { [prop]: 1, opacity: 0 }, { opacity: 1, duration: dur.reduce, scrollTrigger });
+            return;
+          }
+          gsap.fromTo(
+            el,
+            { [prop]: 0, transformOrigin: axis === 'y' ? '50% 0%' : '0% 50%' },
+            { [prop]: 1, duration: dur.divider, delay: index * stagger.base, ease: 'growth', scrollTrigger },
+          );
+        })
+      );
     },
     { scope: ref, dependencies: [axis, index] },
   );
 
-  return <span ref={ref} aria-hidden="true" data-draw-line={axis} className={cn('pointer-events-none block', className)} />;
+  return <span ref={ref} aria-hidden="true" data-draw-line={axis} className={cx('pointer-events-none block', className)} />;
 }

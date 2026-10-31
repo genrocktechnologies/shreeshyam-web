@@ -1,11 +1,11 @@
-import type { ImageKey } from './images';
+import type { PhotoKey } from './images';
 import type { SocialLink } from './site';
 
 export interface TeamMember {
   id: string;
   nameKey: string;
   roleKey: string;
-  photo: ImageKey;
+  photo: PhotoKey;
   /** Shown larger on the Team page (site-plan: Chairman and MD/CEO). */
   featured: boolean;
   /** Placeholders at the client's request; TeamCard renders icons only for real URLs. */
@@ -19,7 +19,7 @@ const placeholderSocials = (): SocialLink[] => [
   { network: 'instagram', url: 'https://www.instagram.com/', placeholder: true },
 ];
 
-const member = (id: string, photo: ImageKey, featured = false): TeamMember => ({
+const member = (id: string, photo: PhotoKey, featured = false): TeamMember => ({
   id,
   nameKey: `team.members.${id}.name`,
   roleKey: `team.members.${id}.role`,

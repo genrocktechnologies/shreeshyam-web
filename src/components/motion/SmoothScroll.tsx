@@ -1,10 +1,9 @@
 'use client';
 
 import Lenis from 'lenis';
-import 'lenis/dist/lenis.css';
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 import { gsap, markMotionReady, ScrollTrigger } from '@/lib/gsap';
-import { HEADER_OFFSET, isLowEnd, media } from '@/lib/motion';
+import { HEADER_OFFSET, isLowEnd, media, scroll } from '@/lib/motion';
 
 const LenisContext = createContext<Lenis | null>(null);
 
@@ -25,6 +24,21 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
   useEffect(() => {
     markMotionReady();
     document.fonts?.ready.then(() => ScrollTrigger.refresh());
+
+    // ScrollTrigger only re-measures on window resize. When the page height changes for
+    // another reason (the FAQ collapsing after hydration, an answer opened), every trigger
+    // below it would fire at stale positions, so refresh once the height settles.
+    let measured = 0;
+    let timer = 0;
+    const onRefresh = () => (measured = document.body.scrollHeight);
+    ScrollTrigger.addEventListener('refresh', onRefresh);
+    const ro = new ResizeObserver(() => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        if (document.body.scrollHeight !== measured) ScrollTrigger.refresh();
+      }, scroll.refreshSettleMs);
+    });
+    ro.observe(document.body);
 
     const mql = window.matchMedia(SMOOTH_QUERY);
     let instance: Lenis | null = null;
@@ -52,6 +66,9 @@ export function SmoothScroll({ children }: { children: ReactNode }) {
     mql.addEventListener('change', onChange);
     return () => {
       mql.removeEventListener('change', onChange);
+      ScrollTrigger.removeEventListener('refresh', onRefresh);
+      ro.disconnect();
+      window.clearTimeout(timer);
       stop();
     };
   }, []);
