@@ -22,6 +22,7 @@ export const distance = { reveal: 28, parallax: 60 }; // px
 - Reveals trigger at `start: 'top 82%'`, once. Don't reverse on scroll-up; replaying animations feels nervous.
 
 ## Engine setup
+- **Libraries:** GSAP (with `@gsap/react`), Lenis, and CSS. The `motion` (framer-motion) library is not used; it was removed to protect the 180 KB first-load JS budget. Anything below that once relied on it now uses a CSS transition or GSAP, as noted.
 - **`SmoothScroll` provider (client):**
   - Create Lenis on desktop only (`(min-width:1024px) and (pointer:fine)` and not reduced-motion), with `lerp: 0.1`.
   - Run `lenis.raf` from `gsap.ticker`, set `gsap.ticker.lagSmoothing(0)`, and call `ScrollTrigger.update` on Lenis scroll.
@@ -29,6 +30,7 @@ export const distance = { reveal: 28, parallax: 60 }; // px
 - **`html.js-motion`:** an inline script in `<head>` adds this class immediately. Initial hidden states (e.g. `.js-motion [data-reveal]{opacity:0}`) live only under it, so content stays visible without JS.
 - **Initialisation:**
   - Register plugins once in `src/lib/gsap.ts`: ScrollTrigger, SplitText, DrawSVGPlugin, CustomEase.
+  - The Flip plugin is **not** registered globally. It is imported and registered inside the gallery route only, so no other page pays for it.
   - Call `ScrollTrigger.refresh()` after `document.fonts.ready` and after each lazy image loads inside pinned sections.
 - **`gsap.matchMedia()` contexts:** `isDesktop` (≥1024), `isTablet` (768–1023), `isMobile` (<768), `reduce`.
 
@@ -40,7 +42,7 @@ export const distance = { reveal: 28, parallax: 60 }; // px
 | `CountUp` | Counts from 0 to the target over 1.8s with `power2.out` when in view. Keeps suffixes (`+`, `%`). Uses `tabular-nums`. Under reduced motion it shows the final value. Renders the final value in SSR HTML, for SEO and no-JS. |
 | `GoldenThread` | An SVG path per section. DrawSVG goes 0% → 100%, scrubbed to that section's scroll (`start:'top 70%'`, `end:'bottom 60%'`, `scrub: 0.6`). |
 | `Parallax` | Image moves ±`distance.parallax` px inside its arch mask (the image is scaled 1.12 so edges never show). Desktop only. |
-| `MagneticButton` | Primary CTAs pull up to 6px toward the cursor (`motion` spring, stiffness 300, damping 20). Fine pointer only. |
+| `MagneticButton` | Primary CTAs pull up to 6px toward the cursor, using a hand-written spring (stiffness 300, damping 20, mass 1) in `MagneticButton.tsx`, with no library. Fine pointer only; static under reduced motion. |
 | `ImageReveal` | Arch mask opens with `clip-path: inset(100% 0 0 0 round 999px 999px 28px 28px)` → `inset(0 ...)` and the image scales 1.15 → 1, `dur.slow`. |
 
 ### The Golden Thread (signature)
@@ -57,8 +59,8 @@ export const distance = { reveal: 28, parallax: 60 }; // px
 - On mobile the thread is drawn per section with a lighter stroke and no glow.
 
 ## Page transitions
-Route changes use a short curtain: a `rani-600` panel slides up and away (0.5s total). Use the Next 14 `template.tsx` + `motion` `AnimatePresence`.
-- Skip it under reduced motion.
+Route changes use a short curtain: a `rani-600` panel slides up and away (0.5s total). Use the Next 14 `template.tsx` with a GSAP timeline (`yPercent` on the panel, inside `useGSAP` so it reverts on unmount).
+- Skip it under reduced motion: no panel, no timeline.
 - Never block the first paint of the first page load.
 
 ## Home page choreography
@@ -84,13 +86,15 @@ Route changes use a short curtain: a `rani-600` panel slides up and away (0.5s t
 - **Loan product pages:** KeyFacts card values Reveal; a "documents needed" checklist gets ticks drawn in stagger when it scrolls into view.
 - **Registration process:** vertical Stepper, with the thread filling as you scroll through the steps.
 - **Forms:** field focus shows a label micro-lift and a marigold underline grow. On submit the button morphs into a spinner, then a check. Success is a thread-bloom mini animation plus a message. Errors shake 4px, once, with an `aria-live` announcement.
-- **Gallery:** masonry Reveal; lightbox opens from the thumbnail position (FLIP via `motion` layoutId).
+- **Gallery:** masonry Reveal; lightbox opens from the thumbnail position, as a FLIP animation using the GSAP Flip plugin. Import Flip only on the gallery route. Under reduced motion the lightbox simply fades.
 
-## Micro-interactions (`motion`)
-- Buttons: hover lift 2px, press scale 0.98, arrow slide.
+## Micro-interactions (CSS transitions)
+No JS library. Each is a CSS transition on `transform` / `opacity` (plus `box-shadow` for cards), using the `growth` easing (`ease-growth` in Tailwind), and disabled or reduced to a fade under `prefers-reduced-motion`.
+- Buttons: hover lift 2px, press scale 0.98, arrow slide 4px.
 - Cards: hover lift with `shadow-lift`, 0.25s.
-- Links: underline draws left→right, 0.3s.
-- LanguageSwitch: the pill indicator slides between EN and हिं (layoutId).
+- Links: underline draws left→right, 0.3s (`scale-x` on a pseudo-element).
+- LanguageSwitch: the pill indicator slides between EN and हिं with a CSS `transform: translateX(…)`, switched by the active locale.
+- Accordion: CSS `grid-template-rows: 0fr → 1fr` over 0.35s. This is the one approved exception to the transform/opacity-only rule. See design-system.md for markup and aria.
 
 ## Reduced motion & low-end fallback
 - Under `prefers-reduced-motion: reduce`:

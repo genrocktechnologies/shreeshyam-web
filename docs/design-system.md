@@ -80,11 +80,11 @@ success:'#1F8A5B', danger:'#C62828',
 | **ProcessStep** | Large outlined numeral (01–03), title, text, image |
 | **TestimonialCard** | Kalam quote mark, quote, name; initials avatar (rani-100 circle). No photos, since none exist. |
 | **TeamCard** | Photo (arch mask, grayscale → colour on hover), name, role. Social icons render only if real URLs exist. |
-| **Accordion** | Accessible (button + region, `aria-expanded`); height animated with `motion`; plus icon rotates into a cross |
+| **Accordion** | A `<button aria-expanded aria-controls>` inside a heading, controlling a `role="region"` panel with `aria-labelledby`. Opening animates the panel wrapper's CSS `grid-template-rows` from `0fr` to `1fr` over 0.35s, with an `overflow-hidden` inner child. A collapsed panel also gets `inert`, so its links can't be tabbed to. The plus icon rotates into a cross with a CSS transform. Instant under reduced motion. No JS animation library. |
 | **KeyFacts** | Definition-list card for loan facts; renders only the fields present |
 | **Stepper** | Vertical numbered steps joined by the thread line |
 | **Form fields** | Visible labels (never placeholder-only), 52px inputs, inline bilingual errors, `inputMode` set (`tel`, `numeric`) |
-| **LanguageSwitch** | `EN \| हिं` pill toggle; keeps the current path |
+| **LanguageSwitch** | `EN \| हिं` pill toggle; keeps the current path. The indicator moves with a CSS `transform` transition. |
 | **MobileActionBar** | Fixed bottom bar on < md: Register (primary) + Call/WhatsApp, which appear only when the numbers exist. Hides on scroll down, shows on scroll up. |
 
 ## Iconography & imagery

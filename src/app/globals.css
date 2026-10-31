@@ -2,26 +2,159 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ---------------------------------------------------------------- base */
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  body {
+    @apply bg-ivory font-body text-body text-ink antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2 {
+    @apply font-display font-semibold text-plum-900;
+    font-optical-sizing: auto;
+  }
+
+  h1 {
+    @apply text-display;
+  }
+
+  h2 {
+    @apply text-h2;
+  }
+
+  h3 {
+    @apply font-body text-h3 font-bold text-plum-900;
+  }
+
+  p {
+    @apply max-w-prose;
+  }
+
+  ::selection {
+    @apply bg-marigold-200 text-plum-900;
+  }
+
+  /* Focus: 3px marigold-300 ring with a 2px offset, keyboard only. */
+  :focus-visible {
+    outline: 3px solid theme('colors.marigold.300');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Hindi: Devanagari display face and roomier line-heights. */
+  :lang(hi) h1,
+  :lang(hi) h2,
+  :lang(hi) .font-display {
+    font-family: var(--font-display-hi), var(--font-body), serif;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  :lang(hi) h1,
+  :lang(hi) .text-display {
+    line-height: 1.25;
+  }
+
+  :lang(hi) h2,
+  :lang(hi) .text-h2 {
+    line-height: 1.3;
+  }
+
+  :lang(hi) body,
+  :lang(hi) .text-body {
+    line-height: 1.85;
+  }
+
+  /* Eyebrows are never uppercased in Devanagari. */
+  :lang(hi) .eyebrow {
+    text-transform: none;
+    letter-spacing: 0.02em;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------------------------------------------------------- components */
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-container px-5 md:px-8;
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .eyebrow {
+    @apply font-body text-eyebrow font-bold uppercase text-rani-600;
+  }
+
+  .stat-number {
+    @apply font-display text-stat font-semibold tabular-nums;
+  }
+
+  .accent-script {
+    @apply font-script text-accent font-bold;
+  }
 }
 
+/* ----------------------------------------------------------- utilities */
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  /* Subtle CSS noise (≤ 4% opacity) for rani/plum bands. Parent needs `relative`. */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+  }
+
+  .mask-arch {
+    border-radius: 999px 999px 28px 28px;
+    overflow: hidden;
+  }
+}
+
+/* ------------------------------------------------- motion start states
+ * Only apply under html.js-motion, which an inline <head> script adds. Without JS
+ * (or if the motion code never boots) every element stays visible. */
+.js-motion [data-reveal='self'],
+.js-motion [data-reveal='stagger'] > *,
+.js-motion [data-split],
+.js-motion [data-thread] {
+  opacity: 0;
+}
+
+.js-motion [data-image-reveal] {
+  clip-path: inset(100% 0 0 0 round 999px 999px 28px 28px);
+}
+
+.js-motion [data-image-reveal='rounded'] {
+  clip-path: inset(100% 0 0 0 round 20px);
 }

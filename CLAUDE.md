@@ -24,7 +24,8 @@ A static, bilingual (English + Hindi) marketing site for a microfinance / financ
 | Framework | Next.js **14.2.35**, App Router, `output: 'export'`, `trailingSlash: true`, `images.unoptimized: true` |
 | UI / language | React 18.3, TypeScript ~5.7 (strict) |
 | Styling | Tailwind CSS 3.4 (tokens in `tailwind.config.ts`, see design-system.md), `clsx` + `tailwind-merge` via `cn()`, `class-variance-authority` for variants |
-| Animation | GSAP 3.15 (ScrollTrigger, SplitText, DrawSVGPlugin) via `@gsap/react` `useGSAP`; Lenis 1.3 for smooth scroll; `motion` for component micro-interactions |
+| Animation | GSAP 3.15 (ScrollTrigger, SplitText, DrawSVGPlugin, CustomEase; Flip on the gallery route only) via `@gsap/react` `useGSAP`; Lenis 1.3 for smooth scroll |
+| Micro-interaction library | none: CSS + GSAP only (bundle budget). `motion` / framer-motion was removed and must not be re-added. |
 | i18n | next-intl 4, routes `/en/...` and `/hi/...` |
 | Forms | react-hook-form + zod; submission via Web3Forms (fetch, no SDK) to the foundation's email |
 | Icons | lucide-react |
@@ -75,6 +76,14 @@ pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNOR
 
 ## Motion rules (summary — full detail in motion-spec.md)
 - Only animate `transform`, `opacity`, `clip-path` and SVG `stroke-dashoffset`. Never animate layout properties.
+  - The one approved exception: the Accordion's CSS `grid-template-rows: 0fr → 1fr`.
+- **No `motion` (framer-motion) library.** Use these instead:
+  - Button, card and link hovers: CSS transitions.
+  - Accordion: CSS `grid-template-rows: 0fr → 1fr` over 0.35s, with correct aria attributes (see design-system.md).
+  - LanguageSwitch pill: CSS `transform`.
+  - Page-transition curtain: GSAP, skipped under reduced motion.
+  - Gallery lightbox FLIP: the GSAP Flip plugin, imported only on the gallery route.
+  - MagneticButton: the hand-written spring in `src/components/motion/MagneticButton.tsx`.
 - All text must be server-rendered and visible without JS.
   - Hide-before-reveal states apply only under `html.js-motion`, which a tiny inline script adds.
   - If JS fails, content shows.

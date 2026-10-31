@@ -91,7 +91,10 @@ How to Join, Register, Contact, Careers, HR Policy, Privacy. Forms are wired to 
   - **Links:** no internal 404s, no `#` or placeholder links.
   - **Visual:** screenshots at 390 and 1440.
 - Lighthouse on Home, a loan page and Register (mobile).
-- Delete the `/dev` playground.
+- **Launch checklist: delete the motion playground.** Remove all of these, then rebuild and confirm `/en/dev/motion/` returns 404:
+  - [ ] `src/app/[locale]/dev/`
+  - [ ] `messages/en/dev.json` and `messages/hi/dev.json` (also remove `'dev'` from `namespaces` in `src/i18n/routing.ts`)
+  - [ ] `public/dev/`
 - Create a GitHub repo, import it into Vercel, add the env var, and set the custom domain.
 - Verify all old `.php` URLs 301 correctly on the preview deployment before switching DNS.
 

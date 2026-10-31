@@ -1,0 +1,48 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/", "has": [{ "type": "header", "key": "accept-language", "value": "hi.*" }], "destination": "/hi/", "permanent": false },
+    { "source": "/", "destination": "/en/", "permanent": false },
+
+    { "source": "/index.php", "destination": "/en/", "statusCode": 301 },
+    { "source": "/about-us.php", "destination": "/en/about/", "statusCode": 301 },
+    { "source": "/our-mission.php", "destination": "/en/about/mission/", "statusCode": 301 },
+    { "source": "/our-vision.php", "destination": "/en/about/vision/", "statusCode": 301 },
+    { "source": "/team.php", "destination": "/en/about/team/", "statusCode": 301 },
+    { "source": "/gallery.php", "destination": "/en/about/gallery/", "statusCode": 301 },
+    { "source": "/milestone.php", "destination": "/en/about/milestones/", "statusCode": 301 },
+    { "source": "/women-empowerment-loan.php", "destination": "/en/loans/women-empowerment/", "statusCode": 301 },
+    { "source": "/micro-business-loan.php", "destination": "/en/loans/micro-business/", "statusCode": 301 },
+    { "source": "/agriculture-rural-livelihood-loan.php", "destination": "/en/loans/agriculture-livelihood/", "statusCode": 301 },
+    { "source": "/livestock-loan.php", "destination": "/en/loans/livestock/", "statusCode": 301 },
+    { "source": "/registration-process.php", "destination": "/en/how-to-join/", "statusCode": 301 },
+    { "source": "/registration.php", "destination": "/en/register/", "statusCode": 301 },
+    { "source": "/career.php", "destination": "/en/careers/", "statusCode": 301 },
+    { "source": "/our-policy.php", "destination": "/en/hr-policy/", "statusCode": 301 },
+    { "source": "/contact-us.php", "destination": "/en/contact/", "statusCode": 301 },
+    { "source": "/privacy-policy.php", "destination": "/en/privacy-policy/", "statusCode": 301 }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=(), browsing-topics=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: blob: https://*.google.com https://*.googleapis.com https://*.gstatic.com; connect-src 'self' https://api.web3forms.com; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+        }
+      ]
+    },
+    {
+      "source": "/_next/static/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}

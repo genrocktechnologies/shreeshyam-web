@@ -1,76 +1,52 @@
-# Redirect map — old `.php` URLs → new clean URLs
+# Redirect map — old `.php` URLs → new URLs
 
-Every page URL found on https://shreeshyamfoundation.in/ (the 17 pages in the crawl, see `content/_crawl.json`), with a proposed clean URL for the Next.js site. All redirects should be **permanent (308)** so search engines move ranking to the new URL. The structure follows the live site's own navigation: _About_ pages sit under `/about`, the _Products_ menu becomes `/loans`.
+Reconciled with the URL map in `docs/site-plan.md`, which is the source of truth for paths. Implemented in **`vercel.json`**; `next.config` redirects don't work with `output: 'export'`.
 
-The new paths have no locale prefix. If next-intl is set up with a prefixed locale (for example `/en/...`), the targets get that prefix, and the old URLs should redirect straight to the final localised URL in one hop.
+- Every old page gets a **301** to the English version (`/en/…/`). The old site had no Hindi.
+- New URLs end with a trailing slash (`trailingSlash: true`).
+- Live status is from the crawl of 2026-10-31 (`content/_crawl.json`).
 
 ## Pages
 
-| Old URL | New URL | Live status (crawl) | Notes |
+| Old URL | New URL | Live status | Notes |
 | --- | --- | --- | --- |
-| `/index.php` | `/` | 200 | Also redirect `/index.php?…` (keep the query string). |
-| `/about-us.php` | `/about` | 200 | |
-| `/our-mission.php` | `/about/mission` | 200 | Footer label "Mission". |
-| `/our-vision.php` | `/about/vision` | 200 | |
-| `/team.php` | `/about/team` | **500** | The live page errors, so there is no content to migrate. The team members appear on `index.php` and `about-us.php` ("Our team Members") and can be the source for this page. |
-| `/gallery.php` | `/about/gallery` | **500** | The live page errors, so there is no content to migrate. The gallery photos must come from the client. |
-| `/milestone.php` | `/about/milestones` | 200 | |
-| `/women-empowerment-loan.php` | `/loans/women-empowerment` | 200 | Navigation group "Products". |
-| `/micro-business-loan.php` | `/loans/micro-business` | 200 | |
-| `/agriculture-rural-livelihood-loan.php` | `/loans/agriculture-rural-livelihood` | 200 | The navigation label "Agriculture Livelihood Loan" differs from the page title "Agriculture & Rural Livelihood Loan". |
-| `/livestock-loan.php` | `/loans/livestock` | 200 | |
-| `/our-policy.php` | `/policies/human-resource` | 200 | The navigation says "Our Policy", but the page content and `<title>` are the "Human Resource Policy". A `/policies` index can hold further policies later. |
-| `/career.php` | `/careers` | 200 | |
-| `/registration.php` | `/register` | 200 | |
-| `/registration-process.php` | `/register/process` | 200 | |
-| `/contact-us.php` | `/contact` | 200 | |
-| `/privacy-policy.php` | `/privacy-policy` | 200 | |
+| `/index.php` | `/en/` | 200 | |
+| `/about-us.php` | `/en/about/` | 200 | |
+| `/our-mission.php` | `/en/about/mission/` | 200 | |
+| `/our-vision.php` | `/en/about/vision/` | 200 | |
+| `/team.php` | `/en/about/team/` | **500** | No content on the old page. The new page is built from the homepage team data. |
+| `/gallery.php` | `/en/about/gallery/` | **500** | No content on the old page. The new page is hidden from nav and sitemap until the client sends photos, but the URL still resolves. |
+| `/milestone.php` | `/en/about/milestones/` | 200 | |
+| `/women-empowerment-loan.php` | `/en/loans/women-empowerment/` | 200 | |
+| `/micro-business-loan.php` | `/en/loans/micro-business/` | 200 | |
+| `/agriculture-rural-livelihood-loan.php` | `/en/loans/agriculture-livelihood/` | 200 | |
+| `/livestock-loan.php` | `/en/loans/livestock/` | 200 | |
+| `/registration-process.php` | `/en/how-to-join/` | 200 | |
+| `/registration.php` | `/en/register/` | 200 | |
+| `/career.php` | `/en/careers/` | 200 | |
+| `/our-policy.php` | `/en/hr-policy/` | 200 | The page is titled "Human Resource Policy" (D13). |
+| `/contact-us.php` | `/en/contact/` | 200 | |
+| `/privacy-policy.php` | `/en/privacy-policy/` | 200 | |
 
-New URL with no old page: `/loans` (an index for the Products menu; the live menu parent is `href="#"`).
+**New page with no old URL:** `/en/loans/` (the loans hub).
 
-## Not pages: form endpoints
+## Site root
 
-These are POST targets, not pages, so they must not be redirected to a page. Each needs a Next.js route handler or server action. If anything outside the site still posts to the old URLs, use a 308 redirect, which keeps the POST method and body.
-
-| Old endpoint | Used by | Proposed replacement |
-| --- | --- | --- |
-| `/formhandler.php` | Contact form (`contact-us.php`) | `/api/contact` |
-| `/registerHandler.php` | Registration form (`registration.php`) | `/api/register` |
-| `/careerHandler.php` | Career application form (`career.php`) | `/api/careers` |
-
-## Referenced only in commented-out HTML
-
-`blog.php` and `single-blog.php` appear only inside a commented-out "Our recent blog & articles" block on `index.php`. Both currently return **404 "File not found."** No redirect is needed unless a blog is added (then `/blog` and `/blog/[slug]`).
-
-## Host-level rules
-
-| From | To |
+| Request | Redirect |
 | --- | --- |
-| `http://…` | `https://…` |
-| `https://www.shreeshyamfoundation.in/*` | `https://shreeshyamfoundation.in/*` (or the reverse; pick one canonical host) |
-| Trailing slash variants (`/about/`) | No trailing slash (`/about`), which is the Next.js default |
-| Old asset paths `/assets/images/**` | Only if images are known to be hotlinked or indexed in image search. Otherwise let them 404. |
+| `/` with `Accept-Language` starting `hi` | `/hi/` (temporary, since it depends on the header) |
+| `/` otherwise | `/en/` (temporary) |
 
-## `next.config.mjs` sketch
+`src/app/page.tsx` also redirects `/` to `/en/`, as a fallback for hosts other than Vercel.
 
-```js
-const redirects = [
-  ['/index.php', '/'],
-  ['/about-us.php', '/about'],
-  ['/our-mission.php', '/about/mission'],
-  ['/our-vision.php', '/about/vision'],
-  ['/team.php', '/about/team'],
-  ['/gallery.php', '/about/gallery'],
-  ['/milestone.php', '/about/milestones'],
-  ['/women-empowerment-loan.php', '/loans/women-empowerment'],
-  ['/micro-business-loan.php', '/loans/micro-business'],
-  ['/agriculture-rural-livelihood-loan.php', '/loans/agriculture-rural-livelihood'],
-  ['/livestock-loan.php', '/loans/livestock'],
-  ['/our-policy.php', '/policies/human-resource'],
-  ['/career.php', '/careers'],
-  ['/registration.php', '/register'],
-  ['/registration-process.php', '/register/process'],
-  ['/contact-us.php', '/contact'],
-  ['/privacy-policy.php', '/privacy-policy'],
-].map(([source, destination]) => ({ source, destination, permanent: true }));
-```
+## Not redirected
+
+| Old URL | Why |
+| --- | --- |
+| `/formhandler.php`, `/registerHandler.php`, `/careerHandler.php` | These were POST handlers, not pages. The new forms post to Web3Forms. Nothing links to them, so they return 404. |
+| `/blog.php`, `/single-blog.php` | They only appear in commented-out HTML and already return 404. |
+| `/assets/**` (old images, CSS, JS) | They aren't linked from outside. They return 404 unless search data shows traffic. |
+
+## Verify before switching DNS (Phase 8)
+
+On the Vercel preview, run `curl -sI <preview>/<old>.php` for each row above. Expect a `301` with the correct `Location`, and no second hop (check that Vercel's `trailingSlash` doesn't add a `/index.php/` redirect first).
