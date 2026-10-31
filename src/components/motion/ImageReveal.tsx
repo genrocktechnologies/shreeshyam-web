@@ -3,7 +3,7 @@
 import { useRef, type ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
-import { dur, REVEAL_START } from '@/lib/motion';
+import { dur, REVEAL_START, scale } from '@/lib/motion';
 
 interface ImageRevealProps {
   children: ReactNode;
@@ -18,7 +18,7 @@ const ROUND = { arch: 'round 999px 999px 28px 28px', rounded: 'round 20px' } as 
 
 /**
  * Opens the image's mask from the bottom up (clip-path inset 100% → 0) while the image
- * settles from scale 1.15 to 1. Reduced motion: a plain fade.
+ * settles from scale.imageFrom to 1. Reduced motion: a plain fade.
  */
 export function ImageReveal({ children, shape = 'arch', trigger = 'scroll', delay = 0, className }: ImageRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -34,12 +34,12 @@ export function ImageReveal({ children, shape = 'arch', trigger = 'scroll', dela
 
       mm.add(MM, (ctx) => {
         if (readConditions(ctx).reduce) {
-          gsap.fromTo(el, { opacity: 0, clipPath: open }, { opacity: 1, duration: 0.2, delay, scrollTrigger });
+          gsap.fromTo(el, { opacity: 0, clipPath: open }, { opacity: 1, duration: dur.reduce, delay, scrollTrigger });
           return;
         }
         const tl = gsap.timeline({ delay, scrollTrigger, defaults: { duration: dur.slow, ease: 'growth' } });
         tl.fromTo(el, { clipPath: `inset(100% 0% 0% 0% ${ROUND[shape]})` }, { clipPath: open });
-        if (media) tl.fromTo(media, { scale: 1.15 }, { scale: 1, clearProps: 'transform' }, 0);
+        if (media) tl.fromTo(media, { scale: scale.imageFrom }, { scale: 1, clearProps: 'transform' }, 0);
       });
     },
     { scope: ref, dependencies: [shape, trigger, delay] },

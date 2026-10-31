@@ -160,6 +160,11 @@
     "careers": "Illustration of two people talking across a desk in a job interview",
     "bannerAbout": "A calculator, glasses and a hand writing on papers at a desk",
     "bannerContact": "A laptop, a cup and a plant on a desk",
-    "teamPortrait": "Portrait of {name}"
+    "teamPortrait": "Portrait of {name}",
+    "heroArch": "Smiling women from a village group sitting together, one holding up her membership card",
+    "aboutArch": "A woman in a green sari reading through documents during an outdoor meeting",
+    "processStepRegistration": "Women in a group raising their membership cards",
+    "processStepSupport": "A young man counting cash beside a register",
+    "processStepMonitoring": "A field worker in glasses reading through papers"
   }
 }

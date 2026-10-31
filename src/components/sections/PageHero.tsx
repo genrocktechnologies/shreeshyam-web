@@ -24,16 +24,14 @@ interface PageHeroProps {
 export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className }: PageHeroProps) {
   return (
     <section className={cn('relative overflow-hidden bg-rani-50', className)}>
-      <GoldenThread
-        d="M50 0 C 50 30, 30 55, 50 100"
-        className="absolute bottom-0 left-[20px] top-[var(--header-total)] w-6 md:left-[8%] md:w-10"
-      />
       <div
         className={cn(
-          'container-site grid items-center gap-10 pb-14 pl-12 pt-[calc(var(--header-total)+2rem)] md:pb-20 md:pl-8 lg:pt-[calc(var(--header-total)+3rem)]',
+          'container-site thread-gutter relative grid items-center gap-10 pb-14 pt-[calc(var(--header-total)+2rem)] md:pb-20 lg:pt-[calc(var(--header-total)+3rem)]',
           image && 'md:grid-cols-[1.25fr_1fr]',
         )}
       >
+        {/* Inside the container so it sits on the shared thread rail (--thread-x). */}
+        <GoldenThread d="M50 0 C 50 30, 30 55, 50 100" className="thread-col bottom-0 top-[var(--header-total)]" />
         <div>
           <Reveal>
             <Breadcrumbs items={breadcrumbs} className="mb-6" />

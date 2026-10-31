@@ -3,7 +3,7 @@
 import { useLocale } from 'next-intl';
 import { useRef, type ReactNode } from 'react';
 import { gsap, motionEnabled, MM, readConditions, SplitText, useGSAP } from '@/lib/gsap';
-import { dur, REVEAL_START, stagger } from '@/lib/motion';
+import { distance, dur, REVEAL_START, stagger } from '@/lib/motion';
 
 type HeadingTag = 'h1' | 'h2' | 'h3' | 'p';
 
@@ -13,6 +13,11 @@ interface SplitHeadingProps {
   /** `load` plays on mount (page heroes); `scroll` plays when scrolled into view. */
   trigger?: 'load' | 'scroll';
   delay?: number;
+  /**
+   * Called once the lines have landed and the split has been reverted (the DOM is back
+   * to its server-rendered state). Client callers only; not called under reduced motion.
+   */
+  onComplete?: () => void;
   className?: string;
 }
 
@@ -21,9 +26,12 @@ interface SplitHeadingProps {
  * because character splits break Devanagari conjuncts. The split is reverted when the
  * animation ends so the DOM and accessible name stay clean.
  */
-export function SplitHeading({ children, as: Tag = 'h2', trigger = 'scroll', delay = 0, className }: SplitHeadingProps) {
+export function SplitHeading({ children, as: Tag = 'h2', trigger = 'scroll', delay = 0, onComplete, className }: SplitHeadingProps) {
   const ref = useRef<HTMLHeadingElement>(null);
   const byWords = useLocale() === 'hi';
+  // Held in a ref so a new callback identity never re-runs (re-splits) the animation.
+  const done = useRef(onComplete);
+  done.current = onComplete;
 
   useGSAP(
     () => {
@@ -34,34 +42,37 @@ export function SplitHeading({ children, as: Tag = 'h2', trigger = 'scroll', del
 
       mm.add(MM, (ctx) => {
         if (readConditions(ctx).reduce) {
-          gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: 0.2, delay, scrollTrigger });
+          gsap.fromTo(el, { opacity: 0 }, { opacity: 1, duration: dur.reduce, delay, scrollTrigger });
           return;
         }
 
         let split: SplitText | undefined;
         // Line breaks depend on the web font, so wait for it before measuring. ctx.add keeps
         // the deferred tweens inside the context so they are reverted on unmount.
-        document.fonts.ready.then(() => ctx.add(() => {
-          if (!el.isConnected) return;
-          split = SplitText.create(el, {
-            type: byWords ? 'words' : 'lines',
-            mask: byWords ? 'words' : 'lines',
-            aria: 'auto',
-          });
-          gsap.set(el, { opacity: 1 });
-          gsap.from(byWords ? split.words : split.lines, {
-            yPercent: 105,
-            duration: dur.base,
-            ease: 'growth',
-            stagger: stagger.tight,
-            delay,
-            scrollTrigger,
-            onComplete: () => {
-              split?.revert();
-              split = undefined;
-            },
-          });
-        }));
+        document.fonts.ready.then(() =>
+          ctx.add(() => {
+            if (!el.isConnected) return;
+            split = SplitText.create(el, {
+              type: byWords ? 'words' : 'lines',
+              mask: byWords ? 'words' : 'lines',
+              aria: 'auto',
+            });
+            gsap.set(el, { opacity: 1 });
+            gsap.from(byWords ? split.words : split.lines, {
+              yPercent: distance.splitRise,
+              duration: dur.base,
+              ease: 'growth',
+              stagger: stagger.tight,
+              delay,
+              scrollTrigger,
+              onComplete: () => {
+                split?.revert();
+                split = undefined;
+                done.current?.();
+              },
+            });
+          }),
+        );
 
         return () => split?.revert();
       });

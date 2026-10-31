@@ -24,7 +24,9 @@ const MESSAGES = path.join(ROOT, 'messages', 'en');
 const REPORT = path.join(ROOT, 'docs', 'content-verification.md');
 
 const ws = (s: string) => s.replace(/\s+/g, ' ').trim();
-const plain = (s: string) => ws(s.replace(/<\/?b>/g, ''));
+/** Rich-text tags allowed in messages: <b> (the old site's bold) and <accent> (Kalam accent word). */
+const RICH_TAGS = ['b', 'accent'];
+const plain = (s: string) => ws(s.replace(/<\/?(b|accent)>/g, ''));
 
 /**
  * Crawled strings intentionally not in messages/en. Each needs a reason a reviewer can
@@ -327,11 +329,23 @@ function main() {
     }
   }
 
-  // 2. ICU: format every message (dummy values for arguments, <b> handler for rich text).
-  const t = createTranslator({ locale: 'en', messages: messages as never });
+  // 2. ICU: format every message (dummy values for arguments, handlers for the allowed
+  // rich-text tags). next-intl reports problems through onError rather than throwing,
+  // so errors are collected there; a try/catch alone would miss them.
   const icuErrors: string[] = [];
+  let currentKey = '';
+  const t = createTranslator({
+    locale: 'en',
+    messages: messages as never,
+    onError: (e) => icuErrors.push(`${currentKey}: ${e.message}`),
+  });
   for (const [key, value] of msgLeaves) {
-    const args: Record<string, unknown> = { b: (c: unknown) => c };
+    currentKey = key;
+    const args: Record<string, unknown> = {};
+    for (const tag of new Set([...value.matchAll(/<(\w+)>/g)].map((m) => m[1]))) {
+      if (RICH_TAGS.includes(tag)) args[tag] = (c: unknown) => c;
+      else icuErrors.push(`${key}: unknown rich-text tag <${tag}> (allowed: ${RICH_TAGS.join(', ')})`);
+    }
     for (const m of value.matchAll(/\{\s*(\w+)\s*(?:,\s*(\w+))?/g)) args[m[1]] = m[2] === 'plural' || m[2] === 'number' ? 1 : 'X';
     try {
       (t.rich as (k: string, v: unknown) => unknown)(key, args);

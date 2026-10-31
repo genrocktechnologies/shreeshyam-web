@@ -18,7 +18,7 @@ export async function MobileActionBar() {
           aria-label={t('a11y.quickActions')}
           className="flex gap-2 border-t border-rani-100 bg-ivory/95 px-4 pt-3 shadow-lift backdrop-blur-md pb-[calc(0.75rem+env(safe-area-inset-bottom))]"
         >
-          <Button href="/register/" arrow className="flex-1">
+          <Button href="/register/" prefetch={false} arrow className="flex-1">
             {t('buttons.register')}
           </Button>
           {site.phone && (

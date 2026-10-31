@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, type PointerEvent, type ReactNode } from 'react';
 import { cn } from '@/lib/cn';
-import { media } from '@/lib/motion';
+import { distance, media, spring } from '@/lib/motion';
 
 interface MagneticButtonProps {
   children: ReactNode;
@@ -14,15 +14,15 @@ interface MagneticButtonProps {
 // Spring constants from the motion spec (stiffness 300, damping 20, mass 1). Implemented
 // here instead of with the `motion` library, which would add ~45 KB gzip to every page
 // that has a primary CTA.
-const STIFFNESS = 300;
-const DAMPING = 20;
-const REST = 0.01;
+const STIFFNESS = spring.stiffness;
+const DAMPING = spring.damping;
+const REST = spring.rest;
 
 /**
  * Wraps a primary CTA so it drifts up to `strength` px toward the cursor. Fine pointers
  * only; touch and reduced-motion users get a static button.
  */
-export function MagneticButton({ children, strength = 6, className }: MagneticButtonProps) {
+export function MagneticButton({ children, strength = distance.magnetic, className }: MagneticButtonProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const state = useRef({ x: 0, y: 0, vx: 0, vy: 0, tx: 0, ty: 0, raf: 0, last: 0 });
 

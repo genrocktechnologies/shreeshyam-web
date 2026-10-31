@@ -84,7 +84,7 @@ export default async function MotionPlayground({ params: { locale } }: { params:
               <MagneticButton>
                 <a
                   href="#reveal"
-                  className="inline-flex min-h-tap items-center rounded-full bg-marigold-400 px-7 font-bold text-plum-900 shadow-soft transition-shadow duration-300 hover:shadow-lift"
+                  className="inline-flex min-h-tap items-center rounded-full bg-marigold-400 px-7 font-bold text-plum-900 shadow-soft transition-shadow duration-card hover:shadow-lift"
                 >
                   {t('demo.cta')}
                 </a>

@@ -2,6 +2,7 @@
 
 import { createContext, useContext, useEffect, useRef, useState, type Dispatch, type ReactNode, type SetStateAction } from 'react';
 import { usePathname } from '@/i18n/navigation';
+import { scroll } from '@/lib/motion';
 import { useScrollState } from '@/lib/useScrollState';
 
 interface HeaderMenuState {
@@ -22,7 +23,7 @@ export const useHeaderMenu = () => useContext(HeaderMenuContext);
 export function HeaderShell({ children }: { children: ReactNode }) {
   const [open, setOpen] = useState<string | null>(null);
   const [focusWithin, setFocusWithin] = useState(false);
-  const { scrolled, hidden } = useScrollState({ threshold: 40, hideAfter: 160 });
+  const { scrolled, hidden } = useScrollState({ threshold: scroll.solidAfter, hideAfter: scroll.headerHideAfter });
   const ref = useRef<HTMLElement>(null);
   const pathname = usePathname();
 

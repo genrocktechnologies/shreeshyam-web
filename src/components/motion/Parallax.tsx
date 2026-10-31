@@ -3,7 +3,7 @@
 import { useRef, type ReactNode } from 'react';
 import { cn } from '@/lib/cn';
 import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
-import { distance } from '@/lib/motion';
+import { distance, scale, scrub } from '@/lib/motion';
 
 interface ParallaxProps {
   children: ReactNode;
@@ -13,11 +13,11 @@ interface ParallaxProps {
   className?: string;
 }
 
-const SCALE = 1.12;
+const SCALE = scale.parallaxCover;
 
 /**
  * Moves its content ±`amount` px inside an overflow-hidden frame as the frame crosses
- * the viewport. The content is scaled 1.12 so edges never show. Desktop only.
+ * the viewport. The content is over-scaled (scale.parallaxCover) so edges never show. Desktop only.
  */
 export function Parallax({ children, amount = distance.parallax, className }: ParallaxProps) {
   const frame = useRef<HTMLDivElement>(null);
@@ -29,7 +29,7 @@ export function Parallax({ children, amount = distance.parallax, className }: Pa
       const mm = gsap.matchMedia();
       mm.add(MM, (ctx) => {
         if (!readConditions(ctx).isDesktop) return;
-        // Scaling by 1.12 leaves 6% of the height spare on each side.
+        // Over-scaling leaves (SCALE - 1) / 2 of the height spare on each side.
         const travel = () => Math.min(amount, (frame.current!.offsetHeight * (SCALE - 1)) / 2);
         gsap.fromTo(
           inner.current,
@@ -37,7 +37,7 @@ export function Parallax({ children, amount = distance.parallax, className }: Pa
           {
             y: () => travel(),
             ease: 'none',
-            scrollTrigger: { trigger: frame.current, start: 'top bottom', end: 'bottom top', scrub: true, invalidateOnRefresh: true },
+            scrollTrigger: { trigger: frame.current, start: 'top bottom', end: 'bottom top', scrub: scrub.parallax, invalidateOnRefresh: true },
           },
         );
       });

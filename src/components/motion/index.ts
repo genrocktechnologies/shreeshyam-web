@@ -1,9 +1,13 @@
 export { CountUp } from './CountUp';
+export { DrawLine } from './DrawLine';
 export { GoldenThread } from './GoldenThread';
 export { ImageReveal } from './ImageReveal';
 export { MagneticButton } from './MagneticButton';
 export { MotionScript } from './MotionScript';
 export { Parallax } from './Parallax';
+export { ReadingHighlight } from './ReadingHighlight';
 export { Reveal } from './Reveal';
+export { ScrollDrift } from './ScrollDrift';
 export { SmoothScroll, useLenis } from './SmoothScroll';
 export { SplitHeading } from './SplitHeading';
+export { ThreadSeed } from './ThreadSeed';

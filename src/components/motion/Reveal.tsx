@@ -34,7 +34,7 @@ export function Reveal({ children, stagger, fromScale, delay = 0, as: Tag = 'div
         const { reduce } = readConditions(ctx);
         const trigger = { trigger: el, start: REVEAL_START, once: true };
         if (reduce) {
-          gsap.fromTo(targets, { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: each && 0.03, delay, scrollTrigger: trigger });
+          gsap.fromTo(targets, { opacity: 0 }, { opacity: 1, duration: dur.reduce, stagger: each && staggerTokens.reduce, delay, scrollTrigger: trigger });
           return;
         }
         gsap.fromTo(

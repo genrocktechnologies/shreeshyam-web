@@ -5,7 +5,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 const DESKTOP = { width: 1440, height: 900 };
 const MOBILE = { width: 360, height: 740 };
-const PAGES = ['/en/dev/layout/', '/hi/dev/layout/', '/en/dev/motion/', '/hi/dev/motion/'];
+const PAGES = ['/en/', '/hi/', '/en/dev/layout/', '/hi/dev/layout/', '/en/dev/motion/', '/hi/dev/motion/'];
 
 /** Tab until `predicate` holds for the focused element; fail after `max` presses. */
 async function tabTo(page: Page, predicate: string, max = 60) {

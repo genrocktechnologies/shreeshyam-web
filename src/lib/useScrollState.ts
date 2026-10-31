@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { scroll } from './motion';
 
 interface Options {
   /** Scroll offset (px) after which `scrolled` is true. */
@@ -16,7 +17,7 @@ interface Options {
  * as soon as the user scrolls up). Works with native scroll and Lenis, which both move
  * window.scrollY. Updates are batched to one per animation frame.
  */
-export function useScrollState({ threshold = 40, hideAfter = 160, tolerance = 6 }: Options = {}) {
+export function useScrollState({ threshold = scroll.solidAfter, hideAfter = scroll.headerHideAfter, tolerance = scroll.tolerance }: Options = {}) {
   const [state, setState] = useState({ scrolled: false, hidden: false });
 
   useEffect(() => {

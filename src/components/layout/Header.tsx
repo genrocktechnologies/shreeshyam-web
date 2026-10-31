@@ -59,9 +59,10 @@ export async function Header({ locale }: { locale: Locale }) {
       </ul>
       <Link
         href="/about/milestones/"
+        prefetch={false}
         data-stagger
         style={{ ['--i' as string]: ABOUT_LINKS.length }}
-        className="group grid grid-cols-[7rem_1fr] items-center gap-4 rounded-2xl border border-rani-100 bg-white p-3 shadow-soft transition-shadow duration-300 hover:shadow-lift"
+        className="group grid grid-cols-[7rem_1fr] items-center gap-4 rounded-2xl border border-rani-100 bg-white p-3 shadow-soft transition-shadow duration-card hover:shadow-lift"
       >
         <Picture
           image="award"
@@ -88,10 +89,10 @@ export async function Header({ locale }: { locale: Locale }) {
               <NavLink
                 href={loan.href}
                 exact
-                className="group flex h-full flex-col gap-3 rounded-2xl border border-rani-100 bg-white p-5 shadow-soft transition-shadow duration-300 hover:shadow-lift"
+                className="group flex h-full flex-col gap-3 rounded-2xl border border-rani-100 bg-white p-5 shadow-soft transition-shadow duration-card hover:shadow-lift"
               >
                 <span className="grid h-12 w-12 place-items-center rounded-full bg-rani-50 text-rani-600">
-                  <Icon aria-hidden="true" strokeWidth={1.75} className="h-6 w-6 transition-transform duration-300 ease-growth group-hover:rotate-[8deg]" />
+                  <Icon aria-hidden="true" strokeWidth={1.75} className="h-6 w-6 transition-transform duration-press ease-growth group-hover:rotate-[8deg]" />
                 </span>
                 <span className="font-bold leading-snug text-plum-900 group-hover:text-rani-700">{t(loan.navKey)}</span>
                 <span className="text-small text-ink-muted">{t(loan.purposeKey)}</span>
@@ -101,7 +102,7 @@ export async function Header({ locale }: { locale: Locale }) {
         })}
       </ul>
       <div data-stagger style={{ ['--i' as string]: loans.length }} className="mt-6">
-        <Button href={loansHubHref} variant="link" arrow>
+        <Button href={loansHubHref} prefetch={false} variant="link" arrow>
           {t('common.nav.allLoans')}
         </Button>
       </div>
@@ -149,7 +150,7 @@ export async function Header({ locale }: { locale: Locale }) {
         ))}
       </ul>
       <div data-stagger style={{ ['--i' as string]: 3 }} className="mt-auto grid gap-4">
-        <Button href="/register/" size="lg" arrow>
+        <Button href="/register/" prefetch={false} size="lg" arrow>
           {t('common.buttons.register')}
         </Button>
         <ContactLinks t={t} newTab={newTab} className="grid gap-2 text-small text-ink-muted" />
@@ -166,7 +167,7 @@ export async function Header({ locale }: { locale: Locale }) {
 
       <div data-bar className="relative">
         <div data-bar-inner className="container-site flex h-[var(--bar-h)] items-center justify-between gap-4">
-          <Link href="/" className="shrink-0 rounded-lg">
+          <Link href="/" prefetch={false} className="shrink-0 rounded-lg">
             <Logo alt={t('common.alt.logo')} priority className="h-12 lg:h-14" />
           </Link>
 
@@ -190,7 +191,7 @@ export async function Header({ locale }: { locale: Locale }) {
 
           <div className="flex items-center gap-2 lg:gap-4">
             {languageSwitch}
-            <Button href="/register/" arrow className="hidden lg:inline-flex">
+            <Button href="/register/" prefetch={false} arrow className="hidden lg:inline-flex">
               {t('common.buttons.register')}
             </Button>
             <MobileMenu

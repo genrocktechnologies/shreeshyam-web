@@ -11,6 +11,16 @@
     /* How much the bar visually shrinks when scrolled (88 → 68 desktop). */
     --shrink: 12px;
     --header-total: calc(var(--utility-h) + var(--bar-h));
+    /* Golden-thread rail: x of the thread inside .container-site, and the gap
+     * between the thread and the content beside it. */
+    --thread-x: 20px;
+    --thread-gap: 1.75rem;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --thread-x: 24px;
+    }
   }
 
   @media (min-width: 1024px) {
@@ -109,7 +119,7 @@
     *::before,
     *::after {
       transition-property: opacity !important;
-      transition-duration: 0.2s !important;
+      transition-duration: theme('transitionDuration.reduce') !important;
       transition-delay: 0s !important;
       animation-duration: 0.01ms !important;
       animation-iteration-count: 1 !important;
@@ -139,12 +149,40 @@
     @apply font-script text-accent font-bold;
   }
 
+  /* ---- Golden-thread rail (motion-spec: segments share one column) ----
+   * The thread runs at x = --thread-x inside .container-site in every section, so the
+   * per-section segments read as one continuous line at any viewport width.
+   * .thread-gutter: container whose content clears the thread.
+   * .thread-col / .thread-col-wide: absolutely positioned SVG column on the thread (a
+   *   0–100 viewBox path at x = 50 lands exactly on --thread-x).
+   * .thread-in-content: the same column, placed from inside a .thread-gutter child. */
+  .thread-gutter {
+    padding-left: calc(var(--thread-x) + var(--thread-gap));
+  }
+
+  .thread-col,
+  .thread-col-wide {
+    position: absolute;
+    left: var(--thread-x);
+    width: 1.5rem;
+    margin-left: -0.75rem;
+  }
+
+  .thread-col-wide {
+    width: 3rem;
+    margin-left: -1.5rem;
+  }
+
+  .thread-in-content {
+    left: calc(-1 * var(--thread-gap));
+  }
+
   /* ---- Site header (state set by HeaderShell via data attributes) ----
    * Only transform is animated: "shrinking" slides the whole header up by the utility
    * bar + --shrink, and nudges the bar content down by half of --shrink, so the
    * visible bar goes 88 → 68px without animating height. */
   .site-header {
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform theme('transitionDuration.header') theme('transitionTimingFunction.growth');
   }
 
   .site-header[data-scrolled='true'] {
@@ -157,9 +195,9 @@
 
   .site-header [data-bar] {
     transition:
-      background-color 0.3s,
-      box-shadow 0.3s,
-      backdrop-filter 0.3s;
+      background-color theme('transitionDuration.bar'),
+      box-shadow theme('transitionDuration.bar'),
+      backdrop-filter theme('transitionDuration.bar');
   }
 
   .site-header[data-scrolled='true'] [data-bar] {
@@ -172,7 +210,7 @@
   }
 
   .site-header [data-bar-inner] {
-    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform theme('transitionDuration.header') theme('transitionTimingFunction.growth');
   }
 
   .site-header[data-scrolled='true'] [data-bar-inner] {
@@ -182,12 +220,12 @@
   /* ---- Mega menu panels: fade + slide 8px, links staggered by --i ---- */
   .mega-panel {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(theme('motion.megaSlide'));
     visibility: hidden;
     transition:
-      opacity 0.2s,
-      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-      visibility 0s linear 0.25s;
+      opacity theme('transitionDuration.megaFade'),
+      transform theme('transitionDuration.mega') theme('transitionTimingFunction.growth'),
+      visibility 0s linear theme('transitionDuration.mega');
   }
 
   .mega-panel[data-open='true'] {
@@ -195,18 +233,18 @@
     transform: none;
     visibility: visible;
     transition:
-      opacity 0.2s,
-      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity theme('transitionDuration.megaFade'),
+      transform theme('transitionDuration.mega') theme('transitionTimingFunction.growth'),
       visibility 0s;
   }
 
   .mega-panel [data-stagger] {
     opacity: 0;
-    transform: translateY(8px);
+    transform: translateY(theme('motion.megaSlide'));
     transition:
-      opacity 0.3s,
-      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: calc(var(--i, 0) * 40ms);
+      opacity theme('transitionDuration.megaLink'),
+      transform theme('transitionDuration.megaLink') theme('transitionTimingFunction.growth');
+    transition-delay: calc(var(--i, 0) * theme('motion.megaStagger'));
   }
 
   .mega-panel[data-open='true'] [data-stagger] {
@@ -217,11 +255,11 @@
   /* Mobile sheet links stagger in from the right. */
   .mobile-sheet [data-stagger] {
     opacity: 0;
-    transform: translateX(16px);
+    transform: translateX(theme('motion.sheetSlide'));
     transition:
-      opacity 0.3s,
-      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: calc(80ms + var(--i, 0) * 40ms);
+      opacity theme('transitionDuration.sheetLink'),
+      transform theme('transitionDuration.sheetLink') theme('transitionTimingFunction.growth');
+    transition-delay: calc(theme('motion.sheetDelay') + var(--i, 0) * theme('motion.sheetStagger'));
   }
 
   .mobile-sheet[data-open='true'] [data-stagger] {
@@ -245,7 +283,7 @@
     background: currentColor;
     transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: transform theme('transitionDuration.link') theme('transitionTimingFunction.growth');
   }
 
   .link-draw:hover::after,
@@ -300,4 +338,17 @@
 
 .js-motion [data-image-reveal='rounded'] {
   clip-path: inset(100% 0 0 0 round 20px);
+}
+
+.js-motion [data-accent-underline],
+.js-motion [data-thread-seed] {
+  opacity: 0;
+}
+
+.js-motion [data-draw-line='y'] {
+  transform: scaleY(0);
+}
+
+.js-motion [data-draw-line='x'] {
+  transform: scaleX(0);
 }

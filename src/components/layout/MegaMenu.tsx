@@ -3,6 +3,7 @@
 import { useEffect, useRef, type ReactNode } from 'react';
 import { ChevronDown } from '@/components/ui/icons';
 import { cn } from '@/lib/cn';
+import { scroll } from '@/lib/motion';
 import { useHeaderMenu } from './HeaderShell';
 
 interface MegaMenuProps {
@@ -12,8 +13,8 @@ interface MegaMenuProps {
   children: ReactNode;
 }
 
-const HOVER_OPEN_MS = 80;
-const HOVER_CLOSE_MS = 160;
+const HOVER_OPEN_MS = scroll.hoverOpenMs;
+const HOVER_CLOSE_MS = scroll.hoverCloseMs;
 
 /**
  * Desktop mega menu using the disclosure pattern: a <button aria-expanded> controlling
@@ -80,7 +81,7 @@ export function MegaMenu({ id, label, children }: MegaMenuProps) {
         {label}
         <ChevronDown
           strokeWidth={2}
-          className={cn('h-4 w-4 transition-transform duration-300 ease-growth', isOpen && 'rotate-180')}
+          className={cn('h-4 w-4 transition-transform duration-press ease-growth', isOpen && 'rotate-180')}
         />
       </button>
       <div id={panelId} data-open={isOpen} className="mega-panel absolute inset-x-0 top-full border-t border-rani-100 bg-ivory shadow-lift">

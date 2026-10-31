@@ -9,7 +9,7 @@ import { cn } from '@/lib/cn';
  * arrow slide); colour changes are instant (CLAUDE.md motion rules).
  */
 export const buttonVariants = cva(
-  'group inline-flex select-none items-center justify-center gap-2 rounded-full font-body font-bold leading-none transition-transform duration-300 ease-growth hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60',
+  'group inline-flex select-none items-center justify-center gap-2 rounded-full font-body font-bold leading-none transition-transform duration-press ease-growth hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-60',
   {
     variants: {
       variant: {
@@ -38,7 +38,7 @@ interface CommonProps extends Variants {
   className?: string;
 }
 
-type LinkButtonProps = CommonProps & { href: string } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className' | 'children'>;
+type LinkButtonProps = CommonProps & { href: string; /** Internal links only. */ prefetch?: boolean } & Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href' | 'className' | 'children'>;
 type NativeButtonProps = CommonProps & { href?: undefined } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className' | 'children'>;
 
 const isInternal = (href: string) => href.startsWith('/') && !href.startsWith('//');
@@ -57,16 +57,16 @@ export function Button(props: LinkButtonProps | NativeButtonProps) {
         <ArrowRight
           aria-hidden="true"
           strokeWidth={2}
-          className="h-[1.1em] w-[1.1em] shrink-0 transition-transform duration-300 ease-growth group-hover:translate-x-1"
+          className="h-[1.1em] w-[1.1em] shrink-0 transition-transform duration-press ease-growth group-hover:translate-x-1"
         />
       )}
     </>
   );
 
   if (rest.href !== undefined) {
-    const { href, ...anchor } = rest as LinkButtonProps;
+    const { href, prefetch, ...anchor } = rest as LinkButtonProps;
     return isInternal(href) ? (
-      <Link href={href} className={classes} {...anchor}>
+      <Link href={href} prefetch={prefetch} className={classes} {...anchor}>
         {content}
       </Link>
     ) : (

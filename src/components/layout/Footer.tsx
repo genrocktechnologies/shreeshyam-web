@@ -34,7 +34,7 @@ export async function Footer({ locale }: { locale: Locale }) {
     <footer className="grain relative bg-plum-900 text-ivory-100">
       <div className="container-site grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.4fr] lg:py-20">
         <div>
-          <Link href="/" className="inline-block rounded-lg">
+          <Link href="/" prefetch={false} className="inline-block rounded-lg">
             <Logo variant="white" alt={t('alt.logo')} className="h-16" />
           </Link>
           <p className="mt-5 text-small leading-relaxed text-ivory-100/85">{t.rich('footer.blurb', richTags)}</p>
@@ -45,7 +45,7 @@ export async function Footer({ locale }: { locale: Locale }) {
           <ul>
             {QUICK_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className={link}>
+                <Link href={l.href} prefetch={false} className={link}>
                   {t(`nav.${l.key}`)}
                 </Link>
               </li>
@@ -58,7 +58,7 @@ export async function Footer({ locale }: { locale: Locale }) {
           <ul>
             {LEGAL_LINKS.map((l) => (
               <li key={l.href}>
-                <Link href={l.href} className={link}>
+                <Link href={l.href} prefetch={false} className={link}>
                   {t(`nav.${l.key}`)}
                 </Link>
               </li>
@@ -120,7 +120,7 @@ export async function Footer({ locale }: { locale: Locale }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={t('a11y.socialLink', { network: t(`social.${s.network}`) })}
-                    className="grid h-12 w-12 place-items-center rounded-full bg-ivory/10 transition-transform duration-300 ease-growth hover:-translate-y-0.5 hover:text-marigold-300"
+                    className="grid h-12 w-12 place-items-center rounded-full bg-ivory/10 transition-transform duration-press ease-growth hover:-translate-y-0.5 hover:text-marigold-300"
                   >
                     <SocialIcon network={s.network} />
                   </a>

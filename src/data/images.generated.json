@@ -1,4 +1,64 @@
 {
+  "heroArch": {
+    "kind": "photo",
+    "width": 819,
+    "height": 1024,
+    "widths": [
+      480,
+      819
+    ],
+    "base": "/images/hero-arch",
+    "blur": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdACFAxLawGZddKb5OJwAA/qUlX4Rlw49L6cyP1DA4bqLzzvugL9LAw22NL85aWD8ZCYIoO8fSEsCAs5Pfqm2g3rIgqyYpMIxdQcnQa6EH/l1smeAJ99LX4Z9/iM/hZJsiizcNJV+Tqc/Vf8/YKLmi8ECM9fsldUAA",
+    "source": "assets/original/index/finance_banner.jpg (crop 600,0 819×1024)"
+  },
+  "aboutArch": {
+    "kind": "photo",
+    "width": 819,
+    "height": 1024,
+    "widths": [
+      480,
+      819
+    ],
+    "base": "/images/about-arch",
+    "blur": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdH8ACvdr4VuYtay8k/0mAAP7TPhzWNt+dLZD0xS3p7S9FjZEYD8rQBRCdFMigPg01i+1q4JFtPuABOD68GGKSJvYXFYwwkEdC1vqWJ3IU8AUwWStCavyd4ALNgho3BoDnPv7LLFLRlTCnJWUGTrVt9UBx/6cAAA==",
+    "source": "assets/original/index/best_hrms_banner.jpg (crop 560,0 819×1024)"
+  },
+  "processStepRegistration": {
+    "kind": "photo",
+    "width": 1000,
+    "height": 750,
+    "widths": [
+      480,
+      960
+    ],
+    "base": "/images/process-step-registration",
+    "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAAwAA4BaJbACdADDcX/PhqIAAP7MZz99yggVzGunrd1LatTPBmMWoKr64dxExxqY6LMtyeJv8wo/P8H+me9LTuvgVj+Bp7ZKzNg0MV6hoghvc6tlA29+EAAAAA==",
+    "source": "assets/original/index/finance_banner.jpg (crop 0,0 1000×750)"
+  },
+  "processStepSupport": {
+    "kind": "photo",
+    "width": 900,
+    "height": 675,
+    "widths": [
+      480,
+      900
+    ],
+    "base": "/images/process-step-support",
+    "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQAgCdASoQAAwAA4BaJZgCdAC3r/4isq6QAP7gq5fTouaUcftsf5jMaMTsnsZ63BrUYC3qW2fCSFmLPaDoB/vFhHAwYd0mEwloAtpxI5abBMLSJ0lqtwKIkwW3T8eAAAA=",
+    "source": "assets/original/index/best_hrms_banner.jpg (crop 0,330 900×675)"
+  },
+  "processStepMonitoring": {
+    "kind": "photo",
+    "width": 770,
+    "height": 578,
+    "widths": [
+      480,
+      770
+    ],
+    "base": "/images/process-step-monitoring",
+    "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAgCdASoQAAwAA4BaJbACdAYvXlKRJhJe34AA/u2m0N8v0YpxvNMktf6F21Ht5U4vXKY4J/W20PkzCNfl5v7pYGOfb74TwyPSS5a6RQKFQ29Rix/EFeR7v4Uh7jy96ZS8DHFZAAA=",
+    "source": "assets/original/index/best_hrms_banner.jpg (crop 1150,60 770×578)"
+  },
   "heroWomenCards": {
     "kind": "photo",
     "width": 1920,

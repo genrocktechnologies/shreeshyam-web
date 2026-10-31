@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home page photo candidates</title>
+<style>
+  :root { --ink:#2B1A22; --muted:#6B5560; --rani:#C2185F; --line:#FFD9E8; --bg:#FFFCF6; --ok:#1F8A5B; }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 32px 20px 64px; background: var(--bg); color: var(--ink); font: 16px/1.55 system-ui, sans-serif; }
+  main { max-width: 1180px; margin: 0 auto; }
+  h1 { font-size: 30px; margin: 0 0 6px; }
+  h2 { font-size: 22px; margin: 40px 0 12px; }
+  p.lead { color: var(--muted); max-width: 70ch; }
+  .note { border-left: 4px solid var(--rani); background: #FFF0F6; padding: 12px 16px; border-radius: 8px; max-width: 80ch; }
+  .grid { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+  .pick { display: grid; gap: 18px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+  figure { margin: 0; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; }
+  .arch img { aspect-ratio: 4 / 5; object-fit: cover; border-radius: 999px 999px 0 0; }
+  figcaption { padding: 12px 14px 14px; font-size: 14px; }
+  figcaption b { display: block; font-size: 15px; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--rani); }
+  .why { color: var(--ok); font-weight: 600; }
+  code { font-size: 13px; background: #FFF0F6; padding: 1px 5px; border-radius: 4px; }
+  ul { padding-left: 20px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Home page photo candidates</h1>
+  <p class="lead">Every real photograph in <code>assets/original</code> (field, office, award), followed by the recommended crop for the hero arch, the About section and the 3 Process steps. Cut-outs on white, illustrations, icons and logos are left out.</p>
+
+  <p class="note"><b>The pool is thin.</b> Only two photos show the community in full frame: the women with membership cards, and the outdoor meeting with cash. Every recommendation is a different crop of one of these two, so some faces appear twice on the home page. More field photos from the client (<em>client-requests E. Media</em>) would fix that. Each crop can be swapped later without code changes.</p>
+
+  <h2>Recommendations</h2>
+  <div class="pick">
+    <figure class="arch">
+      <img src="photo-candidates/hero.jpg" alt="Smiling women from a village group sitting together, one holding up her membership card">
+      <figcaption><span class="tag">Hero arch</span><b>finance_banner.jpg, centre crop (4:5)</b>
+        <span class="why">Real members, faces visible and smiling, holding their membership cards: the foundation's promise in one image, warm and dignified.</span></figcaption>
+    </figure>
+    <figure class="arch">
+      <img src="photo-candidates/about.jpg" alt="A woman in a green sari reading through documents during an outdoor meeting">
+      <figcaption><span class="tag">About section</span><b>best_hrms_banner.jpg, centre crop (4:5)</b>
+        <span class="why">A calm, close portrait of a member reviewing her papers. It shows responsible, everyday finance and is a different scene from the hero.</span></figcaption>
+    </figure>
+  </div>
+  <div class="pick" style="margin-top:18px">
+    <figure>
+      <img src="photo-candidates/step1.jpg" alt="Women in a group raising their membership cards">
+      <figcaption><span class="tag">Process 01 · Member Registration &amp; Assessment</span><b>finance_banner.jpg, left crop (4:3)</b>
+        <span class="why">Women raising their new membership cards: registration, literally. The hero's left side, so the framing differs from the hero arch.</span></figcaption>
+    </figure>
+    <figure>
+      <img src="photo-candidates/step2.jpg" alt="A young man counting cash beside a register">
+      <figcaption><span class="tag">Process 02 · Financial Support &amp; Capacity Building</span><b>best_hrms_banner.jpg, left crop (4:3)</b>
+        <span class="why">Cash and an account register being handled carefully. It matches "responsible financial services" without implying a specific loan.</span></figcaption>
+    </figure>
+    <figure>
+      <img src="photo-candidates/step3.jpg" alt="A field worker in glasses reading through papers">
+      <figcaption><span class="tag">Process 03 · Monitoring &amp; Community Development</span><b>best_hrms_banner.jpg, right crop (4:3)</b>
+        <span class="why">A field worker going through a member's papers: ongoing guidance and follow-up. A different person from the About photo.</span></figcaption>
+    </figure>
+  </div>
+
+  <h2>All real photographs</h2>
+  <div class="grid">
+    <figure><img src="photo-candidates/src-finance_banner.jpg" alt=""><figcaption><span class="tag">Field</span><b>index/finance_banner.jpg</b>1920×1024. Women's group with membership cards. ✔ Used for the hero and Process 01.</figcaption></figure>
+    <figure><img src="photo-candidates/src-best_hrms_banner.jpg" alt=""><figcaption><span class="tag">Field</span><b>index/best_hrms_banner.jpg</b>1920×1024. Outdoor meeting with cash and papers. ✔ Used for About and Process 02–03.</figcaption></figure>
+    <figure><img src="photo-candidates/src-our-awards.jpg" alt=""><figcaption><span class="tag">Award</span><b>index/our-awards.jpeg</b>1600×869. Reserved for the Milestone section (Home §7).</figcaption></figure>
+    <figure><img src="photo-candidates/src-about_us_hero.jpg" alt=""><figcaption><span class="tag">Office</span><b>about-us/about_us_hero.jpg</b>1920×450. Desk, calculator, no people. Not recommended: stock-like and no community.</figcaption></figure>
+    <figure><img src="photo-candidates/src-contact_us.jpg" alt=""><figcaption><span class="tag">Office</span><b>contact-us/contact_us.jpg</b>1920×450. Laptop on a desk, no people. Not recommended.</figcaption></figure>
+    <figure><img src="photo-candidates/src-saurav.jpg" alt=""><figcaption><span class="tag">Office · team</span><b>index/saurav.jpg</b>481×480. Reserved for Team (Home §9).</figcaption></figure>
+    <figure><img src="photo-candidates/src-vikram-kumar.jpg" alt=""><figcaption><span class="tag">Office · team</span><b>index/vikram-kumar.jpg</b>481×480. Reserved for Team.</figcaption></figure>
+    <figure><img src="photo-candidates/src-satyam.jpg" alt=""><figcaption><span class="tag">Office · team</span><b>index/satyam.jpg</b>481×481. Reserved for Team.</figcaption></figure>
+    <figure><img src="photo-candidates/src-Ranjeet.jpg" alt=""><figcaption><span class="tag">Office · team</span><b>index/Ranjeet.jpg</b>481×480. Reserved for Team.</figcaption></figure>
+    <figure><img src="photo-candidates/src-sumit.jpg" alt=""><figcaption><span class="tag">Office · team</span><b>index/sumit.jpg</b>481×480. Reserved for Team.</figcaption></figure>
+    <figure><img src="photo-candidates/src-sonu-kumar.jpg" alt=""><figcaption><span class="tag">Office · team</span><b>index/sonu-kumar.jpg</b>481×480. Reserved for Team.</figcaption></figure>
+    <figure><img src="photo-candidates/src-Shishir.jpg" alt=""><figcaption><span class="tag">Office · team</span><b>index/Shishir.jpg</b>481×480. Reserved for Team.</figcaption></figure>
+  </div>
+
+  <h2>Left out</h2>
+  <ul>
+    <li><code>index/about_me.jpg</code>, <code>about-us/thumb1.jpg</code>, <code>our-vision/vision.jpg</code>: cut-outs on white (torn or blob edges), and only 400–480 px wide.</li>
+    <li><code>Registration.png</code>, <code>support.png</code>, <code>Community.png</code>, <code>career.png</code>: illustrations, not photographs.</li>
+    <li>Icon SVGs, the counter background, the divider line and the old logos.</li>
+  </ul>
+</main>
+</body>
+</html>

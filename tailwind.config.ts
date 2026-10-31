@@ -1,4 +1,8 @@
 import type { Config } from 'tailwindcss';
+import { distance, dur, ease, hero, scale, ui } from './src/lib/motion';
+
+const ms = (v: number) => `${v}ms`;
+const ARCH = 'round 999px 999px 28px 28px';
 
 /** Tokens from docs/design-system.md ("Marigold Thread"). Components use only these colours. */
 const config: Config = {
@@ -65,9 +69,39 @@ const config: Config = {
         soft: '0 12px 32px -14px rgb(224 35 122 / 0.22)',
         lift: '0 20px 44px -16px rgb(224 35 122 / 0.32)',
       },
+      // Motion: all values come from src/lib/motion.ts (one-file tuning).
       transitionTimingFunction: {
-        growth: 'cubic-bezier(0.22, 1, 0.36, 1)',
-        'in-out-soft': 'cubic-bezier(0.65, 0, 0.35, 1)',
+        growth: ease.growth,
+        'in-out-soft': ease.inOut,
+      },
+      transitionDuration: Object.fromEntries(Object.entries(ui).map(([k, v]) => [k, ms(v)])),
+      /** Read in globals.css via theme('motion.*'). */
+      motion: {
+        megaSlide: `${distance.megaSlide}px`,
+        sheetSlide: `${distance.sheetSlide}px`,
+        megaStagger: ms(ui.megaStagger),
+        sheetStagger: ms(ui.sheetStagger),
+        sheetDelay: ms(ui.sheetDelay),
+      },
+      // Hero load sequence runs as CSS (from first paint, before hydration) so the hero
+      // photo, the LCP element, never waits for JavaScript.
+      keyframes: {
+        'arch-open': {
+          from: { clipPath: `inset(100% 0 0 0 ${ARCH})` },
+          to: { clipPath: `inset(0 0 0 0 ${ARCH})` },
+        },
+        settle: { from: { transform: `scale(${scale.imageFrom})` }, to: { transform: 'none' } },
+        'fade-up': { from: { opacity: '0', transform: `translateY(${distance.reveal}px)` }, to: { opacity: '1', transform: 'none' } },
+        'scale-in': { from: { opacity: '0', transform: `scale(${scale.cta})` }, to: { opacity: '1', transform: 'none' } },
+      },
+      animation: {
+        'hero-arch': `arch-open ${dur.slow}s ${ease.growth} ${hero.image}s both`,
+        'hero-settle': `settle ${dur.slow}s ${ease.growth} ${hero.image}s both`,
+        'hero-eyebrow': `fade-up ${dur.base}s ${ease.growth} ${hero.eyebrow}s both`,
+        // The h1 is the largest above-the-fold element on mobile (LCP), so it rises via
+        // CSS from first paint instead of waiting for JS + SplitText.
+        'hero-title': `fade-up ${dur.base}s ${ease.growth} ${hero.title}s both`,
+        'hero-ctas': `scale-in ${dur.base}s ${ease.growth} ${hero.ctas}s both`,
       },
       minHeight: { tap: '48px' },
       minWidth: { tap: '48px' },

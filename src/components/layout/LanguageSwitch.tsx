@@ -35,7 +35,7 @@ export function LanguageSwitch({ label, options, className }: LanguageSwitchProp
     <div role="group" aria-label={label} className={cn('relative inline-grid h-12 grid-cols-2 rounded-full border border-rani-200 bg-ivory', className)}>
       <span
         aria-hidden="true"
-        className="absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full bg-rani-600 transition-transform duration-300 ease-growth"
+        className="absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full bg-rani-600 transition-transform duration-pill ease-growth"
         style={{ transform: `translateX(${index * 100}%)` }}
       />
       {options.map((o) => {

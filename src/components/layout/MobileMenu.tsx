@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState, type KeyboardEvent, type Reac
 import { useLenis } from '@/components/motion';
 import { usePathname } from '@/i18n/navigation';
 import { cn } from '@/lib/cn';
+import { ui } from '@/lib/motion';
 
 interface MobileMenuProps {
   /** Server-rendered navigation content for the sheet. */
@@ -15,7 +16,7 @@ interface MobileMenuProps {
   className?: string;
 }
 
-const CLOSE_MS = 320;
+const CLOSE_MS = ui.sheet; // matches the sheet's slide-out transition
 const FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 /**
@@ -78,7 +79,7 @@ export function MobileMenu({ children, openLabel, closeLabel, dialogLabel, class
         onClick={open}
         aria-haspopup="dialog"
         aria-expanded={shown}
-        className="grid h-12 w-12 place-items-center rounded-full text-plum-900 transition-transform duration-300 ease-growth active:scale-95"
+        className="grid h-12 w-12 place-items-center rounded-full text-plum-900 transition-transform duration-press ease-growth active:scale-95"
       >
         <Menu className="h-7 w-7" />
         <span className="sr-only">{openLabel}</span>
@@ -101,7 +102,7 @@ export function MobileMenu({ children, openLabel, closeLabel, dialogLabel, class
         <div
           data-open={shown}
           className={cn(
-            'mobile-sheet flex h-full flex-col overflow-y-auto bg-ivory shadow-lift transition-transform duration-300 ease-growth',
+            'mobile-sheet flex h-full flex-col overflow-y-auto bg-ivory shadow-lift transition-transform duration-sheet ease-growth',
             shown ? 'translate-x-0' : 'translate-x-full',
           )}
         >
@@ -110,7 +111,7 @@ export function MobileMenu({ children, openLabel, closeLabel, dialogLabel, class
               type="button"
               onClick={close}
               autoFocus
-              className="grid h-12 w-12 place-items-center rounded-full text-plum-900 transition-transform duration-300 ease-growth active:scale-95"
+              className="grid h-12 w-12 place-items-center rounded-full text-plum-900 transition-transform duration-press ease-growth active:scale-95"
             >
               <X className="h-7 w-7" />
               <span className="sr-only">{closeLabel}</span>

@@ -63,6 +63,13 @@ Route changes use a short curtain: a `rani-600` panel slides up and away (0.5s t
 - Skip it under reduced motion: no panel, no timeline.
 - Never block the first paint of the first page load.
 
+## Implementation notes (Phase 3)
+All values below live in `src/lib/motion.ts` (durations, distances, eases, delays, scroll thresholds). CSS gets them through `tailwind.config.ts`, so tuning the motion is a one-file change. Deviations from the spec text, and why:
+- **Hero h1:** it rises as one block via CSS keyframes from first paint, not line by line with SplitHeading. On mobile the h1 is the LCP element, and waiting for JS + SplitText pushed LCP to about 5.3s (4× CPU throttle). Below-the-fold headings keep the line split. The eyebrow, CTAs and arch photo also animate via CSS, so nothing above the fold waits for hydration.
+- **There is no hero "lead":** the live site has no lead text for the hero, and copy is never invented.
+- **About reading highlight:** words start at 62% opacity (`opacity.highlightFrom`), not ink-faint. That is the lowest value that keeps WCAG AA 4.5:1 while words are mid-scrub; lower values fail axe color-contrast.
+- **Thread column:** `--thread-x` is measured inside `.container-site` (20px mobile, 24px from md), not 8% of the viewport. It works out to about 8% at 1440px, and it keeps the thread clear of the text at every width.
+
 ## Home page choreography
 | # | Section | Desktop | Mobile |
 |---|---|---|---|

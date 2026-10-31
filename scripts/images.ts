@@ -24,13 +24,22 @@ const OUT = path.join(ROOT, 'public', 'images');
 const MANIFEST = path.join(ROOT, 'src', 'data', 'images.generated.json');
 
 const WIDTHS = [480, 960, 1600];
-const HERO_KEY = 'heroWomenCards';
+/** The hero image(s): above the fold, held to the 120 KB budget. */
+const HERO_KEYS = new Set(['heroArch']);
 const HERO_BUDGET = 120 * 1024;
 
 type Kind = 'photo' | 'illustration';
+/** Optional crop in source pixels (docs/photo-candidates.html shows each one). */
+type Crop = { left: number; top: number; width: number; height: number };
 
-/** key → [source under assets/original, kind]. Keys match `common.alt.<key>` in messages. */
-const IMAGES: Record<string, [string, Kind]> = {
+/** key → [source under assets/original, kind, crop?]. Keys match `common.alt.<key>` in messages. */
+const IMAGES: Record<string, [string, Kind, Crop?]> = {
+  // Home page crops chosen in docs/photo-candidates.html (Phase 3).
+  heroArch: ['index/finance_banner.jpg', 'photo', { left: 600, top: 0, width: 819, height: 1024 }],
+  aboutArch: ['index/best_hrms_banner.jpg', 'photo', { left: 560, top: 0, width: 819, height: 1024 }],
+  processStepRegistration: ['index/finance_banner.jpg', 'photo', { left: 0, top: 0, width: 1000, height: 750 }],
+  processStepSupport: ['index/best_hrms_banner.jpg', 'photo', { left: 0, top: 330, width: 900, height: 675 }],
+  processStepMonitoring: ['index/best_hrms_banner.jpg', 'photo', { left: 1150, top: 60, width: 770, height: 578 }],
   heroWomenCards: ['index/finance_banner.jpg', 'photo'],
   fieldMeeting: ['index/best_hrms_banner.jpg', 'photo'],
   membersLedger: ['index/about_me.jpg', 'photo'],
@@ -82,12 +91,13 @@ async function main() {
   const manifest: Record<string, ImageEntry> = {};
   let failed = false;
 
-  for (const [key, [rel, kind]] of Object.entries(IMAGES)) {
+  for (const [key, [rel, kind, crop]] of Object.entries(IMAGES)) {
     const src = path.join(SRC, rel);
     if (!fs.existsSync(src)) throw new Error(`${key}: missing source ${rel}`);
+    const load = () => (crop ? sharp(src).rotate().extract(crop) : sharp(src).rotate());
     const meta = await sharp(src).metadata();
-    const width = meta.width!;
-    const height = meta.height!;
+    const width = crop?.width ?? meta.width!;
+    const height = crop?.height ?? meta.height!;
     // Never upscale. Small originals get one size; a near-duplicate of 480 is dropped.
     let widths = WIDTHS.filter((w) => w <= width);
     if (!widths.length) widths = [width];
@@ -96,12 +106,12 @@ async function main() {
     const name = kebab(key);
     const sizes: string[] = [];
     for (const w of widths) {
-      const base = sharp(src).rotate().resize({ width: w, withoutEnlargement: true });
+      const base = load().resize({ width: w, withoutEnlargement: true });
       const img = kind === 'photo' ? grade(base) : base;
       const avif = await img.clone().avif({ quality: kind === 'photo' ? 50 : 60, effort: 6 }).toFile(path.join(OUT, `${name}-${w}.avif`));
       const webp = await img.clone().webp({ quality: kind === 'photo' ? 74 : 85, effort: 6, alphaQuality: 90 }).toFile(path.join(OUT, `${name}-${w}.webp`));
       sizes.push(`${w}: ${kb(avif.size)}/${kb(webp.size)}`);
-      if (key === HERO_KEY && (avif.size > HERO_BUDGET || webp.size > HERO_BUDGET)) {
+      if (HERO_KEYS.has(key) && (avif.size > HERO_BUDGET || webp.size > HERO_BUDGET)) {
         console.error(`  ✗ ${key} ${w}px exceeds the 120 KB hero budget (avif ${kb(avif.size)}, webp ${kb(webp.size)})`);
         failed = true;
       }
@@ -109,10 +119,10 @@ async function main() {
 
     const blur =
       kind === 'photo'
-        ? `data:image/webp;base64,${(await grade(sharp(src).resize({ width: 16 })).webp({ quality: 40 }).toBuffer()).toString('base64')}`
+        ? `data:image/webp;base64,${(await grade(load().resize({ width: 16 })).webp({ quality: 40 }).toBuffer()).toString('base64')}`
         : null;
 
-    manifest[key] = { kind, width, height, widths, base: `/images/${name}`, blur, source: `assets/original/${rel}` };
+    manifest[key] = { kind, width, height, widths, base: `/images/${name}`, blur, source: `assets/original/${rel}${crop ? ` (crop ${crop.left},${crop.top} ${crop.width}×${crop.height})` : ''}` };
     console.log(`  ✓ ${key.padEnd(20)} ${width}×${height}  ${sizes.join('  ')}  (avif/webp)`);
   }
 

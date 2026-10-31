@@ -3,7 +3,7 @@
 import { useRef } from 'react';
 import { cn } from '@/lib/cn';
 import { gsap, motionEnabled, MM, readConditions, useGSAP } from '@/lib/gsap';
-import { REVEAL_START } from '@/lib/motion';
+import { dur, ease, REVEAL_START } from '@/lib/motion';
 
 interface CountUpProps {
   /** The value exactly as published, e.g. "1200+" or "98%". */
@@ -20,7 +20,7 @@ const NUMBER = /^(\D*?)(\d+(?:\.\d+)?)(.*)$/;
  * A pseudo-element holding the final value reserves the width, so counting never
  * shifts layout.
  */
-export function CountUp({ value, duration = 1.8, className }: CountUpProps) {
+export function CountUp({ value, duration = dur.count, className }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
 
   useGSAP(
@@ -43,7 +43,7 @@ export function CountUp({ value, duration = 1.8, className }: CountUpProps) {
         gsap.to(counter, {
           n: target,
           duration,
-          ease: 'power2.out',
+          ease: ease.count,
           onUpdate: render,
           scrollTrigger: { trigger: el, start: REVEAL_START, once: true },
         });

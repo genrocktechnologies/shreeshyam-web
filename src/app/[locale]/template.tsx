@@ -30,7 +30,7 @@ export default function Template({ children }: { children: ReactNode }) {
       gsap.fromTo(
         curtain.current,
         { yPercent: 0, autoAlpha: 1 },
-        { yPercent: -100, duration: dur.base * 0.72, ease: 'inOut', onComplete: () => gsap.set(curtain.current, { autoAlpha: 0 }) },
+        { yPercent: -100, duration: dur.curtain, ease: 'inOut', onComplete: () => gsap.set(curtain.current, { autoAlpha: 0 }) },
       );
     });
   });
