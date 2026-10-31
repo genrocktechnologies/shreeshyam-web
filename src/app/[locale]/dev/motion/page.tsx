@@ -7,6 +7,8 @@ import { altKeyFor } from '@/data/images';
 import { pickMessages } from '@/i18n/pick';
 import { MotionStatus } from './MotionStatus';
 
+export { generateStaticParams } from '@/i18n/static-params';
+
 /**
  * Hidden motion playground: one demo per primitive from docs/motion-spec.md.
  * Not linked, noindex, excluded from the sitemap. DELETE BEFORE LAUNCH (Phase 8),

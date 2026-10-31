@@ -41,6 +41,7 @@ A static, bilingual (English + Hindi) marketing site for a microfinance / financ
 - `pnpm exec tsx scripts/brand.ts`: export logos to `public/brand/` and app icons to `src/app/`
 - `pnpm exec tsx scripts/verify-content.ts`: check every crawled string is in `messages/en`, all messages parse, and all adapter keys resolve. It writes `docs/content-verification.md`. Run it after any edit to `messages/en`.
 - `pnpm exec tsx scripts/content-to-messages.ts`: one-off generator, already run. `messages/` is now the content source; don't regenerate (`--force`) unless the crawl changes.
+- `pnpm exec tsx scripts/dev-smoke.ts`: with `pnpm dev` running (`DEV_URL`, default `http://localhost:3000`), loads every route in both locales and fails on non-200, a Next error overlay, or console errors
 - `pnpm exec playwright test`: tests
 
 pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNORED_BUILDS`, stop and tell the user to run `pnpm approve-builds`. Do not work around it.
@@ -116,6 +117,9 @@ Measured with mobile Lighthouse (Moto G-class throttling):
   - `src/components/{ui,sections,motion,layout}`: components
   - `src/data`: typed content adapters
   - `src/lib`: utilities
+- Every page under [locale] must re-export generateStaticParams from @/i18n/static-params:
+  `export { generateStaticParams } from '@/i18n/static-params';`
+- Never export `dynamicParams = false` (in a layout or page). With `output: 'export'`, Next 14's dev server then fails every route under it with a misleading "missing exported function generateStaticParams()" error. That was the real cause of the Phase 1 dev failure.
 - Server components by default. Use `"use client"` only for animation, forms and interactive widgets.
 - **Messages:**
   - There is one namespace per file in `messages/<locale>/`, listed in `namespaces` in `src/i18n/routing.ts`.
@@ -124,5 +128,5 @@ Measured with mobile Lighthouse (Moto G-class throttling):
 - **Data adapters** (`src/data/*.ts`) hold order, links, images and facts. They reference message keys (`…Key` fields) rather than copying text; `verify-content.ts` checks every key exists.
 - **Images:** use `<Picture image="…" alt={t(altKeyFor(image))} />` from `src/components/ui/Picture.tsx`. Mark the hero `priority`. Never use a raw `<img>` for content images.
 - Motion primitives live in `src/components/motion/`: `Reveal`, `SplitHeading`, `CountUp`, `GoldenThread`, `Parallax`, `MagneticButton`, `SmoothScroll`. Sections compose these; they don't write raw GSAP unless the choreography is unique.
-- Before saying a phase is done, run `pnpm build` and `pnpm exec tsc --noEmit`. Both must pass.
+- Before saying a phase is done, run `pnpm build`, `pnpm exec tsc --noEmit`, and the dev-server smoke check (`pnpm dev` + `scripts/dev-smoke.ts`). All three must pass. `pnpm build` alone does not catch dev-only errors.
 - Commit at the end of each phase with a clear message.

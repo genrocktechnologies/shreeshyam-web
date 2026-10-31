@@ -37,11 +37,12 @@ const kalam = Kalam({
   preload: false,
 });
 
-export const dynamicParams = false;
+// Do NOT export `dynamicParams = false` here or in any page: with `output: 'export'`,
+// Next 14's dev server then fails every route with a misleading "missing
+// generateStaticParams()" error. The static export only emits the listed locales
+// anyway, and unknown locales hit notFound() below.
 
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
+export { generateStaticParams } from '@/i18n/static-params';
 
 export const viewport: Viewport = {
   themeColor: '#FFFCF6',

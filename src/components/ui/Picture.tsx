@@ -27,8 +27,6 @@ export function Picture({ image, alt, sizes = '100vw', priority = false, classNa
   const style: CSSProperties | undefined = entry.blur
     ? { backgroundImage: `url(${entry.blur})`, backgroundSize: 'cover', backgroundPosition: 'center' }
     : undefined;
-  // React 18 has no camelCase fetchPriority prop; the lowercase attribute passes through.
-  const priorityAttrs = priority ? ({ fetchpriority: 'high' } as Record<string, string>) : {};
 
   return (
     <picture className={className}>
@@ -41,9 +39,9 @@ export function Picture({ image, alt, sizes = '100vw', priority = false, classNa
         height={Math.round((entry.height * largest) / entry.width)}
         loading={priority ? 'eager' : 'lazy'}
         decoding={priority ? 'sync' : 'async'}
+        fetchPriority={priority ? 'high' : undefined}
         style={style}
         className={cn('h-auto max-w-full', imgClassName)}
-        {...priorityAttrs}
       />
     </picture>
   );
