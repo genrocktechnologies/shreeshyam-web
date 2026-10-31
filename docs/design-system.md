@@ -46,7 +46,7 @@ success:'#1F8A5B', danger:'#C62828',
 ## Typography
 | Role | EN | HI | Sizes (mobile → desktop) |
 |---|---|---|---|
-| Display (h1) | Fraunces 600, opsz high, `-0.02em` | Tiro Devanagari Hindi 400 | 40 → 76px, leading 1.05 (HI 1.25) |
+| Display (h1) | Fraunces 600, opsz high, `-0.02em` | Tiro Devanagari Hindi 400 | 40 → 60px (`text-display`, capped from ≈1200px so the home h1 stays at 4 lines at 1280–1440px), leading 1.05 (HI 1.25) |
 | h2 | Fraunces 600 | Tiro Devanagari Hindi | 30 → 48px, leading 1.1 (HI 1.3) |
 | h3 / card title | Mukta 700 | Mukta 700 | 20 → 24px |
 | Body | Mukta 400 | Mukta 400 | 17 → 18px, leading 1.65 (HI 1.85) |
