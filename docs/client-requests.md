@@ -34,47 +34,55 @@
 | # | Question | Default we're building with |
 |---|---|---|
 | D12 | Hero "About Us" button opens Contact | **Fixed:** points to About |
-| D13 | "Our Policy" page is titled "Human Resource Policy" | **"HR Policy"**, linked from the footer and Careers |
-| D14 | Name capitalisation (Satyam pushkar, Sumit kumar, Shishir kumar) | **Keep exactly as crawled** until the client confirms. Asked in `docs/client-review-1.md`, items 4–5. |
 | D15 | Stats: 1200+ / 150+ / 98% | **Use as on the live site** |
 | D16 | Testimonials are real, with consent | **Use as on the live site**; flagged for confirmation before launch |
 | — | WhatsApp on the same number? | **Not shown** until confirmed |
 | — | Office days | **Not shown** until confirmed |
 | D17 | The live loan pages already publish some key facts (loan amount for all 4; tenure for Women Empowerment and Micro Business; eligibility and documents for Livestock). | ✅ **Approved:** show the published facts verbatim. They will be replaced when the client sends the full key facts (item C). Charges and repayment stay hidden until then. The values are in `src/data/loans.ts`. |
 
-## 🔁 Applied — reversible (approved defaults, awaiting client confirmation)
-These fixes are already in `messages/en`. Each one is also listed in `APPLIED` in `scripts/verify-content.ts`, which checks that the fixed text is present. **To revert one:** restore the crawled text in `messages/en` and delete its `APPLIED` entry. The client confirms these in `docs/client-review-1.md`.
+## ✅ Confirmed by client (31 Oct 2026) — review sheet 1
+The client answered **Yes** to all 54 items in `docs/client-review-1.md`. Every content fix below is applied in `messages/en` and listed in `APPLIED` in `scripts/verify-content.ts`. That check maps each crawled string to its new text and confirms the named message key holds it. **To revert one:** restore the crawled text in `messages/en` and delete its `APPLIED` entry.
 
-| # | Change | Where (message key) | Was on the live site | Now |
+### Content fixes (applied)
+| Review item | Fix id | Where (message key) | Was on the live site | Now |
 |---|---|---|---|---|
-| A4 | ⚠️ **URGENT, needs client confirmation: these are policy pages.** Organisation name standardised (P1, P2) | `mission.intro`; `hrPolicy.sections.policyAmendments.p1`; `hrPolicy.contact.organisation` | "Shree Shyam MicroFinance"; "Shree Shyam-Baba Micro Growth Foundation" | "Shree Shyam Small Growth Foundation" |
-| A1 | FAQ numbering removed (P7) | `home.faq.items.*.question` | "Q1. What services…" … "Q6. How can I…" | "What services…" … "How can I…" |
-| A2 | "!!" removed from headings (part of P8) | `register.heading`; `careers.heading` | "Register Now !!"; "Apply For Jobs !!" | "Register Now"; "Apply For Jobs" |
-| A3 | Old form labels not used (P11) | `common.form.fields.email`; `common.form.fields.mobile` | "EmailId"; "Mobile No" | "Email"; "Mobile number" |
+| 1–2 (P1, P2) | A4 | `mission.intro`; `hrPolicy.sections.policyAmendments.p1`; `hrPolicy.contact.organisation` | "Shree Shyam MicroFinance"; "Shree Shyam-Baba Micro Growth Foundation" | "Shree Shyam Small Growth Foundation" |
+| 3 (P3) | CR1-3 | `team.members.vikramSinha.name` | "Vikram Sinha" | "Vikram Kumar Sinha" (as in the HR Policy) |
+| 4 (P3, D14) | CR1-4/5 | `team.members.sumitKumar.name` | "Sumit kumar" | "Sumit Kumar" (as in the HR Policy) |
+| 5 (D14) | CR1-4/5 | `team.members.satyamPushkar.name`; `team.members.shishirKumar.name` | "Satyam pushkar"; "Shishir kumar" | "Satyam Pushkar"; "Shishir Kumar" |
+| 7 (P4) | CR1-7 | `privacy.sections.contactUs.l3` | "Office Address: Near Chini Mill Road, In Front of Pani Tanki, Shambu Sah Building…" | "Office Address: Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401" |
+| 8 (P6) | CR1-8 | `loans.products.microBusiness.facts.tenure.value` | "0 to 12 Months" | "Up to 12 Months" |
+| 9 (P6) | CR1-9 | `hrPolicy.sections.probation.p1` | "…probation for 0-3 months, …" | "…probation for up to 3 months, …" |
+| 11 (P8) | CR1-11 | `contact.intro` | "…growth opportunities.." | "…growth opportunities." |
+| 12 (P8) | CR1-12 | `about.whyChoose.heading` | "Why Choose Shree Shyam Small Growth Foundation ?" | "Why Choose Shree Shyam Small Growth Foundation?" |
+| 13 (P9) | CR1-13 | `common.footer.copyright` | "Copyright © 2026 Shree Shyam Small Growth Foundation ." | "Copyright © {year} Shree Shyam Small Growth Foundation." The footer fills `{year}` from the build date. |
+| 14 (P10) | CR1-14 | `mission.coreValues.items.integrity` | "Integrity- Honest, …" | "Integrity – Honest, …" |
+| 15 (P12) | CR1-15 | `contact.title` | "Contact us" | "Contact Us" |
+| 16 (P13) | CR1-16 | `common.nav.loanProducts.agricultureLivelihood` | "Agriculture Livelihood Loan" | "Agriculture & Rural Livelihood Loan" (the page name) |
+| 17 (P7) | A1 | `home.faq.items.*.question` | "Q1. What services…" … "Q6. How can I…" | "What services…" … "How can I…" |
+| 18–19 (P8) | A2 | `register.heading`; `careers.heading` | "Register Now !!"; "Apply For Jobs !!" | "Register Now"; "Apply For Jobs" |
+| 20–21 (P11) | A3 | `common.form.fields.email`; `common.form.fields.mobile` | "EmailId"; "Mobile No" | "Email"; "Mobile number" |
 
-## ✏️ Proposed content fixes — status
-Phase 1 found these issues while mapping the crawl into `messages/en`. Per content rule 1, anything not marked "applied" stays verbatim until the client answers `docs/client-review-1.md`.
+### Facts confirmed (text unchanged)
+| Review item | Fact | Result |
+|---|---|---|
+| 6 (P3) | Pravin Kumar Singh is listed as a Director in the HR Policy only | Kept in the HR Policy. See the open follow-up below about the team section. |
+| 10 (P5) | Staff working hours (Mon–Sat 10 AM – 6 PM, in the HR Policy) vs office hours (9 AM – 9 PM) | Both correct; no change. |
+| — (D13) | "Our Policy" page is the Human Resource Policy | Labelled **"HR Policy"**, linked from the footer and Careers (review item 27). |
 
-| # | Where (message key) | As on the live site | Issue | Status |
-|---|---|---|---|---|
-| P1 | `mission.intro` | "Shree Shyam MicroFinance is committed to…" | The organisation's name differs from "Shree Shyam Small Growth Foundation" | 🔁 Applied as A4 (URGENT confirmation) |
-| P2 | `hrPolicy.sections.policyAmendments.p1`, `hrPolicy.contact.organisation` | "Shree Shyam-Baba Micro Growth Foundation" | A third name for the organisation | 🔁 Applied as A4 (URGENT confirmation) |
-| P3 | `hrPolicy.contact.directors` vs `team.members` | "Vikram Kumar Sinha", "Sumit Kumar", "Pravin Kumar Singh" | Team lists "Vikram Sinha" and "Sumit kumar"; Pravin Kumar Singh is not on the team list | ❓ Verbatim; asking the client |
-| P4 | `privacy.sections.contactUs.l3` | "Office Address: Near Chini Mill Road, In Front of Pani Tanki, Shambu Sah Building…" | A longer address than the confirmed display address | ❓ Verbatim; asking the client |
-| P5 | `hrPolicy.sections.workingHours.list1` | "Monday – Saturday: 10:00 AM – 6:00 PM" | These are staff working hours in the policy. They differ from the confirmed office hours (9 AM – 9 PM); confirm both are correct | ❓ Verbatim; asking the client |
-| P6 | `loans.products.microBusiness.facts.tenure.value`; `hrPolicy.sections.probation.p1` | "0 to 12 Months"; "0-3 months" | A range starting at 0 reads oddly. Check the intended minimum | ❓ Verbatim; asking the client |
-| P7 | `home.faq.items.*.question` | "Q1. What services…" … "Q6. …" | The numbering is part of the text; an accordion doesn't need it | 🔁 Applied as A1 |
-| P8 | `contact.intro`; `about.whyChoose.heading`; `register.heading`; `careers.heading` | "…opportunities.."; "…Foundation ?"; "Register Now !!"; "Apply For Jobs !!" | Double full stop, space before "?", double "!!" | 🔁 "!!" applied as A2. ❓ ".." and " ?" verbatim; asking the client |
-| P9 | `common.footer.copyright` | "Copyright © 2026 Shree Shyam Small Growth Foundation ." | Space before the full stop; the year is fixed at 2026 | ❓ Verbatim; asking the client |
-| P10 | `mission.coreValues.items.integrity` | "Integrity- Honest, …" | The other values use " – " | ❓ Verbatim; asking the client |
-| P11 | `common.form.fields.email`, `common.form.fields.mobile` | "EmailId", "Mobile No" | Old form labels; "Email" and "Mobile number" read better | 🔁 Applied as A3 |
-| P12 | `contact.title` vs `common.nav.contactUs` | "Contact us" / "Contact Us" | Inconsistent capitalisation | ❓ Verbatim; asking the client |
-| P13 | `common.nav.loanProducts.agricultureLivelihood` vs `loans.products.agricultureLivelihood.name` | "Agriculture Livelihood Loan" / "Agriculture & Rural Livelihood Loan" | The menu name differs from the page name | ❓ Verbatim; asking the client |
+### New interface wording (approved as written)
+All in `messages/en/common.json`.
+| Review items | Wording |
+|---|---|
+| 22–33 | Navigation and buttons: "Loans", "All loans", "How to Join", "Careers", "Contact", "HR Policy", "Legal", "Register", "Explore Loans", "More about us", "Meet the team", "Learn more" |
+| 34–42 | Form fields: `form.fields.ageConfirm`, `consentPhone`, `districtVillage`, `loanProduct`, `notSure`, `subject`, `message`, `position`; `form.optional`; `form.careersCv` |
+| 43–45 | Form status: `form.status.sending`, `form.status.success`, `form.errors.sendFailed` |
+| 46–53 | Form errors: `form.errors.*` |
+| 54 | Picture descriptions: `alt.*` (all 19 images) |
 
-## 📝 New interface wording — needs approval before launch
-These strings don't exist on the live site. They are new UI text the rebuild needs, kept to plain, minimal wording, and are all in `messages/en/common.json`.
-- **Form fields:** `form.fields.ageConfirm` ("I am 18 years of age or above", adapted from the crawled membership eligibility); `form.fields.consentPhone`; `form.fields.districtVillage`, `loanProduct`, `notSure`, `subject`, `message`, `position`.
-- **Form messages:** `form.errors.*`; `form.status.success` ("Our team will get back to you as soon as possible", adapted from the crawled contact-form intro); `form.careersCv`.
-- **Navigation and buttons from site-plan.md:** "Loans", "All loans", "How to Join", "Careers", "Contact", "HR Policy", "Legal", "Explore Loans", "More about us", "Meet the team", "Learn more".
-- **Alt text for all 19 images:** `alt.*`.
-- **Accessibility labels:** `a11y.*`.
+### Open follow-up from review sheet 1
+- **Item 6, Pravin Kumar Singh:** the "Yes" confirms he stays in the HR Policy. It doesn't say whether he should also appear in the team section, and no photo or role was sent. He is **not** added to the team section. Ask the client: should he be on the team page, and if so, with which photo and role?
+
+## 📝 New interface wording since review sheet 1 — needs approval before launch
+Not yet shown to the client. Include in the next review sheet.
+- **Accessibility labels** (`common.a11y.*`): read aloud by screen readers, never shown on screen.

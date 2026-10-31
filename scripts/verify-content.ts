@@ -50,12 +50,14 @@ const EXCLUDED: { text: string | RegExp; reason: string }[] = [
 ];
 
 /**
- * Approved, reversible copy fixes applied to messages/en ("applied — reversible" in
- * docs/client-requests.md). For a crawled string matching `from`, the fixed text
- * `to(text)` must be present in the messages. This proves the fix was applied and
- * nothing else was lost. To revert a fix, restore the crawled text and delete its entry.
+ * Copy fixes applied to messages/en and confirmed by the client (docs/client-requests.md,
+ * "Confirmed by client (31 Oct 2026)"). For a crawled string matching `from`, the fixed
+ * text `to(text)` must be present in the messages. When `keys` is given, each of those
+ * message keys must hold one of the fixed texts. That catches a fix that only exists
+ * elsewhere by coincidence (e.g. "Contact Us" is also a nav label). To revert a fix,
+ * restore the crawled text and delete its entry.
  */
-const APPLIED: { id: string; from: RegExp; to: (crawled: string) => string; note: string }[] = [
+const APPLIED: { id: string; from: RegExp; to: (crawled: string) => string; note: string; keys?: string[] }[] = [
   {
     id: 'A1',
     from: /^Q[1-6]\. /,
@@ -78,7 +80,85 @@ const APPLIED: { id: string; from: RegExp; to: (crawled: string) => string; note
     id: 'A4',
     from: /Shree Shyam MicroFinance|Shree Shyam-Baba Micro Growth Foundation/,
     to: (t) => t.replace(/Shree Shyam MicroFinance|Shree Shyam-Baba Micro Growth Foundation/g, 'Shree Shyam Small Growth Foundation'),
-    note: 'Organisation name standardised (URGENT client confirmation).',
+    note: 'Organisation name standardised (client review 1, items 1–2).',
+  },
+  // Client review 1 (docs/client-review-1.md), answered "Yes" on 31 Oct 2026.
+  {
+    id: 'CR1-3',
+    from: /^Vikram Sinha$/,
+    to: () => 'Vikram Kumar Sinha',
+    note: 'Item 3: Vikram Kumar Sinha in both places.',
+    keys: ['team.members.vikramSinha.name'],
+  },
+  {
+    id: 'CR1-4/5',
+    from: /^(Sumit kumar|Satyam pushkar|Shishir kumar)$/,
+    to: (t) => t.replace(/ ([a-z])/, (_, c: string) => ` ${c.toUpperCase()}`),
+    note: 'Items 4–5: capital letters in team names.',
+    keys: ['team.members.sumitKumar.name', 'team.members.satyamPushkar.name', 'team.members.shishirKumar.name'],
+  },
+  {
+    id: 'CR1-7',
+    from: /^Office Address: Near Chini Mill Road, In Front of Pani Tanki, /,
+    to: (t) => t.replace('Near Chini Mill Road, In Front of Pani Tanki, ', ''),
+    note: 'Item 7: privacy-policy address matches the address used everywhere else.',
+    keys: ['privacy.sections.contactUs.l3'],
+  },
+  {
+    id: 'CR1-8',
+    from: /^0 to 12 Months$/,
+    to: () => 'Up to 12 Months',
+    note: 'Item 8: Micro Business Loan tenure.',
+    keys: ['loans.products.microBusiness.facts.tenure.value'],
+  },
+  {
+    id: 'CR1-9',
+    from: /probation for 0-3 months,/,
+    to: (t) => t.replace('probation for 0-3 months,', 'probation for up to 3 months,'),
+    note: 'Item 9: HR probation period.',
+    keys: ['hrPolicy.sections.probation.p1'],
+  },
+  {
+    id: 'CR1-11',
+    from: /opportunities\.\.$/,
+    to: (t) => t.replace(/\.\.$/, '.'),
+    note: 'Item 11: double full stop on the contact page.',
+    keys: ['contact.intro'],
+  },
+  {
+    id: 'CR1-12',
+    from: /^Why Choose Shree Shyam Small Growth Foundation \?$/,
+    to: () => 'Why Choose Shree Shyam Small Growth Foundation?',
+    note: 'Item 12: space before "?".',
+    keys: ['about.whyChoose.heading'],
+  },
+  {
+    id: 'CR1-13',
+    from: /^Copyright © 2026 Shree Shyam Small Growth Foundation \.$/,
+    to: () => 'Copyright © {year} Shree Shyam Small Growth Foundation.',
+    note: 'Item 13: no space before the full stop; the year comes from the build date.',
+    keys: ['common.footer.copyright'],
+  },
+  {
+    id: 'CR1-14',
+    from: /^Integrity- /,
+    to: (t) => t.replace(/^Integrity- /, 'Integrity – '),
+    note: 'Item 14: same dash as the other core values.',
+    keys: ['mission.coreValues.items.integrity'],
+  },
+  {
+    id: 'CR1-15',
+    from: /^Contact us$/,
+    to: () => 'Contact Us',
+    note: 'Item 15: contact page title capitalisation.',
+    keys: ['contact.title'],
+  },
+  {
+    id: 'CR1-16',
+    from: /^Agriculture Livelihood Loan$/,
+    to: () => 'Agriculture & Rural Livelihood Loan',
+    note: 'Item 16: menu uses the loan page name.',
+    keys: ['common.nav.loanProducts.agricultureLivelihood'],
   },
 ];
 
@@ -167,14 +247,16 @@ function leaves(tree: Tree, prefix = ''): [string, string][] {
   );
 }
 
-function hasKey(tree: Tree, key: string): boolean {
+function getKey(tree: Tree, key: string): string | undefined {
   let node: Tree | string | undefined = tree;
   for (const part of key.split('.')) {
-    if (typeof node !== 'object' || node === null) return false;
+    if (typeof node !== 'object' || node === null) return undefined;
     node = node[part];
   }
-  return typeof node === 'string';
+  return typeof node === 'string' ? node : undefined;
 }
+
+const hasKey = (tree: Tree, key: string) => getKey(tree, key) !== undefined;
 
 /** All string values in an object graph (for src/data/site.ts). */
 function strings(v: unknown): string[] {
@@ -234,6 +316,16 @@ function main() {
     ...EXCLUDED.filter((_, i) => !usedExclusions.has(i)),
     ...APPLIED.filter((f) => !usedFixes.has(f.id)).map((f) => ({ text: `${f.id} ${f.from}`, reason: f.note })),
   ];
+  // Keyed fixes: the named message must hold one of this fix's results.
+  for (const f of APPLIED.filter((x) => x.keys)) {
+    const results = new Set(fixed.filter((c) => c.id === f.id).map((c) => c.now));
+    for (const key of f.keys!) {
+      const value = getKey(messages, key);
+      if (value === undefined || !results.has(plain(value))) {
+        missing.push({ text: `${key} should hold the ${f.id} fix (has: ${JSON.stringify(value)})`, where: new Set(['messages/en']) });
+      }
+    }
+  }
 
   // 2. ICU: format every message (dummy values for arguments, <b> handler for rich text).
   const t = createTranslator({ locale: 'en', messages: messages as never });

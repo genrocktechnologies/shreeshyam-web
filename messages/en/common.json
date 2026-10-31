@@ -49,7 +49,7 @@
     "loanProducts": {
       "womenEmpowerment": "Women Empowerment Loan",
       "microBusiness": "Micro Business Loan",
-      "agricultureLivelihood": "Agriculture Livelihood Loan",
+      "agricultureLivelihood": "Agriculture & Rural Livelihood Loan",
       "livestock": "Livestock Loan"
     },
     "howToJoin": "How to Join",
@@ -91,7 +91,7 @@
   "footer": {
     "blurb": "<b>Shree Shyam Small Growth Foundation</b> is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities.",
     "contactHeading": "Contact Us",
-    "copyright": "Copyright © 2026 Shree Shyam Small Growth Foundation ."
+    "copyright": "Copyright © {year} Shree Shyam Small Growth Foundation."
   },
   "form": {
     "optional": "(optional)",
