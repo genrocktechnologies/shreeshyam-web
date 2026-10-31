@@ -26,7 +26,24 @@
     "chatOnWhatsApp": "Chat with us on WhatsApp (opens in a new tab)",
     "mapTitle": "Map showing the Foundation's office location",
     "formErrorsSummary": "Please fix {count, plural, one {# error} other {# errors}} in the form.",
-    "requiredField": "required"
+    "requiredField": "required",
+    "siteMenu": "Site menu",
+    "quickActions": "Quick actions",
+    "socialLinks": "Social media"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "linkedin": "LinkedIn",
+    "twitter": "X (Twitter)",
+    "instagram": "Instagram",
+    "youtube": "YouTube",
+    "whatsapp": "WhatsApp"
+  },
+  "notFound": {
+    "metaTitle": "Page not found",
+    "title": "We couldn't find this page",
+    "text": "The page may have moved when we rebuilt our website. These links will help you find your way.",
+    "hindiLink": "हिन्दी में देखें"
   },
   "languages": {
     "en": "English",

@@ -4,6 +4,23 @@
 
 /* ---------------------------------------------------------------- base */
 @layer base {
+  :root {
+    /* Fixed header geometry. PageHero/Hero pad their top by --header-total. */
+    --utility-h: 0px;
+    --bar-h: 72px;
+    /* How much the bar visually shrinks when scrolled (88 → 68 desktop). */
+    --shrink: 12px;
+    --header-total: calc(var(--utility-h) + var(--bar-h));
+  }
+
+  @media (min-width: 1024px) {
+    :root {
+      --utility-h: 36px;
+      --bar-h: 88px;
+      --shrink: 20px;
+    }
+  }
+
   html {
     color-scheme: light;
     -webkit-text-size-adjust: 100%;
@@ -82,9 +99,20 @@
     letter-spacing: 0.02em;
   }
 
+  /* Reduced motion: CSS transitions become short opacity fades; nothing moves. */
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition-property: opacity !important;
+      transition-duration: 0.2s !important;
+      transition-delay: 0s !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
     }
   }
 }
@@ -109,6 +137,121 @@
 
   .accent-script {
     @apply font-script text-accent font-bold;
+  }
+
+  /* ---- Site header (state set by HeaderShell via data attributes) ----
+   * Only transform is animated: "shrinking" slides the whole header up by the utility
+   * bar + --shrink, and nudges the bar content down by half of --shrink, so the
+   * visible bar goes 88 → 68px without animating height. */
+  .site-header {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-header[data-scrolled='true'] {
+    transform: translateY(calc(-1 * (var(--utility-h) + var(--shrink))));
+  }
+
+  .site-header[data-hidden='true'] {
+    transform: translateY(-100%);
+  }
+
+  .site-header [data-bar] {
+    transition:
+      background-color 0.3s,
+      box-shadow 0.3s,
+      backdrop-filter 0.3s;
+  }
+
+  .site-header[data-scrolled='true'] [data-bar] {
+    @apply bg-ivory/90 shadow-soft backdrop-blur-md;
+  }
+
+  /* An open mega menu makes the bar solid without moving the header. */
+  .site-header[data-menu-open='true'] [data-bar] {
+    @apply bg-ivory shadow-soft;
+  }
+
+  .site-header [data-bar-inner] {
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .site-header[data-scrolled='true'] [data-bar-inner] {
+    transform: translateY(calc(var(--shrink) / 2));
+  }
+
+  /* ---- Mega menu panels: fade + slide 8px, links staggered by --i ---- */
+  .mega-panel {
+    opacity: 0;
+    transform: translateY(8px);
+    visibility: hidden;
+    transition:
+      opacity 0.2s,
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s linear 0.25s;
+  }
+
+  .mega-panel[data-open='true'] {
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition:
+      opacity 0.2s,
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s;
+  }
+
+  .mega-panel [data-stagger] {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.3s,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(var(--i, 0) * 40ms);
+  }
+
+  .mega-panel[data-open='true'] [data-stagger] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Mobile sheet links stagger in from the right. */
+  .mobile-sheet [data-stagger] {
+    opacity: 0;
+    transform: translateX(16px);
+    transition:
+      opacity 0.3s,
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: calc(80ms + var(--i, 0) * 40ms);
+  }
+
+  .mobile-sheet[data-open='true'] [data-stagger] {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Link underline that draws left → right: scale-x on a pseudo-element
+   * (motion-spec, micro-interactions). For single-line links such as navigation. */
+  .link-draw {
+    position: relative;
+  }
+
+  .link-draw::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1.5px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-draw:hover::after,
+  .link-draw:focus-visible::after,
+  .link-draw[aria-current='page']::after {
+    transform: scaleX(1);
   }
 }
 

@@ -1,10 +1,9 @@
 import type { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { HeaderSpacer } from '@/components/layout/HeaderSpacer';
 import { CountUp, GoldenThread, ImageReveal, MagneticButton, Parallax, Reveal, SplitHeading } from '@/components/motion';
 import { Picture } from '@/components/ui/Picture';
 import { altKeyFor } from '@/data/images';
-import { pickMessages } from '@/i18n/pick';
 import { MotionStatus } from './MotionStatus';
 
 export { generateStaticParams } from '@/i18n/static-params';
@@ -45,7 +44,8 @@ export default async function MotionPlayground({ params: { locale } }: { params:
   const tAll = await getTranslations();
 
   return (
-    <main id="main">
+    <div>
+      <HeaderSpacer />
       <div className="border-b border-rani-100 bg-ivory-100">
         <div className="container-site flex flex-wrap items-start justify-between gap-4 py-4">
           <div>
@@ -54,9 +54,16 @@ export default async function MotionPlayground({ params: { locale } }: { params:
               {t('ui.scrollHint')} {t('ui.replay')}
             </p>
           </div>
-          <NextIntlClientProvider messages={pickMessages(await getMessages(), ['dev.ui'])}>
-            <MotionStatus />
-          </NextIntlClientProvider>
+          <MotionStatus
+            labels={{
+              reducedMotion: t('ui.reducedMotion'),
+              smoothScroll: t('ui.smoothScroll'),
+              lowEnd: t('ui.lowEnd'),
+              viewport: t('ui.viewport'),
+              on: t('ui.on'),
+              off: t('ui.off'),
+            }}
+          />
         </div>
       </div>
 
@@ -176,6 +183,6 @@ export default async function MotionPlayground({ params: { locale } }: { params:
           <SplitHeading className="max-w-3xl text-balance">{t('demo.processHeading')}</SplitHeading>
         </div>
       </section>
-    </main>
+    </div>
   );
 }

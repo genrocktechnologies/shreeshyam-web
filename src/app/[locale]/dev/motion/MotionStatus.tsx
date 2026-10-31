@@ -1,13 +1,20 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useLenis } from '@/components/motion';
 import { isLowEnd, media } from '@/lib/motion';
 
+export interface MotionStatusLabels {
+  reducedMotion: string;
+  smoothScroll: string;
+  lowEnd: string;
+  viewport: string;
+  on: string;
+  off: string;
+}
+
 /** Dev-only readout of the motion environment, used to verify each fallback path. */
-export function MotionStatus() {
-  const t = useTranslations('dev.ui');
+export function MotionStatus({ labels }: { labels: MotionStatusLabels }) {
   const lenis = useLenis();
   const [env, setEnv] = useState<{ reduce: boolean; lowEnd: boolean; width: number } | null>(null);
 
@@ -23,7 +30,7 @@ export function MotionStatus() {
     };
   }, []);
 
-  const flag = (on: boolean | undefined) => (on ? t('on') : t('off'));
+  const flag = (on: boolean | undefined) => (on ? labels.on : labels.off);
 
   return (
     <dl
@@ -32,13 +39,13 @@ export function MotionStatus() {
       data-lenis={lenis ? 'true' : 'false'}
       className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-small"
     >
-      <dt className="text-ink-muted">{t('reducedMotion')}</dt>
+      <dt className="text-ink-muted">{labels.reducedMotion}</dt>
       <dd className="font-bold">{flag(env?.reduce)}</dd>
-      <dt className="text-ink-muted">{t('smoothScroll')}</dt>
+      <dt className="text-ink-muted">{labels.smoothScroll}</dt>
       <dd className="font-bold">{flag(!!lenis)}</dd>
-      <dt className="text-ink-muted">{t('lowEnd')}</dt>
+      <dt className="text-ink-muted">{labels.lowEnd}</dt>
       <dd className="font-bold">{flag(env?.lowEnd)}</dd>
-      <dt className="text-ink-muted">{t('viewport')}</dt>
+      <dt className="text-ink-muted">{labels.viewport}</dt>
       <dd className="font-bold tabular-nums">{env ? `${env.width}px` : '—'}</dd>
     </dl>
   );

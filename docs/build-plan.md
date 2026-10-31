@@ -107,7 +107,8 @@ How to Join, Register, Contact, Careers, HR Policy, Privacy. Forms are wired to 
   - **Visual:** screenshots at 390 and 1440.
 - Lighthouse on Home, a loan page and Register (mobile).
 - **Launch checklist: delete the motion playground.** Remove all of these, then rebuild and confirm `/en/dev/motion/` returns 404:
-  - [ ] `src/app/[locale]/dev/`
+  - [ ] `src/app/[locale]/dev/` (the motion playground and the Phase 2 layout demo)
+  - [ ] Point `tests/chrome.spec.ts` (`PAGES` and the `/dev/layout/` tests) at real routes
   - [ ] `messages/en/dev.json` and `messages/hi/dev.json` (also remove `'dev'` from `namespaces` in `src/i18n/routing.ts`)
   - (`public/dev/` was already removed in Phase 1, when the playground switched to `<Picture>` with the real images.)
 - Create a GitHub repo, import it into Vercel, add the env var, and set the custom domain.

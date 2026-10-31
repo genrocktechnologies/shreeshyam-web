@@ -86,3 +86,5 @@ All in `messages/en/common.json`.
 ## 📝 New interface wording since review sheet 1 — needs approval before launch
 Not yet shown to the client. Include in the next review sheet.
 - **Accessibility labels** (`common.a11y.*`): read aloud by screen readers, never shown on screen.
+- **"Page not found" page** (Phase 2, `common.notFound.*`): "We couldn't find this page" / "The page may have moved when we rebuilt our website. These links will help you find your way." / "हिन्दी में देखें", with the approved "Back to home" and "Explore Loans" buttons.
+- **Social network names** (`common.social.*`), read aloud for the footer icons: "Facebook", "LinkedIn", "X (Twitter)", "Instagram", "WhatsApp".
