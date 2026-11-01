@@ -9,3 +9,4 @@ export { Reveal } from './Reveal';
 export { Shine } from './Shine';
 export { SmoothScroll, useLenis } from './SmoothScroll';
 export { SplitHeading } from './SplitHeading';
+export { TreeConnectors } from './TreeConnectors';

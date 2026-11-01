@@ -414,6 +414,7 @@ html.lenis body {
 
 .js-motion [data-accent-underline],
 .js-motion [data-frame-band],
+.js-motion [data-tree-lines],
 .js-motion [data-thread-seed],
 .js-motion [data-bloom],
 .js-motion svg[data-tick] {

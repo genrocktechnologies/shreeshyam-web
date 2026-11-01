@@ -26,6 +26,11 @@ interface PhotoFrameProps {
   sizes: string;
   priority?: boolean;
   motion?: FrameMotion;
+  /**
+   * `circle`: a 1:1 round crop at the image's focal point (Team tree portraits), instead
+   * of the frame from the data. Static (no motion).
+   */
+  shape?: 'circle';
   /** Width/max-width/shadow classes for the frame. Aspect and corners come from the data. */
   className?: string;
 }
@@ -37,9 +42,16 @@ interface PhotoFrameProps {
  * parallax over-scales and caps its travel, and the reveal mask matches the frame's
  * corners, so no motion ever exposes an empty edge.
  */
-export function PhotoFrame({ image, alt, sizes, priority = false, motion = 'reveal', className }: PhotoFrameProps) {
+export function PhotoFrame({ image, alt, sizes, priority = false, motion = 'reveal', shape, className }: PhotoFrameProps) {
   const frame = frameOf(image);
   if (frame === 'illustration') throw new Error(`PhotoFrame: "${image}" is an illustration/cut-out`);
+  if (shape === 'circle') {
+    return (
+      <div data-photo-frame="circle" className={cn('aspect-square overflow-hidden rounded-full', className)}>
+        <Picture image={image} alt={alt} sizes={sizes} priority={priority} className="block h-full w-full" imgClassName="h-full w-full object-cover" />
+      </div>
+    );
+  }
   const { aspect, radius } = FRAMES[frame];
   if (radius === 'curved') {
     const curved = motion === 'hero' ? 'hero' : motion === 'none' ? 'none' : 'reveal';
@@ -57,7 +69,7 @@ export function PhotoFrame({ image, alt, sizes, priority = false, motion = 'reve
       imgClassName="h-full w-full object-cover"
     />
   );
-  const shape = radius === 'arch' ? 'rounded-arch' : 'rounded-2xl';
+  const corners = radius === 'arch' ? 'rounded-arch' : 'rounded-2xl';
   const style = { aspectRatio: aspect };
 
   if (motion === 'reveal' || motion === 'reveal-parallax') {
@@ -69,7 +81,7 @@ export function PhotoFrame({ image, alt, sizes, priority = false, motion = 'reve
   }
 
   return (
-    <div data-photo-frame={frame} style={style} className={cn('overflow-hidden', shape, className)}>
+    <div data-photo-frame={frame} style={style} className={cn('overflow-hidden', corners, className)}>
       {motion === 'hero' ? (
         <Parallax className="h-full">
           <div className="h-full animate-hero-settle">{picture}</div>

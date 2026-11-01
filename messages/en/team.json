@@ -29,5 +29,11 @@
       "name": "Shishir Kumar",
       "role": "Chief Information Officer"
     }
+  },
+  "tiers": {
+    "chairman": "Chairman",
+    "leadership": "Leadership",
+    "executiveDirectors": "Executive Directors",
+    "headsOfficers": "Heads & Officers"
   }
 }

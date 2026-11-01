@@ -1,13 +1,22 @@
 import type { PhotoKey } from './images';
 import type { SocialLink } from './site';
 
+/** Leadership tiers of the Team tree (CR-01, section 5), grouped by the published titles. */
+export type Tier = 1 | 2 | 3 | 4;
+
 export interface TeamMember {
   id: string;
   nameKey: string;
   roleKey: string;
   photo: PhotoKey;
-  /** Shown larger on the Team page (site-plan: Chairman and MD/CEO). */
-  featured: boolean;
+  tier: Tier;
+  /**
+   * Who this member reports to (another member's id). Unknown for everyone until the
+   * client confirms (client-requests, CR-01): the tree then draws connectors tier to tier,
+   * never person to person, because drawing reporting lines would invent them. Once set,
+   * the tree can switch to exact lines.
+   */
+  reportsTo?: string;
   /** LinkedIn, a placeholder at the client's request (rendered per the site.ts social-link rules). */
   socials: SocialLink[];
 }
@@ -18,24 +27,37 @@ export interface TeamMember {
 // icons also only pointed at the networks' home pages; they are not carried over.
 const placeholderSocials = (): SocialLink[] => [{ network: 'linkedin', url: 'https://www.linkedin.com/', placeholder: true }];
 
-const member = (id: string, photo: PhotoKey, featured = false): TeamMember => ({
+const member = (id: string, photo: PhotoKey, tier: Tier): TeamMember => ({
   id,
   nameKey: `team.members.${id}.name`,
   roleKey: `team.members.${id}.role`,
   photo,
-  featured,
+  tier,
   socials: placeholderSocials(),
 });
 
 /** In the crawled order (content rule 9: names and roles exactly as crawled). */
 export const team: TeamMember[] = [
-  member('satyamPushkar', 'teamSatyamPushkar'),
-  member('ranjeetKumar', 'teamRanjeetKumar'),
-  member('sumitKumar', 'teamSumitKumar'),
-  member('sauravPrakash', 'teamSauravPrakash', true),
-  member('vikramSinha', 'teamVikramSinha', true),
-  member('sonuKumar', 'teamSonuKumar'),
-  member('shishirKumar', 'teamShishirKumar'),
+  member('satyamPushkar', 'teamSatyamPushkar', 4),
+  member('ranjeetKumar', 'teamRanjeetKumar', 3),
+  member('sumitKumar', 'teamSumitKumar', 3),
+  member('sauravPrakash', 'teamSauravPrakash', 2),
+  member('vikramSinha', 'teamVikramSinha', 1),
+  member('sonuKumar', 'teamSonuKumar', 4),
+  member('shishirKumar', 'teamShishirKumar', 4),
 ];
+
+/** Tier labels (CR-01 proposed copy, client-requests) in tree order; members keep crawled order. */
+export const teamTiers: { tier: Tier; labelKey: string; members: TeamMember[] }[] = (
+  [
+    [1, 'team.tiers.chairman'],
+    [2, 'team.tiers.leadership'],
+    [3, 'team.tiers.executiveDirectors'],
+    [4, 'team.tiers.headsOfficers'],
+  ] as const
+).map(([tier, labelKey]) => ({ tier, labelKey, members: team.filter((m) => m.tier === tier) }));
+
+/** Chairman and MD/CEO cards are slightly larger. */
+export const isFeatured = (m: TeamMember) => m.tier <= 2;
 
 export const teamHeadingKey = 'team.heading';
