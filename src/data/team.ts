@@ -8,16 +8,15 @@ export interface TeamMember {
   photo: PhotoKey;
   /** Shown larger on the Team page (site-plan: Chairman and MD/CEO). */
   featured: boolean;
-  /** Placeholders at the client's request; TeamCard renders icons only for real URLs. */
+  /** LinkedIn, a placeholder at the client's request (rendered per the site.ts social-link rules). */
   socials: SocialLink[];
 }
 
-// The old team cards all linked to the networks' home pages.
-const placeholderSocials = (): SocialLink[] => [
-  { network: 'linkedin', url: 'https://www.linkedin.com/', placeholder: true },
-  { network: 'twitter', url: 'https://twitter.com/', placeholder: true },
-  { network: 'instagram', url: 'https://www.instagram.com/', placeholder: true },
-];
+// Team LinkedIn: a placeholder for now (client-requests: "Team LinkedIn | Placeholders for
+// now | Same rule as social links"). It opens LinkedIn's home page in a new tab, and the
+// Phase 8 launch check fails while any placeholder remains. The old cards' X and Instagram
+// icons also only pointed at the networks' home pages; they are not carried over.
+const placeholderSocials = (): SocialLink[] => [{ network: 'linkedin', url: 'https://www.linkedin.com/', placeholder: true }];
 
 const member = (id: string, photo: PhotoKey, featured = false): TeamMember => ({
   id,

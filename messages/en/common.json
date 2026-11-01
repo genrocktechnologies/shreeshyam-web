@@ -14,12 +14,14 @@
     "currentLanguage": "Current language: {language}",
     "opensInNewTab": "(opens in a new tab)",
     "socialLink": "{network} (opens in a new tab)",
+    "memberSocial": "{name} on {network} (opens in a new tab)",
     "previous": "Previous",
     "next": "Next",
     "slideOf": "{current} of {total}",
     "goToSlide": "Go to item {number}",
     "pauseSlides": "Pause automatic slides",
     "playSlides": "Play automatic slides",
+    "closeDialog": "Close",
     "readingProgress": "Reading progress",
     "onThisPage": "On this page",
     "backToTop": "Back to top",
@@ -169,6 +171,7 @@
     "aboutArch": "A woman in a green sari reading through documents during an outdoor meeting",
     "processStepRegistration": "Women in a group raising their membership cards",
     "processStepSupport": "A young man counting cash beside a register",
-    "processStepMonitoring": "A field worker in glasses reading through papers"
+    "processStepMonitoring": "A field worker in glasses reading through papers",
+    "aboutHeroArch": "A smiling woman in a cream headscarf sitting with other women from a village group, holding up her membership form"
   }
 }

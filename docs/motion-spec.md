@@ -85,6 +85,9 @@ All values below live in `src/lib/motion.ts` (durations, distances, eases, delay
 - **FAQ (§11):** without JS every answer is open; after hydration only the first stays open.
 - **Inner-page h1 (Phase 4):** `PageHero` no longer splits its h1 with SplitText on load. Like the home hero, the h1 is painted at full opacity on the first frame and rises with the CSS `animate-hero-title` (transform only), because it is the LCP element on inner pages.
 - **CTA band:** the home final CTA and the inner-page closing band are one component (`CtaBand`), so every page's thread ends in the bloom.
+- **Gallery (Phase 5):** the lightbox FLIPs the large image out of the clicked tile with GSAP Flip (transform/scale only). Flip is dynamically imported by the gallery's lightbox (warmed when the browser is idle, awaited on the first tap), so it is in no page's first-load JS, not even the gallery's. Reduced motion: fade only. The tiles are real links to the full-size files, so the gallery works without JS.
+- **PageHero image:** an arch hero image uses the no-clip `hero` motion (settle only), like the home hero, because it can be the desktop LCP element.
+- **Team page grid:** crawled order is kept; the featured Chairman and MD/CEO (4th and 5th) span half the 12-column grid, so they form their own larger middle row.
 
 ## Home page choreography
 | # | Section | Desktop | Mobile |

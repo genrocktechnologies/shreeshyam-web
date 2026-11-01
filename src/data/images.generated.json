@@ -59,6 +59,18 @@
     "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABQAgCdASoQAAwAA4BaJbACdAYvXlKRJhJe34AA/u2m0N8v0YpxvNMktf6F21Ht5U4vXKY4J/W20PkzCNfl5v7pYGOfb74TwyPSS5a6RQKFQ29Rix/EFeR7v4Uh7jy96ZS8DHFZAAA=",
     "source": "assets/original/index/best_hrms_banner.jpg (crop 1150,60 770×578)"
   },
+  "aboutHeroArch": {
+    "kind": "photo",
+    "width": 819,
+    "height": 1024,
+    "widths": [
+      480,
+      819
+    ],
+    "base": "/images/about-hero-arch",
+    "blur": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZAC7ACBv2hAr2Z1pLD8p2MOAAP54EiMazNMU+xZVkzpOxAJw+WIm2Zuc6BoZQ30zBpZwtcukMe4U2vClM1t0Fq7RnkIl8nEesvphXU8YMj4UrwM2LB2D3M+o0FMLE5TaHwTus7tnFtRr6wAAAA==",
+    "source": "assets/original/index/finance_banner.jpg (crop 1101,0 819×1024)"
+  },
   "heroWomenCards": {
     "kind": "photo",
     "width": 1920,

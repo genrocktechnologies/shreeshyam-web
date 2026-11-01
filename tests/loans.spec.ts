@@ -15,7 +15,6 @@ const SLUGS: Record<Product, string> = {
   agricultureLivelihood: 'agriculture-livelihood',
   livestock: 'livestock',
 };
-const tidy = (s: string) => s.replace(/\s+:\s*$/, ':').trim();
 // Labels are uppercased with CSS, so compare case-insensitively.
 const norm = (s: string) => s.replace(/\s+/g, ' ').trim().toLowerCase();
 
@@ -31,7 +30,7 @@ function productStrings(id: Product): string[] {
     const facts = rest.facts as Record<string, { label: string; value: string }>;
     rest.facts = { ...facts, purpose: { value: facts.purpose.value } };
   }
-  const walk = (v: unknown) => (typeof v === 'string' ? out.push(tidy(v)) : v && typeof v === 'object' && Object.values(v).forEach(walk));
+  const walk = (v: unknown) => (typeof v === 'string' ? out.push(v) : v && typeof v === 'object' && Object.values(v).forEach(walk));
   walk(rest);
   return out;
 }

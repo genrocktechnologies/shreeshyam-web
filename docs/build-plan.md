@@ -107,6 +107,8 @@ How to Join, Register, Contact, Careers, HR Policy, Privacy. Forms are wired to 
   - **Visual:** screenshots at 390 and 1440.
 - Lighthouse on Home, a loan page and Register (mobile).
 - **Font preloads:** confirm the Vercel (Linux) build emits `<link rel="preload" as="font">` for Fraunces, Mukta and Kalam (Latin). Local Windows builds emit none: Next 14's font manifest looks for the loader by a `/`-separated path, which seems not to match Windows paths. Without preloads Fraunces swaps late, and Lighthouse shows LCP outliers of about 8s.
+- **Sitemap:** leave out `/about/gallery/` while `galleryPublished` (`src/data/gallery.ts`) is false. When the client's photos arrive: set it to true (this also removes `noindex`), add the gallery to the About menu and the footer, and include it in the sitemap.
+- **Placeholder check:** the launch check covering `placeholder: true` must include the team LinkedIn links in `src/data/team.ts`, not just `site.ts`.
 - **Launch checklist: delete the motion playground.** Remove all of these, then rebuild and confirm `/en/dev/motion/` returns 404:
   - [ ] `src/app/[locale]/dev/` (the motion playground and the Phase 2 layout demo)
   - [ ] Point `tests/chrome.spec.ts` (`PAGES` and the `/dev/layout/` tests) at real routes

@@ -40,6 +40,9 @@ const IMAGES: Record<string, [string, Kind, Crop?]> = {
   processStepRegistration: ['index/finance_banner.jpg', 'photo', { left: 0, top: 0, width: 1000, height: 750 }],
   processStepSupport: ['index/best_hrms_banner.jpg', 'photo', { left: 0, top: 330, width: 900, height: 675 }],
   processStepMonitoring: ['index/best_hrms_banner.jpg', 'photo', { left: 1150, top: 60, width: 770, height: 578 }],
+  // Phase 5: About hero. Same source as the home hero, but the right-hand group (a different
+  // person in focus), so the inner page never repeats the home crop.
+  aboutHeroArch: ['index/finance_banner.jpg', 'photo', { left: 1101, top: 0, width: 819, height: 1024 }],
   heroWomenCards: ['index/finance_banner.jpg', 'photo'],
   fieldMeeting: ['index/best_hrms_banner.jpg', 'photo'],
   membersLedger: ['index/about_me.jpg', 'photo'],

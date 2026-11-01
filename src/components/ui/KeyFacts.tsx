@@ -2,7 +2,6 @@ import { getTranslations } from 'next-intl/server';
 import { Reveal } from '@/components/motion';
 import type { LabelledList, LabelledValue } from '@/data/loans';
 import { cn } from '@/lib/cn';
-import { tidyLabel } from '@/lib/label';
 import { TickList } from './TickList';
 
 /** Values longer than this (characters) are sentences, not figures. */
@@ -38,7 +37,7 @@ export async function KeyFacts({ values, lists, className }: KeyFactsProps) {
             const value = t(r.valueKey);
             return (
               <div key={r.labelKey} className="border-b border-rani-200/60 pb-5 last:border-b-0 last:pb-0">
-                <dt className="text-small font-bold uppercase tracking-[0.08em] text-ink-muted">{tidyLabel(t(r.labelKey))}</dt>
+                <dt className="text-small font-bold uppercase tracking-[0.08em] text-ink-muted">{t(r.labelKey)}</dt>
                 {/* Figures (amount, tenure) read big; a sentence (purpose) stays at body size. */}
                 <dd className={cn('mt-1.5 text-plum-900', value.length > LONG_VALUE ? 'text-body' : 'font-display text-h3 font-semibold')}>{value}</dd>
               </div>
@@ -50,7 +49,7 @@ export async function KeyFacts({ values, lists, className }: KeyFactsProps) {
         <dl className={cn('grid gap-7', rows.length > 0 && 'mt-7 border-t border-rani-200/60 pt-7')}>
           {groups.map((g) => (
             <div key={g.id}>
-              <dt className="text-small font-bold uppercase tracking-[0.08em] text-ink-muted">{tidyLabel(t(g.labelKey))}</dt>
+              <dt className="text-small font-bold uppercase tracking-[0.08em] text-ink-muted">{t(g.labelKey)}</dt>
               <dd className="mt-4">
                 <TickList items={g.itemKeys.map((k) => t(k))} />
               </dd>

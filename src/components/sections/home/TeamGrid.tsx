@@ -1,9 +1,8 @@
 import { getTranslations } from 'next-intl/server';
 import { GoldenThread, Reveal } from '@/components/motion';
 import { Button } from '@/components/ui/Button';
-import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { altKeyFor } from '@/data/images';
+import { TeamCard } from '@/components/ui/TeamCard';
 import { team, teamHeadingKey } from '@/data/team';
 
 /**
@@ -30,32 +29,11 @@ export async function TeamGrid() {
           }
         />
         <Reveal stagger="tight" as="ul" className="mt-12 flex flex-wrap justify-center gap-x-4 gap-y-10 md:gap-x-8 md:gap-y-14">
-          {team.map((m) => {
-            const name = t(m.nameKey);
-            return (
-              <li key={m.id} className="group w-[calc(50%-0.5rem)] md:w-[calc((100%-4rem)/3)] lg:w-[calc((100%-6rem)/4)]">
-                <div className="relative">
-                  <PhotoFrame
-                    image={m.photo}
-                    alt={t(altKeyFor(m.photo), { name })}
-                    motion="none"
-                    sizes="(min-width: 1024px) 17rem, (min-width: 768px) 30vw, 45vw"
-                    className="w-full shadow-soft"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-0 rounded-arch opacity-0 backdrop-grayscale transition-opacity duration-portrait ease-growth [@media(hover:hover)]:opacity-100 [@media(hover:hover)]:group-hover:opacity-0"
-                  />
-                </div>
-                <h3 className="mt-5 text-center font-display text-[1.1875rem] font-semibold leading-snug text-ink md:text-h3">
-                  <span className="relative after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-marigold-400 after:transition-transform after:duration-link after:ease-growth group-hover:after:scale-x-100">
-                    {name}
-                  </span>
-                </h3>
-                <p className="mt-2 text-center text-small text-ink-muted">{t(m.roleKey)}</p>
-              </li>
-            );
-          })}
+          {team.map((m) => (
+            <li key={m.id} className="group w-[calc(50%-0.5rem)] md:w-[calc((100%-4rem)/3)] lg:w-[calc((100%-6rem)/4)]">
+              <TeamCard member={m} sizes="(min-width: 1024px) 17rem, (min-width: 768px) 30vw, 45vw" />
+            </li>
+          ))}
         </Reveal>
       </div>
     </section>

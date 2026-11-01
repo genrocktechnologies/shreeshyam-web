@@ -162,6 +162,20 @@ const APPLIED: { id: string; from: RegExp; to: (crawled: string) => string; note
     note: 'Item 16: menu uses the loan page name.',
     keys: ['common.nav.loanProducts.agricultureLivelihood'],
   },
+  {
+    id: 'P4-1',
+    from: /^(Suitable For|Uses|Benefits|Common Features|Basic Eligibility|Required Documents)\s*:$/,
+    to: (t) => t.replace(/\s*:$/, ''),
+    note: 'Phase 4 default (approved, reversible; for client review 2): no trailing colon on loan-table labels used as headings.',
+    keys: [
+      'loans.products.microBusiness.lists.suitableFor.label',
+      'loans.products.agricultureLivelihood.lists.uses.label',
+      'loans.products.livestock.lists.benefits.label',
+      'loans.products.livestock.lists.commonFeatures.label',
+      'loans.products.livestock.lists.eligibility.label',
+      'loans.products.livestock.lists.documents.label',
+    ],
+  },
 ];
 
 // ---------------------------------------------------------------------------

@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { GoldenThread, Reveal } from '@/components/motion';
 import { Breadcrumbs, type Crumb } from '@/components/ui/Breadcrumbs';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
-import type { PhotoKey } from '@/data/images';
+import { frameOf, type PhotoKey } from '@/data/images';
 import { cn } from '@/lib/cn';
 import { pageHero } from '@/lib/motion';
 
@@ -59,7 +59,8 @@ export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className 
             image={image.key}
             alt={image.alt}
             priority
-            motion="reveal"
+            // Possibly the LCP element: painted on the first frame (no clip mask), settle only.
+            motion={frameOf(image.key) === 'arch' ? 'hero' : 'none'}
             sizes="(min-width: 768px) 22rem, 90vw"
             className="mx-auto w-full max-w-[22rem]"
           />

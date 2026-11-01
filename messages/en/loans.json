@@ -58,7 +58,7 @@
       },
       "lists": {
         "suitableFor": {
-          "label": "Suitable For:",
+          "label": "Suitable For",
           "items": {
             "retailShops": "Retail shops",
             "streetVendors": "Street vendors",
@@ -85,7 +85,7 @@
       },
       "lists": {
         "uses": {
-          "label": "Uses:",
+          "label": "Uses",
           "items": {
             "seedsFertilizers": "Seeds and fertilizers",
             "irrigation": "Irrigation",
@@ -114,7 +114,7 @@
       },
       "lists": {
         "benefits": {
-          "label": "Benefits:",
+          "label": "Benefits",
           "items": {
             "purchaseLivestock": "Purchase of livestock",
             "expansionDairyFarms": "Expansion of dairy farms",
@@ -122,7 +122,7 @@
           }
         },
         "commonFeatures": {
-          "label": "Common Features :",
+          "label": "Common Features",
           "items": {
             "transparentLoanProcess": "Transparent loan process",
             "competitiveInterestRates": "Competitive interest rates (as applicable)",
@@ -133,7 +133,7 @@
           }
         },
         "eligibility": {
-          "label": "Basic Eligibility :",
+          "label": "Basic Eligibility",
           "items": {
             "indianCitizen": "Indian citizen",
             "ageYearsAbove": "Age: 18 years or above",
@@ -141,7 +141,7 @@
           }
         },
         "documents": {
-          "label": "Required Documents :",
+          "label": "Required Documents",
           "items": {
             "aadhaarCard": "Aadhaar Card",
             "panCardApplicable": "PAN Card (if applicable)",

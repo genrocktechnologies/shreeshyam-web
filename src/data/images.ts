@@ -57,6 +57,8 @@ export const IMAGE_META = {
   processStepRegistration: { frame: 'wide', focal: { x: 45, y: 40 } },
   processStepSupport: { frame: 'wide', focal: { x: 40, y: 35 } },
   processStepMonitoring: { frame: 'wide', focal: { x: 50, y: 30 } },
+  // About hero (Phase 5): woman in the cream headscarf, face in the upper third.
+  aboutHeroArch: { frame: 'arch', focal: { x: 40, y: 28 } },
   // Full source photos.
   heroWomenCards: { frame: 'wide', focal: { x: 55, y: 40 } },
   fieldMeeting: { frame: 'wide', focal: { x: 45, y: 35 } },
@@ -102,4 +104,39 @@ export const isTeamPortrait = (key: ImageKey) => key.startsWith('team');
  */
 export function altKeyFor(key: ImageKey): string {
   return isTeamPortrait(key) ? 'common.alt.teamPortrait' : `common.alt.${key}`;
+}
+
+/** The largest WebP of an image (gallery links: the no-JS fallback opens the file itself). */
+export function fullSizeUrl(key: ImageKey): string {
+  const entry = images[key];
+  return `${entry.base}-${entry.widths[entry.widths.length - 1]}.webp`;
+}
+
+/** Everything a <picture> needs for one image, resolved on the server (no manifest in the browser). */
+export interface PictureSourceSet {
+  avif: string;
+  webp: string;
+  /** Largest WebP: the <img> fallback src. */
+  src: string;
+  width: number;
+  height: number;
+  /** Blurred placeholder (data URI), photos only. */
+  blur?: string;
+  /** object-position from the focal point. */
+  position: string;
+}
+
+export function pictureSources(key: ImageKey): PictureSourceSet {
+  const entry = images[key];
+  const largest = entry.widths[entry.widths.length - 1];
+  const set = (ext: 'avif' | 'webp') => entry.widths.map((w) => `${entry.base}-${w}.${ext} ${w}w`).join(', ');
+  return {
+    avif: set('avif'),
+    webp: set('webp'),
+    src: `${entry.base}-${largest}.webp`,
+    width: largest,
+    height: Math.round((entry.height * largest) / entry.width),
+    blur: entry.blur || undefined,
+    position: objectPosition(key),
+  };
 }

@@ -83,6 +83,12 @@ success:'#1F8A5B', danger:'#C62828',
 | **Accordion** | A `<button aria-expanded aria-controls>` inside a heading, controlling a `role="region"` panel with `aria-labelledby`. Opening animates the panel wrapper's CSS `grid-template-rows` from `0fr` to `1fr` over 0.35s, with an `overflow-hidden` inner child. A collapsed panel also gets `inert`, so its links can't be tabbed to. The plus icon rotates into a cross with a CSS transform. Instant under reduced motion. No JS animation library. Without JS every panel renders open, so all answers stay readable. |
 | **KeyFacts** | Definition-list card for loan facts; renders only the fields present (nothing at all if none). Figures (amount, tenure) use the display face; sentences (purpose) stay at body size; eligibility and documents are TickLists. Sticky beside the lists on desktop, first on phones |
 | **TickList** | Checklist with marigold-100 tick discs whose rani checks draw in one after another (`DrawTicks`) |
+| **FeatureCard** | ServiceCard, also used for About's "Why Choose" items: IconBadge, title, text; hover lift and icon turn. `inlineIcon` puts the icon beside the text in wide bento cells |
+| **TeamCard** | Arch portrait (hover grayscale → colour on hover-capable devices), name, role; optional LinkedIn icon (placeholder per the site.ts rules, labelled "{name} on LinkedIn"). `featured` enlarges the type; the grid sets the width |
+| **PullQuote** | A page's key statement (Mission, Vision): display type beside a marigold rule, with a Kalam quote mark |
+| **TeaserCard** | Linked summary of another page (About's Mission/Vision teasers, the sibling link on Mission and Vision); the whole card is the link |
+| **Illustration** | Illustrations and cut-out photos at their natural shape. Cut-outs are multiply-blended so their white surround takes the background colour. Typed to `IllustrationKey`, the counterpart of PhotoFrame's `PhotoKey` |
+| **PictureSources** | Renders a `<picture>` from sources resolved on the server (`pictureSources()`). `Picture` renders through it; client components use it directly, so the image manifest stays out of the browser |
 | **Stepper** | Vertical numbered steps joined by the thread line |
 | **SectionHeading** | Optional eyebrow, an h2 (SplitHeading), an optional lead, and an optional action (a link or button) beside the heading from md up |
 | **IconBadge** | The duotone icon from Iconography: a rani-50 circle, a marigold-200 blob, and a rani-600 lucide stroke that turns `rotate.icon` degrees on group hover |

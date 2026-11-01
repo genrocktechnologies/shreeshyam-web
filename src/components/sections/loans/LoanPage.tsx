@@ -9,7 +9,6 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { TickList } from '@/components/ui/TickList';
 import { documentsFaqId, faqs } from '@/data/faqs';
 import { loanById, loansHubHref, relatedLoans, relatedLoansHeadingKey, type LoanProduct } from '@/data/loans';
-import { tidyLabel } from '@/lib/label';
 
 /**
  * The one template behind the 4 loan product pages (site-plan, Loan product):
@@ -49,7 +48,7 @@ export async function LoanPage({ id }: { id: LoanProduct['id'] }) {
             {loan.lists.map((list) => (
               <div key={list.id}>
                 <Reveal>
-                  <h2 className="text-h3">{tidyLabel(t(list.labelKey))}</h2>
+                  <h2 className="text-h3">{t(list.labelKey)}</h2>
                 </Reveal>
                 <TickList items={list.itemKeys.map((k) => t(k))} className="mt-5" />
               </div>

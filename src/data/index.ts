@@ -1,4 +1,6 @@
+export * from './about';
 export * from './faqs';
+export * from './gallery';
 export * from './images';
 export * from './loans';
 export * from './process';
