@@ -6,7 +6,7 @@ import { GalleryLightbox } from '@/components/sections/gallery/GalleryLightbox';
 import { PageHero } from '@/components/sections/PageHero';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { aboutRoutes } from '@/data/about';
-import { galleryPhotos, galleryPublished } from '@/data/gallery';
+import { gallery } from '@/data/gallery';
 import { altKeyFor, fullSizeUrl, isTeamPortrait, pictureSources } from '@/data/images';
 import { team } from '@/data/team';
 
@@ -15,7 +15,7 @@ export { generateStaticParams } from '@/i18n/static-params';
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }): Promise<Metadata> {
   const t = await getTranslations({ locale });
   // Hidden until the client's photos arrive: not linked, not indexed, not in the sitemap.
-  return { title: t('common.nav.gallery'), ...(galleryPublished ? {} : { robots: { index: false, follow: true } }) };
+  return { title: t('common.nav.gallery'), ...(gallery.enabled ? {} : { robots: { index: false, follow: true } }) };
 }
 
 /**
@@ -27,8 +27,8 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 export default async function GalleryPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
   const t = await getTranslations();
-  const total = galleryPhotos.length;
-  const items = galleryPhotos.map((image) => {
+  const total = gallery.photos.length;
+  const items = gallery.photos.map((image) => {
     const member = isTeamPortrait(image) ? team.find((m) => m.photo === image) : undefined;
     return { id: image, image, alt: t(altKeyFor(image), member ? { name: t(member.nameKey) } : undefined), sources: pictureSources(image) };
   });

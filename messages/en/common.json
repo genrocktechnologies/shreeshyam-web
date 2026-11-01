@@ -1,5 +1,14 @@
 {
   "siteName": "Shree Shyam Small Growth Foundation",
+  "brand": {
+    "nameLine1": "Shree Shyam",
+    "nameLine2": "Small Growth Foundation",
+    "tagline": {
+      "financialInclusion": "Financial Inclusion",
+      "womenEmpowerment": "Women Empowerment",
+      "communityGrowth": "Community Growth"
+    }
+  },
   "continueToSite": "Continue to the site",
   "a11y": {
     "skipToContent": "Skip to main content",
@@ -33,7 +42,8 @@
     "requiredField": "required",
     "siteMenu": "Site menu",
     "quickActions": "Quick actions",
-    "socialLinks": "Social media"
+    "socialLinks": "Social media",
+    "logoHome": "{name}, home"
   },
   "social": {
     "facebook": "Facebook",
@@ -62,11 +72,13 @@
     "mission": "Our Mission",
     "missionShort": "Mission",
     "vision": "Our Vision",
+    "visionMission": "Vision & Mission",
     "team": "Our Team",
     "gallery": "Our Gallery",
     "milestones": "Our Milestone",
     "loans": "Loans",
     "allLoans": "All loans",
+    "loanProductsMenu": "Loan Products",
     "loanProducts": {
       "womenEmpowerment": "Women Empowerment Loan",
       "microBusiness": "Micro Business Loan",
@@ -74,6 +86,7 @@
       "livestock": "Livestock Loan"
     },
     "howToJoin": "How to Join",
+    "membership": "Membership",
     "careers": "Careers",
     "contact": "Contact",
     "contactUs": "Contact Us",
@@ -114,7 +127,8 @@
     "blurb": "<b>Shree Shyam Small Growth Foundation</b> is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities.",
     "contactHeading": "Contact Us",
     "help": "Help",
-    "copyright": "Copyright © {year} Shree Shyam Small Growth Foundation."
+    "copyright": "Copyright © {year} Shree Shyam Small Growth Foundation.",
+    "rights": "© {year} Shree Shyam Small Growth Foundation. All Rights Reserved."
   },
   "form": {
     "optional": "(optional)",

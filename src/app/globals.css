@@ -7,7 +7,7 @@
   :root {
     /* Fixed header geometry. PageHero/Hero pad their top by --header-total. */
     --utility-h: 0px;
-    --bar-h: 72px;
+    --bar-h: 64px;
     /* How much the bar visually shrinks when scrolled (88 → 68 desktop). */
     --shrink: 12px;
     --header-total: calc(var(--utility-h) + var(--bar-h));
@@ -25,8 +25,8 @@
 
   @media (min-width: 1024px) {
     :root {
-      --utility-h: 36px;
-      --bar-h: 88px;
+      --utility-h: 40px;
+      --bar-h: 96px;
       --shrink: 20px;
     }
   }
@@ -162,6 +162,12 @@ html.lenis body {
     @apply mx-auto w-full max-w-container px-5 md:px-8;
   }
 
+  /* Header rows: wider than the page container, so the lockup and the full nav fit on
+   * one line from the nav breakpoint (CR-01: the nav never wraps). */
+  .container-header {
+    @apply mx-auto w-full max-w-[1400px] px-4 md:px-8;
+  }
+
   /* CR-01 compact spacing (was py-20 md:py-28 lg:py-32). */
   .section-pad {
     @apply py-12 md:py-16 lg:py-20;
@@ -210,9 +216,22 @@ html.lenis body {
   /* ---- Site header (state set by HeaderShell via data attributes) ----
    * Only transform is animated: "shrinking" slides the whole header up by the utility
    * bar + --shrink, and nudges the bar content down by half of --shrink, so the
-   * visible bar goes 88 → 68px without animating height. */
+   * visible bar goes 96 → 76px without animating height. */
   .site-header {
+    /* Logo lockup sizes (BrandLockup): phones scale with the viewport so the lockup, the
+     * language switch and the menu button share a 360px row. */
+    --lockup-mark: 2.75rem;
+    --lockup-line1: clamp(0.875rem, 4vw, 1.125rem);
+    --lockup-line2: clamp(0.5rem, 2.3vw, 0.6875rem);
     transition: transform theme('transitionDuration.header') theme('transitionTimingFunction.growth');
+  }
+
+  @media (min-width: 1024px) {
+    .site-header {
+      --lockup-mark: 4.5rem;
+      --lockup-line1: 1.875rem;
+      --lockup-line2: 1.0625rem;
+    }
   }
 
   .site-header[data-scrolled='true'] {
@@ -223,6 +242,11 @@ html.lenis body {
     transform: translateY(-100%);
   }
 
+  /* Cream-to-light-yellow bar (CR-01 reference). */
+  .header-bar {
+    background-image: linear-gradient(90deg, theme('colors.ivory.DEFAULT') 40%, theme('colors.marigold.100'));
+  }
+
   .site-header [data-bar] {
     transition:
       background-color theme('transitionDuration.bar'),
@@ -231,12 +255,12 @@ html.lenis body {
   }
 
   .site-header[data-scrolled='true'] [data-bar] {
-    @apply bg-ivory/90 shadow-soft backdrop-blur-md;
+    @apply shadow-soft;
   }
 
-  /* An open mega menu makes the bar solid without moving the header. */
+  /* An open dropdown adds the bar shadow without moving the header. */
   .site-header[data-menu-open='true'] [data-bar] {
-    @apply bg-ivory shadow-soft;
+    @apply shadow-soft;
   }
 
   .site-header [data-bar-inner] {

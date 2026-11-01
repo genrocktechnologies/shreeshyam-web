@@ -165,9 +165,6 @@ export const hero = {
  */
 export const pageHero = { breadcrumb: 0, eyebrow: 0.05, intro: 0.2 } as const;
 
-/** Footer emblem watermark: slow drift (px, each way) while the footer scrolls into view. Desktop only. */
-export const watermark = { drift: 40, scrub: 0.8 } as const;
-
 /** CSS transitions (ms), exposed as Tailwind `duration-<name>` and theme('transitionDuration.<name>'). */
 export const ui = {
   press: 300, // buttons, arrows, chevrons

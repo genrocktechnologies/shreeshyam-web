@@ -39,10 +39,10 @@ export function LanguageSwitch({ label, options, className }: LanguageSwitchProp
   const index = Math.max(0, routing.locales.indexOf(locale as Locale));
 
   return (
-    <div role="group" aria-label={label} className={cx('relative inline-grid h-12 grid-cols-2 rounded-full border border-rani-200 bg-ivory', className)}>
+    <div role="group" aria-label={label} className={cx('relative inline-grid h-12 grid-cols-2 rounded-full border border-rani-200 bg-white', className)}>
       <span
         aria-hidden="true"
-        className="absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full bg-rani-600 transition-transform duration-pill ease-growth"
+        className="absolute inset-y-1 left-1 w-[calc(50%-4px)] rounded-full bg-rani-500 transition-transform duration-pill ease-growth"
         style={{ transform: `translateX(${index * 100}%)` }}
       />
       {options.map((o) => {
@@ -55,8 +55,8 @@ export function LanguageSwitch({ label, options, className }: LanguageSwitchProp
             lang={o.locale}
             aria-current={active ? 'true' : undefined}
             className={cx(
-              'relative z-10 grid min-w-[52px] place-items-center rounded-full px-3 text-small font-bold',
-              active ? 'text-white' : 'text-rani-700',
+              'relative z-10 grid min-w-[48px] place-items-center rounded-full px-2 text-small font-semibold',
+              active ? 'text-white' : 'text-rani-600',
             )}
           >
             <span aria-hidden="true">{o.short}</span>

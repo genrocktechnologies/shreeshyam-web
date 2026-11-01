@@ -23,6 +23,13 @@ export interface SocialLink {
 export interface Site {
   url: string;
   nameKey: string;
+  /**
+   * Header and footer brand (CR-01, section 3). 'typeset': the real emblem (logo-mark,
+   * never cropped or recoloured) beside the typeset two-line name and tagline: a new
+   * lockup, pending client approval. 'image': the one-line fallback, the client's full
+   * logo file (logo-full / logo-white) exactly as supplied.
+   */
+  logoLockup: 'typeset' | 'image';
   phone: { display: string; e164: string; href: string } | null;
   whatsapp: { e164: string; href: string } | null;
   email: string;
@@ -59,6 +66,7 @@ export interface Site {
 export const site: Site = {
   url: 'https://shreeshyamfoundation.in',
   nameKey: 'common.siteName',
+  logoLockup: 'typeset',
   phone: { display: '+91 87509 71329', e164: '+918750971329', href: 'tel:+918750971329' },
   // Not confirmed. Switching it on is one line: { e164: '+91…', href: 'https://wa.me/91…' }.
   whatsapp: null,

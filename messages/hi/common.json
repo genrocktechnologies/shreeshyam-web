@@ -1,6 +1,15 @@
 {
   "_status": "draft-needs-review",
   "siteName": "श्री श्याम स्मॉल ग्रोथ फ़ाउंडेशन",
+  "brand": {
+    "nameLine1": "श्री श्याम",
+    "nameLine2": "स्मॉल ग्रोथ फ़ाउंडेशन",
+    "tagline": {
+      "financialInclusion": "वित्तीय समावेशन",
+      "womenEmpowerment": "महिला सशक्तिकरण",
+      "communityGrowth": "सामुदायिक विकास"
+    }
+  },
   "continueToSite": "साइट पर जाएँ",
   "a11y": {
     "skipToContent": "मुख्य सामग्री पर जाएँ"

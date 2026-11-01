@@ -25,6 +25,8 @@ const LOGOS: [string, string, string | null, number][] = [
   ['logo-full-240', 'logo-full.png', 'logo-white.webp', 240],
   ['logo-white-320', 'logo-white.png', 'white_img_2.png', 320],
   ['logo-mark', 'logo-mark.png', null, 512],
+  // CR-01 lockup emblem (header ≈76px tall, footer ≈64px; 2× for retina).
+  ['logo-mark-160', 'logo-mark.png', null, 160],
   ['logo-wordmark', 'logo-wordmark.png', null, 640],
   ['logo-wordmark-white', 'logo-wordmark-white.png', null, 640],
 ];

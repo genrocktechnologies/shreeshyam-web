@@ -6,6 +6,7 @@ export const aboutRoutes = {
   about: '/about/',
   mission: '/about/mission/',
   vision: '/about/vision/',
+  visionMission: '/about/vision-mission/',
   team: '/about/team/',
   milestones: '/about/milestones/',
   gallery: '/about/gallery/',
