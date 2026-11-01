@@ -21,14 +21,14 @@ export async function TeaserCard({ title, text, href, headingLevel: H = 'h2', cl
   return (
     <article
       className={cn(
-        'group relative flex h-full flex-col rounded-2xl border border-rani-100 bg-ivory p-7 shadow-soft transition-[transform,box-shadow] duration-card ease-growth focus-within:shadow-lift hover:-translate-y-1 hover:shadow-lift md:p-9',
+        'group relative flex h-full flex-col rounded-2xl bg-white p-5 shadow-soft transition-[transform,box-shadow] duration-card ease-growth focus-within:shadow-lift hover:-translate-y-1 hover:shadow-lift md:p-7',
         className,
       )}
     >
       <span aria-hidden="true" className="absolute inset-x-7 top-0 h-[3px] origin-left scale-x-0 rounded-full bg-marigold-400 transition-transform duration-link ease-growth group-focus-within:scale-x-100 group-hover:scale-x-100" />
-      <H className="font-display text-h3 font-semibold text-ink">{title}</H>
-      <p className="mt-4 text-body text-ink-muted">{text}</p>
-      <Link href={href} prefetch={false} className="mt-auto inline-flex min-h-tap items-center gap-2 pt-6 font-bold text-rani-700 after:absolute after:inset-0 after:rounded-2xl">
+      <H className="font-display text-h3 font-bold text-rani-600">{title}</H>
+      <p className="mt-3 text-body text-ink-muted">{text}</p>
+      <Link href={href} prefetch={false} className="mt-auto inline-flex min-h-tap items-center gap-2 pt-4 font-bold text-rani-600 after:absolute after:inset-0 after:rounded-2xl">
         {t('common.buttons.learnMore')}{' '}
         <span className="sr-only">{title}</span>
         <ArrowRight className="h-[1.1em] w-[1.1em] transition-transform duration-press ease-growth group-hover:translate-x-1" />

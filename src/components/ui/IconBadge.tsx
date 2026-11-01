@@ -8,9 +8,9 @@ import type { IconComponent } from './icons';
  */
 export function IconBadge({ icon: Icon, className }: { icon: IconComponent; className?: string }) {
   return (
-    <span aria-hidden="true" className={cn('relative grid h-16 w-16 shrink-0 place-items-center rounded-full bg-rani-50', className)}>
-      <span className="absolute left-3 top-3.5 h-8 w-8 rounded-[45%_55%_60%_40%] bg-marigold-200" />
-      <Icon className="relative h-7 w-7 text-rani-600 transition-transform duration-card ease-growth group-hover:rotate-icon" />
+    <span aria-hidden="true" className={cn('relative grid h-14 w-14 shrink-0 place-items-center rounded-full bg-rani-50', className)}>
+      <span className="absolute left-2.5 top-3 h-7 w-7 rounded-[45%_55%_60%_40%] bg-marigold-200" />
+      <Icon className="relative h-6 w-6 text-rani-500 transition-transform duration-card ease-growth group-hover:rotate-icon" />
     </span>
   );
 }

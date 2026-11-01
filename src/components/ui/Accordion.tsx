@@ -49,10 +49,10 @@ export function Accordion({ items, defaultOpen = 0 }: { items: AccordionItem[]; 
                 aria-expanded={isOpen}
                 aria-controls={panelId}
                 onClick={() => toggle(i)}
-                className="group flex min-h-[4.5rem] w-full items-center justify-between gap-6 py-5 text-left font-display text-[1.1875rem] font-semibold leading-snug text-ink md:text-h3"
+                className="group flex min-h-[3.75rem] w-full items-center justify-between gap-5 py-3.5 text-left font-display text-[1.0625rem] font-bold leading-snug text-ink md:text-[1.1875rem]"
               >
                 <span>{item.title}</span>
-                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full border-[1.5px] border-rani-200 text-rani-600 transition-transform duration-press ease-growth group-hover:scale-105">
+                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full border-[1.5px] border-rani-200 text-rani-600 transition-transform duration-press ease-growth group-hover:scale-105">
                   <Plus className={cx('h-5 w-5 transition-transform duration-accordion ease-growth', isOpen && 'rotate-45')} />
                 </span>
               </button>
@@ -70,7 +70,7 @@ export function Accordion({ items, defaultOpen = 0 }: { items: AccordionItem[]; 
               )}
             >
               <div className="overflow-hidden">
-                <p className="max-w-prose pb-7 pr-4 text-body text-ink-muted md:pr-16">{item.body}</p>
+                <p className="max-w-prose pb-5 pr-4 text-body text-ink-muted md:pr-16">{item.body}</p>
               </div>
             </div>
           </div>

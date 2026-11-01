@@ -1,12 +1,12 @@
 import { getLocale, getTranslations } from 'next-intl/server';
-import { GoldenThread, Reveal } from '@/components/motion';
+import { Reveal } from '@/components/motion';
 import { Accordion } from '@/components/ui/Accordion';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { faqHeadingKey, faqs } from '@/data/faqs';
 
 /**
- * Home §10 (site-plan): the 6 crawled Q&As in an accordion (first one open), plus
- * FAQPage JSON-LD built from the same messages.
+ * FAQ (CR-01: moved from home to Membership, with its FAQPage JSON-LD): the 6 crawled
+ * Q&As in an accordion (first one open), JSON-LD built from the same messages.
  */
 export async function Faq() {
   const t = await getTranslations();
@@ -22,8 +22,7 @@ export async function Faq() {
 
   return (
     <section id="faq" className="relative bg-ivory">
-      <div className="container-site thread-gutter section-pad relative grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-20">
-        <GoldenThread className="thread-col inset-y-0 h-full" />
+      <div className="container-site section-pad relative grid gap-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
         <SectionHeading title={t(faqHeadingKey)} className="lg:sticky lg:top-32 lg:self-start" />
         <Reveal>
           <Accordion items={items} />

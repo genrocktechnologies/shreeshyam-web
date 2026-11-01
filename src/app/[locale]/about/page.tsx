@@ -2,9 +2,12 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { GoldenThread, Reveal } from '@/components/motion';
 import { CtaBand } from '@/components/sections/CtaBand';
-import { Milestone } from '@/components/sections/home/Milestone';
+import { Milestone } from '@/components/sections/Milestone';
+import { Services } from '@/components/sections/Services';
+import { Testimonials } from '@/components/sections/Testimonials';
 import { ImpactBand } from '@/components/sections/ImpactBand';
 import { PageHero } from '@/components/sections/PageHero';
+import { Button } from '@/components/ui/Button';
 import { FeatureCard } from '@/components/ui/FeatureCard';
 import { BookOpen, HeartHandshake, Scale, ShieldCheck, Sprout, Users, type IconComponent } from '@/components/ui/icons';
 import { Illustration } from '@/components/ui/Illustration';
@@ -31,9 +34,10 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 /**
- * About (site-plan): intro → foundation story (crawled sections in order) → stats →
- * Mission & Vision teasers → milestone → CTA. The crawled team section lives on
- * /about/team/ (shared data), not repeated here.
+ * About (site-plan, CR-01): intro → foundation story (both paragraphs; home shows only the
+ * first) with a link to the Team page → What we do (the 6 services, moved from home) →
+ * Why choose → impact band → testimonials (moved from home) → Vision & Mission teasers →
+ * milestone → CTA. The team itself lives on /about/team/ (the tree), not repeated here.
  */
 export default async function AboutPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
@@ -50,13 +54,18 @@ export default async function AboutPage({ params: { locale } }: { params: { loca
       />
 
       <section className="relative bg-ivory">
-        <div className="container-site thread-gutter section-pad relative grid items-center gap-12 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-20">
+        <div className="container-site thread-gutter section-pad relative grid items-center gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
           <GoldenThread className="thread-col inset-y-0 h-full" />
           <div>
             <SectionHeading title={t('about.foundation.heading')} />
             <Reveal className="mt-6 grid gap-5 text-body text-ink">
               <p>{t.rich('about.foundation.body1', richTags)}</p>
               <p>{t('about.foundation.body2')}</p>
+            </Reveal>
+            <Reveal className="mt-6">
+              <Button href={aboutRoutes.team} variant="ghost" arrow>
+                {t('common.buttons.meetTheTeam')}
+              </Button>
             </Reveal>
           </div>
           <Reveal>
@@ -70,14 +79,15 @@ export default async function AboutPage({ params: { locale } }: { params: { loca
         </div>
       </section>
 
-      <section className="relative bg-ivory-100">
-        <div className="container-site thread-gutter section-pad relative">
-          <GoldenThread className="thread-col inset-y-0 h-full" />
+      <Services />
+
+      <section className="relative bg-blush">
+        <div className="container-site section-pad relative">
           <SectionHeading title={t('about.whyChoose.heading')} />
-          <Reveal stagger as="ul" className="mt-12 grid gap-5 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+          <Reveal stagger as="ul" className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
             {whyChoose.map((item) => (
               <li key={item.id}>
-                <FeatureCard icon={ICONS[item.id]} title={t(item.titleKey)} text={t(item.textKey)} />
+                <FeatureCard icon={ICONS[item.id]} title={t(item.titleKey)} text={t(item.textKey)} inlineIcon />
               </li>
             ))}
           </Reveal>
@@ -85,11 +95,11 @@ export default async function AboutPage({ params: { locale } }: { params: { loca
       </section>
 
       <ImpactBand />
+      <Testimonials />
 
       <section className="relative bg-ivory">
-        <div className="container-site thread-gutter section-pad relative">
-          <GoldenThread className="thread-col inset-y-0 h-full" />
-          <Reveal stagger className="grid gap-6 md:grid-cols-2 md:gap-8">
+        <div className="container-site section-pad relative">
+          <Reveal stagger className="grid gap-5 md:grid-cols-2 md:gap-6">
             <TeaserCard title={t('mission.title')} text={t('mission.intro')} href={`${aboutRoutes.visionMission}#mission`} />
             <TeaserCard title={t('vision.title')} text={t('vision.statement')} href={`${aboutRoutes.visionMission}#vision`} />
           </Reveal>

@@ -19,18 +19,20 @@ interface PageHeroProps {
 }
 
 /**
- * Compact inner-page hero (motion-spec, Inner pages): the breadcrumb fades in, the h1
+ * Compact inner-page hero (CR-01: ≤ 420px on desktop below the header, ≤ 60vh on phones;
+ * motion-spec, Inner pages): the breadcrumb fades in, the h1
  * rises (CSS, transform only, so it can be the LCP element), an arch image opens, and the
  * golden thread starts. Its top padding
  * clears the fixed header.
  */
 export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className }: PageHeroProps) {
   return (
-    <section className={cn('relative overflow-hidden bg-rani-50', className)}>
+    <section className={cn('relative overflow-hidden bg-blush', className)}>
       <div
         className={cn(
-          'container-site thread-gutter relative grid items-center gap-10 pb-14 pt-[calc(var(--header-total)+2rem)] md:pb-20 lg:pt-[calc(var(--header-total)+3rem)]',
-          image && 'md:grid-cols-[1.25fr_1fr]',
+          'container-site thread-gutter relative grid items-center gap-6 pb-8 pt-[calc(var(--header-total)+1.25rem)] md:gap-10 md:pb-10 lg:pt-[calc(var(--header-total)+1.75rem)]',
+          // Phones: a small photo beside the text, so the hero stays within 60vh.
+          image && 'grid-cols-[minmax(0,1fr)_5.5rem] items-start md:grid-cols-[1.25fr_1fr] md:items-center',
         )}
       >
         {/* Inside the container so it sits on the shared thread rail (--thread-x). */}
@@ -38,18 +40,18 @@ export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className 
         <GoldenThread d="M50 0 C 50 30, 30 55, 50 100" className="thread-col top-[var(--header-total)] h-[calc(100%-var(--header-total))]" />
         <div>
           <Reveal delay={pageHero.breadcrumb}>
-            <Breadcrumbs items={breadcrumbs} className="mb-6" />
+            <Breadcrumbs items={breadcrumbs} className="mb-3" />
           </Reveal>
           {eyebrow && (
             <Reveal delay={pageHero.eyebrow}>
-              <p className="eyebrow mb-3">{eyebrow}</p>
+              <p className="eyebrow mb-2">{eyebrow}</p>
             </Reveal>
           )}
           {/* The h1 is usually the LCP element: painted at full opacity on the first frame and
               risen with a CSS transform, never hidden while it waits for JS + SplitText. */}
           <h1 className="animate-hero-title text-balance">{title}</h1>
           {intro && (
-            <Reveal delay={pageHero.intro} className="mt-6 text-body text-ink-muted">
+            <Reveal delay={pageHero.intro} className="mt-4 text-body text-ink-muted">
               {intro}
             </Reveal>
           )}
@@ -61,8 +63,8 @@ export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className 
             priority
             // Possibly the LCP element: painted on the first frame (no clip mask), settle only.
             motion={frameOf(image.key) === 'arch' ? 'hero' : 'none'}
-            sizes="(min-width: 768px) 22rem, 90vw"
-            className="mx-auto w-full max-w-[22rem]"
+            sizes="(min-width: 768px) 15rem, 5.5rem"
+            className="w-full md:mx-auto md:max-w-[15rem]"
           />
         )}
       </div>

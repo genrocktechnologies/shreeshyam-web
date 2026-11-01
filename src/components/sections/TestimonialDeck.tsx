@@ -156,14 +156,14 @@ export function TestimonialDeck({ items, labels }: { items: DeckItem[]; labels: 
             aria-label={labels.slideOf[i]}
             className="w-[88%] shrink-0 snap-center md:w-[70%] lg:w-[min(42rem,70%)]"
           >
-            <figure className="flex h-full select-none flex-col rounded-2xl border border-rani-100 bg-ivory p-7 shadow-soft md:p-10">
-              <span aria-hidden="true" className="font-script text-[4.5rem] font-bold leading-[0.6] text-rani-500">
+            <figure className="flex h-full select-none flex-col rounded-2xl bg-white p-5 shadow-soft md:p-7">
+              <span aria-hidden="true" className="font-script text-[3.25rem] font-bold leading-[0.6] text-rani-500">
                 &ldquo;
               </span>
-              <blockquote className="mt-4 flex-1">
-                <p className="font-display text-[1.1875rem] leading-relaxed text-ink md:text-[1.375rem]">{item.quote}</p>
+              <blockquote className="mt-2 flex-1">
+                <p className="text-body leading-relaxed text-ink md:text-[1.125rem]">{item.quote}</p>
               </blockquote>
-              <figcaption className="mt-8 flex items-center gap-4">
+              <figcaption className="mt-5 flex items-center gap-3">
                 <span aria-hidden="true" className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-rani-100 font-bold text-rani-700">
                   {item.initials}
                 </span>
@@ -174,7 +174,7 @@ export function TestimonialDeck({ items, labels }: { items: DeckItem[]; labels: 
         ))}
       </ul>
 
-      <div className="mt-8 flex items-center justify-between gap-4 lg:justify-center lg:gap-8">
+      <div className="mt-4 flex items-center justify-between gap-4 lg:justify-center lg:gap-8">
         <div className="flex">
           {items.map((item, i) => (
             <button

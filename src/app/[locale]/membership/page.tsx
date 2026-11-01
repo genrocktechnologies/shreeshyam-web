@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { GoldenThread, Reveal } from '@/components/motion';
+import { Reveal } from '@/components/motion';
+import { Faq } from '@/components/sections/Faq';
+import { ProcessSteps } from '@/components/sections/membership/ProcessSteps';
 import { PageHero } from '@/components/sections/PageHero';
 import { LazyRegisterForm } from '@/components/sections/membership/LazyRegisterForm';
 import type { RegisterFormLabels } from '@/components/sections/membership/RegisterForm';
@@ -21,8 +23,9 @@ const ERROR_COUNTS = [1, 2, 3, 4, 5, 6, 7];
 
 /**
  * Membership (CR-01, section 7): replaces /how-to-join/ and /register/ (both 301 here;
- * register to #register). How to Join's intro, the benefits / eligibility / documents
- * checklists, then the registration form. Text as crawled.
+ * register to #register). How to Join's intro, the process stepper (moved from home), the
+ * benefits / eligibility / documents checklists, the registration form, then the FAQ
+ * with its FAQPage JSON-LD (also moved from home). Text as crawled.
  */
 export default async function MembershipPage({ params: { locale } }: { params: { locale: string } }) {
   setRequestLocale(locale);
@@ -69,16 +72,13 @@ export default async function MembershipPage({ params: { locale } }: { params: {
 
   return (
     <>
-      <PageHero
-        title={title}
-        eyebrow={t('howToJoin.eyebrow')}
-        breadcrumbs={[{ label: title }]}
-        intro={<p className="max-w-prose">{t('howToJoin.intro')}</p>}
-      />
+      <PageHero title={title} eyebrow={t('howToJoin.eyebrow')} breadcrumbs={[{ label: title }]} />
 
-      <section id="checklists" className="relative bg-ivory">
-        <div className="container-site thread-gutter section-pad relative">
-          <GoldenThread className="thread-col inset-y-0 h-full" />
+      {/* How to Join's long intro leads the process (keeps the hero within 60vh on phones). */}
+      <ProcessSteps lead={t('howToJoin.intro')} />
+
+      <section id="checklists" className="relative bg-blush">
+        <div className="container-site section-pad relative">
           <h2>{t('howToJoin.heading')}</h2>
           <div className="mt-8 grid gap-5 lg:grid-cols-3">
             {lists.map((l) => (
@@ -87,8 +87,8 @@ export default async function MembershipPage({ params: { locale } }: { params: {
                 <TickList items={l.items} className="mt-4" />
               </Reveal>
             ))}
-            <Reveal className="rounded-2xl bg-blush p-5 md:p-6">
-              <span aria-hidden="true" className="grid h-12 w-12 place-items-center rounded-full bg-white text-rani-500">
+            <Reveal className="rounded-2xl bg-white p-5 shadow-soft md:p-6">
+              <span aria-hidden="true" className="grid h-12 w-12 place-items-center rounded-full bg-rani-50 text-rani-500">
                 <FileText strokeWidth={1.75} className="h-6 w-6" />
               </span>
               <h3 className="mt-4 font-display text-h3 font-bold text-rani-600">{t(documents.questionKey)}</h3>
@@ -99,8 +99,7 @@ export default async function MembershipPage({ params: { locale } }: { params: {
       </section>
 
       <section id="register" aria-labelledby="register-heading" className="relative scroll-mt-24 bg-rani-50">
-        <div className="container-site thread-gutter section-pad relative">
-          <GoldenThread className="thread-col inset-y-0 h-full" />
+        <div className="container-site section-pad relative">
           <div className="mx-auto max-w-3xl rounded-2xl bg-white p-5 shadow-soft md:p-10">
             <h2 id="register-heading">{t('register.heading')}</h2>
             <div className="mt-6">
@@ -110,6 +109,8 @@ export default async function MembershipPage({ params: { locale } }: { params: {
           </div>
         </div>
       </section>
+
+      <Faq />
     </>
   );
 }

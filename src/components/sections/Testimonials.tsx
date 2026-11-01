@@ -1,13 +1,12 @@
 import { getTranslations } from 'next-intl/server';
-import { GoldenThread } from '@/components/motion';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { initials, testimonials, testimonialsHeadingKey, testimonialsLeadKey } from '@/data/testimonials';
 import { TestimonialDeck } from './TestimonialDeck';
 
 /**
- * Home §8 (site-plan): "What Our Members Say" + subtitle and the 4 quotes, exactly as
- * crawled, with initials avatars (no photos exist). The deck is a client component fed
- * with translated strings, so no message formatter ships to the browser.
+ * "What Our Members Say" (CR-01: moved from home to About): heading + subtitle and the 4
+ * quotes exactly as crawled, with initials avatars (no photos exist), in a compact
+ * single-card carousel. The deck gets translated strings, so no message formatter ships.
  */
 export async function Testimonials() {
   const t = await getTranslations();
@@ -28,11 +27,10 @@ export async function Testimonials() {
   };
 
   return (
-    <section id="testimonials" className="relative bg-ivory">
-      <div className="container-site thread-gutter section-pad relative">
-        <GoldenThread className="thread-col inset-y-0 h-full" />
+    <section id="testimonials" className="relative bg-blush">
+      <div className="container-site section-pad">
         <SectionHeading title={t(testimonialsHeadingKey)} lead={t(testimonialsLeadKey)} />
-        <div className="mt-12">
+        <div className="mt-8">
           <TestimonialDeck items={items} labels={labels} />
         </div>
       </div>
