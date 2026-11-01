@@ -22,4 +22,3 @@ export const processSteps: ProcessStep[] = [
 ];
 
 export const processHeadingKey = 'home.process.heading';
-export const howToJoinHref = '/how-to-join/';

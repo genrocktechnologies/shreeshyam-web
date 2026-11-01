@@ -8,8 +8,8 @@
 
     { "source": "/index.php", "destination": "/en/", "statusCode": 301 },
     { "source": "/about-us.php", "destination": "/en/about/", "statusCode": 301 },
-    { "source": "/our-mission.php", "destination": "/en/about/mission/", "statusCode": 301 },
-    { "source": "/our-vision.php", "destination": "/en/about/vision/", "statusCode": 301 },
+    { "source": "/our-mission.php", "destination": "/en/about/vision-mission/#mission", "statusCode": 301 },
+    { "source": "/our-vision.php", "destination": "/en/about/vision-mission/#vision", "statusCode": 301 },
     { "source": "/team.php", "destination": "/en/about/team/", "statusCode": 301 },
     { "source": "/gallery.php", "destination": "/en/about/gallery/", "statusCode": 301 },
     { "source": "/milestone.php", "destination": "/en/about/milestones/", "statusCode": 301 },
@@ -17,12 +17,17 @@
     { "source": "/micro-business-loan.php", "destination": "/en/loans/micro-business/", "statusCode": 301 },
     { "source": "/agriculture-rural-livelihood-loan.php", "destination": "/en/loans/agriculture-livelihood/", "statusCode": 301 },
     { "source": "/livestock-loan.php", "destination": "/en/loans/livestock/", "statusCode": 301 },
-    { "source": "/registration-process.php", "destination": "/en/how-to-join/", "statusCode": 301 },
-    { "source": "/registration.php", "destination": "/en/register/", "statusCode": 301 },
+    { "source": "/registration-process.php", "destination": "/en/membership/", "statusCode": 301 },
+    { "source": "/registration.php", "destination": "/en/membership/", "statusCode": 301 },
     { "source": "/career.php", "destination": "/en/careers/", "statusCode": 301 },
     { "source": "/our-policy.php", "destination": "/en/hr-policy/", "statusCode": 301 },
     { "source": "/contact-us.php", "destination": "/en/contact/", "statusCode": 301 },
-    { "source": "/privacy-policy.php", "destination": "/en/privacy-policy/", "statusCode": 301 }
+    { "source": "/privacy-policy.php", "destination": "/en/privacy-policy/", "statusCode": 301 },
+
+    { "source": "/:locale(en|hi)/about/mission{/}?", "destination": "/:locale/about/vision-mission/#mission", "statusCode": 301 },
+    { "source": "/:locale(en|hi)/about/vision{/}?", "destination": "/:locale/about/vision-mission/#vision", "statusCode": 301 },
+    { "source": "/:locale(en|hi)/how-to-join{/}?", "destination": "/:locale/membership/", "statusCode": 301 },
+    { "source": "/:locale(en|hi)/register{/}?", "destination": "/:locale/membership/#register", "statusCode": 301 }
   ],
   "headers": [
     {

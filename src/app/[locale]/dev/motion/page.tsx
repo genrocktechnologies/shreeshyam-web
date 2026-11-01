@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { HeaderSpacer } from '@/components/layout/HeaderSpacer';
-import { CountUp, GoldenThread, MagneticButton, Reveal, SplitHeading } from '@/components/motion';
+import { CountUp, GoldenThread, Reveal, SplitHeading } from '@/components/motion';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { altKeyFor } from '@/data/images';
 import { MotionStatus } from './MotionStatus';
@@ -67,7 +67,7 @@ export default async function MotionPlayground({ params: { locale } }: { params:
         </div>
       </div>
 
-      {/* Hero: SplitHeading (load) + ImageReveal (load) + MagneticButton */}
+      {/* Hero: SplitHeading (load) + ImageReveal (load) */}
       <section className="relative overflow-hidden">
         <ThreadColumn />
         <div className="container-site grid items-center gap-10 py-16 md:grid-cols-[1.2fr_1fr] md:py-24">
@@ -80,15 +80,12 @@ export default async function MotionPlayground({ params: { locale } }: { params:
               {t('demo.heading')}
             </SplitHeading>
             <div className="mt-8">
-              <Label>{t('primitives.magnetic')}</Label>
-              <MagneticButton>
-                <a
-                  href="#reveal"
-                  className="inline-flex min-h-tap items-center rounded-full bg-marigold-400 px-7 font-bold text-plum-900 shadow-soft transition-shadow duration-card hover:shadow-lift"
-                >
-                  {t('demo.cta')}
-                </a>
-              </MagneticButton>
+              <a
+                href="#reveal"
+                className="inline-flex min-h-tap items-center rounded-full bg-marigold-400 px-7 font-bold text-plum-900 shadow-soft transition-shadow duration-card hover:shadow-lift"
+              >
+                {t('demo.cta')}
+              </a>
             </div>
           </div>
           <div className="pl-8 md:pl-0">

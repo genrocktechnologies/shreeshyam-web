@@ -7,7 +7,7 @@
   "eyebrow": "Join Our Mission",
   "intro": "Become a member of Shree Shyam Small Growth Foundation and contribute to building a financially inclusive, empowered, and self-reliant society. As a member, you will have the opportunity to participate in our social development initiatives, financial literacy programs, community welfare activities, and entrepreneurship support programs.",
   "benefits": {
-    "label": "Membership Benefits:",
+    "label": "Membership Benefits",
     "items": {
       "financialLiteracyAwareness": "Financial literacy and awareness programs",
       "entrepreneurshipGuidanceSupport": "Entrepreneurship guidance and support",
@@ -20,7 +20,7 @@
     }
   },
   "eligibility": {
-    "label": "Membership Eligibility:",
+    "label": "Membership Eligibility",
     "items": {
       "yearsAgeAbove": "Be 18 years of age or above",
       "indianCitizen": "Be an Indian citizen",

@@ -163,6 +163,13 @@ const APPLIED: { id: string; from: RegExp; to: (crawled: string) => string; note
     keys: ['common.nav.loanProducts.agricultureLivelihood'],
   },
   {
+    id: 'CR01-1',
+    from: /^Membership (Benefits|Eligibility):$/,
+    to: (t) => t.replace(/:$/, ''),
+    note: 'Membership page list labels shown without the trailing colon, like the loan labels (P4-1). Reversible; for client review 2.',
+    keys: ['howToJoin.benefits.label', 'howToJoin.eligibility.label'],
+  },
+  {
     id: 'P4-1',
     from: /^(Suitable For|Uses|Benefits|Common Features|Basic Eligibility|Required Documents)\s*:$/,
     to: (t) => t.replace(/\s*:$/, ''),

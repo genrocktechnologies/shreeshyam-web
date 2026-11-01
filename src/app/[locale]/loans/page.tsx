@@ -7,7 +7,7 @@ import { LoanCard } from '@/components/ui/LoanCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { faqs, whoCanApplyFaqIds } from '@/data/faqs';
 import { loans, loansHubIntroKey, whoCanApplyHeadingKey } from '@/data/loans';
-import { howToJoinHref } from '@/data/process';
+import { membershipRoutes } from '@/data/membership';
 
 export { generateStaticParams } from '@/i18n/static-params';
 
@@ -57,10 +57,7 @@ export default async function LoansHub({ params: { locale } }: { params: { local
         </div>
       </section>
 
-      <CtaBand
-        primary={{ label: t('common.buttons.howToJoin'), href: howToJoinHref }}
-        secondary={{ label: t('common.buttons.register'), href: '/register/' }}
-      />
+      <CtaBand primary={{ label: t('common.buttons.joinUs'), href: membershipRoutes.membership }} />
     </>
   );
 }

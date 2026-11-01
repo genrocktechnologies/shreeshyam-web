@@ -420,10 +420,4 @@ html.lenis body {
   opacity: 0;
 }
 
-.js-motion [data-draw-line='y'] {
-  transform: scaleY(0);
-}
 
-.js-motion [data-draw-line='x'] {
-  transform: scaleX(0);
-}

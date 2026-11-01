@@ -4,8 +4,6 @@ import type { IllustrationKey, PhotoKey } from './images';
 /** About-cluster routes (locale-less). */
 export const aboutRoutes = {
   about: '/about/',
-  mission: '/about/mission/',
-  vision: '/about/vision/',
   visionMission: '/about/vision-mission/',
   team: '/about/team/',
   milestones: '/about/milestones/',

@@ -12,8 +12,8 @@ Reconciled with the URL map in `docs/site-plan.md`, which is the source of truth
 | --- | --- | --- | --- |
 | `/index.php` | `/en/` | 200 | |
 | `/about-us.php` | `/en/about/` | 200 | |
-| `/our-mission.php` | `/en/about/mission/` | 200 | |
-| `/our-vision.php` | `/en/about/vision/` | 200 | |
+| `/our-mission.php` | `/en/about/vision-mission/#mission` | 200 | CR-01: Vision and Mission are one page. |
+| `/our-vision.php` | `/en/about/vision-mission/#vision` | 200 | CR-01: Vision and Mission are one page. |
 | `/team.php` | `/en/about/team/` | **500** | No content on the old page. The new page is built from the homepage team data. |
 | `/gallery.php` | `/en/about/gallery/` | **500** | No content on the old page. The new page is hidden from nav and sitemap until the client sends photos, but the URL still resolves. |
 | `/milestone.php` | `/en/about/milestones/` | 200 | |
@@ -21,14 +21,27 @@ Reconciled with the URL map in `docs/site-plan.md`, which is the source of truth
 | `/micro-business-loan.php` | `/en/loans/micro-business/` | 200 | |
 | `/agriculture-rural-livelihood-loan.php` | `/en/loans/agriculture-livelihood/` | 200 | |
 | `/livestock-loan.php` | `/en/loans/livestock/` | 200 | |
-| `/registration-process.php` | `/en/how-to-join/` | 200 | |
-| `/registration.php` | `/en/register/` | 200 | |
+| `/registration-process.php` | `/en/membership/` | 200 | CR-01: How to Join and Register are one Membership page. |
+| `/registration.php` | `/en/membership/` | 200 | CR-01 (as specified: the page, not `#register`). |
 | `/career.php` | `/en/careers/` | 200 | |
 | `/our-policy.php` | `/en/hr-policy/` | 200 | The page is titled "Human Resource Policy" (D13). |
 | `/contact-us.php` | `/en/contact/` | 200 | |
 | `/privacy-policy.php` | `/en/privacy-policy/` | 200 | |
 
 **New page with no old URL:** `/en/loans/` (the loans hub).
+
+## Retired new-site URLs (CR-01)
+
+These paths were planned or built before CR-01. They 301 in both locales (`/:locale(en|hi)/…`, with or without the trailing slash):
+
+| Old path | New path |
+| --- | --- |
+| `/{en,hi}/about/mission/` | `/{en,hi}/about/vision-mission/#mission` |
+| `/{en,hi}/about/vision/` | `/{en,hi}/about/vision-mission/#vision` |
+| `/{en,hi}/how-to-join/` | `/{en,hi}/membership/` |
+| `/{en,hi}/register/` | `/{en,hi}/membership/#register` |
+
+`tests/redirects.spec.ts` checks every row of this file's tables against `vercel.json` through `scripts/serve-static.mjs`, which applies the `vercel.json` redirects locally.
 
 ## Site root
 

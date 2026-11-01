@@ -3,7 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { GoldenThread, Reveal } from '@/components/motion';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { Milestone } from '@/components/sections/home/Milestone';
-import { StatsBand } from '@/components/sections/home/StatsBand';
+import { ImpactBand } from '@/components/sections/ImpactBand';
 import { PageHero } from '@/components/sections/PageHero';
 import { FeatureCard } from '@/components/ui/FeatureCard';
 import { BookOpen, HeartHandshake, Scale, ShieldCheck, Sprout, Users, type IconComponent } from '@/components/ui/icons';
@@ -84,14 +84,14 @@ export default async function AboutPage({ params: { locale } }: { params: { loca
         </div>
       </section>
 
-      <StatsBand />
+      <ImpactBand />
 
       <section className="relative bg-ivory">
         <div className="container-site thread-gutter section-pad relative">
           <GoldenThread className="thread-col inset-y-0 h-full" />
           <Reveal stagger className="grid gap-6 md:grid-cols-2 md:gap-8">
-            <TeaserCard title={t('mission.title')} text={t('mission.intro')} href={aboutRoutes.mission} />
-            <TeaserCard title={t('vision.title')} text={t('vision.statement')} href={aboutRoutes.vision} />
+            <TeaserCard title={t('mission.title')} text={t('mission.intro')} href={`${aboutRoutes.visionMission}#mission`} />
+            <TeaserCard title={t('vision.title')} text={t('vision.statement')} href={`${aboutRoutes.visionMission}#vision`} />
           </Reveal>
         </div>
       </section>
