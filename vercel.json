@@ -3,7 +3,7 @@
   "cleanUrls": true,
   "trailingSlash": true,
   "redirects": [
-    { "source": "/", "has": [{ "type": "header", "key": "accept-language", "value": "hi.*" }], "destination": "/hi/", "permanent": false },
+    { "source": "/", "has": [{ "type": "header", "key": "accept-language", "value": "^hi.*" }], "destination": "/hi/", "permanent": false },
     { "source": "/", "destination": "/en/", "permanent": false },
 
     { "source": "/index.php", "destination": "/en/", "statusCode": 301 },
