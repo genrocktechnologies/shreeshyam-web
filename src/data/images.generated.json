@@ -71,6 +71,32 @@
     "blur": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZAC7ACBv2hAr2Z1pLD8p2MOAAP54EiMazNMU+xZVkzpOxAJw+WIm2Zuc6BoZQ30zBpZwtcukMe4U2vClM1t0Fq7RnkIl8nEesvphXU8YMj4UrwM2LB2D3M+o0FMLE5TaHwTus7tnFtRr6wAAAA==",
     "source": "assets/original/index/finance_banner.jpg (crop 1101,0 819×1024)"
   },
+  "heroPanel": {
+    "kind": "photo",
+    "width": 1638,
+    "height": 1024,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "base": "/images/hero-panel",
+    "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAQCdASoQAAoAA4BaJagCdADc7i1AgAD+3O0Kg6qhTEWTRL4rPk5+7SVqs2I0lGsJcqzboYJifU4fAS0xh+IIeyv/fXmVLkMjaIB6siX3L1avnSvFoljJDAAAAA==",
+    "source": "assets/original/index/finance_banner.jpg (crop 240,0 1638×1024)"
+  },
+  "aboutPanel": {
+    "kind": "photo",
+    "width": 1360,
+    "height": 850,
+    "widths": [
+      480,
+      960,
+      1360
+    ],
+    "base": "/images/about-panel",
+    "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAgCdASoQAAoAA4BaJZgCdAYvXjFmv1QajQAA/sXUEjAeg64iQJFmQG3cdeuot+pOW11ee0gfam2UX3f3k9gKqTl7Q8iyPdFOd1hyflyV4fNQBsANfvkHBe8/I10ID5jKEbsZLwSAAA==",
+    "source": "assets/original/index/best_hrms_banner.jpg (crop 520,40 1360×850)"
+  },
   "heroWomenCards": {
     "kind": "photo",
     "width": 1920,

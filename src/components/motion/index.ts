@@ -1,4 +1,5 @@
 export { CountUp } from './CountUp';
+export { DrawFrame } from './DrawFrame';
 export { DrawLine } from './DrawLine';
 export { DrawTicks } from './DrawTicks';
 export { GoldenThread } from './GoldenThread';

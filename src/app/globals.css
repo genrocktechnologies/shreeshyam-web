@@ -376,6 +376,18 @@ html.lenis body {
     background-image: radial-gradient(ellipse 50% 80% at 100% 0%, theme('colors.rani.600 / 0.6'), transparent 70%);
   }
 
+  /* Impact band (CR-01): magenta | yellow, split on a diagonal that leans right at the
+   * top (≈36% across the band). Phones: yellow, with the slogan block on its own magenta. */
+  .impact-split {
+    background-color: theme('colors.marigold.400');
+  }
+
+  @media (min-width: 768px) {
+    .impact-split {
+      background-image: linear-gradient(100deg, theme('colors.rani.500') 38%, theme('colors.marigold.400') calc(38% + 1px));
+    }
+  }
+
   .mask-arch {
     border-radius: 999px 999px 28px 28px;
     overflow: hidden;
@@ -401,6 +413,7 @@ html.lenis body {
 }
 
 .js-motion [data-accent-underline],
+.js-motion [data-frame-band],
 .js-motion [data-thread-seed],
 .js-motion [data-bloom],
 .js-motion svg[data-tick] {

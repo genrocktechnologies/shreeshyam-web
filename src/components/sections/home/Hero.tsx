@@ -1,79 +1,57 @@
 import { getTranslations } from 'next-intl/server';
-import { GoldenThread, MagneticButton, ScrollDrift, ThreadSeed } from '@/components/motion';
-import { accentTags } from '@/components/ui/Accent';
 import { Button } from '@/components/ui/Button';
-import { Eyebrow } from '@/components/ui/Eyebrow';
+import { HeartFlourish, Lotus } from '@/components/ui/Decor';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { altKeyFor } from '@/data/images';
-import { trigger } from '@/lib/motion';
-import { HeroTitle } from './HeroTitle';
+import { loansHubHref } from '@/data/loans';
+import { membershipRoutes } from '@/data/membership';
 
 /**
- * Home §1 (site-plan): eyebrow, h1, Register + Explore Loans, arch photo.
+ * Home §1 (CR-01): blush hero. Left: the script line and h1 (one heading), the intro, the
+ * yellow "Join Us" CTA (→ Membership) and an "Explore Loans" text link. Right: the real
+ * hero photo in the curved panel. Side slogan with a heart flourish from xl only.
+ * All hero copy is CR-01 proposed copy (client-requests); the revert is home.hero.*.
  *
- * Load sequence (motion-spec, Home §2), all timings in lib/motion.ts `hero`:
- * - The LCP candidates (h1 on phones, arch photo on desktop) are fully painted on the
- *   first frame and animate transform only: the h1 rises, the photo settles from 1.15×.
- *   Both run as CSS from first paint, so nothing above the fold waits for JS.
- * - The eyebrow fades up, the CTAs scale in, then the Kalam accent underline draws.
- * - The golden-thread seed pops in under the CTAs; the stem below it draws as the
- *   hero scrolls away and runs straight into the stats band.
- * On scroll (desktop): the photo parallaxes inside its arch and the text drifts up.
- * Mobile: the photo (capped at 34svh) sits above the text, so the headline and the
- * Register button fit above the fold at 390×844; no parallax or drift.
+ * Load sequence (motion-spec, Home §1): the h1 is painted on the first frame and rises
+ * with CSS (it is the LCP on phones); the photo is painted at once (LCP on desktop) and
+ * only its marigold band draws in; the CTAs scale in. Nothing above the fold waits for JS.
  */
 export async function Hero() {
   const t = await getTranslations();
 
   return (
-    <section id="hero" className="relative overflow-hidden bg-ivory">
-      <div className="container-site thread-gutter grid gap-5 pt-[calc(var(--header-total)+0.75rem)] md:grid-cols-12 md:gap-10 lg:pt-[calc(var(--header-total)+2.5rem)]">
-        {/* Text column (7/12): keeps the headline to 4 lines at 1280–1440px. */}
-        <div className="flex flex-col md:col-span-7 md:justify-center">
-          <ScrollDrift className="md:pt-4">
-            <div className="animate-hero-eyebrow">
-              <Eyebrow>{t('home.hero.eyebrow')}</Eyebrow>
-            </div>
-            <HeroTitle className="mt-3 text-balance md:mt-4">{t.rich('home.hero.title', accentTags)}</HeroTitle>
-            <div className="mt-6 flex animate-hero-ctas flex-wrap items-center gap-3 md:mt-9 md:gap-4">
-              <MagneticButton>
-                <Button href="/register/" size="lg" arrow>
-                  {t('common.buttons.register')}
-                </Button>
-              </MagneticButton>
-              <Button href="/loans/" size="lg" variant="ghost">
-                {t('common.buttons.exploreLoans')}
-              </Button>
-            </div>
-          </ScrollDrift>
-
-          {/* Thread story, step 1: the seed under the CTAs and the stem down to the hero's
-              bottom edge, where the stats band's segment continues it. */}
-          <div className="relative mt-6 h-16 md:mt-8 md:h-24">
-            <ThreadSeed className="thread-col thread-in-content top-0" />
-            <GoldenThread
-              d="M50 0 V100"
-              start={trigger.heroThreadStart}
-              end={trigger.heroThreadEnd}
-              trigger="#hero"
-              // An absolutely positioned <svg> doesn't stretch between top/bottom (it
-              // keeps its intrinsic ratio), so the height is explicit: block minus top-3.
-              className="thread-col thread-in-content top-3 h-[calc(100%-0.75rem)]"
-            />
+    <section id="hero" className="relative overflow-hidden bg-blush">
+      <Lotus className="absolute -left-8 top-[calc(var(--header-total)+0.5rem)] hidden h-28 w-40 text-rani-400 opacity-[0.14] md:block" />
+      <div className="container-site relative grid items-center gap-7 pb-24 pt-[calc(var(--header-total)+1.25rem)] md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:gap-8 md:pb-28 lg:pt-[calc(var(--header-total)+2rem)] xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_7.5rem] xl:gap-6">
+        <div>
+          <h1 className="animate-hero-title text-balance">
+            <span className="mb-1 block font-script text-accent font-bold text-rani-600">{t('home.compact.heroScript')}</span>
+            {t('home.compact.heroTitle')}
+          </h1>
+          <p className="mt-4 text-body text-ink md:mt-5">{t('home.compact.heroIntro')}</p>
+          <div className="mt-6 flex animate-hero-ctas flex-wrap items-center gap-x-6 gap-y-3 md:mt-7">
+            <Button href={membershipRoutes.membership} size="lg" arrow>
+              {t('common.buttons.joinUs')}
+            </Button>
+            <Button href={loansHubHref} variant="link" arrow className="min-h-tap">
+              {t('common.buttons.exploreLoans')}
+            </Button>
           </div>
         </div>
 
-        {/* Arch photo (5/12): above the text on mobile, height-capped at 34svh there. */}
-        <div className="order-first md:order-none md:col-span-5 md:self-center md:pb-10">
-          <PhotoFrame
-            image="heroArch"
-            alt={t(altKeyFor('heroArch'))}
-            priority
-            motion="hero"
-            sizes="(min-width: 1024px) 26rem, (min-width: 768px) 40vw, 28svh"
-            className="mx-auto w-full max-w-[calc(34svh*0.8)] shadow-lift md:max-w-[26rem]"
-          />
-        </div>
+        <PhotoFrame
+          image="heroPanel"
+          alt={t(altKeyFor('heroPanel'))}
+          priority
+          motion="hero"
+          sizes="(min-width: 1280px) 33rem, (min-width: 768px) 50vw, 92vw"
+          className="w-full"
+        />
+
+        <p className="hidden -rotate-6 text-center font-script text-[1.75rem] font-bold leading-tight text-rani-600 xl:block">
+          {t('home.compact.heroSlogan')}
+          <HeartFlourish className="mx-auto mt-1 h-6 w-20 text-rani-500" />
+        </p>
       </div>
     </section>
   );

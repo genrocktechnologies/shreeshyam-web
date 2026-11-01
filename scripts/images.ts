@@ -25,7 +25,7 @@ const MANIFEST = path.join(ROOT, 'src', 'data', 'images.generated.json');
 
 const WIDTHS = [480, 960, 1600];
 /** The hero image(s): above the fold, held to the 120 KB budget. */
-const HERO_KEYS = new Set(['heroArch']);
+const HERO_KEYS = new Set(['heroArch', 'heroPanel']);
 const HERO_BUDGET = 120 * 1024;
 
 type Kind = 'photo' | 'illustration';
@@ -43,6 +43,11 @@ const IMAGES: Record<string, [string, Kind, Crop?]> = {
   // Phase 5: About hero. Same source as the home hero, but the right-hand group (a different
   // person in focus), so the inner page never repeats the home crop.
   aboutHeroArch: ['index/finance_banner.jpg', 'photo', { left: 1101, top: 0, width: 819, height: 1024 }],
+  // CR-01 curved panels (16:10). Hero: the members holding their cards, the woman in the
+  // pink and green dupatta just left of centre (the curve clips the left edge). About: the
+  // woman in the green sari reading documents, with the member beside her.
+  heroPanel: ['index/finance_banner.jpg', 'photo', { left: 240, top: 0, width: 1638, height: 1024 }],
+  aboutPanel: ['index/best_hrms_banner.jpg', 'photo', { left: 520, top: 40, width: 1360, height: 850 }],
   heroWomenCards: ['index/finance_banner.jpg', 'photo'],
   fieldMeeting: ['index/best_hrms_banner.jpg', 'photo'],
   membersLedger: ['index/about_me.jpg', 'photo'],

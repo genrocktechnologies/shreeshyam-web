@@ -37,6 +37,10 @@ export const dur = {
   petal: 0.6,
   /** Loan pages: each checklist tick drawing itself. */
   tick: 0.4,
+  /** CR-01 curved photo frame: the marigold band drawing along the curve. */
+  frame: 1.1,
+  /** Team tree: each tier's connector lines drawing. */
+  connector: 0.6,
 } as const;
 
 export const stagger = {
@@ -157,6 +161,8 @@ export const hero = {
   seed: 0.8,
   /** Gap between the title's last line landing and the underline starting. */
   underlineGap: 0.05,
+  /** CR-01: the hero photo's marigold band starts drawing (after the h1 has risen). */
+  frame: 0.35,
 } as const;
 
 /**

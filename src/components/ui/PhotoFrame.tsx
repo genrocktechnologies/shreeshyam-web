@@ -1,6 +1,7 @@
 import { ImageReveal, Parallax } from '@/components/motion';
 import { FRAMES, frameOf, type PhotoKey } from '@/data/images';
 import { cn } from '@/lib/cn';
+import { CurvedFrame } from './CurvedFrame';
 import { Picture } from './Picture';
 
 type FrameMotion =
@@ -12,7 +13,8 @@ type FrameMotion =
   | 'reveal-parallax'
   /**
    * Above the fold, possibly the LCP element: fully painted on the first frame (no clip,
-   * no opacity), it only settles from scale.imageFrom via CSS; parallax on desktop. Arch only.
+   * no opacity), it only settles from scale.imageFrom via CSS; parallax on desktop. For a
+   * panel (CR-01): the photo is static and only its marigold band draws in after load.
    */
   | 'hero';
 
@@ -29,7 +31,7 @@ interface PhotoFrameProps {
 }
 
 /**
- * Every content photo goes through this frame. Shape (arch / wide / banner), aspect ratio
+ * Every content photo goes through this frame. Shape (arch / wide / banner / panel), aspect ratio
  * and focal point all come from IMAGE_META in src/data/images.ts, so framing is data,
  * not CSS hacks. The image always covers the frame (object-cover at the focal point);
  * parallax over-scales and caps its travel, and the reveal mask matches the frame's
@@ -39,7 +41,11 @@ export function PhotoFrame({ image, alt, sizes, priority = false, motion = 'reve
   const frame = frameOf(image);
   if (frame === 'illustration') throw new Error(`PhotoFrame: "${image}" is an illustration/cut-out`);
   const { aspect, radius } = FRAMES[frame];
-  if (motion === 'hero' && radius !== 'arch') throw new Error('PhotoFrame: the hero motion is defined for the arch frame only');
+  if (radius === 'curved') {
+    const curved = motion === 'hero' ? 'hero' : motion === 'none' ? 'none' : 'reveal';
+    return <CurvedFrame image={image} alt={alt} sizes={sizes} priority={priority} motion={curved} className={className} />;
+  }
+  if (motion === 'hero' && radius !== 'arch') throw new Error('PhotoFrame: the hero motion is defined for the arch and panel frames only');
 
   const picture = (
     <Picture

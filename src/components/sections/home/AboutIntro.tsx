@@ -1,53 +1,42 @@
 import { getTranslations } from 'next-intl/server';
-import { GoldenThread, ReadingHighlight, Reveal, SplitHeading } from '@/components/motion';
+import { Reveal } from '@/components/motion';
 import { Button } from '@/components/ui/Button';
+import { Lotus } from '@/components/ui/Decor';
 import { Eyebrow } from '@/components/ui/Eyebrow';
+import { Sprout } from '@/components/ui/icons';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
+import { aboutRoutes } from '@/data/about';
 import { altKeyFor } from '@/data/images';
 import { richTags } from '@/lib/rich';
 
 /**
- * Home §3 (site-plan): eyebrow + heading from the old hero's slide 2, the "About the
- * Foundation" paragraphs and a "More about us" link (this also replaces the old hero
- * button that wrongly pointed at Contact).
- * Motion (motion-spec, Home §4): desktop reading highlight (words go from faint to full
- * as the section scrolls), arch photo parallax, and the thread stem (story step 2)
- * descending through the section. Mobile: simple reveals.
+ * Home §3 (CR-01): blush About band. Left: the real About photo in the curved panel (its
+ * band draws in on scroll) with a small sprout disc as the inset. Right: "About Us", the
+ * foundation's name as the h2, the FIRST "About the Foundation" paragraph verbatim (the
+ * second is on the About page) and "Know More". Plain reveals; no scroll scrub.
  */
 export async function AboutIntro() {
   const t = await getTranslations();
 
   return (
-    <section className="relative bg-ivory">
-      <div className="container-site thread-gutter section-pad relative grid items-center gap-12 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-20">
-        <GoldenThread d="M50 0 C 50 22, 22 38, 28 55 S 50 80, 50 100" className="thread-col-wide inset-y-0 h-full" />
-
-        <PhotoFrame
-          image="aboutArch"
-          alt={t(altKeyFor('aboutArch'))}
-          motion="reveal-parallax"
-          sizes="(min-width: 768px) 26rem, 22rem"
-          className="mx-auto w-full max-w-[22rem] shadow-soft md:max-w-[26rem]"
-        />
-
-        <div>
-          <Reveal>
-            <Eyebrow>{t('home.aboutIntro.eyebrow')}</Eyebrow>
-          </Reveal>
-          <SplitHeading className="mt-4 text-balance">{t('home.aboutIntro.title')}</SplitHeading>
-          <Reveal>
-            <p className="accent-script mt-8 text-rani-600">{t('about.foundation.heading')}</p>
-          </Reveal>
-          <ReadingHighlight className="mt-3 grid gap-5 text-body text-ink">
-            <p>{t.rich('about.foundation.body1', richTags)}</p>
-            <p>{t('about.foundation.body2')}</p>
-          </ReadingHighlight>
-          <Reveal className="mt-8">
-            <Button href="/about/" variant="ghost" arrow>
-              {t('common.buttons.moreAboutUs')}
-            </Button>
-          </Reveal>
+    <section id="about" className="relative overflow-hidden bg-blush">
+      <Lotus className="absolute -bottom-2 right-2 hidden h-24 w-36 text-rani-400 opacity-[0.14] md:block" />
+      <div className="container-site section-pad relative grid items-center gap-8 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-14">
+        <div className="relative">
+          <PhotoFrame image="aboutPanel" alt={t(altKeyFor('aboutPanel'))} motion="reveal" sizes="(min-width: 1280px) 33rem, (min-width: 768px) 46vw, 92vw" className="w-full" />
+          <span aria-hidden="true" className="absolute -bottom-3 left-[12%] grid h-14 w-14 place-items-center rounded-full bg-white shadow-soft md:h-16 md:w-16">
+            <Sprout strokeWidth={1.75} className="h-7 w-7 text-rani-500 md:h-8 md:w-8" />
+          </span>
         </div>
+
+        <Reveal>
+          <Eyebrow>{t('common.nav.aboutUs')}</Eyebrow>
+          <h2 className="mt-2 text-balance">{t('common.siteName')}</h2>
+          <p className="mt-4 text-body text-ink">{t.rich('about.foundation.body1', richTags)}</p>
+          <Button href={aboutRoutes.about} arrow className="mt-6">
+            {t('common.buttons.knowMore')}
+          </Button>
+        </Reveal>
       </div>
     </section>
   );

@@ -23,15 +23,18 @@ export const images = manifest as Record<ImageKey, ImageEntry>;
  * - arch: the jharokha arch, 4:5. Single subject or a tight group, faces in the upper half.
  * - wide: rounded rectangle, 4:3. Wide group shots and two-person shots (e.g. the award).
  * - banner: rounded strip, 16:5. Very wide scenes with no people.
+ * - panel: CR-01 signature frame, 16:10. A rounded rectangle whose left edge is an organic
+ *   curve, hugged by a marigold band that draws in (CurvedFrame). Home hero and About.
  * - illustration: NEVER placed in a photo frame. Cut-outs on white, transparent
  *   illustrations and drawings are shown whole (object-contain) in illustration slots.
  */
-export type Frame = 'arch' | 'wide' | 'banner' | 'illustration';
+export type Frame = 'arch' | 'wide' | 'banner' | 'panel' | 'illustration';
 
-export const FRAMES: Record<Exclude<Frame, 'illustration'>, { aspect: string; radius: 'arch' | 'rounded' }> = {
+export const FRAMES: Record<Exclude<Frame, 'illustration'>, { aspect: string; radius: 'arch' | 'rounded' | 'curved' }> = {
   arch: { aspect: '4 / 5', radius: 'arch' },
   wide: { aspect: '4 / 3', radius: 'rounded' },
   banner: { aspect: '16 / 5', radius: 'rounded' },
+  panel: { aspect: '16 / 10', radius: 'curved' },
 };
 
 /** Point (in %) that must stay in view when the frame crops the image: object-position. */
@@ -57,6 +60,9 @@ export const IMAGE_META = {
   processStepRegistration: { frame: 'wide', focal: { x: 45, y: 40 } },
   processStepSupport: { frame: 'wide', focal: { x: 40, y: 35 } },
   processStepMonitoring: { frame: 'wide', focal: { x: 50, y: 30 } },
+  // CR-01 curved panels: faces in the upper half, clear of the curved left edge.
+  heroPanel: { frame: 'panel', focal: { x: 55, y: 40 } },
+  aboutPanel: { frame: 'panel', focal: { x: 45, y: 35 } },
   // About hero (Phase 5): woman in the cream headscarf, face in the upper third.
   aboutHeroArch: { frame: 'arch', focal: { x: 40, y: 28 } },
   // Full source photos.

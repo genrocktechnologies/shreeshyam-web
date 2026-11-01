@@ -2,6 +2,18 @@
   "meta": {
     "title": "Shree Shyam Small Growth Foundation | Financial Inclusion & Community Development"
   },
+  "compact": {
+    "heroScript": "Together We Build a",
+    "heroTitle": "Stronger & Prosperous Tomorrow",
+    "heroIntro": "Shree Shyam Small Growth Foundation is committed to empowering underprivileged communities, especially women, through financial support, skill development and sustainable growth opportunities.",
+    "heroSlogan": "Empowered Women Build Stronger Communities",
+    "cards": {
+      "womenEmpowerment": "Women Empowerment",
+      "financialInclusion": "Financial Inclusion",
+      "communityGrowth": "Community Growth"
+    },
+    "impactSlogan": "Small Steps Create Big Changes"
+  },
   "hero": {
     "eyebrow": "Building Better Futures Together",
     "title": "Creating Opportunities for <accent>Every Family</accent> Through Financial Inclusion Today"
