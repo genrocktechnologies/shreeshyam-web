@@ -22,6 +22,8 @@ export interface LoanProduct {
   nameKey: string;
   /** One-line purpose for LoanCard: the page's intro paragraph, else its "Purpose" row. */
   purposeKey: string;
+  /** The crawled "Purpose" row. LoanPage lists it in KeyFacts when the hero shows the intro instead. */
+  purpose: LabelledValue | null;
   image: ImageKey | null;
   /**
    * KeyFacts. Only values published on the live loan pages are filled; everything else
@@ -62,6 +64,7 @@ function product(id: ProductId, href: string): LoanProduct {
     navKey: `common.nav.loanProducts.${id}`,
     nameKey: `${ns}.name`,
     purposeKey: m.intro ? `${ns}.intro` : `${ns}.facts.purpose.value`,
+    purpose: fact('purpose'),
     image: null,
     keyFacts: {
       amount: fact('amount'),
@@ -86,3 +89,20 @@ export const loans: LoanProduct[] = [
 ];
 
 export const loansHubHref = '/loans/';
+
+/**
+ * The hub's intro reuses published copy (there is no crawled hub page): the home page's
+ * "Financial Inclusion Services" description. Listed for the client in client-requests.
+ */
+export const loansHubIntroKey = 'home.services.items.financialInclusion.text';
+export const whoCanApplyHeadingKey = 'loans.hub.whoCanApply';
+export const relatedLoansHeadingKey = 'loans.related.heading';
+
+export function loanById(id: LoanProduct['id']): LoanProduct {
+  const loan = loans.find((l) => l.id === id);
+  if (!loan) throw new Error(`Unknown loan: ${id}`);
+  return loan;
+}
+
+/** The other products, in menu order (the "Other loans" nav on each product page). */
+export const relatedLoans = (id: LoanProduct['id']) => loans.filter((l) => l.id !== id);

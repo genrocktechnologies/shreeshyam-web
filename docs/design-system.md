@@ -76,12 +76,13 @@ success:'#1F8A5B', danger:'#C62828',
 | **SectionHeading** | Eyebrow + h2 + optional lead paragraph; `align` prop |
 | **StatCard** | Large number (CountUp) + label; used on the plum band |
 | **ServiceCard** | Duotone icon in a rani-50 circle, title, text; hover lift + icon rotates 8° |
-| **LoanCard** | Product name, one-line purpose (from crawled text), "Learn more"; top edge has a marigold thread that draws on hover |
+| **LoanCard** | Product name, one-line purpose (from crawled text), "Learn more"; top edge has a marigold thread that draws on hover. The link covers the card. Sizes: `panel` (home), `large` (hub; adds the published amount and tenure), `compact` (the "Other loans" nav) |
 | **ProcessStep** | Large outlined numeral (01–03), title, text, image |
 | **TestimonialCard** | Kalam quote mark, quote, name; initials avatar (rani-100 circle). No photos, since none exist. |
 | **TeamCard** | Photo (arch mask, grayscale → colour on hover), name, role. Social icons render only if real URLs exist. |
 | **Accordion** | A `<button aria-expanded aria-controls>` inside a heading, controlling a `role="region"` panel with `aria-labelledby`. Opening animates the panel wrapper's CSS `grid-template-rows` from `0fr` to `1fr` over 0.35s, with an `overflow-hidden` inner child. A collapsed panel also gets `inert`, so its links can't be tabbed to. The plus icon rotates into a cross with a CSS transform. Instant under reduced motion. No JS animation library. Without JS every panel renders open, so all answers stay readable. |
-| **KeyFacts** | Definition-list card for loan facts; renders only the fields present |
+| **KeyFacts** | Definition-list card for loan facts; renders only the fields present (nothing at all if none). Figures (amount, tenure) use the display face; sentences (purpose) stay at body size; eligibility and documents are TickLists. Sticky beside the lists on desktop, first on phones |
+| **TickList** | Checklist with marigold-100 tick discs whose rani checks draw in one after another (`DrawTicks`) |
 | **Stepper** | Vertical numbered steps joined by the thread line |
 | **SectionHeading** | Optional eyebrow, an h2 (SplitHeading), an optional lead, and an optional action (a link or button) beside the heading from md up |
 | **IconBadge** | The duotone icon from Iconography: a rani-50 circle, a marigold-200 blob, and a rani-600 lucide stroke that turns `rotate.icon` degrees on group hover |

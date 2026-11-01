@@ -1,12 +1,9 @@
 import { getTranslations } from 'next-intl/server';
 import { GoldenThread, Reveal } from '@/components/motion';
 import { Button } from '@/components/ui/Button';
-import { IconBadge } from '@/components/ui/IconBadge';
-import { ArrowRight } from '@/components/ui/icons';
-import { LOAN_ICONS } from '@/components/ui/loan-icons';
+import { LoanCard } from '@/components/ui/LoanCard';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { loans, loansHubHref } from '@/data/loans';
-import { Link } from '@/i18n/navigation';
 import { trigger } from '@/lib/motion';
 import { LoansPin } from './LoansPin';
 
@@ -64,45 +61,18 @@ export async function Loans() {
             data-loans-track=""
             className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 lg:group-data-[pinned]/loans:flex lg:group-data-[pinned]/loans:w-max"
           >
-            {loans.map((loan, i) => {
-              const name = t(loan.nameKey);
-              return (
-                <li key={loan.id} className="relative lg:group-data-[pinned]/loans:w-[30rem]">
-                  {/* Phone branch: from the thread into the card's edge. */}
-                  <GoldenThread
-                    d="M0 0 C 0 70, 35 100, 100 100"
-                    start={trigger.branchStart}
-                    end={trigger.branchEnd}
-                    className="absolute right-full top-0 h-10 w-[var(--thread-gap)] md:hidden"
-                  />
-                  <article className="group relative flex h-full flex-col rounded-2xl border border-rani-100 bg-ivory-100 p-7 shadow-soft transition-[transform,box-shadow] duration-card ease-growth focus-within:shadow-lift hover:-translate-y-1 hover:shadow-lift md:p-8 lg:group-data-[pinned]/loans:p-10">
-                    {/* Marigold thread along the top edge, drawn on hover/focus. */}
-                    <span
-                      aria-hidden="true"
-                      className="absolute inset-x-7 top-0 h-[3px] origin-left scale-x-0 rounded-full bg-marigold-400 transition-transform duration-link ease-growth group-focus-within:scale-x-100 group-hover:scale-x-100"
-                    />
-                    <div className="flex items-start justify-between gap-4">
-                      <IconBadge icon={LOAN_ICONS[loan.id]} />
-                      <span aria-hidden="true" className="font-display text-h2 leading-none text-rani-600">
-                        {String(i + 1).padStart(2, '0')}
-                      </span>
-                    </div>
-                    <h3 className="mt-8 font-display text-h3 font-semibold text-ink">{name}</h3>
-                    <p className="mt-3 text-body text-ink-muted">{t(loan.purposeKey)}</p>
-                    {/* The link covers the whole card (after:inset-0), so the card is one big tap target. */}
-                    <Link
-                      href={loan.href}
-                      prefetch={false}
-                      className="mt-auto inline-flex min-h-tap items-center gap-2 pt-6 font-bold text-rani-700 after:absolute after:inset-0 after:rounded-2xl"
-                    >
-                      {t('common.buttons.learnMore')}{' '}
-                      <span className="sr-only">{name}</span>
-                      <ArrowRight className="h-[1.1em] w-[1.1em] transition-transform duration-press ease-growth group-hover:translate-x-1" />
-                    </Link>
-                  </article>
-                </li>
-              );
-            })}
+            {loans.map((loan, i) => (
+              <li key={loan.id} className="relative lg:group-data-[pinned]/loans:w-[30rem]">
+                {/* Phone branch: from the thread into the card's edge. */}
+                <GoldenThread
+                  d="M0 0 C 0 70, 35 100, 100 100"
+                  start={trigger.branchStart}
+                  end={trigger.branchEnd}
+                  className="absolute right-full top-0 h-10 w-[var(--thread-gap)] md:hidden"
+                />
+                <LoanCard loan={loan} number={i + 1} className="lg:group-data-[pinned]/loans:p-10" />
+              </li>
+            ))}
           </Reveal>
         </div>
       </div>

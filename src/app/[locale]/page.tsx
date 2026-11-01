@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { CtaBand } from '@/components/sections/CtaBand';
 import { AboutIntro } from '@/components/sections/home/AboutIntro';
 import { Faq } from '@/components/sections/home/Faq';
-import { FinalCta } from '@/components/sections/home/FinalCta';
 import { Hero } from '@/components/sections/home/Hero';
 import { Loans } from '@/components/sections/home/Loans';
 import { Milestone } from '@/components/sections/home/Milestone';
@@ -38,7 +38,7 @@ export default function HomePage({ params: { locale } }: { params: { locale: str
       <Testimonials />
       <TeamGrid />
       <Faq />
-      <FinalCta />
+      <CtaBand id="final-cta" />
     </>
   );
 }

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import { GoldenThread, Reveal, SplitHeading } from '@/components/motion';
+import { GoldenThread, Reveal } from '@/components/motion';
 import { Breadcrumbs, type Crumb } from '@/components/ui/Breadcrumbs';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import type { PhotoKey } from '@/data/images';
@@ -20,7 +20,8 @@ interface PageHeroProps {
 
 /**
  * Compact inner-page hero (motion-spec, Inner pages): the breadcrumb fades in, the h1
- * rises line by line, an arch image opens, and the golden thread starts. Its top padding
+ * rises (CSS, transform only, so it can be the LCP element), an arch image opens, and the
+ * golden thread starts. Its top padding
  * clears the fixed header.
  */
 export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className }: PageHeroProps) {
@@ -44,9 +45,9 @@ export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className 
               <p className="eyebrow mb-3">{eyebrow}</p>
             </Reveal>
           )}
-          <SplitHeading as="h1" trigger="load" delay={pageHero.title} className="text-balance">
-            {title}
-          </SplitHeading>
+          {/* The h1 is usually the LCP element: painted at full opacity on the first frame and
+              risen with a CSS transform, never hidden while it waits for JS + SplitText. */}
+          <h1 className="animate-hero-title text-balance">{title}</h1>
           {intro && (
             <Reveal delay={pageHero.intro} className="mt-6 text-body text-ink-muted">
               {intro}

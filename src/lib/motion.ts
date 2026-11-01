@@ -35,6 +35,8 @@ export const dur = {
   shine: 1.2,
   /** Final CTA bloom: each petal scaling in. */
   petal: 0.6,
+  /** Loan pages: each checklist tick drawing itself. */
+  tick: 0.4,
 } as const;
 
 export const stagger = {
@@ -157,8 +159,11 @@ export const hero = {
   underlineGap: 0.05,
 } as const;
 
-/** Inner-page hero (PageHero) load sequence: delays (s). */
-export const pageHero = { breadcrumb: 0, eyebrow: 0.05, title: 0.1, intro: 0.2 } as const;
+/**
+ * Inner-page hero (PageHero) load sequence: delays (s). The h1 itself rises via CSS
+ * (`animate-hero-title`, timed by `hero.title`) so it is painted on the first frame.
+ */
+export const pageHero = { breadcrumb: 0, eyebrow: 0.05, intro: 0.2 } as const;
 
 /** Footer emblem watermark: slow drift (px, each way) while the footer scrolls into view. Desktop only. */
 export const watermark = { drift: 40, scrub: 0.8 } as const;

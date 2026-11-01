@@ -83,6 +83,8 @@ All values below live in `src/lib/motion.ts` (durations, distances, eases, delay
 - **Testimonials (§9):** one native scroll-snap track at every width. Desktop adds peek scaling (transform only, from scroll position), mouse drag, and a 7s auto-advance with a pause button (WCAG 2.2.2). The track is focusable for keyboard scrolling.
 - **Team (§10):** grayscale uses a `backdrop-filter` overlay faded with opacity (no grey colour token is needed), and only on hover-capable devices. Touch devices always show colour.
 - **FAQ (§11):** without JS every answer is open; after hydration only the first stays open.
+- **Inner-page h1 (Phase 4):** `PageHero` no longer splits its h1 with SplitText on load. Like the home hero, the h1 is painted at full opacity on the first frame and rises with the CSS `animate-hero-title` (transform only), because it is the LCP element on inner pages.
+- **CTA band:** the home final CTA and the inner-page closing band are one component (`CtaBand`), so every page's thread ends in the bloom.
 
 ## Home page choreography
 | # | Section | Desktop | Mobile |
@@ -104,7 +106,7 @@ All values below live in `src/lib/motion.ts` (durations, distances, eases, delay
 ## Inner pages
 - **Page hero:** breadcrumb fades in, h1 `SplitHeading`, compact arch image `ImageReveal`, thread starts.
 - **Long-form pages** (Policy, Privacy, Mission, Vision): no fancy motion. Use a reading progress bar (marigold, top), a sticky table of contents that highlights the active heading, and Reveal on images only.
-- **Loan product pages:** KeyFacts card values Reveal; a "documents needed" checklist gets ticks drawn in stagger when it scrolls into view.
+- **Loan product pages:** KeyFacts card values Reveal; a "documents needed" checklist gets ticks drawn in stagger when it scrolls into view. (Implemented: `DrawTicks` draws every TickList on loan pages, not only documents, with `dur.tick` and `stagger.base`.)
 - **Registration process:** vertical Stepper, with the thread filling as you scroll through the steps.
 - **Forms:** field focus shows a label micro-lift and a marigold underline grow. On submit the button morphs into a spinner, then a check. Success is a thread-bloom mini animation plus a message. Errors shake 4px, once, with an `aria-live` announcement.
 - **Gallery:** masonry Reveal; lightbox opens from the thumbnail position, as a FLIP animation using the GSAP Flip plugin. Import Flip only on the gallery route. Under reduced motion the lightbox simply fades.

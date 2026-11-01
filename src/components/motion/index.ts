@@ -1,5 +1,6 @@
 export { CountUp } from './CountUp';
 export { DrawLine } from './DrawLine';
+export { DrawTicks } from './DrawTicks';
 export { GoldenThread } from './GoldenThread';
 export { ImageReveal } from './ImageReveal';
 export { MagneticButton } from './MagneticButton';

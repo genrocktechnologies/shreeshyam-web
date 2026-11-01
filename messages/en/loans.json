@@ -1,4 +1,10 @@
 {
+  "hub": {
+    "whoCanApply": "Who can apply"
+  },
+  "related": {
+    "heading": "Other loans"
+  },
   "products": {
     "womenEmpowerment": {
       "meta": {
