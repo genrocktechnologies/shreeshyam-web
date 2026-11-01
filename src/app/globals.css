@@ -42,18 +42,18 @@
     text-rendering: optimizeLegibility;
   }
 
+  /* CR-01: Merriweather headings in the brand magenta (≈4.9:1 on white; large text). */
   h1,
   h2 {
-    @apply font-display font-semibold text-plum-900;
-    font-optical-sizing: auto;
+    @apply font-display font-bold;
   }
 
   h1 {
-    @apply text-display;
+    @apply text-display text-rani-500;
   }
 
   h2 {
-    @apply text-h2;
+    @apply text-h2 text-rani-600;
   }
 
   h3 {
@@ -79,7 +79,12 @@
     outline: none;
   }
 
-  /* Hindi: Devanagari display face and roomier line-heights. */
+  /* Hindi: Devanagari display and script faces, and roomier line-heights. */
+  :lang(hi) .font-script,
+  :lang(hi) .accent-script {
+    font-family: var(--font-script-hi), cursive;
+  }
+
   :lang(hi) h1,
   :lang(hi) h2,
   :lang(hi) .font-display {
@@ -103,11 +108,6 @@
     line-height: 1.85;
   }
 
-  /* Eyebrows are never uppercased in Devanagari. */
-  :lang(hi) .eyebrow {
-    text-transform: none;
-    letter-spacing: 0.02em;
-  }
 
   /* Reduced motion: CSS transitions become short opacity fades; nothing moves. */
   @media (prefers-reduced-motion: reduce) {
@@ -162,16 +162,17 @@ html.lenis body {
     @apply mx-auto w-full max-w-container px-5 md:px-8;
   }
 
+  /* CR-01 compact spacing (was py-20 md:py-28 lg:py-32). */
   .section-pad {
-    @apply py-20 md:py-28 lg:py-32;
+    @apply py-12 md:py-16 lg:py-20;
   }
 
   .eyebrow {
-    @apply font-body text-eyebrow font-bold uppercase text-rani-600;
+    @apply font-body text-eyebrow font-semibold text-rani-600;
   }
 
   .stat-number {
-    @apply font-display text-stat font-semibold tabular-nums;
+    @apply font-display text-stat font-bold tabular-nums;
   }
 
   .accent-script {
@@ -345,12 +346,10 @@ html.lenis body {
     background-size: 160px 160px;
   }
 
-  /* Footer surface: plum-900 with two soft rani radial glows (design-system, Footer). */
+  /* Footer surface: CR-01 magenta with one soft deeper glow (design-system, Footer). */
   .footer-surface {
-    background-color: theme('colors.plum.900');
-    background-image:
-      radial-gradient(ellipse 60% 55% at 88% 8%, theme('colors.rani.700 / 0.38'), transparent 70%),
-      radial-gradient(ellipse 45% 50% at 0% 100%, theme('colors.rani.800 / 0.3'), transparent 70%);
+    background-color: theme('colors.rani.500');
+    background-image: radial-gradient(ellipse 50% 80% at 100% 0%, theme('colors.rani.600 / 0.6'), transparent 70%);
   }
 
   .mask-arch {

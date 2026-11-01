@@ -3,20 +3,20 @@ import { distance, dur, ease, hero, rotate, scale, ui } from './src/lib/motion';
 
 const ms = (v: number) => `${v}ms`;
 
-/** Tokens from docs/design-system.md ("Marigold Thread"). Components use only these colours. */
+/** Tokens from docs/design-system.md (CR-01 palette). Components use only these colours. */
 const config: Config = {
   content: ['./src/**/*.{ts,tsx,mdx}'],
   theme: {
     extend: {
       colors: {
         rani: {
-          50: '#FFF0F6',
+          50: '#FFF1F7', // light pink surfaces
           100: '#FFD9E8',
           200: '#FFB3D0',
           300: '#FF80B1',
           400: '#F2489A',
-          500: '#E0237A', // brand primary
-          600: '#C2185F',
+          500: '#D71978', // primary magenta: top bar, active nav pill, icons, footer
+          600: '#C21869', // pink text and hover
           700: '#9C1149',
           800: '#740D37',
           900: '#4A0823',
@@ -24,16 +24,20 @@ const config: Config = {
         marigold: {
           50: '#FFFBEB',
           100: '#FFF2C2',
-          200: '#FFE485',
-          300: '#FFD447',
-          400: '#FFC21A', // brand accent
-          500: '#F5A800',
+          200: '#FFE88A',
+          300: '#FFDF5C',
+          400: '#FFD52E', // CTA buttons, yellow frames, stats panel (fill only)
+          500: '#F9C900', // hover and borders on yellow
           600: '#C98500',
           700: '#9A6300',
         },
         plum: { 700: '#5A2140', 800: '#3E1530', 900: '#2B0E21' },
         ivory: { DEFAULT: '#FFFCF6', 100: '#FFF8EC' },
-        ink: { DEFAULT: '#2B1A22', muted: '#6B5560', faint: '#A8949E' },
+        /** Soft pink section backgrounds (hero, About). Pink text < 24px on it uses rani-600 or ink. */
+        blush: '#FCEAF2',
+        /** Second line of the header name. */
+        cocoa: '#683B20',
+        ink: { DEFAULT: '#29232B', muted: '#6B5560', faint: '#A8949E' },
         success: '#1F8A5B',
         danger: '#C62828',
       },
@@ -42,20 +46,21 @@ const config: Config = {
         'display-hi': ['var(--font-display-hi)', 'var(--font-body)', 'serif'],
         body: ['var(--font-body)', 'system-ui', 'sans-serif'],
         script: ['var(--font-script)', 'cursive'],
+        'script-hi': ['var(--font-script-hi)', 'cursive'],
       },
       // Fluid sizes: mobile → desktop values from the type scale. Hindi line-heights are
       // raised in globals.css under :lang(hi).
       fontSize: {
-        // Display (h1): 40px on phones → capped at 60px (≈1200px+), so the hero headline
-        // stays within 4 lines in its 7/12 column at 1280 and 1440.
-        display: ['clamp(2.5rem, 1.9rem + 2.4vw, 3.75rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
-        h2: ['clamp(1.875rem, 1.5rem + 1.6vw, 3rem)', { lineHeight: '1.1' }],
-        h3: ['clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem)', { lineHeight: '1.3' }],
-        body: ['clamp(1.0625rem, 1.04rem + 0.1vw, 1.125rem)', { lineHeight: '1.65' }],
+        // CR-01 compact scale (Merriweather runs wide, Poppins large). Display (h1): 34px on
+        // phones → capped at 56px, so the hero headline stays within 2–3 lines.
+        display: ['clamp(2.125rem, 1.6rem + 2.2vw, 3.5rem)', { lineHeight: '1.15', letterSpacing: '-0.01em' }],
+        h2: ['clamp(1.625rem, 1.35rem + 1.1vw, 2.375rem)', { lineHeight: '1.2' }],
+        h3: ['clamp(1.125rem, 1.07rem + 0.25vw, 1.3125rem)', { lineHeight: '1.35' }],
+        body: ['clamp(1rem, 0.98rem + 0.1vw, 1.0625rem)', { lineHeight: '1.7' }],
         small: ['0.875rem', { lineHeight: '1.5' }],
-        eyebrow: ['0.8125rem', { lineHeight: '1.4', letterSpacing: '0.14em' }],
-        accent: ['clamp(1.375rem, 1.1rem + 1.2vw, 2rem)', { lineHeight: '1.3' }],
-        stat: ['clamp(3rem, 2.1rem + 3.9vw, 5.5rem)', { lineHeight: '1' }],
+        eyebrow: ['0.9375rem', { lineHeight: '1.4', letterSpacing: '0.01em' }],
+        accent: ['clamp(1.5rem, 1.2rem + 1.4vw, 2.375rem)', { lineHeight: '1.25' }],
+        stat: ['clamp(2rem, 1.6rem + 1.6vw, 2.75rem)', { lineHeight: '1.1' }],
       },
       maxWidth: {
         container: '1240px',
@@ -67,8 +72,8 @@ const config: Config = {
         arch: '999px 999px 28px 28px',
       },
       boxShadow: {
-        soft: '0 12px 32px -14px rgb(224 35 122 / 0.22)',
-        lift: '0 20px 44px -16px rgb(224 35 122 / 0.32)',
+        soft: '0 10px 30px -14px rgb(215 25 120 / 0.2)',
+        lift: '0 18px 40px -16px rgb(215 25 120 / 0.3)',
       },
       // Motion: all values come from src/lib/motion.ts (one-file tuning).
       transitionTimingFunction: {

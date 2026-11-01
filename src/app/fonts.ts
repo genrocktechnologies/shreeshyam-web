@@ -1,16 +1,18 @@
-import { Fraunces, Kalam, Mukta, Tiro_Devanagari_Hindi } from 'next/font/google';
+import { Dancing_Script, Kalam, Merriweather, Poppins, Tiro_Devanagari_Hindi } from 'next/font/google';
 
 // Shared by app/[locale]/layout.tsx and app/not-found.tsx (both render the full document).
+// Faces from CR-01 (design-system, Typography): Merriweather display, Poppins body,
+// Dancing Script accents; Hindi keeps Tiro Devanagari Hindi (display) and Kalam (accents).
 //
 // Performance (mobile LCP budget): `subsets` controls what is PRELOADED. Every subset's
 // @font-face (with its unicode-range) is still generated, so Devanagari files download
-// on demand only when a page actually renders Devanagari text. Preloading Devanagari
-// on every English page cost ~190 KB competing with the hero.
+// on demand only when a page actually renders Devanagari text. Hindi-only faces are never
+// preloaded, so English pages don't spend bandwidth on them.
 
-/** Display face. Only weight 600 is used, so a single static file replaces the opsz variable font. */
-export const fraunces = Fraunces({
+/** Display (h1, h2, card titles, stat numbers): 700, plus 900 for the header name. */
+export const merriweather = Merriweather({
   subsets: ['latin'],
-  weight: '600',
+  weight: ['700', '900'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -24,23 +26,31 @@ export const tiroHindi = Tiro_Devanagari_Hindi({
   display: 'optional',
   preload: false,
 });
-export const mukta = Mukta({
-  weight: ['400', '500', '700'],
+/** Body, nav and buttons in both scripts (Poppins has a Devanagari subset). */
+export const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
 });
 /**
- * Accent script. Only 700 is used. The hero accent ("Every Family") sits inside the h1,
- * so a late swap reflowed the headline and moved the CTAs (CLS 0.26). It is therefore
- * preloaded (Latin only, ~1 small file) and 'optional': on a slow first visit the
- * fallback stays for that view instead of shifting the hero.
+ * English script accents (the hero's "Together We Build a" line, slogans). It sits right
+ * above the h1, so a late swap would push the headline down: preloaded and 'optional',
+ * like Kalam before it.
  */
-export const kalam = Kalam({
-  weight: '700',
+export const dancingScript = Dancing_Script({
+  weight: ['600', '700'],
   subsets: ['latin'],
   variable: '--font-script',
   display: 'optional',
 });
+/** Hindi script accents: Dancing Script has no Devanagari. Hindi pages only, never preloaded. */
+export const kalam = Kalam({
+  weight: '700',
+  subsets: ['devanagari', 'latin'],
+  variable: '--font-script-hi',
+  display: 'optional',
+  preload: false,
+});
 
-export const fontVariables = [fraunces.variable, tiroHindi.variable, mukta.variable, kalam.variable].join(' ');
+export const fontVariables = [merriweather.variable, tiroHindi.variable, poppins.variable, dancingScript.variable, kalam.variable].join(' ');
