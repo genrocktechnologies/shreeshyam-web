@@ -7,6 +7,8 @@ Detailed specs live in `docs/`:
 - `docs/motion-spec.md`: animation rules and per-section choreography
 - `docs/build-plan.md`: phases and acceptance criteria
 - `docs/client-requests.md`: content we are waiting on
+- `docs/cr-01-compact-redesign.md`: client change request CR-01 (compact redesign). It overrides the specs above where they conflict; they have been updated to match.
+- `docs/client-review-2.md`: items awaiting client confirmation (CR-01 proposed copy, the logo lockup, photos)
 
 ## What this is
 A static, bilingual (English + Hindi) marketing site for a microfinance / financial-inclusion foundation in Motihari, Bihar.
@@ -15,7 +17,7 @@ A static, bilingual (English + Hindi) marketing site for a microfinance / financ
 - **Primary:** rural women, small entrepreneurs, farmers and low-income households, mostly on mid-range Android phones over patchy 4G.
 - **Secondary:** partners, donors, job seekers and regulators.
 
-**Brand feel:** warm, trustworthy, dignified, hopeful. Premium, but never flashy. Finance demands calm confidence.
+**Brand feel:** warm, trustworthy, dignified, hopeful. Premium, but never flashy. Finance demands calm confidence. Since CR-01 the site is **compact** (magenta and yellow, after `docs/reference/cr-01-home.png`): visitors reach what matters with little scrolling.
 
 ## Stack (locked — do not upgrade or add frameworks without asking)
 | Area | Choice |
@@ -45,6 +47,7 @@ A static, bilingual (English + Hindi) marketing site for a microfinance / financ
 - `pnpm exec playwright test`: tests against the static export (run `pnpm build` first; `playwright.config.ts` serves `out/` with `scripts/serve-static.mjs`)
 - `node scripts/bundle-size.mjs`: gzipped first-load JS of every exported page (budget 180 KB)
 - `pnpm exec tsx scripts/icons.ts`: regenerate `src/components/ui/icons.tsx` from lucide icon data
+- `pnpm exec tsx scripts/contrast.ts`: WCAG AA check of the colour-token pairs the design uses
 
 pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNORED_BUILDS`, stop and tell the user to run `pnpm approve-builds`. Do not work around it.
 
@@ -55,7 +58,7 @@ pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNOR
    - Every Hindi file carries `"_status": "draft-needs-review"` until the client approves it.
    - Keep financial and legal terms precise and simple, at roughly a Class 8 reading level.
 4. **Client-confirmed facts** are listed at the top of `docs/client-requests.md` under "Confirmed". They override crawled values (e.g. the phone number, office hours and map pin). Put them in `src/data/site.ts`.
-5. **Missing content** (loan key facts, legal details, grievance contact, gallery, WhatsApp):
+5. **Missing content** (loan key facts, legal details, grievance contact, gallery, WhatsApp, Terms & Conditions):
    - Render nothing for it, and hide the UI that depends on it behind a `null` check in `src/data/site.ts`.
    - Never show `+91 xxxxxxxxxx` or `#` links.
 6. **Social links are temporary placeholders, at the client's request.**
@@ -65,16 +68,27 @@ pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNOR
 7. **Forms never collect** Aadhaar, PAN, bank account numbers or document uploads. Documents are verified offline at the office.
 8. **Logo files** are in `client-inputs/logo/`. Use them, not the crawled logo, when present (see Phase 0). Never redraw or restyle the logo.
 9. Testimonials, team names and the award story are used exactly as crawled.
+10. **The CR-01 reference image** (`docs/reference/cr-01-home.png`) is a visual source only, never a content source.
+    - Never use its statistics (keep 1200+ / 150+ / 98%), its logo, or its AI-style photos.
+    - Its new wording is proposed copy, logged in `docs/client-requests.md` and `docs/client-review-2.md`, each with a one-line revert.
+    - Never generate, buy or download photos of people.
 
 ## Design rules
-- Colours come only from Tailwind tokens (`rani`, `marigold`, `plum`, `ivory`, `ink`). No raw hex in components.
-- **Yellow (`marigold`) is never used for text on light backgrounds.** Use it as a fill, with `plum-900` text on top.
+- Colours come only from Tailwind tokens (`rani`, `marigold`, `blush`, `cocoa`, `plum`, `ivory`, `ink`). No raw hex in components. Check new colour pairs with `scripts/contrast.ts`.
+- **Yellow (`marigold`) is never used for text on light backgrounds.** Use it as a fill, with `plum-900` text on top. Plum is a text colour only (no plum bands).
+- **Compactness (CR-01):**
+  - `.section-pad` is `py-12 md:py-16 lg:py-20`.
+  - Home ≤ 2.7 viewports at 1440×900 and ≤ 6 at 390×844 (footer excluded).
+  - Inner-page heroes ≤ 420px on desktop and ≤ 60vh on phones.
+  - `tests/compact.spec.ts` checks these.
 - **Light theme only.**
-- Fonts are loaded with `next/font/google`:
-  - Fraunces: English display
+- Fonts are loaded with `next/font/google` (`src/app/fonts.ts`):
+  - Merriweather 700/900: English display
   - Tiro Devanagari Hindi: Hindi display
-  - Mukta: body, both scripts
-  - Kalam: handwritten accents, both scripts
+  - Poppins 400/500/600/700: body, nav and buttons, both scripts
+  - Dancing Script 600/700: English script accents
+  - Kalam: Hindi script accents (`:lang(hi)`)
+  - Only Latin files are preloaded; Hindi-only faces never are.
 - The `<html lang>` attribute switches per locale. Hindi gets `leading-relaxed+` (see design-system.md).
 - Exactly one `<h1>` per page.
 - Every image has meaningful alt text from `messages/*`.
@@ -89,12 +103,12 @@ pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNOR
   - LanguageSwitch pill: CSS `transform`.
   - Page-transition curtain: GSAP, skipped under reduced motion.
   - Gallery lightbox FLIP: the GSAP Flip plugin, imported only on the gallery route.
-  - MagneticButton: the hand-written spring in `src/components/motion/MagneticButton.tsx`.
+  - MagneticButton was removed by CR-01; don't re-add it.
 - All text must be server-rendered and visible without JS.
   - Hide-before-reveal states apply only under `html.js-motion`, which a tiny inline script adds.
   - If JS fails, content shows.
-- Use `gsap.matchMedia()` everywhere. Under `(prefers-reduced-motion: reduce)`, use no scroll animations, no pinning and no smooth scroll; simple fades only.
-- Pinning and horizontal scroll apply on `md` (≥768px) and up only. On mobile, use plain reveals.
+- Use `gsap.matchMedia()` everywhere. Under `(prefers-reduced-motion: reduce)`, use no scroll animations and no smooth scroll; simple fades only.
+- **No pinned sections and no horizontal-scroll pins anywhere (CR-01).** They add scroll length. Keep motion light: reveals, CountUp, hover lifts, the curved-frame band draw-in, the Team tree connectors, the page curtain and the accordion.
 - **SplitText on Hindi splits by words or lines only, never characters.** Character splits break Devanagari conjuncts.
 - Lenis runs on desktop only (native scroll on touch), synced with ScrollTrigger through `gsap.ticker`.
 - Kill and revert every GSAP context on unmount (`useGSAP` scope). Call `ScrollTrigger.refresh()` after fonts and images load.
@@ -128,16 +142,24 @@ Measured with mobile Lighthouse (Moto G-class throttling):
   - Only `common` is sent to the browser. A client component needing other keys wraps itself in a nested `NextIntlClientProvider` with `pickMessages(await getMessages(), ['ns.path'])`.
   - Some messages keep the old site's emphasis as `<b>…</b>`. Render those with `t.rich(key, richTags)` from `src/lib/rich.tsx`, never with plain `t()`.
   - `<accent>…</accent>` marks a Kalam accent word with the drawn marigold underline (e.g. `home.hero.title`). Render it with `t.rich(key, accentTags)` from `src/components/ui/Accent.tsx`. `b` and `accent` are the only tags `verify-content.ts` allows.
-- **Golden thread rail:** sections with a thread use `container-site thread-gutter` (content clears the thread). The `<GoldenThread>` goes *inside* that container with `thread-col` (straight) or `thread-col-wide` (sway), plus `inset-y-0 h-full`. An absolutely positioned SVG needs an explicit height; `h-auto` doesn't stretch it. Paths use a 0–100 space with x = 50 at both ends, so segments join across sections.
+- **Golden thread rail (inner pages only; removed from home by CR-01):** sections with a thread use `container-site thread-gutter` (content clears the thread). The `<GoldenThread>` goes *inside* that container with `thread-col` (straight) or `thread-col-wide` (sway), plus `inset-y-0 h-full`. An absolutely positioned SVG needs an explicit height; `h-auto` doesn't stretch it. Paths use a 0–100 space with x = 50 at both ends, so segments join across sections.
 - **Data adapters** (`src/data/*.ts`) hold order, links, images and facts. They reference message keys (`…Key` fields) rather than copying text; `verify-content.ts` checks every key exists.
-- **Images:** place content photos with `<PhotoFrame image="…" alt={t(altKeyFor(image))} sizes="…" motion="…" />` from `src/components/ui/PhotoFrame.tsx`. The frame shape and focal point come from `IMAGE_META` in `src/data/images.ts` (see design-system, Photo frames). Never put a cut-out/illustration in a photo frame (the types forbid it). Mark the hero `priority`. Never use a raw `<img>` for content images.
+- **Images:** place content photos with `<PhotoFrame image="…" alt={t(altKeyFor(image))} sizes="…" motion="…" />` from `src/components/ui/PhotoFrame.tsx`. The frame shape and focal point come from `IMAGE_META` in `src/data/images.ts` (see design-system, Photo frames). The CR-01 curved yellow frame is the `panel` frame (rendered by `CurvedFrame`); `shape="circle"` gives the Team tree's round portraits. Never put a cut-out/illustration in a photo frame (the types forbid it). Mark the hero `priority`. Never use a raw `<img>` for content images.
 - **Icons:** import from `@/components/ui/icons` (generated by `scripts/icons.ts`; add names there and re-run), **never from `lucide-react`**. In lucide-react 1.x every icon is a `"use client"` module, so even a server-rendered icon adds ~12 KB of JS to every page.
 - **Client components that load on every page** (anything in the header, footer or layout) must not call `useTranslations`. Translate on the server and pass strings as props. That keeps next-intl's message formatter (~12 KB) out of the shared bundle; route-specific client components such as forms may use it.
 - **Images in client components:** render `PictureSources` with sources resolved on the server (`pictureSources(key)` from `@/data/images`), never `Picture`. `Picture` imports the image manifest and `cn`, which would ship to the browser.
 - **Class names in client components:** use `cx()` from `@/lib/cx` (clsx only), never `cn()`. `cn` adds tailwind-merge (~17 KB gzip), which one client import ships to every page. Don't pass conflicting utilities to client components.
 - **Lazy motion:** a new scroll-triggered primitive wraps its setup in `whenNear(el, ctx, setup)` from `@/lib/gsap`, so nothing below the fold does GSAP work during hydration.
 - **Link prefetch:** `Button` links default to `prefetch={false}`. Visitors are on metered 4G; prefetch only where it clearly pays off.
-- **Bundle budget:** after `pnpm build`, run `node scripts/bundle-size.mjs`. Every exported page must stay under 180 KB gzip of JS.
-- Motion primitives live in `src/components/motion/`: `Reveal`, `SplitHeading`, `CountUp`, `GoldenThread`, `Parallax`, `MagneticButton`, `SmoothScroll`. Sections compose these; they don't write raw GSAP unless the choreography is unique.
+- **Bundle budget:** after `pnpm build`, run `node scripts/bundle-size.mjs`. Every exported page must stay under 180 KB gzip of JS. Heavy code that is only needed on interaction loads on demand: the gallery's Flip, and the Membership form (its own chunk; zod loads on first focus).
+- **Forms:**
+  - Strings are translated on the server and passed as props.
+  - Submissions go to Web3Forms with `NEXT_PUBLIC_WEB3FORMS_KEY` (`src/lib/web3forms.ts`). Without the key the form renders, but sending reports "could not be sent".
+  - Forms also work without JS (native POST).
+- **Routes (CR-01):**
+  - `/about/vision-mission/` and `/membership/` replaced `/about/mission/`, `/about/vision/`, `/how-to-join/` and `/register/`.
+  - Redirects live in `vercel.json`. `scripts/serve-static.mjs` applies them locally, and `tests/redirects.spec.ts` checks them.
+  - The Gallery is switched on by `gallery.enabled` in `src/data/gallery.ts`.
+- Motion primitives live in `src/components/motion/`: `Reveal`, `SplitHeading`, `CountUp`, `DrawFrame`, `TreeConnectors`, `DrawTicks`, `GoldenThread`, `ImageReveal`, `Parallax`, `Shine`, `SmoothScroll`. Sections compose these; they don't write raw GSAP unless the choreography is unique.
 - Before saying a phase is done, run `pnpm build`, `pnpm exec tsc --noEmit`, and the dev-server smoke check (`pnpm dev` + `scripts/dev-smoke.ts`). All three must pass. `pnpm build` alone does not catch dev-only errors.
 - Commit at the end of each phase with a clear message.

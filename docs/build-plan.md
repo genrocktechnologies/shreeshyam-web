@@ -21,7 +21,7 @@ pnpm add -D sharp
   - `app/[locale]/layout.tsx` with `generateStaticParams` + `setRequestLocale`
   - No middleware, since static export doesn't run it.
 - `tailwind.config.ts` with all tokens from design-system.md; `globals.css` with base styles, `:lang(hi)` overrides, focus styles and the grain utility.
-- Fonts via `next/font/google` (Fraunces, Tiro Devanagari Hindi, Mukta [latin + devanagari subsets], Kalam).
+- Fonts via `next/font/google` (originally Fraunces, Tiro Devanagari Hindi, Mukta, Kalam; since CR-01: Merriweather, Poppins, Dancing Script, Tiro Devanagari Hindi, Kalam).
 - `src/lib/{cn,gsap,motion}.ts`; the `html.js-motion` inline script; the `SmoothScroll` provider.
 - All motion primitives from motion-spec.md, plus a hidden `/en/dev/motion` playground page that demos each one. Exclude it from the sitemap and delete it before launch.
 - **Logo:**
@@ -81,7 +81,9 @@ About, Mission, Vision, Team, Milestones, and Gallery (built but hidden from nav
 - Dev-server smoke check: with `pnpm dev` running, `pnpm exec tsx scripts/dev-smoke.ts` requests every route in both locales and reports HTTP 200 with no error overlay and no console errors.
 
 ## Phase 6 — Conversion & utility pages
-How to Join, Register, Contact, Careers, HR Policy, Privacy. Forms are wired to Web3Forms.
+Contact, Careers, HR Policy, Privacy. Forms are wired to Web3Forms.
+
+CR-01 merged How to Join and Register into `/membership/`. Its registration form is already built; it still needs the Web3Forms key (`NEXT_PUBLIC_WEB3FORMS_KEY`) and a real test submission.
 
 **Accept:**
 - A real test submission arrives in the inbox for each form.
@@ -105,9 +107,13 @@ How to Join, Register, Contact, Careers, HR Policy, Privacy. Forms are wired to 
   - **a11y:** axe on all routes.
   - **Links:** no internal 404s, no `#` or placeholder links.
   - **Visual:** screenshots at 390 and 1440.
-- Lighthouse on Home, a loan page and Register (mobile).
-- **Font preloads:** confirm the Vercel (Linux) build emits `<link rel="preload" as="font">` for Fraunces, Mukta and Kalam (Latin). Local Windows builds emit none: Next 14's font manifest looks for the loader by a `/`-separated path, which seems not to match Windows paths. Without preloads Fraunces swaps late, and Lighthouse shows LCP outliers of about 8s.
-- **Sitemap:** leave out `/about/gallery/` while `galleryPublished` (`src/data/gallery.ts`) is false. When the client's photos arrive: set it to true (this also removes `noindex`), add the gallery to the About menu and the footer, and include it in the sitemap.
+- Lighthouse on Home, a loan page and Membership (mobile).
+- **Font preloads:** confirm the Vercel (Linux) build emits `<link rel="preload" as="font">` for Merriweather, Poppins and Dancing Script (Latin). Local Windows builds emit none: Next 14's font manifest looks for the loader by a `/`-separated path, which seems not to match Windows paths. Without preloads the display face swaps late, and Lighthouse shows LCP outliers.
+- **Sitemap:**
+  - Leave out `/about/gallery/` while `gallery.enabled` (`src/data/gallery.ts`) is false.
+  - When the client sends at least 12 photos, set it to true. That adds the header nav item and removes `noindex`; then include the gallery in the sitemap.
+  - List `/about/vision-mission/` and `/membership/`, never the retired paths.
+- **Terms & Conditions:** add the footer link only once the client supplies the text (CR-01).
 - **Placeholder check:** the launch check covering `placeholder: true` must include the team LinkedIn links in `src/data/team.ts`, not just `site.ts`.
 - **Launch checklist: delete the motion playground.** Remove all of these, then rebuild and confirm `/en/dev/motion/` returns 404:
   - [ ] `src/app/[locale]/dev/` (the motion playground and the Phase 2 layout demo)

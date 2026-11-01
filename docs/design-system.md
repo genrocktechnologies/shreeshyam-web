@@ -1,135 +1,143 @@
-# Design System — "Marigold Thread"
+# Design System — CR-01 "Compact"
+
+CR-01 (client change request, 1 Nov 2026; `docs/cr-01-compact-redesign.md`) replaced the earlier "Marigold Thread" direction. The visual source is `docs/reference/cr-01-home.png`. The reference is **not** a content source: its statistics, logo and AI-style photos are never used (CR-01, section 0).
 
 ## Concept
-The client gave us two colours, pink and yellow. We give them meaning.
-
-- **Rani pink** is the confident, celebratory pink of Indian textiles. It is the brand voice: headings, primary surfaces and key moments.
-- **Marigold** is the genda flower of every auspicious occasion. It stands for growth, prosperity and action, and is used for CTAs, highlights and numbers.
-- **The Golden Thread** is the signature motif. It's a single marigold line, inspired by the sacred *kalava/mauli* thread, that runs through each page, connecting sections the way the foundation connects families to opportunity. It starts as a seed and ends in a bloom (see motion-spec.md).
-
-The direction is **warm editorial finance**: generous whitespace, a large serif display face, calm and precise layouts, with rich colour reserved for meaningful moments rather than painted everywhere. Roughly 70% ivory/blush surfaces, 20% rani, 10% marigold.
+- **Compact:** visitors reach what matters with less scrolling. The hero, the three cards and About sit in the first two screens (NN/g: about 57% of viewing time is above the fold, 74% within two screenfuls).
+- **Magenta and yellow:** the client's pink and yellow, as in the reference. Magenta (`rani-500`) carries the brand: top bar, active nav pill, icons, footer, headings. Yellow (`marigold-400`) is a **fill only**: CTA buttons, the curved photo bands, the stats panel, tree connectors.
+- **Signature shape:** the **curved yellow frame**: a photo panel whose leading edge is an organic curve, hugged by a marigold band that draws in. It replaces the arch on home and the page-long Golden Thread. The thread's motif lives on as the yellow frames, the Team tree's connectors and the Membership stepper line.
+- **Warm, dignified, calm:** soft pink surfaces (`blush`), white cards with a soft pink shadow, few decorations.
 
 ## Colour tokens (`tailwind.config.ts` → `theme.extend.colors`)
+Token names were kept, so components didn't change; the values follow the reference.
 ```ts
 rani: {
-  50:'#FFF0F6',100:'#FFD9E8',200:'#FFB3D0',300:'#FF80B1',400:'#F2489A',
-  500:'#E0237A', // brand primary
-  600:'#C2185F',700:'#9C1149',800:'#740D37',900:'#4A0823',
+  50:'#FFF1F7',   // light pink surfaces
+  100:'#FFD9E8',200:'#FFB3D0',300:'#FF80B1',400:'#F2489A',
+  500:'#D71978',  // primary magenta: top bar, active nav pill, icons, footer, h1
+  600:'#C21869',  // pink text, h2, card titles, hover
+  700:'#9C1149',800:'#740D37',900:'#4A0823',
 },
 marigold: {
-  50:'#FFFBEB',100:'#FFF2C2',200:'#FFE485',300:'#FFD447',
-  400:'#FFC21A', // brand accent
-  500:'#F5A800',600:'#C98500',700:'#9A6300',
+  50:'#FFFBEB',100:'#FFF2C2',200:'#FFE88A',300:'#FFDF5C',
+  400:'#FFD52E',  // CTA buttons, yellow frames, stats panel (fill only)
+  500:'#F9C900',  // hover and borders on yellow
+  600:'#C98500',700:'#9A6300',
 },
-plum:   { 700:'#5A2140', 800:'#3E1530', 900:'#2B0E21' }, // headings on yellow, deep sections
-ivory:  { DEFAULT:'#FFFCF6', 100:'#FFF8EC' },             // page background
-ink:    { DEFAULT:'#2B1A22', muted:'#6B5560', faint:'#A8949E' }, // body text (plum-tinted)
+blush: '#FCEAF2',  // soft pink section backgrounds (hero, About, testimonials)
+cocoa: '#683B20',  // second line of the header name
+plum:  { 700:'#5A2140', 800:'#3E1530', 900:'#2B0E21' }, // TEXT ONLY (e.g. on yellow buttons)
+ivory: { DEFAULT:'#FFFCF6', 100:'#FFF8EC' },
+ink:   { DEFAULT:'#29232B', muted:'#6B5560', faint:'#A8949E' },
 success:'#1F8A5B', danger:'#C62828',
 ```
 
-### Contrast rules (WCAG 2.2 AA; verify with an a11y contrast script)
-| Use | Pair | Approx. ratio |
+### Contrast (WCAG 2.2 AA): `pnpm exec tsx scripts/contrast.ts`
+The script reads the tokens and checks every pair the design uses; axe checks the rendered pages.
+
+| Use | Pair | Ratio |
 |---|---|---|
-| Body text | `ink` on `ivory` | ~15:1 ✅ |
-| Pink text (links, headings) | `rani-600` or darker on `ivory` | ≥ 5:1 ✅ (`rani-500` only for ≥ 24px headings) |
-| White text on pink | `white` on `rani-600`+ | ✅ (`rani-500` fill only with ≥ 18px bold text) |
-| Yellow buttons | `plum-900` text on `marigold-400` | ~12:1 ✅ |
-| ❌ Never | marigold text on ivory or white; white text on marigold | fails |
+| h1, large pink text | `rani-500` on white / ivory / blush | 4.9 / 4.8 / 4.2 (large text only) |
+| Pink text < 24px | `rani-600` on white / blush | 5.8 / 5.0 |
+| Body | `ink` on white / blush | 15.3 / 13.3 |
+| Top bar, footer, active pill | white on `rani-500` | 4.9 |
+| Yellow buttons, stats panel | `plum-900` on `marigold-400` | 12.5 |
+| Stat labels on yellow | `rani-700` on `marigold-400` | 5.7 (`rani-600` only for the ≥ 32px bold numbers: 4.1) |
+| Header name, line 2 | `cocoa` on the bar gradient | ≥ 8.4 |
+| ❌ Never | yellow text on light backgrounds; white text on yellow | fails |
 
 ### Surfaces
-- Page: `ivory`
-- Alternating sections: `rani-50` or `marigold-50`
-- Hero-moment / CTA bands: `rani-600` → `rani-800` gradient with a subtle grain texture (CSS noise, ≤ 4% opacity)
-- Deep "trust" band (stats, award): `plum-900` with marigold numbers
-- Cards: white, 1px `rani-100` border, soft shadow
+- Page: `ivory`. Hero, About band, testimonials, checklists: `blush`. Feature-card band, milestone band, form band: `rani-50`.
+- Top bar, CTA band, footer: `rani-500`. The plum bands are gone (plum is a text colour only).
+- Impact band: a diagonal split, magenta | yellow (`.impact-split`).
+- Cards: white, `rounded-2xl`, `shadow-soft`, no border.
 
-## Typography
-| Role | EN | HI | Sizes (mobile → desktop) |
+## Typography (`src/app/fonts.ts`, `next/font/google`)
+| Role | English | Hindi | Sizes (mobile → desktop) |
 |---|---|---|---|
-| Display (h1) | Fraunces 600, opsz high, `-0.02em` | Tiro Devanagari Hindi 400 | 40 → 60px (`text-display`, capped from ≈1200px so the home h1 stays at 4 lines at 1280–1440px), leading 1.05 (HI 1.25) |
-| h2 | Fraunces 600 | Tiro Devanagari Hindi | 30 → 48px, leading 1.1 (HI 1.3) |
-| h3 / card title | Mukta 700 | Mukta 700 | 20 → 24px |
-| Body | Mukta 400 | Mukta 400 | 17 → 18px, leading 1.65 (HI 1.85) |
-| Small / meta | Mukta 500 | Mukta 500 | 14px |
-| Eyebrow | Mukta 700, uppercase, `0.14em` tracking, `rani-600` | Mukta 700 (no uppercase) | 13px |
-| Accent script | Kalam 700, `marigold-600` on dark or `rani-600` on light | Kalam | 22 → 32px, max one per section |
-| Numbers (stats) | Fraunces 600, `tabular-nums` | same, with Latin digits | 48 → 88px |
+| Display (h1) | **Merriweather** 700, `rani-500` | Tiro Devanagari Hindi 400 | 34 → 56px (`text-display`), leading 1.15 (HI 1.25) |
+| h2 | Merriweather 700, `rani-600` | Tiro Devanagari Hindi | 26 → 38px, leading 1.2 (HI 1.3) |
+| Card title / h3 | Merriweather 700, `rani-600` | Tiro (via `.font-display`) | 18 → 21px |
+| Header name | Merriweather 900 ("SHREE SHYAM") / 700 (line 2) | Tiro | see Logo lockup |
+| Body, nav, buttons | **Poppins** 400/500/600/700 | Poppins (Devanagari subset) | 16 → 17px, leading 1.7 (HI 1.85) |
+| Eyebrow | Poppins 600, `rani-600`, sentence case, with a 24px yellow dash | same | 15px |
+| Script accent | **Dancing Script** 600/700 | **Kalam** 700 (Dancing Script has no Devanagari) | 24 → 38px (`text-accent`) |
+| Numbers (stats) | Merriweather 700, `tabular-nums` | same | 32 → 44px |
 
-- Set the font CSS variables on `<html>`: `--font-display`, `--font-display-hi`, `--font-body`, `--font-script`. A `:lang(hi)` rule swaps the display font and line-heights.
-- Body copy is never below 16px. Line length is at most 68ch.
+- CSS variables on `<html>`: `--font-display`, `--font-display-hi`, `--font-body`, `--font-script`, `--font-script-hi`. `:lang(hi)` swaps the display and script faces and raises line-heights.
+- **Preloads:** only Latin files are preloaded (Merriweather, Poppins, Dancing Script). Tiro and Kalam are never preloaded, so English pages don't download Hindi fonts. Dancing Script and Tiro use `display: optional` (they sit above or in the h1, so a late swap would shift it).
+- Body copy is never below 16px (form helper and meta text: 14–15px). Line length ≤ 68ch.
 
 ## Spacing, radius, elevation
-- Container: `max-w-[1240px] px-5 md:px-8`
-- Section padding: `py-20 md:py-28 lg:py-32`
-- Radius: `rounded-2xl` (20px) for cards, `rounded-full` for pills and buttons
-- **Arch mask**, the signature image shape: `border-radius: 999px 999px 28px 28px`. It echoes the *jharokha* window, and is used on hero and feature photos.
-- Shadows:
-  - `shadow-soft`: `0 12px 32px -14px rgb(224 35 122 / .22)`
-  - `shadow-lift` (hover): `0 20px 44px -16px rgb(224 35 122 / .32)`
-- Borders: `rani-100`. Dividers: `rani-200` at 60% opacity.
+- Container: `max-w-[1240px] px-5 md:px-8`. Header rows: `.container-header` (`max-w-[1400px] px-4 md:px-8`), so the lockup and full nav fit on one line.
+- **Section padding (CR-01):** `py-12 md:py-16 lg:py-20` (`.section-pad`; was `py-20 md:py-28 lg:py-32`). Card padding about 25% less than before (`p-5 md:p-6`).
+- **Compactness targets** (tested in `tests/compact.spec.ts`): home ≤ 2.7 viewports at 1440×900 and ≤ 6 at 390×844 (footer excluded); hero + cards within 1.3 viewports on desktop; inner page heroes ≤ 420px below the header on desktop and ≤ 60vh on phones; no photo taller than about 70% of the viewport.
+- Radius: `rounded-2xl` (20px) for cards and panels, `rounded-full` for pills, buttons and icon discs.
+- Shadows: `shadow-soft` `0 10px 30px -14px rgb(215 25 120 / .2)`; `shadow-lift` (hover) `0 18px 40px -16px rgb(215 25 120 / .3)`.
 
-## Components (build in `src/components/ui`)
+## Header (`src/components/layout/Header.tsx`)
+- **Top bar** (lg+, 40px): magenta, white text, marigold icons. Email left, phone centre, address right (opens Maps). Hidden below lg to keep the header compact.
+- **Main bar** (96px desktop, 64px phones): cream-to-light-yellow gradient (`.header-bar`). Logo lockup, then the nav, then `EN | हिं`.
+- **Nav:** Home · About Us · Vision & Mission · Loan Products ▾ (dropdown: the 4 loans + All loans) · Membership · Gallery (only when `gallery.enabled`) · Contact Us. The active item is a magenta pill with white text. Careers is in the footer. No desktop Register button (Membership is the conversion path).
+- **Breakpoint (measured):** the full nav shows from 1280px (`xl`); below, the hamburger and full-height sheet, so the nav never wraps. The tagline shows from lg, except 1280–1399px, where it would collide with the nav.
+- Sticky behaviour as before: shrinks 96 → 76px on scroll, hides on scroll down, returns on scroll up.
+
+## Logo lockup (`src/components/ui/BrandLockup.tsx`)
+- The client's real **emblem** (`public/brand/logo-mark-160.webp`), never cropped or recoloured, then a typeset two-line name: "SHREE SHYAM" (Merriweather 900, `rani-500`) over "SMALL GROWTH FOUNDATION" (Merriweather 700, `cocoa`), then the tagline "Financial Inclusion • Women Empowerment • Community Growth" (Poppins 12px, `ink`, marigold bullets).
+- A **new lockup, pending client approval** (client-review-2). `site.logoLockup = 'image'` in `src/data/site.ts` switches back to the client's full logo file.
+- Sizes come from CSS variables (`--lockup-mark`, `--lockup-line1`, `--lockup-line2`), set on `.site-header` (scaled with the viewport on phones so it fits 360px beside the language switch and menu button) and on the footer link.
+- The typeset text is `aria-hidden`; the link's accessible name is "Shree Shyam Small Growth Foundation, home".
+
+## Footer (`src/components/layout/Footer.tsx`)
+- Magenta (`.footer-surface`). The emblem as a faint watermark (12%), always **whole**: it sits in the page margin beside the container from 1400px, where the margin fits it, so no text or icon crosses it; hidden below that.
+- **Row 1:** lockup (white) · one line of quick links (About Us · Vision & Mission · Loan Products · Membership · Careers · Contact Us) over phone and email · social placeholders. Phones: links in 2 columns, phone/email as icon buttons beside the socials.
+- **Bottom bar:** "© {build year} Shree Shyam Small Growth Foundation. All Rights Reserved." left; Privacy Policy · HR Policy · Contact Us right. **Terms & Conditions** is added only when the client supplies its text.
+- Height: 225px at 1440 (target ≤ 260), 511px at 360–390 including the action-bar clearance (target ≤ 520).
+
+## Components (`src/components/ui`, `src/components/sections`)
 | Component | Spec |
 |---|---|
-| **Button** | Variants: `primary` (marigold-400 fill, plum-900 text), `secondary` (rani-600 fill, white), `ghost` (rani-600 text, 1.5px border), `link`. Sizes: md 48px, lg 56px. Arrow icon slides 4px on hover. Focus ring: 3px `marigold-300` + 2px offset. |
-| **Eyebrow** | Small marigold thread dash (24px) + eyebrow text |
-| **SectionHeading** | Eyebrow + h2 + optional lead paragraph; `align` prop |
-| **StatCard** | Large number (CountUp) + label; used on the plum band |
-| **ServiceCard** | Duotone icon in a rani-50 circle, title, text; hover lift + icon rotates 8° |
-| **LoanCard** | Product name, one-line purpose (from crawled text), "Learn more"; top edge has a marigold thread that draws on hover. The link covers the card. Sizes: `panel` (home), `large` (hub; adds the published amount and tenure), `compact` (the "Other loans" nav) |
-| **ProcessStep** | Large outlined numeral (01–03), title, text, image |
-| **TestimonialCard** | Kalam quote mark, quote, name; initials avatar (rani-100 circle). No photos, since none exist. |
-| **TeamCard** | Photo (arch mask, grayscale → colour on hover), name, role. Social icons render only if real URLs exist. |
-| **Accordion** | A `<button aria-expanded aria-controls>` inside a heading, controlling a `role="region"` panel with `aria-labelledby`. Opening animates the panel wrapper's CSS `grid-template-rows` from `0fr` to `1fr` over 0.35s, with an `overflow-hidden` inner child. A collapsed panel also gets `inert`, so its links can't be tabbed to. The plus icon rotates into a cross with a CSS transform. Instant under reduced motion. No JS animation library. Without JS every panel renders open, so all answers stay readable. |
-| **KeyFacts** | Definition-list card for loan facts; renders only the fields present (nothing at all if none). Figures (amount, tenure) use the display face; sentences (purpose) stay at body size; eligibility and documents are TickLists. Sticky beside the lists on desktop, first on phones |
-| **TickList** | Checklist with marigold-100 tick discs whose rani checks draw in one after another (`DrawTicks`) |
-| **FeatureCard** | ServiceCard, also used for About's "Why Choose" items: IconBadge, title, text; hover lift and icon turn. `inlineIcon` puts the icon beside the text in wide bento cells |
-| **TeamCard** | Arch portrait (hover grayscale → colour on hover-capable devices), name, role; optional LinkedIn icon (placeholder per the site.ts rules, labelled "{name} on LinkedIn"). `featured` enlarges the type; the grid sets the width |
-| **PullQuote** | A page's key statement (Mission, Vision): display type beside a marigold rule, with a Kalam quote mark |
-| **TeaserCard** | Linked summary of another page (About's Mission/Vision teasers, the sibling link on Mission and Vision); the whole card is the link |
-| **Illustration** | Illustrations and cut-out photos at their natural shape. Cut-outs are multiply-blended so their white surround takes the background colour. Typed to `IllustrationKey`, the counterpart of PhotoFrame's `PhotoKey` |
-| **PictureSources** | Renders a `<picture>` from sources resolved on the server (`pictureSources()`). `Picture` renders through it; client components use it directly, so the image manifest stays out of the browser |
-| **Stepper** | Vertical numbered steps joined by the thread line |
-| **SectionHeading** | Optional eyebrow, an h2 (SplitHeading), an optional lead, and an optional action (a link or button) beside the heading from md up |
-| **IconBadge** | The duotone icon from Iconography: a rani-50 circle, a marigold-200 blob, and a rani-600 lucide stroke that turns `rotate.icon` degrees on group hover |
-| **Form fields** | Visible labels (never placeholder-only), 52px inputs, inline bilingual errors, `inputMode` set (`tel`, `numeric`) |
-| **LanguageSwitch** | `EN \| हिं` pill toggle; keeps the current path. The indicator moves with a CSS `transform` transition. |
-| **MobileActionBar** | Fixed bottom bar on < md: Register (primary) + Call/WhatsApp, which appear only when the numbers exist. Hides on scroll down, shows on scroll up. |
+| **Button** | `primary` (marigold-400 fill, plum-900 text; the "Join Us →" / "Know More →" style), `secondary`, `ghost`, `onDark`, `link`. Sizes md 48px, lg 56px. Arrow slides 4px on hover. |
+| **Eyebrow** | 24px yellow dash + sentence-case Poppins 600 in `rani-600` |
+| **SectionHeading** | Optional eyebrow, h2, optional lead and action |
+| **Home FeatureCards** | 3 white cards overlapping the hero's bottom: a circular icon disc (pink `rani-100` or yellow `marigold-300`), a Merriweather title, the live-site description, a small round arrow (decorative; the title link covers the card). Phones: compact rows. |
+| **ImpactBand** | Diagonal magenta \| yellow band: script slogan with a yellow swash and leaf; the 3 live-site stats with magenta icon discs, CountUp numbers, labels. Home and About. |
+| **LoanStrip** | Home: the 4 products in one row from lg (icon, name, amount/tenure chips, arrow); a horizontal snap row on smaller screens. |
+| **FeatureCard** | Services ("What we do") and "Why choose": IconBadge beside a Merriweather title and text, compact |
+| **IconBadge** | 56px `rani-50` disc, marigold blob, `rani-500` lucide stroke |
+| **LoanCard** | Product name, purpose, link; `panel`/`large`/`compact` sizes (Loans hub, Other loans) |
+| **ProcessSteps** | Membership: 3 marigold number discs on one marigold stepper line (across from md, down the left on phones), title, text |
+| **TestimonialCard / deck** | Compact single-card carousel: script quote mark, quote, initials avatar. Native scroll-snap; desktop auto-advance with pause. |
+| **TeamCard** | Team tree: circular **colour** portrait (112px desktop, 88px phones; Chairman and MD/CEO 128/96px) in a 3px marigold ring, name (Merriweather), role (Poppins), LinkedIn placeholder. Hover/focus lifts the card and glows the ring. Phones: a compact row. |
+| **Team tree** | `/about/team/`: nested lists by tier (Chairman → Leadership → Executive Directors → Heads & Officers) with tier headings; desktop connectors tier to tier (TreeConnectors); phones a vertical tree with a marigold spine. See site-plan. |
+| **Accordion** | As before (button in a heading, `role="region"`, CSS `grid-template-rows` 0fr → 1fr, `inert` when closed), with compact 60px rows |
+| **KeyFacts / TickList** | Unchanged |
+| **PullQuote** | A key statement beside a marigold rule, with a script quote mark (Vision & Mission) |
+| **TeaserCard** | Linked summary card (About's Vision & Mission teasers) |
+| **CtaBand** | Slim magenta band for inner pages (≤ 220px desktop): heading beside Register (→ `/membership/#register`) and Contact Us. Not on home. |
+| **PageHero** | Compact: blush, breadcrumb, optional eyebrow, h1, optional intro; an optional arch photo (15rem desktop; 5.5rem beside the text on phones). ≤ 420px below the header on desktop, ≤ 60vh on phones. |
+| **RegisterForm** | Membership (`#register`): visible labels, 48px+ inputs, required marks, inline errors tied with `aria-describedby`, an error summary that takes focus, polite status. Never collects ID numbers or uploads. |
+| **Decor** | `Lotus`, `Leaf`, `Swash`, `HeartFlourish`: drawn in code, `aria-hidden`, 10–15% opacity in section corners, used sparingly |
+| **LanguageSwitch** | `EN \| हिं` pill (white, magenta marker); 48px options |
+| **MobileActionBar** | < md: Register (→ `/membership/#register`) + Call (+ WhatsApp when confirmed) |
+| **Illustration / PictureSources** | Unchanged |
 
 ## Iconography & imagery
-- **Icons:** Lucide at 1.75 stroke, sized 24/28. Service icons are duotone: lucide stroke in rani-600 over a marigold-200 blob.
-- **Photos:** use only the real photos from `assets/original` (field, award, team). Never use stock or AI-generated people.
-  - Grade them consistently: slight warm lift, no heavy filters.
-- **Decorative SVGs** (drawn in code, kept light):
-  - The Golden Thread
-  - A marigold bloom (5-petal radial)
-  - A seed/sprout mark
-  - A faint *alpana* dot pattern at 6% opacity for section backgrounds
-- **Logo:** the client's existing logo, used unchanged. Use the white version on rani or plum backgrounds.
+- **Icons:** lucide via the generated `@/components/ui/icons` (never `lucide-react` directly), stroke 1.75.
+- **Photos:** only the real photos from `assets/original` (and later the client's). Never generate, buy or download people photos. Consistent slight warm grade. The client shot list for the reference look is in `docs/client-review-2.md`.
+- **Decorations:** the curved yellow bands, the tree connectors, the stepper line, a lotus/leaf outline at 10–15% opacity in a few corners.
 
 ## Photo frames (data, not CSS)
-Every content photo is placed with `<PhotoFrame>` (`src/components/ui/PhotoFrame.tsx`). Its shape, aspect ratio and focal point come from `IMAGE_META` in `src/data/images.ts`:
+Every content photo goes through `<PhotoFrame>`; shape, aspect and focal point come from `IMAGE_META` in `src/data/images.ts`.
 
-| Frame | Aspect | Corners | Use for |
+| Frame | Aspect | Shape | Use for |
 |---|---|---|---|
-| `arch` | 4:5 | 999px 999px 28px 28px (jharokha) | One person, or a tight group with faces in the upper half (hero, About, team portraits) |
-| `wide` | 4:3 | 20px | Wide group shots and two-person shots, e.g. the award photo (an arch would slice the presenter) |
-| `banner` | 16:5 | 20px | Very wide scenes with no people |
-| `illustration` | natural | none | Cut-outs on white, transparent drawings. **Never placed in a photo frame.** `PhotoFrame` only accepts `PhotoKey`, so passing one is a type error. |
+| `panel` | 16:10 | **CR-01 signature**: rounded rectangle, left edge one organic curve (an `objectBoundingBox` clip path), a ≈12px marigold band hugging the curve (an SVG stroke in the same 160×100 viewBox, so it never distorts) | Home hero (`heroPanel`) and About band (`aboutPanel`). Rendered by `CurvedFrame`. |
+| `arch` | 4:5 | 999px 999px 28px 28px | Inner-page hero photos, gallery portraits |
+| `wide` | 4:3 | 20px | Group and two-person shots (award) |
+| `banner` | 16:5 | 20px | Very wide scenes without people |
+| `illustration` | natural | none | Cut-outs and drawings; never in a photo frame |
 
-- **Focal point:** `focal: { x, y }` in % becomes `object-position` (and the blur placeholder's position). Set it so faces and the main subject stay inside the frame at 390px and 1440px.
-- **No empty edges:** the image always covers the frame (`object-cover`). Parallax over-scales by `scale.parallaxCover` and caps its travel at the spare margin. The reveal mask uses the frame's own corners. Verified by scrolling every frame and checking that the image layer covers its box at each step.
-- **To add a photo:** process it with `scripts/images.ts` (with a `crop` if needed), add its frame and focal point to `IMAGE_META`, then screenshot the placement at both widths.
-
-## Footer
-`src/components/layout/Footer.tsx`, with `FooterWatermark` and `BackToTop`.
-
-- **Surface:** `plum-900` with two soft rani radial glows (`.footer-surface`) plus the grain texture.
-- **Watermark:** the complete logo emblem (`public/brand/logo-mark.webp`) at 7% opacity, `aria-hidden`, `pointer-events: none`. It is a deity image, so it is always shown **whole**:
-  - **Desktop:** in a right-hand column reserved for it (content has `lg:pr-[25rem] xl:pr-[30rem]`), so no text is laid across the face. Up to 420px tall at lg and 520px at xl; vertically centred above the bottom bar; never cropped by an edge.
-  - **Mobile:** about 260px, centred behind the top area.
-  - **Motion:** a slow drift on desktop only (`watermark.drift`, `watermark.scrub` in motion.ts); static on mobile and under reduced motion.
-- **Top row:** the white logo, the foundation blurb, contact chips (phone, email, address linking to Maps in a new tab, office hours 9 AM – 9 PM; icons from `ui/icons`), and a Register button (primary, lg).
-- **Link columns:** About, Loans (4 products + All loans), Help (How to Join, Register, Contact, Careers), Legal (Privacy Policy, HR Policy, plus hidden slots for legal and grievance details). 2 columns on mobile and up to xl; 4 at xl. Every link has a 48px tap target. The columns Reveal (stagger) on scroll.
-- **Bottom bar:** copyright with the year from the build date, social icons (placeholders for now, 48px), and a "Back to top" button that scrolls up and moves focus to the header logo. On mobile, extra bottom padding clears the fixed MobileActionBar.
-- **Contrast:** checked against the brightest point of glow plus watermark. The dimmest text (ivory-100 at 80%) measures at least 8.6:1, and axe reports no issues.
+- `shape="circle"` overrides the frame with a 1:1 round crop at the focal point (Team tree portraits).
+- No photo is shown taller than about 70% of the viewport.
+- To add a photo: process it with `scripts/images.ts` (crop if needed), add its frame and focal point to `IMAGE_META`, screenshot the placement at 390 and 1440.
