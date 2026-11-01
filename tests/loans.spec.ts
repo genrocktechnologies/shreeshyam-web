@@ -85,7 +85,7 @@ test('hub lists all 4 products with their published amounts, and Who can apply',
     await expect(page.locator('main')).toContainText(loanMessages.products[id].facts.amount.value);
   }
   await expect(page.getByRole('heading', { level: 2, name: loanMessages.hub.whoCanApply })).toBeVisible();
-  await expect(page.locator('main a[href="/en/how-to-join/"]').first()).toBeVisible();
+  await expect(page.locator('main a[href="/en/membership/"]').first()).toBeVisible();
 });
 
 test('no placeholder or # links on loan pages', async ({ page }) => {

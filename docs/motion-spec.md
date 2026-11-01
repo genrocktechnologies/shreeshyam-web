@@ -52,7 +52,7 @@ A short curtain (`template.tsx`, GSAP, 0.5s): a `rani-600` panel slides up and a
 ## Home (CR-01, compact)
 | # | Section | Desktop | Mobile |
 |---|---|---|---|
-| 1 | **Header** | Top bar + bar; shrinks 96 → 76px past 40px, hides on scroll down, returns on scroll up (transform only). Loan Products dropdown fades and slides 8px. | Sheet from the right; links stagger in. |
+| 1 | **Header** | Top bar + bar; shrinks 108 → 88px past 40px, hides on scroll down, returns on scroll up (transform only). Loan Products dropdown fades and slides 8px. | Sheet from the right; links stagger in. |
 | 2 | **Hero** | From first paint, CSS only: the h1 (script line + title) rises (transform), the CTAs scale in from 0.96. The photo is painted at once (LCP on desktop), and its marigold band draws in after `hero.frame`. | Same; the h1 is the LCP. The photo sits below the text. |
 | 3 | **Feature cards** | Fade up with stagger; hover lifts the card, turns the icon, slides the arrow (CSS). | Same. |
 | 4 | **About** | Text reveals; the photo's band draws in on scroll. No word scrub. | Same. |
@@ -61,7 +61,8 @@ A short curtain (`template.tsx`, GSAP, 0.5s): a `rani-600` panel slides up and a
 | 7 | **Footer** | Static. | Static. |
 
 ## Inner pages
-- **PageHero:** breadcrumb fades in; the h1 is painted on the first frame and rises with CSS (`animate-hero-title`, transform only), since it is often the LCP element. An arch photo uses the no-clip `hero` motion (settle only).
+- **PageHero:** CSS only, from first paint: breadcrumb and eyebrow fade up, the h1 and intro rise (`animate-hero-title`, transform only). An arch photo uses the no-clip `hero` motion (settle only).
+- **Nothing in the first screen sits behind a JS `Reveal` or `ImageReveal`** (CR-01 LCP pass). On a 4×-throttled phone at 1.6 Mbps hydration takes about 5s, so hidden-until-JS content in view became the LCP at 5–6s. This applies to: the Membership intro, the Loans hub cards, the Vision & Mission pull-quotes, the Milestones award photo (priority, `motion="none"`), About's foundation section (its illustration has `priority`), the Gallery tiles, and the Chairman's portrait (priority).
 - **Vision & Mission, About, Milestones:** reveals only; pull-quotes fade up.
 - **Membership:** the process stepper's marigold line is static (the thread motif), steps fade up with stagger; checklist ticks draw in; the FAQ accordion; the form has no decorative motion (focus rings, inline errors, a polite status message).
 - **Team tree:** cards fade in; on md+ the connectors draw tier by tier once (`TreeConnectors`); reduced motion shows them drawn; phones use a static CSS spine.

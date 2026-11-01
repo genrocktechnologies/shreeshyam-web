@@ -36,8 +36,10 @@ export default async function MilestonesPage({ params: { locale } }: { params: {
       <article className="relative bg-ivory">
         <div className="container-site thread-gutter section-pad relative">
           <GoldenThread wrap="[data-award-frame]" start={trigger.wrapStart} end={trigger.wrapEnd} className="absolute inset-0 h-full w-full" />
-          <div data-award-frame="" className="relative mx-auto max-w-4xl overflow-hidden rounded-2xl shadow-soft">
-            <PhotoFrame image="award" alt={t(altKeyFor('award'))} sizes="(min-width: 1024px) 56rem, 90vw" className="w-full" />
+          {/* 48rem wide at most, so the 4:3 photo stays under ~70% of the viewport height (CR-01). */}
+          <div data-award-frame="" className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl shadow-soft">
+            {/* In the first screen (the LCP element): no mask reveal, painted at once. */}
+            <PhotoFrame image="award" alt={t(altKeyFor('award'))} priority motion="none" sizes="(min-width: 1024px) 48rem, 90vw" className="w-full" />
             <Shine />
           </div>
 

@@ -46,7 +46,7 @@ export async function FeatureCards() {
   const t = await getTranslations();
 
   return (
-    <section className="relative z-10 bg-rani-50 pb-8 md:pb-12">
+    <section className="relative z-10 bg-rani-50 pb-6 md:pb-8">
       <div className="container-site">
         {/* Pulled up over the hero's bottom edge (the hero leaves room for it). */}
         <Reveal stagger as="ul" className="relative -mt-16 grid gap-3 md:-mt-20 md:grid-cols-3 md:gap-6">
@@ -60,12 +60,12 @@ export async function FeatureCards() {
                     <Icon className={cn('h-7 w-7 transition-transform duration-card ease-growth group-hover:rotate-icon md:h-9 md:w-9', yellow ? 'text-cocoa' : 'text-rani-500')} />
                   </span>
                   <div className="md:mt-4">
-                    <h2 className="text-h3">
+                    <h2 className="text-h3 md:text-[1.375rem]">
                       <Link href={c.href} prefetch={false} className="after:absolute after:inset-0 after:rounded-2xl">
                         {t(c.titleKey)}
                       </Link>
                     </h2>
-                    <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-ink md:mx-auto md:mt-2 md:max-w-[17rem]">{t(c.textKey)}</p>
+                    <p className="mt-1.5 text-[0.9375rem] leading-relaxed text-ink md:mx-auto md:mt-2 md:max-w-[19rem] md:text-body">{t(c.textKey)}</p>
                   </div>
                   <span
                     aria-hidden="true"

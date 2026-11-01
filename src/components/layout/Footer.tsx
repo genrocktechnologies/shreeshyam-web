@@ -64,7 +64,7 @@ export async function Footer({ locale }: { locale: Locale }) {
 
       <div className="container-site relative">
         <div className="grid gap-4 py-6 lg:py-7 xl:grid-cols-[auto_minmax(0,1fr)_auto] xl:items-center xl:gap-6">
-          <Link href="/" prefetch={false} aria-label={t('common.a11y.logoHome', { name: t('common.siteName') })} className="inline-block justify-self-start rounded-lg [--lockup-line1:1.25rem] [--lockup-line2:0.6875rem] [--lockup-mark:3rem] lg:[--lockup-mark:3.5rem]">
+          <Link href="/" prefetch={false} className="inline-block justify-self-start rounded-lg [--lockup-line1:1.25rem] [--lockup-line2:0.6875rem] [--lockup-mark:3rem] lg:[--lockup-mark:3.5rem]">
             <BrandLockup line1={t('common.brand.nameLine1')} line2={t('common.brand.nameLine2')} logoAlt={t('common.alt.logo')} tone="onDark" />
           </Link>
 

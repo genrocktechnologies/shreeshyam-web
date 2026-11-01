@@ -1,10 +1,9 @@
 import type { ReactNode } from 'react';
-import { GoldenThread, Reveal } from '@/components/motion';
+import { GoldenThread } from '@/components/motion';
 import { Breadcrumbs, type Crumb } from '@/components/ui/Breadcrumbs';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { frameOf, type PhotoKey } from '@/data/images';
 import { cn } from '@/lib/cn';
-import { pageHero } from '@/lib/motion';
 
 interface PageHeroProps {
   /** The page's single <h1>. */
@@ -39,22 +38,16 @@ export function PageHero({ title, eyebrow, breadcrumbs, intro, image, className 
         {/* Explicit height: an absolute <svg> doesn't stretch between top and bottom. */}
         <GoldenThread d="M50 0 C 50 30, 30 55, 50 100" className="thread-col top-[var(--header-total)] h-[calc(100%-var(--header-total))]" />
         <div>
-          <Reveal delay={pageHero.breadcrumb}>
+          {/* Everything above the fold animates with CSS from first paint, never behind a JS
+              Reveal: on a slow phone hydration takes seconds, and the intro is often the LCP. */}
+          <div className="animate-hero-eyebrow">
             <Breadcrumbs items={breadcrumbs} className="mb-3" />
-          </Reveal>
-          {eyebrow && (
-            <Reveal delay={pageHero.eyebrow}>
-              <p className="eyebrow mb-2">{eyebrow}</p>
-            </Reveal>
-          )}
+          </div>
+          {eyebrow && <p className="eyebrow mb-2 animate-hero-eyebrow">{eyebrow}</p>}
           {/* The h1 is usually the LCP element: painted at full opacity on the first frame and
               risen with a CSS transform, never hidden while it waits for JS + SplitText. */}
           <h1 className="animate-hero-title text-balance">{title}</h1>
-          {intro && (
-            <Reveal delay={pageHero.intro} className="mt-4 text-body text-ink-muted">
-              {intro}
-            </Reveal>
-          )}
+          {intro && <div className="mt-4 animate-hero-title text-body text-ink-muted">{intro}</div>}
         </div>
         {image && (
           <PhotoFrame

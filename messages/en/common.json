@@ -42,8 +42,7 @@
     "requiredField": "required",
     "siteMenu": "Site menu",
     "quickActions": "Quick actions",
-    "socialLinks": "Social media",
-    "logoHome": "{name}, home"
+    "socialLinks": "Social media"
   },
   "social": {
     "facebook": "Facebook",

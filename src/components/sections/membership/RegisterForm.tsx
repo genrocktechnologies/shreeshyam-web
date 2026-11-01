@@ -87,6 +87,8 @@ export function RegisterForm({ labels, locale }: { labels: RegisterFormLabels; l
     formState: { errors, submitCount },
   } = useForm<Values>({
     resolver: resolve,
+    // The error summary takes focus instead (it lists how many fields need fixing).
+    shouldFocusError: false,
     defaultValues: { name: '', mobile: '', ageConfirm: false, districtVillage: '', loanProduct: '', message: '', consentPhone: false, botcheck: false },
   });
 

@@ -1,0 +1,316 @@
+# ROLE: World-Class UI/UX Designer & Senior Frontend Developer
+
+Act as an award-winning UI/UX designer, creative director, and senior frontend engineer with expertise in building premium NGO, nonprofit, financial inclusion, and women empowerment websites.
+
+## PROJECT OBJECTIVE
+
+I have an existing website for **Shree Shyam Small Growth Foundation**.
+
+I have provided a reference screenshot of the website design. I want you to completely improve the UI/UX of my existing website to match the reference screenshot as closely as technically possible.
+
+**IMPORTANT: The reference screenshot is the single source of truth for the visual design.**
+
+My target is a pixel-perfect reproduction of the reference design, not a creative interpretation or an alternative design.
+
+## 1. FIRST: ANALYZE THE EXISTING PROJECT
+
+Before writing or modifying any code:
+
+1. Inspect the complete existing project structure.
+2. Identify the frontend framework, libraries, CSS architecture, and existing components.
+3. Identify all existing pages, routes, assets, images, fonts, and functionality.
+4. Understand the existing website's branding and content.
+5. Identify reusable components and existing integrations.
+6. Create a plan for implementing the new design without breaking existing functionality.
+
+Do not delete or replace the existing project architecture unnecessarily.
+
+## 2. STRICT DESIGN REFERENCE
+
+Recreate the attached reference screenshot with maximum visual accuracy.
+
+Follow these design specifications:
+
+### A. Overall Design Style
+- Premium Indian NGO / nonprofit website.
+- Elegant, modern, welcoming, and professional appearance.
+- Soft pink and yellow visual identity.
+- Clean layouts with generous spacing.
+- Rounded cards and subtle shadows.
+- Beautiful typography and decorative floral elements.
+- Responsive and visually balanced composition.
+
+### B. Exact Colour Palette
+
+Use colours sampled from the reference image wherever possible.
+
+Primary colours:
+- Deep Pink / Magenta: #D71978
+- Dark Pink: #C21869
+- Soft Pink Background: #FCEAF2
+- Light Pink: #FFF1F7
+- Bright Yellow: #FFD52E
+- Golden Yellow: #F9C900
+- Dark Brown: #683B20
+- Body Text: #29232B
+- White: #FFFFFF
+
+Do not introduce unrelated colours or gradients.
+
+### C. Typography
+
+Match the typography style visible in the reference:
+
+- Main headings: Elegant bold serif typography.
+- Section headings: Bold serif typography.
+- Navigation: Clean, readable sans-serif typography.
+- Body text: Professional, highly readable typography.
+- Decorative slogans: Elegant cursive/script typography.
+
+Suggested font combination:
+- Headings: Playfair Display or Merriweather.
+- Body: Poppins or Lato.
+- Decorative text: Dancing Script.
+
+Use appropriate font weights, sizes, line heights, and letter spacing to reproduce the reference.
+
+### D. Header and Navigation
+
+Create the same two-level header:
+
+TOP CONTACT BAR:
+- Magenta background.
+- Email address on the left.
+- Phone number in the middle.
+- Location/address on the right.
+- Small yellow icons.
+
+MAIN NAVIGATION:
+- White/light cream background.
+- Foundation logo on the left.
+- Large organization name.
+- Tagline below the organization name:
+  Financial Inclusion • Women Empowerment • Community Growth
+- Navigation links on the right:
+  Home | About Us | Vision & Mission | Loan Products | Membership | Gallery | Contact Us
+- Active navigation item in a rounded magenta button.
+
+Maintain the same alignment, proportions, spacing, and height as the reference.
+
+### E. Hero Section
+
+Recreate the main hero section exactly in terms of composition.
+
+LEFT SIDE:
+- Soft pink background.
+- Decorative floral elements.
+- Script tagline: "Together We Build a"
+- Main heading:
+  "Stronger & Prosperous Tomorrow"
+- Short foundation introduction.
+- Yellow rounded CTA button: "Join Us →"
+
+RIGHT SIDE:
+- Large, beautifully cropped photograph of Indian women participating in a community empowerment meeting.
+- Main woman in a bright pink saree in the foreground.
+- Other women in colourful traditional Indian sarees in the background.
+- Yellow curved decorative border around the photograph.
+- Pink handwritten slogan on the right:
+  "Empowered Women Build Stronger Communities"
+
+The hero image, crop, shape, and positioning must closely match the reference.
+
+### F. Three Feature Cards
+
+Create three equal-width cards with white/light pink backgrounds, rounded corners, and subtle shadows.
+
+CARD 1:
+Icon: Woman empowerment illustration.
+Heading: Women Empowerment.
+Description: Supporting women with education, skills and financial independence for a better future.
+
+CARD 2:
+Icon: Money/financial inclusion illustration.
+Heading: Financial Inclusion.
+Description: Providing affordable microloans and financial services to reach the unbanked.
+
+CARD 3:
+Icon: Community growth illustration.
+Heading: Community Growth.
+Description: Building stronger communities through sustainable development and collaboration.
+
+Each card must include a circular icon background and a small circular arrow button at the bottom.
+
+### G. About Us Section
+
+Recreate the two-column layout.
+
+LEFT:
+- A beautiful image composition featuring a small growing plant in hands and a group of Indian women.
+- Yellow decorative curved border.
+- Rounded image corners.
+
+RIGHT:
+- Small section label: About Us.
+- Main heading: Shree Shyam Small Growth Foundation.
+- Description about financial inclusion, women empowerment, and community development.
+- Yellow CTA button: Know More →.
+
+Include subtle floral decorations in the background.
+
+### H. Statistics / Impact Section
+
+Create a full-width statistics banner.
+
+LEFT SIDE:
+- Magenta background.
+- Decorative script text:
+  "Small Steps Create Big Changes"
+- Yellow decorative underline and leaf illustration.
+
+RIGHT SIDE:
+- Bright yellow background.
+- Four equally spaced statistics:
+  500+ Happy Families
+  300+ Women Empowered
+  ₹ 50 Lakh+ Loan Disbursed
+  200+ Community Projects
+
+Use circular pink icons with yellow/white details and bold serif numbers.
+
+### I. Footer
+
+Create a full-width magenta footer containing:
+- Copyright text: © 2026 Shree Shyam Small Growth Foundation. All Rights Reserved.
+- Privacy Policy.
+- Terms & Conditions.
+- Contact Us.
+- Social media icons.
+
+Maintain the same pink branding and alignment as the reference.
+
+## 3. IMAGE REQUIREMENTS — EXTREMELY IMPORTANT
+
+Images are a critical part of this design.
+
+Do not use random stock images or unrelated illustrations.
+
+The reference features:
+1. Indian women in traditional sarees participating in a community meeting.
+2. A smiling Indian woman in a bright pink saree in the hero foreground.
+3. A small green plant growing in soil held by hands.
+4. Indian women participating in a financial empowerment meeting.
+5. Circular illustrations for women empowerment, financial inclusion, and community growth.
+
+Use the original reference images if they are available in the existing project.
+
+If they are unavailable, find or create visually matching alternatives.
+
+Image requirements:
+- Authentic Indian appearance.
+- Traditional Indian clothing.
+- Natural lighting.
+- Professional photography.
+- High-resolution images.
+- Consistent image quality.
+- Correct image cropping and positioning.
+
+Do not stretch images or use distorted faces.
+
+## 4. RESPONSIVE DESIGN
+
+The website must work perfectly on:
+
+- Desktop (1920px, 1440px, 1366px).
+- Laptop (1280px).
+- Tablet (768px).
+- Mobile (375px, 390px, 430px).
+
+Desktop must closely follow the reference screenshot.
+
+On mobile:
+- Convert navigation into a working hamburger menu.
+- Stack the hero content and image.
+- Convert three feature cards into a vertical layout.
+- Stack the About Us section.
+- Make statistics responsive.
+- Prevent horizontal scrolling.
+- Maintain proper typography and spacing.
+
+## 5. FUNCTIONALITY REQUIREMENTS
+
+Preserve all existing functionality.
+
+Ensure:
+- Navigation links work.
+- CTA buttons navigate to the correct pages or sections.
+- Contact details remain accurate.
+- Forms continue working.
+- Existing API integrations remain intact.
+- Gallery functionality remains intact.
+- Loan and membership pages continue working.
+- Social media links work.
+- Mobile navigation works.
+
+Do not invent contact information, organizational claims, or financial statistics. Use existing project data wherever available.
+
+## 6. TECHNICAL IMPLEMENTATION
+
+- Follow the existing framework and project architecture.
+- Write clean, reusable, maintainable components.
+- Use responsive CSS.
+- Avoid unnecessary dependencies.
+- Optimize images and loading performance.
+- Use semantic HTML.
+- Follow accessibility best practices.
+- Add hover effects and subtle transitions.
+- Maintain consistent spacing and component sizing.
+- Avoid excessive animations.
+
+## 7. PIXEL-PERFECT VALIDATION
+
+This is a mandatory step.
+
+After implementing the design:
+
+1. Start the development server.
+2. Open the website using the available browser.
+3. Capture screenshots at 1440px desktop width.
+4. Compare the screenshots side by side with my reference image.
+5. Identify differences in:
+   - Header height.
+   - Logo size and positioning.
+   - Font family and font sizes.
+   - Background colours.
+   - Section heights.
+   - Image cropping.
+   - Card dimensions.
+   - Margins and padding.
+   - Border radius.
+   - Button styles.
+   - Footer layout.
+6. Correct the differences.
+7. Repeat the comparison until the visual result is as close as possible to the reference.
+
+Do not stop after the first implementation.
+
+## 8. FINAL INSTRUCTIONS
+
+- Do not redesign the reference.
+- Do not introduce your own colour scheme.
+- Do not randomly change fonts.
+- Do not replace the layout with a generic NGO template.
+- Do not remove existing website features.
+- Do not use placeholder images in the final implementation.
+- Do not leave incomplete sections.
+- Do not break existing routes or backend functionality.
+
+**FINAL GOAL:**
+
+My existing website should visually resemble the attached reference screenshot as closely as possible, including its colours, typography, images, layout, spacing, proportions, cards, buttons, header, hero section, statistics banner, and footer.
+
+Think like a world-class UI/UX designer. Pay attention to every pixel, every alignment, and every visual detail.
+
+First analyze the project, then implement, test, compare, and refine the complete website.
+
+Do not just give me recommendations or code snippets. Actually implement the changes in my existing project.

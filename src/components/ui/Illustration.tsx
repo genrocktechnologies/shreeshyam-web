@@ -7,6 +7,8 @@ interface IllustrationProps {
   image: IllustrationKey;
   alt: string;
   sizes: string;
+  /** In the first screen (possibly the LCP element): eager, high-priority load. */
+  priority?: boolean;
   className?: string;
 }
 
@@ -16,12 +18,13 @@ interface IllustrationProps {
  * the section's background colour instead of showing as a pale box. Use on light
  * backgrounds only.
  */
-export function Illustration({ image, alt, sizes, className }: IllustrationProps) {
+export function Illustration({ image, alt, sizes, priority = false, className }: IllustrationProps) {
   return (
     <Picture
       image={image}
       alt={alt}
       sizes={sizes}
+      priority={priority}
       className={cn('block mix-blend-multiply', className)}
       imgClassName="h-auto w-full"
     />

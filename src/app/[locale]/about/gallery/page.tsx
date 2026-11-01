@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
-import { GoldenThread, Reveal } from '@/components/motion';
+import { GoldenThread } from '@/components/motion';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { GalleryLightbox } from '@/components/sections/gallery/GalleryLightbox';
 import { PageHero } from '@/components/sections/PageHero';
@@ -47,7 +47,8 @@ export default async function GalleryPage({ params: { locale } }: { params: { lo
         <div className="container-site thread-gutter section-pad relative">
           <GoldenThread className="thread-col inset-y-0 h-full" />
           <GalleryLightbox items={items.map(({ id, alt, sources }) => ({ id, alt, sources }))} labels={labels}>
-            <Reveal stagger="tight" as="ul" className="columns-1 gap-5 sm:columns-2 md:gap-6 lg:columns-3 [&>li]:mb-5 [&>li]:break-inside-avoid md:[&>li]:mb-6">
+            {/* No Reveal: the first tiles are in the first screen (the LCP element). */}
+            <ul className="columns-1 gap-5 sm:columns-2 md:gap-6 lg:columns-3 [&>li]:mb-5 [&>li]:break-inside-avoid md:[&>li]:mb-6">
               {items.map((item, i) => (
                 <li key={item.image}>
                   <a href={fullSizeUrl(item.image)} data-gallery-index={i} className="group block rounded-2xl">
@@ -61,7 +62,7 @@ export default async function GalleryPage({ params: { locale } }: { params: { lo
                   </a>
                 </li>
               ))}
-            </Reveal>
+            </ul>
           </GalleryLightbox>
         </div>
       </section>

@@ -34,15 +34,17 @@ export const poppins = Poppins({
   display: 'swap',
 });
 /**
- * English script accents (the hero's "Together We Build a" line, slogans). It sits right
- * above the h1, so a late swap would push the headline down: preloaded and 'optional',
- * like Kalam before it.
+ * English script accents (the hero's "Together We Build a" line, slogans). Preloaded and
+ * 'swap': with 'optional', a cold first visit kept the fallback sans for the whole view,
+ * which broke the script look. A late swap can't shift the layout here: the hero line is
+ * one unwrapped line with a fixed line-height (text-accent), and the slogans sit in boxes
+ * sized by their neighbours.
  */
 export const dancingScript = Dancing_Script({
   weight: ['600', '700'],
   subsets: ['latin'],
   variable: '--font-script',
-  display: 'optional',
+  display: 'swap',
 });
 /** Hindi script accents: Dancing Script has no Devanagari. Hindi pages only, never preloaded. */
 export const kalam = Kalam({

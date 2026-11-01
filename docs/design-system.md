@@ -77,10 +77,10 @@ The script reads the tokens and checks every pair the design uses; axe checks th
 
 ## Header (`src/components/layout/Header.tsx`)
 - **Top bar** (lg+, 40px): magenta, white text, marigold icons. Email left, phone centre, address right (opens Maps). Hidden below lg to keep the header compact.
-- **Main bar** (96px desktop, 64px phones): cream-to-light-yellow gradient (`.header-bar`). Logo lockup, then the nav, then `EN | हिं`.
+- **Main bar** (108px desktop, 64px phones): cream-to-light-yellow gradient (`.header-bar`). Logo lockup, then the nav, then `EN | हिं`.
 - **Nav:** Home · About Us · Vision & Mission · Loan Products ▾ (dropdown: the 4 loans + All loans) · Membership · Gallery (only when `gallery.enabled`) · Contact Us. The active item is a magenta pill with white text. Careers is in the footer. No desktop Register button (Membership is the conversion path).
 - **Breakpoint (measured):** the full nav shows from 1280px (`xl`); below, the hamburger and full-height sheet, so the nav never wraps. The tagline shows from lg, except 1280–1399px, where it would collide with the nav.
-- Sticky behaviour as before: shrinks 96 → 76px on scroll, hides on scroll down, returns on scroll up.
+- Sticky behaviour as before: shrinks 108 → 88px on scroll, hides on scroll down, returns on scroll up.
 
 ## Logo lockup (`src/components/ui/BrandLockup.tsx`)
 - The client's real **emblem** (`public/brand/logo-mark-160.webp`), never cropped or recoloured, then a typeset two-line name: "SHREE SHYAM" (Merriweather 900, `rani-500`) over "SMALL GROWTH FOUNDATION" (Merriweather 700, `cocoa`), then the tagline "Financial Inclusion • Women Empowerment • Community Growth" (Poppins 12px, `ink`, marigold bullets).
@@ -115,7 +115,7 @@ The script reads the tokens and checks every pair the design uses; axe checks th
 | **PullQuote** | A key statement beside a marigold rule, with a script quote mark (Vision & Mission) |
 | **TeaserCard** | Linked summary card (About's Vision & Mission teasers) |
 | **CtaBand** | Slim magenta band for inner pages (≤ 220px desktop): heading beside Register (→ `/membership/#register`) and Contact Us. Not on home. |
-| **PageHero** | Compact: blush, breadcrumb, optional eyebrow, h1, optional intro; an optional arch photo (15rem desktop; 5.5rem beside the text on phones). ≤ 420px below the header on desktop, ≤ 60vh on phones. |
+| **PageHero** | Compact: blush, breadcrumb, optional eyebrow, h1, optional intro (all CSS-animated from first paint, never behind a JS Reveal); an optional arch photo (15rem desktop; 5.5rem beside the text on phones). ≤ 420px below the header on desktop, ≤ 60vh on phones. |
 | **RegisterForm** | Membership (`#register`): visible labels, 48px+ inputs, required marks, inline errors tied with `aria-describedby`, an error summary that takes focus, polite status. Never collects ID numbers or uploads. |
 | **Decor** | `Lotus`, `Leaf`, `Swash`, `HeartFlourish`: drawn in code, `aria-hidden`, 10–15% opacity in section corners, used sparingly |
 | **LanguageSwitch** | `EN \| हिं` pill (white, magenta marker); 48px options |

@@ -20,8 +20,9 @@ interface BrandLockupProps {
 /**
  * CR-01 logo lockup (design-system, Logo lockup): the client's real emblem, whole and
  * uncoloured, then the typeset name ("SHREE SHYAM" in Merriweather over "SMALL GROWTH
- * FOUNDATION") and, when given, the tagline with marigold bullets. The text is a visual
- * repeat of the link's accessible name, so it is aria-hidden; the emblem's alt is empty.
+ * FOUNDATION") and, when given, the tagline with marigold bullets. The typeset name IS the
+ * link's accessible name ("Shree Shyam Small Growth Foundation"; WCAG 2.5.3 label in name),
+ * so the emblem's alt is empty and only the tagline is aria-hidden.
  * `site.logoLockup = 'image'` switches back to the client's full logo file.
  */
 export function BrandLockup({ line1, line2, tagline, taglineClassName = 'flex', logoAlt, tone = 'light', priority = false, className }: BrandLockupProps) {
@@ -41,7 +42,7 @@ export function BrandLockup({ line1, line2, tagline, taglineClassName = 'flex', 
         decoding="async"
         className="h-[var(--lockup-mark,3rem)] w-auto shrink-0"
       />
-      <span aria-hidden="true" className="flex min-w-0 flex-col">
+      <span className="flex min-w-0 flex-col">
         <span
           className={cn(
             'whitespace-nowrap font-display font-black uppercase leading-[1.05] tracking-[0.01em] [font-size:var(--lockup-line1,1rem)]',
@@ -49,7 +50,7 @@ export function BrandLockup({ line1, line2, tagline, taglineClassName = 'flex', 
           )}
         >
           {line1}
-        </span>
+        </span>{' '}
         <span
           className={cn(
             'whitespace-nowrap font-display font-bold uppercase leading-[1.15] [font-size:var(--lockup-line2,0.625rem)]',
@@ -59,7 +60,7 @@ export function BrandLockup({ line1, line2, tagline, taglineClassName = 'flex', 
           {line2}
         </span>
         {tagline && (
-          <span className={cn('mt-1 items-center gap-1.5 whitespace-nowrap text-[0.75rem] leading-tight', taglineClassName, dark ? 'text-white' : 'text-ink')}>
+          <span aria-hidden="true" className={cn('mt-1 items-center gap-1.5 whitespace-nowrap text-[0.75rem] leading-tight', taglineClassName, dark ? 'text-white' : 'text-ink')}>
             {tagline.map((item, i) => (
               <span key={item} className="flex items-center gap-1.5">
                 {i > 0 && <span className="h-1.5 w-1.5 rounded-full bg-marigold-400" />}

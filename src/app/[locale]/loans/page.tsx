@@ -32,13 +32,14 @@ export default async function LoansHub({ params: { locale } }: { params: { local
       <section className="relative bg-ivory">
         <div className="container-site thread-gutter section-pad relative">
           <GoldenThread className="thread-col inset-y-0 h-full" />
-          <Reveal stagger as="ul" className="grid gap-6 md:grid-cols-2 md:gap-8">
+          {/* First screen (LCP on phones): painted at once, no Reveal. */}
+          <ul className="grid gap-6 md:grid-cols-2 md:gap-8">
             {loans.map((loan, i) => (
               <li key={loan.id}>
                 <LoanCard loan={loan} number={i + 1} size="large" headingLevel="h2" />
               </li>
             ))}
-          </Reveal>
+          </ul>
         </div>
       </section>
 

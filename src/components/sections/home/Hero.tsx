@@ -22,9 +22,11 @@ export async function Hero() {
   return (
     <section id="hero" className="relative overflow-hidden bg-blush">
       <Lotus className="absolute -left-8 top-[calc(var(--header-total)+0.5rem)] hidden h-28 w-40 text-rani-400 opacity-[0.14] md:block" />
-      <div className="container-site relative grid items-center gap-7 pb-24 pt-[calc(var(--header-total)+1.25rem)] md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:gap-8 md:pb-28 lg:pt-[calc(var(--header-total)+2rem)] xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_7.5rem] xl:gap-6">
+      {/* Wider than the page container from xl, like the reference: the text column takes the
+          two-line headline, the photo grows towards the right edge. */}
+      <div className="container-site relative grid items-center gap-7 pb-24 pt-[calc(var(--header-total)+1.25rem)] md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:gap-8 md:pb-28 lg:pt-[calc(var(--header-total)+1.75rem)] xl:max-w-[1360px] xl:grid-cols-[minmax(0,33rem)_minmax(0,1fr)_7rem] xl:gap-8">
         <div>
-          <h1 className="animate-hero-title text-balance">
+          <h1 className="animate-hero-title xl:text-[2.875rem]">
             <span className="mb-1 block font-script text-accent font-bold text-rani-600">{t('home.compact.heroScript')}</span>
             {t('home.compact.heroTitle')}
           </h1>
@@ -44,7 +46,7 @@ export async function Hero() {
           alt={t(altKeyFor('heroPanel'))}
           priority
           motion="hero"
-          sizes="(min-width: 1280px) 33rem, (min-width: 768px) 50vw, 92vw"
+          sizes="(min-width: 1280px) 40rem, (min-width: 768px) 50vw, 92vw"
           className="w-full"
         />
 

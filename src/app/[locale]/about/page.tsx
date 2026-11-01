@@ -57,25 +57,25 @@ export default async function AboutPage({ params: { locale } }: { params: { loca
         <div className="container-site thread-gutter section-pad relative grid items-center gap-8 md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-14">
           <GoldenThread className="thread-col inset-y-0 h-full" />
           <div>
-            <SectionHeading title={t('about.foundation.heading')} />
-            <Reveal className="mt-6 grid gap-5 text-body text-ink">
+            {/* Right under the hero, inside the first screen on desktop: no Reveal here, so
+                nothing in view waits for JS (LCP). */}
+            <h2>{t('about.foundation.heading')}</h2>
+            <div className="mt-6 grid gap-5 text-body text-ink">
               <p>{t.rich('about.foundation.body1', richTags)}</p>
               <p>{t('about.foundation.body2')}</p>
-            </Reveal>
-            <Reveal className="mt-6">
-              <Button href={aboutRoutes.team} variant="ghost" arrow>
-                {t('common.buttons.meetTheTeam')}
-              </Button>
-            </Reveal>
+            </div>
+            <Button href={aboutRoutes.team} variant="ghost" arrow className="mt-6">
+              {t('common.buttons.meetTheTeam')}
+            </Button>
           </div>
-          <Reveal>
-            <Illustration
-              image={aboutImages.foundation}
-              alt={t(altKeyFor(aboutImages.foundation))}
-              sizes="(min-width: 768px) 28rem, 90vw"
-              className="mx-auto w-full max-w-[28rem]"
-            />
-          </Reveal>
+          <Illustration
+            image={aboutImages.foundation}
+            alt={t(altKeyFor(aboutImages.foundation))}
+            sizes="(min-width: 768px) 28rem, 90vw"
+            // The LCP element at 1440 (inside the first screen, beside the foundation text).
+            priority
+            className="mx-auto w-full max-w-[28rem]"
+          />
         </div>
       </section>
 

@@ -19,7 +19,7 @@ export async function ImpactBand() {
   return (
     <section id="impact" className="impact-split relative overflow-hidden">
       <div className="container-site grid md:grid-cols-[minmax(0,0.36fr)_minmax(0,0.64fr)] md:items-center">
-        <div className="-mx-5 bg-rani-500 px-5 py-8 md:mx-0 md:bg-transparent md:px-0 md:py-10">
+        <div className="-mx-5 bg-rani-500 px-5 py-7 md:mx-0 md:bg-transparent md:px-0 md:py-7">
           <p className="max-w-[16rem] -rotate-6 font-script text-accent font-bold text-white">
             {t('home.compact.impactSlogan')}
             <Leaf className="ml-2 inline-block h-8 w-7 align-middle text-marigold-400" />
@@ -27,7 +27,7 @@ export async function ImpactBand() {
           <Swash className="-mt-1 h-5 w-52 -rotate-6 text-marigold-400" />
         </div>
 
-        <Reveal stagger as="ul" className="grid gap-5 py-8 sm:grid-cols-3 sm:gap-0 md:py-8 md:pl-10">
+        <Reveal stagger as="ul" className="grid gap-5 py-7 sm:grid-cols-3 sm:gap-0 md:py-6 md:pl-10">
           {stats.map((s) => {
             const Icon = ICONS[s.id];
             return (

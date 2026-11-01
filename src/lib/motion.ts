@@ -165,12 +165,6 @@ export const hero = {
   frame: 0.35,
 } as const;
 
-/**
- * Inner-page hero (PageHero) load sequence: delays (s). The h1 itself rises via CSS
- * (`animate-hero-title`, timed by `hero.title`) so it is painted on the first frame.
- */
-export const pageHero = { breadcrumb: 0, eyebrow: 0.05, intro: 0.2 } as const;
-
 /** CSS transitions (ms), exposed as Tailwind `duration-<name>` and theme('transitionDuration.<name>'). */
 export const ui = {
   press: 300, // buttons, arrows, chevrons

@@ -103,3 +103,37 @@ Not yet shown to the client. Include in the next review sheet.
 - **"Documents usually needed"** — ✅ approved internally (1 Nov 2026); include in client review 2. (Phase 4) product pages without their own documents list (Women Empowerment, Micro Business, Agriculture) show FAQ Q4 ("What documents are required for membership registration?") as crawled. Livestock shows its own published list instead.
 - **Search-engine description** (Phase 3): the old site has no meta description, so every page's default description is the footer blurb ("Shree Shyam Small Growth Foundation is a socially driven organization committed to promoting financial inclusion, economic empowerment, and sustainable livelihoods for underserved communities."). The client may prefer a dedicated sentence.
 - **More field photos (E. Media):** the home page has only two full-frame community photos, so the hero, About and Process images are different crops of the same two. More real photos from the client would remove the repetition.
+
+## 🆕 CR-01 compact redesign (1 Nov 2026) — on client review sheet 2
+CR-01 (`docs/cr-01-compact-redesign.md`) follows the client's reference picture. Its new wording is **proposed copy supplied by the client via the reference**: used on the site, but every string needs confirming. The client-facing questions are in `docs/client-review-2.md`. Each row's revert is one line.
+
+| Status | Key | Proposed copy | Revert (one line) |
+|---|---|---|---|
+| CR-01 copy: confirm | `home.compact.heroScript` + `home.compact.heroTitle` | "Together We Build a" / "Stronger & Prosperous Tomorrow" (h1) | In `Hero.tsx`, render `home.hero.eyebrow` + `home.hero.title` (with `accentTags`) instead. |
+| CR-01 copy: confirm | `home.compact.heroIntro` | "Shree Shyam Small Growth Foundation is committed to empowering underprivileged communities, especially women, through financial support, skill development and sustainable growth opportunities." | Delete the `<p>` in `Hero.tsx` (the live site had no hero intro). |
+| CR-01 copy: confirm | `home.compact.heroSlogan` | "Empowered Women Build Stronger Communities" | Delete the slogan `<p>` in `Hero.tsx`. |
+| CR-01 copy: confirm | `home.compact.impactSlogan` | "Small Steps Create Big Changes" | Delete the slogan block in `ImpactBand.tsx`. |
+| CR-01 copy: confirm | `home.compact.cards.*` | "Women Empowerment", "Financial Inclusion", "Community Growth" | In `FeatureCards.tsx`, use `home.services.items.{womenEmpowerment,financialInclusion,communityWelfare}.title`. |
+| CR-01 copy: confirm | `common.brand.tagline.*` | "Financial Inclusion • Women Empowerment • Community Growth" | Drop the `tagline` prop in `Header.tsx`. |
+| CR-01 copy: confirm | `team.tiers.*` | "Chairman", "Leadership", "Executive Directors", "Heads & Officers" | Edit the four labels in `messages/en/team.json`. |
+| CR-01 copy: confirm | `common.brand.nameLine1/2` + lockup | Emblem + typeset "SHREE SHYAM / SMALL GROWTH FOUNDATION" (new lockup) | `site.logoLockup = 'image'` in `src/data/site.ts`. |
+| CR-01 copy: confirm | `common.buttons.joinUs`, `common.buttons.knowMore` | "Join Us", "Know More" | Use `common.buttons.register` / `common.buttons.moreAboutUs`. |
+| CR-01 copy: confirm | `common.nav.visionMission`, `nav.loanProductsMenu`, `nav.membership` | "Vision & Mission", "Loan Products", "Membership" | Edit the three labels in `messages/en/common.json`. |
+| CR-01 copy: confirm | `common.footer.rights` | "© {year} Shree Shyam Small Growth Foundation. All Rights Reserved." | In `Footer.tsx`, use `common.footer.copyright` (approved in review 1). |
+| CR-01 copy: confirm | fix `CR01-1` | "Membership Benefits", "Membership Eligibility" (colon removed, like P4-1) | Restore the colons in `messages/en/howToJoin.json` and delete fix `CR01-1` in `scripts/verify-content.ts`. |
+| New, read aloud only | `common.alt.heroPanel`, `common.alt.aboutPanel` | Picture descriptions for the two new curved-panel crops | Edit in `messages/en/common.json`. |
+
+**Hindi:** `common.brand.*` has Hindi drafts (`_status: draft-needs-review`); the other new keys fall back to English until Phase 7.
+
+### Not taken from the reference (intentional; CR-01 section 0)
+- **Statistics:** the reference's 500+ / 300+ / ₹50 Lakh+ / 200+ are invented. The site keeps the live 1200+ / 150+ / 98% (D15). New figures only if the client sends verified ones.
+- **Logo:** the reference's women-figures logo isn't the client's. The real emblem is used, never cropped or recoloured.
+- **Photos:** the reference's AI-style photos (members in saris, the plant in hands) are never used. Only real photos from `assets/original`; the requested shot list is in client-review-2 item 13.
+- **Navigation:** Gallery stays hidden until `gallery.enabled` (≥ 12 real photos). Terms & Conditions is not linked until its text exists. The `EN | हिं` switch and the mobile Register/Call bar are kept.
+
+### ⏳ Pending from CR-01
+- **Reporting lines** for the Team tree (who reports to whom). Until then the connectors run tier to tier; `reportsTo` in `src/data/team.ts` is ready for exact lines.
+- **Terms & Conditions** text, or confirmation to omit it.
+- **Gallery:** at least 12 real photos, with consent.
+- **Photos** for the reference look (shot list in client-review-2, item 13).
+- **Web3Forms access key** (`NEXT_PUBLIC_WEB3FORMS_KEY` on Vercel), so the Membership form can send. Without it, the form shows "could not be sent, please call us". No test submission has been sent yet.

@@ -150,7 +150,7 @@ export async function Header({ locale }: { locale: Locale }) {
 
       <div data-bar className="header-bar relative">
         <div data-bar-inner className="container-header flex h-[var(--bar-h)] items-center justify-between gap-3">
-          <Link id="site-logo" href="/" prefetch={false} aria-label={t('common.a11y.logoHome', { name: t('common.siteName') })} className="min-w-0 shrink rounded-lg">
+          <Link id="site-logo" href="/" prefetch={false} className="min-w-0 shrink rounded-lg">
             <BrandLockup
               line1={t('common.brand.nameLine1')}
               line2={t('common.brand.nameLine2')}

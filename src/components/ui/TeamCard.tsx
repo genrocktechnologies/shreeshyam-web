@@ -30,6 +30,8 @@ export async function TeamCard({ member, className }: { member: TeamMember; clas
         image={member.photo}
         alt={t(altKeyFor(member.photo), { name })}
         shape="circle"
+        // The Chairman's card is first in the tree, above the fold (often the LCP on phones).
+        priority={member.tier === 1}
         sizes={featured ? '(min-width: 768px) 128px, 96px' : '(min-width: 768px) 112px, 88px'}
         className={cn(
           'shrink-0 ring-[3px] ring-marigold-400 ring-offset-2 transition-shadow duration-card group-focus-within:shadow-lift group-hover:shadow-lift',

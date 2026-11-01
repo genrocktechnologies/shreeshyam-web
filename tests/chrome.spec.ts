@@ -5,7 +5,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 const DESKTOP = { width: 1440, height: 900 };
 const MOBILE = { width: 360, height: 740 };
-const PAGES = ['/en/', '/hi/', '/en/loans/', '/hi/loans/', '/en/loans/livestock/', '/hi/loans/women-empowerment/', '/en/about/', '/hi/about/', '/en/about/mission/', '/hi/about/mission/', '/en/about/vision/', '/hi/about/vision/', '/en/about/team/', '/hi/about/team/', '/en/about/milestones/', '/hi/about/milestones/', '/en/about/gallery/', '/hi/about/gallery/', '/en/dev/layout/', '/hi/dev/layout/', '/en/dev/motion/', '/hi/dev/motion/'];
+const PAGES = ['/en/', '/hi/', '/en/loans/', '/hi/loans/', '/en/loans/livestock/', '/hi/loans/women-empowerment/', '/en/about/', '/hi/about/', '/en/about/vision-mission/', '/hi/about/vision-mission/', '/en/membership/', '/hi/membership/', '/en/about/team/', '/hi/about/team/', '/en/about/milestones/', '/hi/about/milestones/', '/en/about/gallery/', '/hi/about/gallery/', '/en/dev/layout/', '/hi/dev/layout/', '/en/dev/motion/', '/hi/dev/motion/'];
 
 /** Tab until `predicate` holds for the focused element; fail after `max` presses. */
 async function tabTo(page: Page, predicate: string, max = 60) {
@@ -42,35 +42,77 @@ async function revealAll(page: Page) {
 test.describe('desktop header', () => {
   test.use({ viewport: DESKTOP });
 
-  test('mega menus work with the keyboard only', async ({ page }) => {
+  test('Loan Products dropdown works with the keyboard only', async ({ page }) => {
     await page.goto('/en/dev/layout/');
-    const about = page.locator('button[aria-controls="mega-about"]');
     const loans = page.locator('button[aria-controls="mega-loans"]');
 
-    await tabTo(page, `document.activeElement?.getAttribute('aria-controls') === 'mega-about'`);
-    await expect(about).toHaveAttribute('aria-expanded', 'false');
-
+    await tabTo(page, `document.activeElement?.getAttribute('aria-controls') === 'mega-loans'`);
+    await expect(loans).toHaveAttribute('aria-expanded', 'false');
     await page.keyboard.press('Enter');
-    await expect(about).toHaveAttribute('aria-expanded', 'true');
-    await expect(page.locator('#mega-about')).toBeVisible();
+    await expect(loans).toHaveAttribute('aria-expanded', 'true');
+    await expect(page.locator('#mega-loans')).toBeVisible();
 
     await page.keyboard.press('Tab');
-    expect(await page.evaluate(() => !!document.activeElement?.closest('#mega-about'))).toBe(true);
+    expect(await page.evaluate(() => !!document.activeElement?.closest('#mega-loans'))).toBe(true);
 
     await page.keyboard.press('Escape');
-    await expect(about).toHaveAttribute('aria-expanded', 'false');
-    await expect(about).toBeFocused();
-    await expect(page.locator('#mega-about')).toBeHidden();
-
-    // Closed panel links are skipped: the next Tab goes straight to the Loans trigger.
-    await page.keyboard.press('Tab');
+    await expect(loans).toHaveAttribute('aria-expanded', 'false');
     await expect(loans).toBeFocused();
+    await expect(page.locator('#mega-loans')).toBeHidden();
+
+    // Closed panel links are skipped: the next Tab goes to the next nav item.
+    await page.keyboard.press('Tab');
+    await expect(page.locator(':focus')).toHaveAttribute('href', '/en/membership/');
+
+    // Tabbing through and out of an open panel closes it.
+    await loans.focus();
     await page.keyboard.press('Space');
     await expect(loans).toHaveAttribute('aria-expanded', 'true');
-
-    // Tabbing through and out of the panel closes it.
     await tabTo(page, `!document.activeElement?.closest('#mega-loans') && document.activeElement?.getAttribute('aria-controls') !== 'mega-loans'`);
     await expect(loans).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  test('CR-01 nav: items in order, active pill, no desktop Register, Gallery hidden', async ({ page }) => {
+    await page.goto('/en/about/team/');
+    const nav = page.getByRole('navigation', { name: 'Main navigation' }).first();
+    const items = await nav.locator(':scope > ul > li').evaluateAll((lis) => lis.map((li) => li.firstElementChild?.textContent?.trim()));
+    expect(items).toEqual(['Home', 'About Us', 'Vision & Mission', 'Loan Products', 'Membership', 'Contact Us']);
+    // About Us is the active pill on its sub-pages, but not on Vision & Mission.
+    await expect(nav.locator('a[aria-current="page"]')).toHaveText('About Us');
+    await page.goto('/en/about/vision-mission/');
+    await expect(nav.locator('a[aria-current="page"]')).toHaveText('Vision & Mission');
+    await page.goto('/en/loans/livestock/');
+    await expect(nav.locator('button[aria-controls="mega-loans"]')).toHaveClass(/bg-rani-500/);
+    await expect(page.locator('header a[href$="/register/"], header a[href$="#register"]:visible')).toHaveCount(0);
+    await expect(page.locator('header a[href*="gallery"]')).toHaveCount(0);
+  });
+
+  test('top bar: email, phone and address (Maps)', async ({ page }) => {
+    await page.goto('/en/');
+    const bar = page.locator('header .bg-rani-500').first();
+    await expect(bar.locator('a[href^="mailto:"]')).toBeVisible();
+    await expect(bar.locator('a[href="tel:+918750971329"]')).toHaveText('+91 87509 71329');
+    await expect(bar.locator('a[href^="https://maps.app.goo.gl/"]')).toBeVisible();
+  });
+
+  test('the nav never wraps: one row from 1280px, the hamburger below', async ({ page }) => {
+    for (const width of [1280, 1366, 1440, 1920]) {
+      await page.setViewportSize({ width, height: 900 });
+      await page.goto('/en/');
+      const nav = page.getByRole('navigation', { name: 'Main navigation' }).first();
+      await expect(nav).toBeVisible();
+      const tops = await nav.locator(':scope > ul > li').evaluateAll((lis) => new Set(lis.map((li) => Math.round(li.getBoundingClientRect().top))).size);
+      expect(tops, `${width}px`).toBe(1);
+      const overlap = await page.evaluate(() => {
+        const logo = document.getElementById('site-logo')!.getBoundingClientRect();
+        const nav = document.querySelector('header nav')!.getBoundingClientRect();
+        return logo.right > nav.left;
+      });
+      expect(overlap, `logo overlaps nav at ${width}px`).toBe(false);
+    }
+    await page.setViewportSize({ width: 1279, height: 900 });
+    await page.goto('/en/');
+    await expect(page.locator('button[aria-haspopup="dialog"]')).toBeVisible();
   });
 
   test('mega menu opens on hover and closes on leave', async ({ page }) => {
@@ -127,14 +169,18 @@ test.describe('mobile', () => {
   test('action bar offers Register and Call', async ({ page }) => {
     await page.goto('/en/dev/layout/');
     const bar = page.getByRole('navigation', { name: 'Quick actions' });
-    await expect(bar.getByRole('link', { name: /Register/ })).toBeVisible();
+    await expect(bar.getByRole('link', { name: /Register/ })).toHaveAttribute('href', '/en/membership/#register');
     await expect(bar.locator('a[href^="tel:"]')).toBeVisible();
   });
 });
 
-test('footer copyright year comes from the build date', async ({ page }) => {
+test('footer: copyright year from the build date, quick links, no Terms link yet', async ({ page }) => {
   await page.goto('/en/dev/layout/');
-  await expect(page.locator('footer')).toContainText(`Copyright © ${new Date().getFullYear()} Shree Shyam Small Growth Foundation.`);
+  const footer = page.locator('footer');
+  await expect(footer).toContainText(`© ${new Date().getFullYear()} Shree Shyam Small Growth Foundation. All Rights Reserved.`);
+  const links = await footer.getByRole('navigation', { name: 'Footer navigation' }).locator('a').allInnerTexts();
+  expect(links.map((l) => l.trim())).toEqual(['About Us', 'Vision & Mission', 'Loan Products', 'Membership', 'Careers', 'Contact Us']);
+  await expect(footer.getByText(/Terms/)).toHaveCount(0);
 });
 
 test('unknown URLs get the branded 404 page', async ({ page }) => {

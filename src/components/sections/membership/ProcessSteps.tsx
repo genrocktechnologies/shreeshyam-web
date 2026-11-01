@@ -16,14 +16,9 @@ export async function ProcessSteps({ lead }: { lead?: string }) {
   return (
     <section id="process" className="relative bg-ivory">
       <div className="container-site section-pad">
-        {lead && (
-          <Reveal>
-            <p className="mb-8 max-w-3xl text-body text-ink md:text-[1.125rem] md:leading-relaxed">{lead}</p>
-          </Reveal>
-        )}
-        <Reveal>
-          <h2 className="max-w-3xl text-balance">{t(processHeadingKey)}</h2>
-        </Reveal>
+        {/* Right under the hero, so often the LCP element: painted at once, never behind a Reveal. */}
+        {lead && <p className="mb-8 max-w-3xl text-body text-ink md:text-[1.125rem] md:leading-relaxed">{lead}</p>}
+        <h2 className="max-w-3xl text-balance">{t(processHeadingKey)}</h2>
         <div className="relative mt-8">
           {/* The stepper line: down the discs on phones, across them from md. */}
           <span aria-hidden="true" className="absolute bottom-6 left-6 top-6 w-[3px] -translate-x-1/2 rounded-full bg-marigold-400 md:bottom-auto md:left-[16.66%] md:right-[16.66%] md:top-6 md:h-[3px] md:w-auto md:translate-x-0" />
