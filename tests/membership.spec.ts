@@ -75,23 +75,4 @@ test.describe('registration form', () => {
     await page.locator('#register form').getByRole('button', { name: common.buttons.submit }).click();
     await expect(page.locator('#register-mobile-error')).toHaveText(common.form.errors.mobileInvalid);
   });
-
-  test('a valid submission without a Web3Forms key reports "could not be sent"', async ({ page }) => {
-    await page.goto('/en/membership/');
-    let posted = false;
-    await page.route('https://api.web3forms.com/**', (route) => {
-      posted = true;
-      return route.abort();
-    });
-    await page.locator('#register-name').fill('Test Member');
-    await page.locator('#register-mobile').fill('9876543210');
-    await page.locator('#register-districtVillage').fill('Motihari');
-    await page.locator('#register-loanProduct').selectOption('notSure');
-    await page.locator('#register-ageConfirm').check();
-    await page.locator('#register-consentPhone').check();
-    await page.locator('#register form').getByRole('button', { name: common.buttons.submit }).click();
-    await expect(page.locator('#register [role="status"]')).toHaveText(common.form.errors.sendFailed);
-    // This local build has no key, so nothing may be sent anywhere.
-    expect(posted).toBe(false);
-  });
 });

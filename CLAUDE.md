@@ -153,7 +153,9 @@ Measured with mobile Lighthouse (Moto G-class throttling):
 - **Link prefetch:** `Button` links default to `prefetch={false}`. Visitors are on metered 4G; prefetch only where it clearly pays off.
 - **Bundle budget:** after `pnpm build`, run `node scripts/bundle-size.mjs`. Every exported page must stay under 180 KB gzip of JS. Heavy code that is only needed on interaction loads on demand: the gallery's Flip, and the Membership form (its own chunk; zod loads on first focus).
 - **Forms:**
+  - One engine for all three forms: `src/components/forms/` (`fields.ts` builds the field specs and labels on the server; `WebForm` renders them; `schemas.ts` holds the zod schemas and loads on demand; pages use `LazyWebForm`).
   - Strings are translated on the server and passed as props.
+  - Tests always mock Web3Forms (`page.route`); never send real mail from the test suite.
   - Submissions go to Web3Forms with `NEXT_PUBLIC_WEB3FORMS_KEY` (`src/lib/web3forms.ts`). Without the key the form renders, but sending reports "could not be sent".
   - Forms also work without JS (native POST).
 - **Routes (CR-01):**

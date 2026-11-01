@@ -47,7 +47,7 @@ for (const locale of ['en', 'hi']) {
   });
 }
 
-const INNER = ['/en/about/', '/en/about/vision-mission/', '/en/about/team/', '/en/about/milestones/', '/en/membership/', '/en/loans/', '/en/loans/micro-business/', '/hi/about/', '/hi/membership/'];
+const INNER = ['/en/about/', '/en/about/vision-mission/', '/en/about/team/', '/en/about/milestones/', '/en/membership/', '/en/loans/', '/en/loans/micro-business/', '/hi/about/', '/hi/membership/', '/en/contact/', '/en/careers/', '/en/hr-policy/', '/en/privacy-policy/'];
 
 for (const path of INNER) {
   test(`${path}: page hero ≤ 420px (desktop, below the header) and ≤ 60vh (phones)`, async ({ page }) => {

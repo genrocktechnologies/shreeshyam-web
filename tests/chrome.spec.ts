@@ -5,7 +5,7 @@ import { expect, test, type Page } from '@playwright/test';
 
 const DESKTOP = { width: 1440, height: 900 };
 const MOBILE = { width: 360, height: 740 };
-const PAGES = ['/en/', '/hi/', '/en/loans/', '/hi/loans/', '/en/loans/livestock/', '/hi/loans/women-empowerment/', '/en/about/', '/hi/about/', '/en/about/vision-mission/', '/hi/about/vision-mission/', '/en/membership/', '/hi/membership/', '/en/about/team/', '/hi/about/team/', '/en/about/milestones/', '/hi/about/milestones/', '/en/about/gallery/', '/hi/about/gallery/', '/en/dev/layout/', '/hi/dev/layout/', '/en/dev/motion/', '/hi/dev/motion/'];
+const PAGES = ['/en/', '/hi/', '/en/loans/', '/hi/loans/', '/en/loans/livestock/', '/hi/loans/women-empowerment/', '/en/about/', '/hi/about/', '/en/about/vision-mission/', '/hi/about/vision-mission/', '/en/membership/', '/hi/membership/', '/en/contact/', '/hi/contact/', '/en/careers/', '/hi/careers/', '/en/hr-policy/', '/hi/hr-policy/', '/en/privacy-policy/', '/hi/privacy-policy/', '/en/about/team/', '/hi/about/team/', '/en/about/milestones/', '/hi/about/milestones/', '/en/about/gallery/', '/hi/about/gallery/', '/en/dev/layout/', '/hi/dev/layout/', '/en/dev/motion/', '/hi/dev/motion/'];
 
 /** Tab until `predicate` holds for the focused element; fail after `max` presses. */
 async function tabTo(page: Page, predicate: string, max = 60) {

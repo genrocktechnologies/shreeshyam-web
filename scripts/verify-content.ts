@@ -163,6 +163,13 @@ const APPLIED: { id: string; from: RegExp; to: (crawled: string) => string; note
     keys: ['common.nav.loanProducts.agricultureLivelihood'],
   },
   {
+    id: 'P6-1',
+    from: /^(Information We Collect|How We Use Your Information|Information Sharing|Data Security|Cookies|Your Rights|Third-Party Services|Children's Privacy|Contact Us)\s*:$/,
+    to: (t) => t.replace(/\s*:$/, ''),
+    note: 'Privacy Policy section headings shown without the trailing colon (they are also the table of contents), like P4-1. Reversible; for client review 2.',
+    keys: ["privacy.sections.informationWeCollect.heading","privacy.sections.howWeUse.heading","privacy.sections.informationSharing.heading","privacy.sections.dataSecurity.heading","privacy.sections.cookies.heading","privacy.sections.yourRights.heading","privacy.sections.thirdPartyServices.heading","privacy.sections.childrensPrivacy.heading","privacy.sections.contactUs.heading"],
+  },
+  {
     id: 'CR01-1',
     from: /^Membership (Benefits|Eligibility):$/,
     to: (t) => t.replace(/:$/, ''),

@@ -4,12 +4,11 @@ import { Reveal } from '@/components/motion';
 import { Faq } from '@/components/sections/Faq';
 import { ProcessSteps } from '@/components/sections/membership/ProcessSteps';
 import { PageHero } from '@/components/sections/PageHero';
-import { LazyRegisterForm } from '@/components/sections/membership/LazyRegisterForm';
-import type { RegisterFormLabels } from '@/components/sections/membership/RegisterForm';
+import { formFields, formLabels } from '@/components/forms/fields';
+import { LazyWebForm } from '@/components/forms/LazyWebForm';
 import { FileText } from '@/components/ui/icons';
 import { TickList } from '@/components/ui/TickList';
 import { documentsFaqId, faqs } from '@/data/faqs';
-import { loans } from '@/data/loans';
 import { membershipBenefitKeys, membershipEligibilityKeys } from '@/data/membership';
 
 export { generateStaticParams } from '@/i18n/static-params';
@@ -18,8 +17,6 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   const t = await getTranslations({ locale });
   return { title: t('common.nav.membership'), description: t('howToJoin.intro') };
 }
-
-const ERROR_COUNTS = [1, 2, 3, 4, 5, 6, 7];
 
 /**
  * Membership (CR-01, section 7): replaces /how-to-join/ and /register/ (both 301 here;
@@ -32,38 +29,6 @@ export default async function MembershipPage({ params: { locale } }: { params: {
   const t = await getTranslations();
   const title = t('common.nav.membership');
   const documents = faqs.find((f) => f.id === documentsFaqId)!;
-
-  const labels: RegisterFormLabels = {
-    name: t('common.form.fields.name'),
-    mobile: t('common.form.fields.mobile'),
-    ageConfirm: t('common.form.fields.ageConfirm'),
-    districtVillage: t('common.form.fields.districtVillage'),
-    loanProduct: t('common.form.fields.loanProduct'),
-    message: t('common.form.fields.message'),
-    consentPhone: t('common.form.fields.consentPhone'),
-    optional: t('common.form.optional'),
-    required: t('common.a11y.requiredField'),
-    honeypot: t('common.form.fields.honeypot'),
-    submit: t('common.buttons.submit'),
-    sending: t('common.form.status.sending'),
-    success: t('common.form.status.success'),
-    sendFailed: t('common.form.errors.sendFailed'),
-    errorsSummary: ERROR_COUNTS.map((count) => t('common.a11y.formErrorsSummary', { count })),
-    errors: {
-      required: t('common.form.errors.required'),
-      nameTooShort: t('common.form.errors.nameTooShort'),
-      mobileInvalid: t('common.form.errors.mobileInvalid'),
-      tooLong: t.raw('common.form.errors.tooLong') as string,
-      chooseOption: t('common.form.errors.chooseOption'),
-      ageRequired: t('common.form.errors.ageRequired'),
-      consentRequired: t('common.form.errors.consentRequired'),
-    },
-    loanOptions: [
-      ...loans.map((l) => ({ value: l.id, label: t(l.navKey) })),
-      { value: 'notSure', label: t('common.form.fields.notSure') },
-    ],
-    subject: t('register.title'),
-  };
 
   const lists = [
     { id: 'benefits', heading: t('howToJoin.benefits.label'), items: membershipBenefitKeys.map((k) => t(k)) },
@@ -104,7 +69,7 @@ export default async function MembershipPage({ params: { locale } }: { params: {
             <h2 id="register-heading">{t('register.heading')}</h2>
             <div className="mt-6">
               {/* Strings arrive as props: no message formatter is sent to the browser. */}
-              <LazyRegisterForm labels={labels} locale={locale} />
+              <LazyWebForm form="register" fields={formFields('register', t)} labels={formLabels(t)} subject={t('register.title')} locale={locale} />
             </div>
           </div>
         </div>

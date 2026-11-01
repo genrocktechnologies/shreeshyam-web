@@ -14,7 +14,7 @@ We have rebuilt the website in the compact style you asked for (your change requ
 
 You can reply on this sheet, by email, or by phone, item by item ("1 Yes, 2 No…").
 
-Items 9, 10, 13 and 14 ask you to **send** something rather than tick a box.
+Items 9, 10, 13 and 14 ask you to **send** something rather than tick a box. Item 24 asks you to confirm your email address.
 
 ---
 
@@ -218,6 +218,44 @@ These are for people who use screen readers. They are never shown on screen.
 - About page photo: "A smiling woman in a cream headscarf sitting with other women from a village group, holding up her membership form"
 
 ☐ Yes  ☐ Change to: ______________________________
+
+---
+
+## Part E — Contact, Careers and policy pages
+
+### 21. Contact page — the map
+
+To keep the page fast on mobile data, the Google map only loads when someone presses **"Show map"**. Until then the page shows the pin name and address, with this note:
+
+> The map is provided by Google. It loads only when you press “Show map”.
+
+The two buttons say **"Show map"** and **"Open in Maps"**.
+
+☐ Yes  ☐ No  ☐ Change to: ______________________________
+
+### 22. Careers page
+
+- The page is called **"Careers"**. The old website called it "Career".
+- The old page only had the heading "Apply For Jobs" and a form, so that is all we show. Please send any text about working with you (for example open jobs, or what you look for).
+- CVs are not uploaded on the website. The page says: *"To share your CV, email it to shreeshyamfoundation2026@gmail.com."*
+
+☐ Yes  ☐ No  ☐ Change to: ______________________________
+
+### 23. Privacy Policy — section titles
+
+The section titles have lost their colons ("Information We Collect :" is now "Information We Collect"). They also appear in the list of contents beside the text, called **"On this page"**. The HR Policy page has the same list.
+
+☐ Yes  ☐ No  ☐ Change to: ______________________________
+
+### 24. Forms — what we ask, and the emails you receive
+
+- **Contact form:** name, mobile number, email (optional), subject, message.
+- **Careers form:** name, mobile number, email, the job or kind of work, and a message (optional).
+- **Membership form:** as in item 17.
+- No form asks for Aadhaar, PAN, bank details or any document upload. Documents are checked at your office.
+- Each message arrives at **shreeshyamfoundation2026@gmail.com**, with the subject "Registration", "Contact Us" or "Apply For Jobs". **Please confirm this is the right email address.**
+
+☐ Yes  ☐ No  ☐ Change to: ______________________________
 
 ---
 

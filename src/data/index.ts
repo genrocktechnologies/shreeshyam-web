@@ -4,6 +4,7 @@ export * from './gallery';
 export * from './images';
 export * from './loans';
 export * from './membership';
+export * from './policies';
 export * from './process';
 export * from './services';
 export * from './site';

@@ -136,4 +136,17 @@ CR-01 (`docs/cr-01-compact-redesign.md`) follows the client's reference picture.
 - **Terms & Conditions** text, or confirmation to omit it.
 - **Gallery:** at least 12 real photos, with consent.
 - **Photos** for the reference look (shot list in client-review-2, item 13).
-- **Web3Forms access key** (`NEXT_PUBLIC_WEB3FORMS_KEY` on Vercel), so the Membership form can send. Without it, the form shows "could not be sent, please call us". No test submission has been sent yet.
+- ~~Web3Forms access key~~ ✅ received 1 Nov 2026 (`.env.local` locally, and on Vercel). All three forms send; one test submission per form was sent at the end of Phase 6.
+
+## 🆕 Phase 6 (1 Nov 2026) — on client review sheet 2 (Part E)
+| Item | Wording / change | Revert |
+|---|---|---|
+| `contact.map.note` (new) | "The map is provided by Google. It loads only when you press “Show map”." | Edit in `messages/en/contact.json`. |
+| `common.buttons.showMap`, `openInMaps` | "Show map", "Open in Maps" (written in Phase 1, first shown now) | Edit in `messages/en/common.json`. |
+| `common.a11y.onThisPage` | "On this page" (the long-form contents heading, now visible) | Edit in `messages/en/common.json`. |
+| Careers page title | The approved nav label "Careers" (crawled page title: "Career") | Use `careers.title` in `src/app/[locale]/careers/page.tsx`. |
+| HR Policy page | h1 "Human Resource Policy" (crawled heading), with the crawled title "Our Policy" as the eyebrow | — |
+| Fix `P6-1` | Privacy Policy section headings without the trailing colon (they are also the table of contents) | Restore the colons in `messages/en/privacy.json` and delete fix `P6-1` in `scripts/verify-content.ts`. |
+| Email subjects (inbox only) | "Registration", "Contact Us", "Apply For Jobs" (crawled page titles/headings) | The `subject` prop on each page's `LazyWebForm`. |
+| Hindi form texts | Drafts of every form label, error and status in `messages/hi/common.json` (`_status: draft-needs-review`) | For the Hindi reviewer (F). |
+| Recipient | All forms deliver to shreeshyamfoundation2026@gmail.com (G24: still needs formal confirmation; review 2, item 24). | Change the recipient in the Web3Forms dashboard (the key decides the inbox). |

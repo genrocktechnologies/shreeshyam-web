@@ -10,5 +10,8 @@
   "form": {
     "heading": "Send Us a Message",
     "intro": "Have questions or need assistance? Fill out the form below and our team will get back to you as soon as possible."
+  },
+  "map": {
+    "note": "The map is provided by Google. It loads only when you press “Show map”."
   }
 }

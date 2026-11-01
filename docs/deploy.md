@@ -19,8 +19,9 @@ The site is a fully static export (`output: 'export'` in `next.config.mjs`). Ver
 | Name | Value | Environments | Why |
 |---|---|---|---|
 | `ENABLE_EXPERIMENTAL_COREPACK` | `1` | Production, Preview, Development | Vercel's built-in pnpm is chosen from the lockfile version (`9.0`) and is older than pnpm 11. With this set, Vercel uses Corepack to install the exact version in `package.json` (`"packageManager": "pnpm@11.9.0"`). Without it, an older pnpm would ignore the build approvals in `pnpm-workspace.yaml`. |
+| `NEXT_PUBLIC_WEB3FORMS_KEY` | the Web3Forms access key | Production, Preview, Development | Read at **build** time (static export) by `src/lib/web3forms.ts`; it is a public key, designed to be in the page. Locally it lives in `.env.local` (gitignored). Without it the forms render but report "could not be sent". Changing it needs a redeploy. |
 
-No other variables are needed. The Web3Forms access key is added in Phase 6, when the forms are built.
+No other variables are needed.
 
 ## Build approvals (pnpm 11)
 

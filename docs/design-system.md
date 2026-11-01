@@ -116,7 +116,9 @@ The script reads the tokens and checks every pair the design uses; axe checks th
 | **TeaserCard** | Linked summary card (About's Vision & Mission teasers) |
 | **CtaBand** | Slim magenta band for inner pages (≤ 220px desktop): heading beside Register (→ `/membership/#register`) and Contact Us. Not on home. |
 | **PageHero** | Compact: blush, breadcrumb, optional eyebrow, h1, optional intro (all CSS-animated from first paint, never behind a JS Reveal); an optional arch photo (15rem desktop; 5.5rem beside the text on phones). ≤ 420px below the header on desktop, ≤ 60vh on phones. |
-| **RegisterForm** | Membership (`#register`): visible labels, 48px+ inputs, required marks, inline errors tied with `aria-describedby`, an error summary that takes focus, polite status. Never collects ID numbers or uploads. |
+| **WebForm** (`src/components/forms`) | All three forms (Membership `#register`, Contact, Careers), driven by field specs from the server (`fields.ts`): visible labels, 48px+ inputs, required / optional marks, inline errors tied with `aria-describedby`, an error summary that takes focus, a polite status. Two-column grid from sm; checkboxes below. Never collects ID numbers, bank details or uploads. |
+| **MapFacade** | Contact: a white card with the confirmed pin (name, address), a note, "Show map" (loads the Google iframe; no request before) and "Open in Maps" |
+| **LongForm** | HR Policy, Privacy: compact PageHero, then a sticky "On this page" contents list (desktop; marks the section being read) beside a 46rem reading column; on phones the contents fold into a `<details>`. A 4px marigold reading-progress bar runs along the top of the viewport (`transform: scaleX`). |
 | **Decor** | `Lotus`, `Leaf`, `Swash`, `HeartFlourish`: drawn in code, `aria-hidden`, 10–15% opacity in section corners, used sparingly |
 | **LanguageSwitch** | `EN \| हिं` pill (white, magenta marker); 48px options |
 | **MobileActionBar** | < md: Register (→ `/membership/#register`) + Call (+ WhatsApp when confirmed) |

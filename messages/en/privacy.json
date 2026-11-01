@@ -7,12 +7,12 @@
   "intro": "Shree Shyam Small Growth Foundation (\"the Foundation\", \"we\", \"our\", or \"us\") is committed to protecting the privacy and personal information of our members, beneficiaries, donors, website visitors, and other stakeholders. This Privacy Policy explains how we collect, use, store, and protect your information when you use our website or services.",
   "sections": {
     "informationWeCollect": {
-      "heading": "Information We Collect :",
+      "heading": "Information We Collect",
       "l1": "Personal Information :- Full Name, Father's/Husband Name, DOB, Gender, Mobile No., Residential Address, Identity Document, Bank Account Details, Membership Details, Loan or Financial Assistance application information (if applicable)",
       "l2": "Website Information :- IP Address, Browser Type, Device Information, Cookies and website usage data"
     },
     "howWeUse": {
-      "heading": "How We Use Your Information :",
+      "heading": "How We Use Your Information",
       "l1": "Process membership applications.",
       "l2": "Respond to enquiries and provide customer support.",
       "l3": "Administer Foundation programs and services.",
@@ -22,7 +22,7 @@
       "l7": "Prevent fraud and protect the security of our services."
     },
     "informationSharing": {
-      "heading": "Information Sharing :",
+      "heading": "Information Sharing",
       "l1": "We do not sell or rent your personal information.",
       "l2": "Your information may be shared only:-",
       "l3": "With your consent.",
@@ -31,11 +31,11 @@
       "l6": "To protect the legal rights, safety, or security of the Foundation or others"
     },
     "dataSecurity": {
-      "heading": "Data Security:",
+      "heading": "Data Security",
       "l1": "We take reasonable administrative, technical, and organizational measures to protect personal information against unauthorized access, disclosure, alteration, or destruction. While we work to safeguard your data, no method of electronic storage or internet transmission can be guaranteed to be completely secure."
     },
     "cookies": {
-      "heading": "Cookies :",
+      "heading": "Cookies",
       "l1": "Our website may use cookies to:",
       "l2": "Improve website functionality.",
       "l3": "Remember user preferences.",
@@ -44,7 +44,7 @@
       "l6": "You may disable cookies through your browser settings, although some website features may not function properly."
     },
     "yourRights": {
-      "heading": "Your Rights :",
+      "heading": "Your Rights",
       "l1": "Subject to applicable law, you may have the right to :",
       "l2": "Access your personal information.",
       "l3": "Request correction of inaccurate information.",
@@ -53,11 +53,11 @@
       "l6": "Contact us with privacy-related concerns."
     },
     "thirdPartyServices": {
-      "heading": "Third-Party Services :",
+      "heading": "Third-Party Services",
       "l1": "Our website may include links to third-party websites or services. We are not responsible for the privacy practices or content of those external websites. We encourage you to review their privacy policies before providing personal information."
     },
     "childrensPrivacy": {
-      "heading": "Children's Privacy :",
+      "heading": "Children's Privacy",
       "l1": "Our services are not intended for children under 18 years of age unless participation is permitted with the consent of a parent or legal guardian and in accordance with applicable laws."
     },
     "policyChanges": {
@@ -65,7 +65,7 @@
       "l1": "We may update this Privacy Policy from time to time. Any changes will be published on this page along with the revised effective date."
     },
     "contactUs": {
-      "heading": "Contact Us :",
+      "heading": "Contact Us",
       "l1": "Shree Shyam Small Growth Foundation",
       "l2": "Managing Director: Saurav Prakash",
       "l3": "Office Address: Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401"
