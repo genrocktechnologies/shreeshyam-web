@@ -33,7 +33,7 @@ export function resolverFor(form: FormName, e: FormLabels['errors']) {
       name,
       mobile,
       email: optionalEmail,
-      subject: requiredText(LIMITS.short),
+      topic: requiredText(LIMITS.short),
       message: requiredText(LIMITS.message),
       botcheck,
     }),

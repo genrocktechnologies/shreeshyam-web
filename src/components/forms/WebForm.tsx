@@ -40,7 +40,6 @@ export function WebForm({ form, fields, labels, subject, locale }: WebFormProps)
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
   const [hydrated, setHydrated] = useState(false);
   const summary = useRef<HTMLDivElement>(null);
-  useEffect(() => setHydrated(true), []);
 
   // Async resolver: zod arrives with the first validation, not with the page.
   const resolver = useRef<Resolver<Values> | null>(null);
@@ -66,6 +65,7 @@ export function WebForm({ form, fields, labels, subject, locale }: WebFormProps)
     register,
     handleSubmit,
     reset,
+    setValue,
     formState: { errors, submitCount },
   } = useForm<Values>({
     resolver: resolve,
@@ -73,6 +73,17 @@ export function WebForm({ form, fields, labels, subject, locale }: WebFormProps)
     shouldFocusError: false,
     defaultValues: defaults,
   });
+
+  // Once attached, copy in anything typed while the form's script was still loading, then
+  // mark the form ready (data-hydrated; it also switches to JS validation).
+  useEffect(() => {
+    for (const f of fields) {
+      const el = document.getElementById(id(f.name)) as HTMLInputElement | null;
+      if (el) setValue(f.name, f.type === 'checkbox' ? el.checked : el.value);
+    }
+    setHydrated(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const errorCount = Object.keys(errors).length;
   useEffect(() => {
@@ -152,7 +163,7 @@ export function WebForm({ form, fields, labels, subject, locale }: WebFormProps)
   const others = fields.filter((f) => f.type !== 'checkbox');
 
   return (
-    <form action={WEB3FORMS_KEY ? WEB3FORMS_ENDPOINT : undefined} method="post" noValidate={hydrated} onSubmit={handleSubmit(onValid)} onFocus={() => void loadSchemas().catch(() => undefined)} className="grid gap-5">
+    <form action={WEB3FORMS_KEY ? WEB3FORMS_ENDPOINT : undefined} method="post" noValidate={hydrated} data-hydrated={hydrated ? '' : undefined} onSubmit={handleSubmit(onValid)} onFocus={() => void loadSchemas().catch(() => undefined)} className="grid gap-5">
       {/* No-JS submissions: Web3Forms reads these directly. */}
       {WEB3FORMS_KEY && <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />}
       <input type="hidden" name="subject" value={subject} />

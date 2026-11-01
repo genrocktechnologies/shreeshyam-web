@@ -63,7 +63,8 @@ export function formFields(form: FormName, t: T): FieldSpec[] {
         name,
         mobile,
         { name: 'email', type: 'email', label: f('email'), required: false, autoComplete: 'email', maxLength: LIMITS.email },
-        { name: 'subject', type: 'text', label: f('subject'), required: true, maxLength: LIMITS.short },
+        // Named "topic": Web3Forms reserves `subject` for the email subject ("Contact Us").
+        { name: 'topic', type: 'text', label: f('subject'), required: true, maxLength: LIMITS.short },
         message(true),
       ];
     case 'careers':

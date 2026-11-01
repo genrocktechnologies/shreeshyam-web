@@ -8,6 +8,7 @@ import register from '../messages/en/register.json';
 
 test('renders How to Join, the process, the checklists, the form and the FAQ', async ({ page }) => {
   await page.goto('/en/membership/');
+    await page.locator('form[data-hydrated]').first().waitFor();
   const main = page.locator('main');
   await expect(page.locator('h1')).toHaveText(common.nav.membership);
   await expect(main).toContainText(howToJoin.intro);
@@ -23,6 +24,7 @@ test('renders How to Join, the process, the checklists, the form and the FAQ', a
 
 test('FAQPage JSON-LD moved here with all six questions (and left home)', async ({ page }) => {
   await page.goto('/en/membership/');
+    await page.locator('form[data-hydrated]').first().waitFor();
   const json = JSON.parse((await page.locator('#faq script[type="application/ld+json"]').textContent()) ?? '{}');
   expect(json['@type']).toBe('FAQPage');
   expect(json.mainEntity).toHaveLength(6);
@@ -32,6 +34,7 @@ test('FAQPage JSON-LD moved here with all six questions (and left home)', async 
 
 test('FAQ accordion: first answer open, others inert, buttons toggle', async ({ page }) => {
   await page.goto('/en/membership/');
+    await page.locator('form[data-hydrated]').first().waitFor();
   const buttons = page.locator('#faq h3 > button');
   await expect(buttons).toHaveCount(6);
   await expect(buttons.first()).toHaveAttribute('aria-expanded', 'true');
@@ -46,6 +49,7 @@ test('FAQ accordion: first answer open, others inert, buttons toggle', async ({ 
 test.describe('registration form', () => {
   test('never asks for ID numbers, bank details or uploads', async ({ page }) => {
     await page.goto('/en/membership/');
+    await page.locator('form[data-hydrated]').first().waitFor();
     const form = page.locator('#register form');
     await expect(form.locator('input[type="file"]')).toHaveCount(0);
     const names = await form.locator('input, select, textarea').evaluateAll((els) => els.map((e) => e.getAttribute('name') ?? ''));
@@ -58,6 +62,7 @@ test.describe('registration form', () => {
 
   test('empty submit: error summary takes focus, inline errors are tied to their fields', async ({ page }) => {
     await page.goto('/en/membership/');
+    await page.locator('form[data-hydrated]').first().waitFor();
     const form = page.locator('#register form');
     await form.getByLabel(common.form.fields.name, { exact: false }).first().focus();
     await form.getByRole('button', { name: common.buttons.submit }).click();
@@ -71,6 +76,7 @@ test.describe('registration form', () => {
 
   test('an invalid mobile number is rejected with the bilingual-ready message', async ({ page }) => {
     await page.goto('/en/membership/');
+    await page.locator('form[data-hydrated]').first().waitFor();
     await page.locator('#register-mobile').fill('12345');
     await page.locator('#register form').getByRole('button', { name: common.buttons.submit }).click();
     await expect(page.locator('#register-mobile-error')).toHaveText(common.form.errors.mobileInvalid);

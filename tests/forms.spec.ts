@@ -11,7 +11,7 @@ type Form = { form: 'register' | 'contact' | 'careers'; path: string; fill: Reco
 
 const FORMS: Form[] = [
   { form: 'register', path: 'membership/', fill: { name: 'Test Member', mobile: '9876543210', districtVillage: 'Motihari' }, select: { loanProduct: 'notSure' }, check: ['ageConfirm', 'consentPhone'] },
-  { form: 'contact', path: 'contact/', fill: { name: 'Test Visitor', mobile: '9876543210', subject: 'Test', message: 'Test message' } },
+  { form: 'contact', path: 'contact/', fill: { name: 'Test Visitor', mobile: '9876543210', topic: 'Test', message: 'Test message' } },
   { form: 'careers', path: 'careers/', fill: { name: 'Test Applicant', mobile: '9876543210', email: 'test@example.com', position: 'Field Officer' } },
 ];
 
@@ -37,6 +37,7 @@ for (const f of FORMS) {
   for (const [locale, m] of [['en', en], ['hi', hi]] as const) {
     test(`${f.form} (${locale}): empty submit shows the summary and required errors in ${locale.toUpperCase()}`, async ({ page }) => {
       await page.goto(`/${locale}/${f.path}`);
+    await page.locator('form[data-hydrated]').first().waitFor();
       const sent = await mockWeb3Forms(page);
       await page.locator(`#${f.form}-name`).focus();
       await submit(page, f);
@@ -53,6 +54,7 @@ for (const f of FORMS) {
 
   test(`${f.form}: a valid submission posts the fields + hidden fields to Web3Forms and shows success`, async ({ page }) => {
     await page.goto(`/en/${f.path}`);
+    await page.locator('form[data-hydrated]').first().waitFor();
     const sent = await mockWeb3Forms(page);
     await fillValid(page, f);
     await submit(page, f);
@@ -64,6 +66,8 @@ for (const f of FORMS) {
     expect(String(body.page_url)).toContain(`/en/${f.path}`);
     expect(String(body.access_key)).toMatch(/^[0-9a-f-]{36}$/i);
     expect(body.name).toBe(f.fill.name);
+    // The email subject is always the form's own (Web3Forms reserves `subject`).
+    expect(body.subject).toBe({ register: 'Registration', contact: 'Contact Us', careers: 'Apply For Jobs' }[f.form]);
     expect(body).not.toHaveProperty('botcheck');
     // Never ID numbers, bank details or uploads (content rule 7).
     for (const key of Object.keys(body)) expect(key).not.toMatch(/aadha|pan_|^pan$|bank|account|ifsc|upload|file/i);
@@ -71,6 +75,7 @@ for (const f of FORMS) {
 
   test(`${f.form}: a Web3Forms failure shows "could not be sent"`, async ({ page }) => {
     await page.goto(`/en/${f.path}`);
+    await page.locator('form[data-hydrated]').first().waitFor();
     await mockWeb3Forms(page, false);
     await fillValid(page, f);
     await submit(page, f);
@@ -79,6 +84,7 @@ for (const f of FORMS) {
 
   test(`${f.form}: a ticked honeypot is dropped silently`, async ({ page }) => {
     await page.goto(`/en/${f.path}`);
+    await page.locator('form[data-hydrated]').first().waitFor();
     const sent = await mockWeb3Forms(page);
     await fillValid(page, f);
     await page.locator(`#${f.form}-name`).locator('xpath=ancestor::form').locator('input[name="botcheck"]').evaluate((el: HTMLInputElement) => el.click());
@@ -105,6 +111,7 @@ for (const f of FORMS) {
 test('careers: an invalid email is rejected (EN and HI)', async ({ page }) => {
   for (const [locale, m] of [['en', en], ['hi', hi]] as const) {
     await page.goto(`/${locale}/careers/`);
+    await page.locator('form[data-hydrated]').first().waitFor();
     await page.locator('#careers-email').fill('not-an-email');
     await page.locator('#careers-email').locator('xpath=ancestor::form').getByRole('button').last().click();
     await expect(page.locator('#careers-email-error')).toHaveText(m.form.errors.emailInvalid);
