@@ -65,7 +65,9 @@ The script reads the tokens and checks every pair the design uses; axe checks th
 | Numbers (stats) | Merriweather 700, `tabular-nums` | same | 32 → 44px |
 
 - CSS variables on `<html>`: `--font-display`, `--font-display-hi`, `--font-body`, `--font-script`, `--font-script-hi`. `:lang(hi)` swaps the display and script faces and raises line-heights.
-- **Preloads:** only Latin files are preloaded (Merriweather, Poppins, Dancing Script). Tiro and Kalam are never preloaded, so English pages don't download Hindi fonts. Dancing Script and Tiro use `display: optional` (they sit above or in the h1, so a late swap would shift it).
+- **Preloads:** only Latin files are preloaded (Merriweather, Poppins, Dancing Script). Tiro, Kalam and Poppins' Devanagari files are never preloaded, so English pages don't download Hindi fonts.
+- **Hindi pages (Phase 7):** body text uses a second Poppins instance with `display: optional` (`poppinsHi`, via `:root:lang(hi)`), and Tiro and Kalam are `optional` too: when Poppins' Devanagari file swapped in late, Hindi text re-flowed and the headline re-wrapped (CLS up to 0.084 on a throttled phone; now 0). The trade-off: on a cold first visit over a slow connection, Hindi text can show in the phone's own Devanagari font for that page; the next page uses the cached faces. Dancing Script (English only) is `swap`.
+- **Latin inside Hindi pages:** names and the organisation's name stay in Latin script; where they use the display face they carry `lang="en"` (`latinLang()`), so they keep Merriweather rather than Tiro.
 - Body copy is never below 16px (form helper and meta text: 14–15px). Line length ≤ 68ch.
 
 ## Spacing, radius, elevation

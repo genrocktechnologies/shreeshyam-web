@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- brand file from public/brand, not a processed content image */
 import { site } from '@/data/site';
 import { cn } from '@/lib/cn';
+import { latinLang } from '@/lib/lang';
 import { Logo } from './Logo';
 
 interface BrandLockupProps {
@@ -44,6 +45,7 @@ export function BrandLockup({ line1, line2, tagline, taglineClassName = 'flex', 
       />
       <span className="flex min-w-0 flex-col">
         <span
+          lang={latinLang(line1)}
           className={cn(
             'whitespace-nowrap font-display font-black uppercase leading-[1.05] tracking-[0.01em] [font-size:var(--lockup-line1,1rem)]',
             dark ? 'text-white' : 'text-rani-500',
@@ -52,6 +54,7 @@ export function BrandLockup({ line1, line2, tagline, taglineClassName = 'flex', 
           {line1}
         </span>{' '}
         <span
+          lang={latinLang(line2)}
           className={cn(
             'whitespace-nowrap font-display font-bold uppercase leading-[1.15] [font-size:var(--lockup-line2,0.625rem)]',
             dark ? 'text-white' : 'text-cocoa',

@@ -2,6 +2,7 @@ import { getTranslations } from 'next-intl/server';
 import { altKeyFor } from '@/data/images';
 import { isFeatured, type TeamMember } from '@/data/team';
 import { cn } from '@/lib/cn';
+import { latinLang } from '@/lib/lang';
 import { PhotoFrame } from './PhotoFrame';
 import { SocialIcon } from './SocialIcon';
 
@@ -39,7 +40,7 @@ export async function TeamCard({ member, className }: { member: TeamMember; clas
         )}
       />
       <div className="min-w-0 flex-1 md:mt-3">
-        <h3 className={cn('font-display font-bold leading-snug text-rani-600', featured ? 'text-[1.0625rem] md:text-[1.1875rem]' : 'text-[1.0625rem]')}>{name}</h3>
+        <h3 lang={latinLang(name)} className={cn('font-display font-bold leading-snug text-rani-600', featured ? 'text-[1.0625rem] md:text-[1.1875rem]' : 'text-[1.0625rem]')}>{name}</h3>
         <p className="mt-0.5 text-small text-ink-muted">{t(member.roleKey)}</p>
       </div>
       {member.socials.length > 0 && (

@@ -36,7 +36,7 @@ export async function ImpactBand() {
                   <Icon strokeWidth={1.75} className="h-6 w-6 md:h-7 md:w-7" />
                 </span>
                 <p className="flex flex-col sm:items-center">
-                  <span className="stat-number text-rani-600">
+                  <span lang="en" className="stat-number text-rani-600">
                     <CountUp value={t(s.valueKey)} />
                   </span>
                   <span className="text-small font-semibold text-rani-700">{t(s.labelKey)}</span>

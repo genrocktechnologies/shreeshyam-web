@@ -1,0 +1,33 @@
+{
+  "_status": "draft-needs-review",
+  "meta": {
+    "title": "रजिस्ट्रेशन की प्रक्रिया"
+  },
+  "title": "रजिस्ट्रेशन की प्रक्रिया",
+  "heading": "सदस्यता रजिस्ट्रेशन",
+  "eyebrow": "हमारे मिशन से जुड़ें",
+  "intro": "Shree Shyam Small Growth Foundation के सदस्य बनें और आर्थिक रूप से सबको साथ लेकर चलने वाला, सशक्त और आत्मनिर्भर समाज बनाने में हाथ बँटाएँ। सदस्य के रूप में आपको हमारे सामाजिक विकास के कामों, वित्तीय साक्षरता कार्यक्रमों, सामुदायिक कल्याण के कामों और व्यवसाय में मदद के कार्यक्रमों में शामिल होने का मौका मिलेगा।",
+  "benefits": {
+    "label": "सदस्यता के फ़ायदे",
+    "items": {
+      "financialLiteracyAwareness": "वित्तीय साक्षरता और जागरूकता कार्यक्रम",
+      "entrepreneurshipGuidanceSupport": "व्यवसाय के लिए सलाह और मदद",
+      "participationCommunityDevelopment": "सामुदायिक विकास के कामों में हिस्सेदारी",
+      "womenEmpowermentSkill": "महिला सशक्तिकरण और हुनर सिखाने के कार्यक्रम",
+      "networkingLikeMinded": "एक जैसी सोच वाले सदस्यों से जान-पहचान",
+      "invitationsFoundationMeetings": "फ़ाउंडेशन की बैठकों, कार्यशालाओं और कार्यक्रमों का न्योता",
+      "regularUpdatesFoundation": "फ़ाउंडेशन के कामों की नियमित जानकारी",
+      "certificateMembershipApplicable": "सदस्यता प्रमाणपत्र (अगर लागू हो)"
+    }
+  },
+  "eligibility": {
+    "label": "सदस्यता की योग्यता",
+    "items": {
+      "yearsAgeAbove": "उम्र 18 साल या उससे ज़्यादा हो",
+      "indianCitizen": "भारत के नागरिक हों",
+      "agreeAbideFoundations": "फ़ाउंडेशन के नियमों का पालन करने के लिए सहमत हों",
+      "submitValidIdentity": "पहचान और पते का सही प्रमाण जमा करें",
+      "completeMembershipApplication": "सदस्यता का आवेदन फ़ॉर्म पूरा भरें"
+    }
+  }
+}

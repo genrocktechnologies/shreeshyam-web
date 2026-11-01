@@ -1,0 +1,158 @@
+{
+  "_status": "draft-needs-review",
+  "hub": {
+    "whoCanApply": "कौन आवेदन कर सकता है"
+  },
+  "related": {
+    "heading": "दूसरे लोन"
+  },
+  "products": {
+    "womenEmpowerment": {
+      "meta": {
+        "title": "महिला सशक्तिकरण लोन"
+      },
+      "name": "महिला सशक्तिकरण लोन",
+      "intro": "महिला उद्यमियों, स्वयं सहायता समूहों (SHG) और कमाई वाले कामों के लिए आर्थिक मदद।",
+      "facts": {
+        "purpose": {
+          "label": "उद्देश्य",
+          "value": "महिला उद्यमियों, स्वयं सहायता समूहों (SHG) और कमाई वाले कामों में मदद।"
+        },
+        "amount": {
+          "label": "लोन राशि",
+          "value": "₹10,000 – ₹30,000"
+        },
+        "tenure": {
+          "label": "अवधि",
+          "value": "6 महीने तक"
+        }
+      },
+      "lists": {
+        "keyFeatures": {
+          "label": "मुख्य बातें",
+          "items": {
+            "businessExpansion": "व्यवसाय बढ़ाना",
+            "homeBasedEnterprises": "घर से चलने वाले काम",
+            "flexibleRepaymentOptions": "लोन चुकाने के आसान विकल्प"
+          }
+        }
+      }
+    },
+    "microBusiness": {
+      "meta": {
+        "title": "छोटा व्यवसाय (माइक्रो बिज़नेस) लोन"
+      },
+      "name": "छोटा व्यवसाय (माइक्रो बिज़नेस) लोन",
+      "facts": {
+        "purpose": {
+          "label": "उद्देश्य",
+          "value": "छोटे व्यवसायों और बहुत छोटे उद्यमों के लिए आर्थिक मदद।"
+        },
+        "amount": {
+          "label": "लोन राशि",
+          "value": "₹10,000 – ₹1,00,000"
+        },
+        "tenure": {
+          "label": "अवधि",
+          "value": "12 महीने तक"
+        }
+      },
+      "lists": {
+        "suitableFor": {
+          "label": "किसके लिए सही",
+          "items": {
+            "retailShops": "खुदरा दुकानें",
+            "streetVendors": "ठेले और फेरी वाले",
+            "smallTraders": "छोटे व्यापारी",
+            "serviceBusinesses": "सेवा देने वाले व्यवसाय"
+          }
+        }
+      }
+    },
+    "agricultureLivelihood": {
+      "meta": {
+        "title": "खेती और ग्रामीण आजीविका लोन"
+      },
+      "name": "खेती और ग्रामीण आजीविका लोन",
+      "facts": {
+        "purpose": {
+          "label": "उद्देश्य",
+          "value": "किसानों और गाँव के उद्यमियों की मदद।"
+        },
+        "amount": {
+          "label": "लोन राशि",
+          "value": "₹10,000 – ₹25,000"
+        }
+      },
+      "lists": {
+        "uses": {
+          "label": "किस काम के लिए",
+          "items": {
+            "seedsFertilizers": "बीज और खाद",
+            "irrigation": "सिंचाई",
+            "dairyFarming": "डेयरी (दूध का काम)",
+            "poultry": "मुर्गी पालन",
+            "goatFarming": "बकरी पालन",
+            "farmEquipment": "खेती के औज़ार"
+          }
+        }
+      }
+    },
+    "livestock": {
+      "meta": {
+        "title": "पशुपालन लोन"
+      },
+      "name": "पशुपालन लोन",
+      "facts": {
+        "purpose": {
+          "label": "उद्देश्य",
+          "value": "डेयरी, मुर्गी पालन, मछली पालन और पशुपालन के लिए पैसा।"
+        },
+        "amount": {
+          "label": "लोन राशि",
+          "value": "₹10,000 – ₹30,000"
+        }
+      },
+      "lists": {
+        "benefits": {
+          "label": "फ़ायदे",
+          "items": {
+            "purchaseLivestock": "पशु खरीदना",
+            "expansionDairyFarms": "डेयरी फ़ार्म बढ़ाना",
+            "poultryFisheriesDevelopment": "मुर्गी पालन और मछली पालन का विकास"
+          }
+        },
+        "commonFeatures": {
+          "label": "आम बातें",
+          "items": {
+            "transparentLoanProcess": "साफ़-सुथरी लोन प्रक्रिया",
+            "competitiveInterestRates": "उचित ब्याज दरें (जैसा लागू हो)",
+            "simpleDocumentation": "कम और आसान कागज़ी काम",
+            "flexibleRepaymentOptions": "लोन चुकाने के आसान विकल्प",
+            "customerSupportFinancial": "सदस्य सहायता और आर्थिक सलाह",
+            "responsibleLendingPractices": "ज़िम्मेदारी से लोन देने का तरीका"
+          }
+        },
+        "eligibility": {
+          "label": "बुनियादी योग्यता",
+          "items": {
+            "indianCitizen": "भारत के नागरिक",
+            "ageYearsAbove": "उम्र: 18 साल या उससे ज़्यादा",
+            "validIdentityAddress": "पहचान और पते का सही प्रमाण (आधार कार्ड, पैन कार्ड, बैंक खाता, आमदनी या व्यवसाय का प्रमाण, ज़रूरत के अनुसार दूसरे कागज़)"
+          }
+        },
+        "documents": {
+          "label": "ज़रूरी कागज़",
+          "items": {
+            "aadhaarCard": "आधार कार्ड",
+            "panCardApplicable": "पैन कार्ड (अगर लागू हो)",
+            "passportSizePhotographs": "पासपोर्ट साइज़ फ़ोटो",
+            "addressProof": "पते का प्रमाण",
+            "bankPassbookStatement": "बैंक पासबुक या स्टेटमेंट",
+            "incomeBusinessProof": "आमदनी/व्यवसाय का प्रमाण (जहाँ लागू हो)"
+          }
+        }
+      }
+    }
+  }
+}

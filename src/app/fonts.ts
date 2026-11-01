@@ -20,9 +20,10 @@ export const tiroHindi = Tiro_Devanagari_Hindi({
   weight: '400',
   subsets: ['devanagari', 'latin'],
   variable: '--font-display-hi',
-  // 'optional': it isn't preloaded (only Hindi pages use it), so a late swap would shift
-  // the hero headline (seen as CLS 0.27 on /hi/). If it misses the first ~100ms the
-  // fallback stays for that view and the cached face is used on the next one.
+  // 'optional': it isn't preloaded (only Hindi pages use it), so a late swap re-wraps the
+  // Hindi headline. Re-checked in Phase 7: with 'swap', /hi/ on a throttled phone reached
+  // CLS 0.123 (budget < 0.05). If it misses the first ~100ms the fallback stays for that
+  // view and the cached face is used from the next page on.
   display: 'optional',
   preload: false,
 });
@@ -32,6 +33,21 @@ export const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-body',
   display: 'swap',
+});
+/**
+ * Body face for Hindi pages: the same Poppins as its own 'optional' instance, never
+ * preloaded. (`subsets` only picks what is preloaded; the Devanagari @font-face is
+ * generated either way.) With the shared 'swap' instance, Poppins' Devanagari file
+ * arriving late re-flowed the Hindi text and re-wrapped the headline (Tiro falls back to
+ * the body face): CLS up to 0.084 on /hi/ on a throttled phone (Phase 7). Switched in by
+ * `:root:lang(hi)` in globals.css.
+ */
+export const poppinsHi = Poppins({
+  weight: ['400', '500', '600', '700'],
+  subsets: ['latin'],
+  variable: '--font-body-hi',
+  display: 'optional',
+  preload: false,
 });
 /**
  * English script accents (the hero's "Together We Build a" line, slogans). Preloaded and
@@ -55,4 +71,4 @@ export const kalam = Kalam({
   preload: false,
 });
 
-export const fontVariables = [merriweather.variable, tiroHindi.variable, poppins.variable, dancingScript.variable, kalam.variable].join(' ');
+export const fontVariables = [merriweather.variable, tiroHindi.variable, poppins.variable, poppinsHi.variable, dancingScript.variable, kalam.variable].join(' ');

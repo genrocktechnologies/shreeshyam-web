@@ -48,6 +48,8 @@ A static, bilingual (English + Hindi) marketing site for a microfinance / financ
 - `node scripts/bundle-size.mjs`: gzipped first-load JS of every exported page (budget 180 KB)
 - `pnpm exec tsx scripts/icons.ts`: regenerate `src/components/ui/icons.tsx` from lucide icon data
 - `pnpm exec tsx scripts/contrast.ts`: WCAG AA check of the colour-token pairs the design uses
+- `pnpm exec tsx scripts/hindi-keys.ts`: the en and hi message trees must match (0 missing / extra keys), placeholders and tags must agree, every Hindi message must parse, no Devanagari digits. Run it after any edit to `messages/en` or `messages/hi`.
+- `pnpm exec tsx scripts/hindi-review.ts`: regenerate `docs/hindi-review.csv` and `docs/hindi-review.xlsx` for the client's Hindi reviewer
 
 pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNORED_BUILDS`, stop and tell the user to run `pnpm approve-builds`. Do not work around it.
 
@@ -57,6 +59,9 @@ pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNOR
 3. **Hindi** is drafted by Claude.
    - Every Hindi file carries `"_status": "draft-needs-review"` until the client approves it.
    - Keep financial and legal terms precise and simple, at roughly a Class 8 reading level.
+   - Words people in Bihar already use stay as they are, in Devanagari (लोन, EMI, आधार, पैन, बैंक, फ़ॉर्म).
+   - Names of people and the organisation stay exactly as in English (Latin script); mark Latin-only strings with `lang={latinLang(text)}` (`src/lib/lang.ts`) where they use the display face, so they keep Merriweather on Hindi pages.
+   - Numbers stay in Latin digits.
 4. **Client-confirmed facts** are listed at the top of `docs/client-requests.md` under "Confirmed". They override crawled values (e.g. the phone number, office hours and map pin). Put them in `src/data/site.ts`.
 5. **Missing content** (loan key facts, legal details, grievance contact, gallery, WhatsApp, Terms & Conditions):
    - Render nothing for it, and hide the UI that depends on it behind a `null` check in `src/data/site.ts`.
@@ -89,6 +94,7 @@ pnpm 11 blocks dependency build scripts. If an install ends with `ERR_PNPM_IGNOR
   - Dancing Script 600/700: English script accents
   - Kalam: Hindi script accents (`:lang(hi)`)
   - Only Latin files are preloaded; Hindi-only faces never are.
+  - Hindi pages use a second, `display: 'optional'` Poppins instance for body text (`poppinsHi`, switched in by `:root:lang(hi)`); the shared `swap` instance made Hindi text re-flow (CLS). Tiro and Kalam stay `optional` for the same reason.
 - The `<html lang>` attribute switches per locale. Hindi gets `leading-relaxed+` (see design-system.md).
 - Exactly one `<h1>` per page.
 - Every image has meaningful alt text from `messages/*`.

@@ -79,15 +79,23 @@
     outline: none;
   }
 
-  /* Hindi: Devanagari display and script faces, and roomier line-heights. */
-  :lang(hi) .font-script,
-  :lang(hi) .accent-script {
+  /* Hindi pages use the 'optional' Poppins instance for body text (app/fonts.ts).
+   * :root:lang(hi) outranks the next/font class that defines --font-body. */
+  :root:lang(hi) {
+    --font-body: var(--font-body-hi);
+  }
+
+  /* Hindi: Devanagari display and script faces, and roomier line-heights. The face rules
+   * test the element's OWN language (x:lang(hi), not :lang(hi) x), so Latin names marked
+   * lang="en" (latinLang()) keep Merriweather / Dancing Script on Hindi pages. */
+  .font-script:lang(hi),
+  .accent-script:lang(hi) {
     font-family: var(--font-script-hi), cursive;
   }
 
-  :lang(hi) h1,
-  :lang(hi) h2,
-  :lang(hi) .font-display {
+  h1:lang(hi),
+  h2:lang(hi),
+  .font-display:lang(hi) {
     font-family: var(--font-display-hi), var(--font-body), serif;
     font-weight: 400;
     letter-spacing: 0;

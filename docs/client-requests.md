@@ -27,7 +27,7 @@
 - **E. Media:** gallery photos, logo source file, high-res photos.
 
   → The Gallery is built but hidden from nav and sitemap. The team page is rebuilt from homepage data.
-- **F. Hindi reviewer.** Needed for launch.
+- **F. Hindi reviewer.** Needed for launch. Phase 7 (1 Nov 2026): every key has a Hindi draft (`_status: draft-needs-review`); the reviewer works in `docs/hindi-review.xlsx` (or `.csv`), with instructions on its second sheet. Choices to confirm there: names of people and the organisation kept in Latin script (Devanagari spelling is an option), common words such as लोन / आधार / पैन kept, Latin digits.
 - **G. Vercel plan owner (Pro), domain DNS access, email recipient confirmation.** Needed for launch.
 
 ## ❓ Not yet answered — proceeding with these defaults (easy to reverse)

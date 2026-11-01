@@ -1,0 +1,40 @@
+{
+  "_status": "draft-needs-review",
+  "heading": "हमारी टीम के सदस्य",
+  "members": {
+    "satyamPushkar": {
+      "name": "Satyam Pushkar",
+      "role": "हेड, बिज़नेस डेवलपमेंट"
+    },
+    "ranjeetKumar": {
+      "name": "Ranjeet Kumar",
+      "role": "एग्ज़िक्यूटिव डायरेक्टर, बिज़नेस"
+    },
+    "sumitKumar": {
+      "name": "Sumit Kumar",
+      "role": "एग्ज़िक्यूटिव डायरेक्टर, फ़ाइनेंस"
+    },
+    "sauravPrakash": {
+      "name": "Saurav Prakash",
+      "role": "MD, CEO, संस्थापक"
+    },
+    "vikramSinha": {
+      "name": "Vikram Kumar Sinha",
+      "role": "चेयरमैन"
+    },
+    "sonuKumar": {
+      "name": "Sonu Kumar",
+      "role": "हेड, IT"
+    },
+    "shishirKumar": {
+      "name": "Shishir Kumar",
+      "role": "चीफ़ इन्फ़ॉर्मेशन ऑफ़िसर"
+    }
+  },
+  "tiers": {
+    "chairman": "चेयरमैन",
+    "leadership": "नेतृत्व",
+    "executiveDirectors": "एग्ज़िक्यूटिव डायरेक्टर",
+    "headsOfficers": "हेड और अधिकारी"
+  }
+}

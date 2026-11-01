@@ -7,6 +7,7 @@ import { Sprout } from '@/components/ui/icons';
 import { PhotoFrame } from '@/components/ui/PhotoFrame';
 import { aboutRoutes } from '@/data/about';
 import { altKeyFor } from '@/data/images';
+import { latinLang } from '@/lib/lang';
 import { richTags } from '@/lib/rich';
 
 /**
@@ -31,7 +32,9 @@ export async function AboutIntro() {
 
         <Reveal>
           <Eyebrow>{t('common.nav.aboutUs')}</Eyebrow>
-          <h2 className="mt-2 text-balance">{t('common.siteName')}</h2>
+          <h2 lang={latinLang(t('common.siteName'))} className="mt-2 text-balance">
+            {t('common.siteName')}
+          </h2>
           <p className="mt-4 text-body text-ink">{t.rich('about.foundation.body1', richTags)}</p>
           <Button href={aboutRoutes.about} arrow className="mt-6">
             {t('common.buttons.knowMore')}
