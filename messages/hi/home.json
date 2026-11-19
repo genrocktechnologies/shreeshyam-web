@@ -15,6 +15,20 @@
     },
     "impactSlogan": "छोटे कदम, बड़े बदलाव"
   },
+  "awards": {
+    "heading": "पुरस्कार और सम्मान",
+    "items": {
+      "dazzling": {
+        "title": "International Dazzling Award 2026",
+        "category": "वित्तीय समावेशन और महिला सशक्तिकरण में उत्कृष्टता",
+        "text": "वित्तीय समावेशन और महिलाओं को सशक्त बनाने के हमारे काम के लिए सम्मान।"
+      },
+      "iconic": {
+        "title": "Iconic Business Award 2026",
+        "text": "हमारे MD, CEO और संस्थापक Saurav Prakash ने यह पुरस्कार प्राप्त किया।"
+      }
+    }
+  },
   "hero": {
     "eyebrow": "मिलकर बेहतर भविष्य बनाएँ",
     "title": "वित्तीय समावेशन के ज़रिए आज <accent>हर परिवार</accent> के लिए नए मौके"

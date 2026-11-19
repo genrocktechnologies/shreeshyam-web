@@ -263,6 +263,19 @@ Each loan page now has the registration form. On a loan page the form is for tha
 
 ☐ Yes  ☐ No  ☐ Change to: ______________________________
 
+### 26. Home page — "Awards & Recognition"
+
+A new section under the three cards shows your two award photos:
+
+| Award | Line under the name | Short description |
+|---|---|---|
+| International Dazzling Award 2026 | Excellence in Financial Inclusion & Women Empowerment | Honoured for our work in financial inclusion and in empowering women. |
+| Iconic Business Award 2026 | — | Received by our MD, CEO & Founder, Saurav Prakash. |
+
+**Please check the Iconic Business Award photo.** The big screen behind the stage shows another winner's slide (a name ending "…R TIWARI", "OWNER", "OUTDOOR ADVERTISEMENT", and that person's photo). We cropped it as much as we could, but part of it is still visible behind the man. If you have another photo from that moment, please send it.
+
+☐ Yes  ☐ No  ☐ Change to: ______________________________
+
 ---
 
 Thank you! Please send your answers, photos and any texts to us by email or WhatsApp.

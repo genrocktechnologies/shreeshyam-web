@@ -22,6 +22,7 @@ const OUT = path.join(ROOT, 'src', 'components', 'ui', 'icons.tsx');
 const ICONS: Record<string, string> = {
   'arrow-right': 'ArrowRight',
   'arrow-up': 'ArrowUp',
+  award: 'Award',
   'badge-check': 'BadgeCheck',
   'book-open': 'BookOpen',
   check: 'Check',

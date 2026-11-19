@@ -35,6 +35,7 @@ const IDENTICAL_OK = [
   /^hrPolicy\.contact\.(organisation|directors\.names\..+)$/,
   /^privacy\.(heading|sections\.contactUs\.l1)$/,
   /^dev\.primitives\./, // component names in the motion playground
+  /^home\.awards\.items\.\w+\.title$/, // award names (proper names)
 ];
 
 const flatten = (t: Tree, prefix = '', out = new Map<string, string>()) => {

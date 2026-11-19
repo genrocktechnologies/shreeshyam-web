@@ -97,6 +97,31 @@
     "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAgCdASoQAAoAA4BaJZgCdAYvXjFmv1QajQAA/sXUEjAeg64iQJFmQG3cdeuot+pOW11ee0gfam2UX3f3k9gKqTl7Q8iyPdFOd1hyflyV4fNQBsANfvkHBe8/I10ID5jKEbsZLwSAAA==",
     "source": "assets/original/index/best_hrms_banner.jpg (crop 520,40 1360×850)"
   },
+  "awardIconic2026": {
+    "kind": "photo",
+    "width": 3200,
+    "height": 2400,
+    "widths": [
+      480,
+      960,
+      1600
+    ],
+    "base": "/images/award-iconic2026",
+    "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAQCdASoQAAwAA4BaJZACdACAfHLkAP5zQZJ0BXyXW2EWPJzowbiRs2u0eo+t5Kt42w1+NGSl/sj8FEFtrcxS3p26DTMG9J8OubfzXf2zkzIOh/kJAAAA",
+    "source": "assets/original/awards/iconic-business-award-2026.jpeg (crop 1650,1450 3200×2400)"
+  },
+  "awardDazzling2026": {
+    "kind": "photo",
+    "width": 1080,
+    "height": 810,
+    "widths": [
+      480,
+      960
+    ],
+    "base": "/images/award-dazzling2026",
+    "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoQAAwAA4BaJaACdAYs3dW6uf+QvQAA/tbUH9ZAsttqrn7giCrSy7vKyvxsK4Jq/1swfeVilmsnlAKmsdz7GmROvE5uWwIrnju+/wt5K7UNt8ZevyUTG5Cd30QM75zxRfxWAHfgv1MAAA==",
+    "source": "assets/original/awards/international-dazzling-award-2026.jpeg (crop 0,150 1080×810)"
+  },
   "heroWomenCards": {
     "kind": "photo",
     "width": 1920,

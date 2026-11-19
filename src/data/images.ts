@@ -70,6 +70,9 @@ export const IMAGE_META = {
   fieldMeeting: { frame: 'wide', focal: { x: 45, y: 35 } },
   // Two people: presenter (≈ x 37–58%) and awardee (≈ x 62–90%); keep both whole.
   award: { frame: 'wide', focal: { x: 62, y: 40 } },
+  // Home "Awards & Recognition": already cropped to 4:3 around both people.
+  awardIconic2026: { frame: 'wide', focal: { x: 50, y: 35 } },
+  awardDazzling2026: { frame: 'wide', focal: { x: 45, y: 35 } },
   bannerAbout: { frame: 'banner', focal: { x: 50, y: 50 } },
   bannerContact: { frame: 'banner', focal: { x: 50, y: 50 } },
   // Cut-outs on white (torn/blob edges): illustration slots only.

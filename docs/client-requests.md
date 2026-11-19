@@ -156,3 +156,13 @@ CR-01 (`docs/cr-01-compact-redesign.md`) follows the client's reference picture.
 |---|---|---|
 | `loans.apply.heading` (new) | "Apply for this loan" (section heading, hero button, closing band); Hindi draft "इस लोन के लिए आवेदन करें" | Remove the `#apply` section, the hero button and the CtaBand `primary` in `src/components/sections/loans/LoanPage.tsx`. |
 | Form | The Membership registration form, limited to the page's loan, pre-selected (`formFields('register', t, { loan })`); email subject "Registration: <loan name>" | — |
+
+## 🆕 Home "Awards & Recognition" (19 Nov 2026) — client review 2, item 26
+Photos supplied by the client (originals in `docs/photo-candidates/`, processed from `assets/original/awards/` as `awardDazzling2026` and `awardIconic2026`).
+| Key | Proposed copy | Revert |
+|---|---|---|
+| `home.awards.heading` | "Awards & Recognition" | Remove `<Awards />` from `src/app/[locale]/page.tsx`. |
+| `home.awards.items.dazzling.*` | title "International Dazzling Award 2026", category "Excellence in Financial Inclusion & Women Empowerment" (both as given by the client), text "Honoured for our work in financial inclusion and in empowering women." | Edit in `messages/en/home.json`. |
+| `home.awards.items.iconic.*` | title "Iconic Business Award 2026" (as in the crawled award story), text "Received by our MD, CEO & Founder, Saurav Prakash." (from the crawled award story) | Edit in `messages/en/home.json`. |
+| `common.alt.awardDazzling2026`, `awardIconic2026` | Picture descriptions; the presenters and the awardee are not named | — |
+- **Open:** the Iconic photo's backdrop shows another awardee's slide ("…R TIWARI", "OWNER", "OUTDOOR ADVERTISEMENT"); cropped but still partly visible. Ask the client to confirm the photo or send another.

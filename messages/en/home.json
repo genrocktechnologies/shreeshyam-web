@@ -14,6 +14,20 @@
     },
     "impactSlogan": "Small Steps Create Big Changes"
   },
+  "awards": {
+    "heading": "Awards & Recognition",
+    "items": {
+      "dazzling": {
+        "title": "International Dazzling Award 2026",
+        "category": "Excellence in Financial Inclusion & Women Empowerment",
+        "text": "Honoured for our work in financial inclusion and in empowering women."
+      },
+      "iconic": {
+        "title": "Iconic Business Award 2026",
+        "text": "Received by our MD, CEO & Founder, Saurav Prakash."
+      }
+    }
+  },
   "hero": {
     "eyebrow": "Building Better Futures Together",
     "title": "Creating Opportunities for <accent>Every Family</accent> Through Financial Inclusion Today"

@@ -48,6 +48,10 @@ const IMAGES: Record<string, [string, Kind, Crop?]> = {
   // woman in the green sari reading documents, with the member beside her.
   heroPanel: ['index/finance_banner.jpg', 'photo', { left: 240, top: 0, width: 1638, height: 1024 }],
   aboutPanel: ['index/best_hrms_banner.jpg', 'photo', { left: 520, top: 40, width: 1360, height: 850 }],
+  // Awards & Recognition on home (client photos, 19 Nov 2026; originals in
+  // docs/photo-candidates): presenter and awardee, faces and trophy in a 4:3 frame.
+  awardIconic2026: ['awards/iconic-business-award-2026.jpeg', 'photo', { left: 1650, top: 1450, width: 3200, height: 2400 }],
+  awardDazzling2026: ['awards/international-dazzling-award-2026.jpeg', 'photo', { left: 0, top: 150, width: 1080, height: 810 }],
   heroWomenCards: ['index/finance_banner.jpg', 'photo'],
   fieldMeeting: ['index/best_hrms_banner.jpg', 'photo'],
   membersLedger: ['index/about_me.jpg', 'photo'],

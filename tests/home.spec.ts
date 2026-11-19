@@ -89,3 +89,19 @@ test('no old home sections, pins, magnetic buttons or golden thread on home', as
   for (const id of ['#services', '#process', '#milestone', '#testimonials', '#team', '#faq', '#final-cta']) await expect(page.locator(id)).toHaveCount(0);
   await expect(page.locator('[data-pinned], .pin-spacer, [data-thread], [data-magnetic]')).toHaveCount(0);
 });
+
+test('Awards & Recognition: both awards with photo, name and description, between the cards and About', async ({ page }) => {
+  await page.goto('/en/');
+  const section = page.locator('#awards');
+  await expect(section.getByRole('heading', { level: 2 })).toHaveText(home.awards.heading);
+  for (const a of Object.values(home.awards.items)) {
+    const card = section.locator('article', { has: page.getByRole('heading', { level: 3, name: a.title }) });
+    await expect(card).toContainText(a.text);
+    if ('category' in a) await expect(card).toContainText(a.category);
+    await expect(card.locator('img[alt]')).toHaveCount(1);
+  }
+  await expect(section.locator('a[href="/en/about/milestones/"]')).toHaveCount(1);
+  // Order on the page: feature cards → awards → About.
+  const [awards, about] = await page.evaluate(() => ['#awards', '#about'].map((s) => document.querySelector(s)!.getBoundingClientRect().top));
+  expect(awards).toBeLessThan(about);
+});

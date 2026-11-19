@@ -49,6 +49,7 @@ All English copy comes from `content/<slug>.json`. Section lists below say **whe
 Targets: ≤ 2.7 viewports at 1440×900 and ≤ 6 at 390×844 (footer excluded); hero and cards within 1.3 viewports on desktop; the headline and CTA above the fold on phones.
 1. **Hero** (blush): script line "Together We Build a" + h1 "Stronger & Prosperous Tomorrow", intro, yellow "Join Us →" (→ Membership) and "Explore Loans →"; the real members photo in the curved panel; side slogan (desktop). All CR-01 proposed copy; revert: the old eyebrow + h1 (`home.hero.*`).
 2. **Three feature cards**, overlapping the hero: Women Empowerment (→ the Women Empowerment loan), Financial Inclusion (→ Loans), Community Growth (→ About). Proposed titles; descriptions verbatim from the live services.
+2a. **Awards & Recognition** (client request, 19 Nov 2026): two compact cards with the real award photos (International Dazzling Award 2026; Iconic Business Award 2026, linking to Milestones), each with its name, category and a short description.
 3. **About** (blush): the About photo in the curved panel, "About Us", the foundation's name, the **first** "About the Foundation" paragraph, "Know More →".
 4. **Impact band**: proposed slogan "Small Steps Create Big Changes" | the live stats 1200+ / 150+ / 98% (never the reference's invented numbers).
 5. **Loan products strip**: the 4 products with their published amount/tenure.

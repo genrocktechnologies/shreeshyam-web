@@ -22,7 +22,7 @@ type Tree = { [k: string]: string | Tree };
 /** Page for a key: the most specific prefix wins. Order = site order (and sort order). */
 const PAGES: [string, RegExp][] = [
   ['Every page: header, footer and menus', /^common\.(siteName|brand|continueToSite|nav|buttons|footer|languages|social|contact)\b/],
-  ['Home', /^home\.(meta|compact|hero|aboutIntro|stats)\b/],
+  ['Home', /^home\.(meta|compact|awards|hero|aboutIntro|stats)\b/],
   ['About', /^(about\.|home\.(services|testimonials)\b)/],
   ['Vision & Mission', /^(vision|mission)\./],
   ['Team', /^team\./],
