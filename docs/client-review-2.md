@@ -259,7 +259,7 @@ The section titles have lost their colons ("Information We Collect :" is now "In
 
 ### 25. Loan pages — apply for a loan
 
-Each loan page now has the registration form, with that loan already chosen. A button near the top, **"Apply for this loan"**, takes people to it. The email you receive is titled, for example, "Registration: Livestock Loan".
+Each loan page now has the registration form. On a loan page the form is for that loan only (the "Preferred loan" choice shows just that loan). A button near the top, **"Apply for this loan"**, takes people to it. The email you receive is titled, for example, "Registration: Livestock Loan".
 
 ☐ Yes  ☐ No  ☐ Change to: ______________________________
 

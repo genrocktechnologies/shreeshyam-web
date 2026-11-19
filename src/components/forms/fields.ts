@@ -32,8 +32,8 @@ export function formLabels(t: T): FormLabels {
 }
 
 /**
- * The fields of each form (site-plan, Forms). `options.loan` pre-selects the preferred loan
- * on the Register form (loan pages). Names match schemas.ts. No ID numbers, bank
+ * The fields of each form (site-plan, Forms). `options.loan` (loan pages) limits the Register
+ * form's preferred loan to that one loan, pre-selected. Names match schemas.ts. No ID numbers, bank
  * details or uploads, ever (content rule 7); Careers CVs go by email (a mailto link).
  */
 export function formFields(form: FormName, t: T, options: { loan?: string } = {}): FieldSpec[] {
@@ -53,8 +53,11 @@ export function formFields(form: FormName, t: T, options: { loan?: string } = {}
           type: 'select',
           label: f('loanProduct'),
           required: true,
-          options: [...loans.map((l) => ({ value: l.id, label: t(l.navKey) })), { value: 'notSure', label: f('notSure') }],
-          // A loan page's application form starts on that loan (still changeable).
+          // On a loan page only that loan is offered (and pre-selected); elsewhere all four
+          // and "Not sure".
+          options: options.loan
+            ? loans.filter((l) => l.id === options.loan).map((l) => ({ value: l.id, label: t(l.navKey) }))
+            : [...loans.map((l) => ({ value: l.id, label: t(l.navKey) })), { value: 'notSure', label: f('notSure') }],
           defaultValue: options.loan,
         },
         message(false),

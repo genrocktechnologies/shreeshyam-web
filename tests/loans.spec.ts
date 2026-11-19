@@ -105,6 +105,9 @@ for (const [id, slug] of Object.entries(SLUGS) as [Product, string][]) {
     await expect(page.locator('main a[href="#apply"]')).toHaveCount(2);
     await page.locator('form[data-hydrated]').waitFor();
     await expect(page.locator('#register-loanProduct')).toHaveValue(id);
+    // Only this page's loan is offered.
+    await expect(page.locator('#register-loanProduct option')).toHaveCount(1);
+    await expect(page.locator('#register-loanProduct option')).toHaveText(loanMessages.products[id].name);
     // Same registration form as Membership: no ID numbers, bank details or uploads.
     await expect(section.locator('input[type="file"]')).toHaveCount(0);
 

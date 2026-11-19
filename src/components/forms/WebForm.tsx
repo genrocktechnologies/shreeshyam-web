@@ -56,7 +56,7 @@ export function WebForm({ form, fields, labels, subject, locale }: WebFormProps)
     Object.fromEntries([
       ...fields.map((f) => {
         const el = typeof document === 'undefined' ? null : (document.getElementById(id(f.name)) as HTMLInputElement | null);
-        return [f.name, f.type === 'checkbox' ? !!el?.checked : (el?.value ?? f.defaultValue ?? '')];
+        return [f.name, f.type === 'checkbox' ? !!el?.checked : el?.value || f.defaultValue || ''];
       }),
       ['botcheck', false],
     ]),
@@ -138,9 +138,12 @@ export function WebForm({ form, fields, labels, subject, locale }: WebFormProps)
     if (f.type === 'select')
       return (
         <select {...common} defaultValue={f.defaultValue ?? ''} className={cx(input, 'appearance-auto')}>
-          <option value="" disabled>
-            —
-          </option>
+          {/* The empty "—" choice only when nothing is pre-selected. */}
+          {!f.defaultValue && (
+            <option value="" disabled>
+              —
+            </option>
+          )}
           {f.options?.map((o) => (
             <option key={o.value} value={o.value}>
               {o.label}

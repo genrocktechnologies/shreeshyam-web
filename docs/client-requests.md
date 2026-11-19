@@ -155,4 +155,4 @@ CR-01 (`docs/cr-01-compact-redesign.md`) follows the client's reference picture.
 | Item | Wording / change | Revert |
 |---|---|---|
 | `loans.apply.heading` (new) | "Apply for this loan" (section heading, hero button, closing band); Hindi draft "इस लोन के लिए आवेदन करें" | Remove the `#apply` section, the hero button and the CtaBand `primary` in `src/components/sections/loans/LoanPage.tsx`. |
-| Form | The Membership registration form, with the page's loan pre-selected (`formFields('register', t, { loan })`); email subject "Registration: <loan name>" | — |
+| Form | The Membership registration form, limited to the page's loan, pre-selected (`formFields('register', t, { loan })`); email subject "Registration: <loan name>" | — |
