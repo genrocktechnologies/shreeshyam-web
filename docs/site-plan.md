@@ -31,7 +31,7 @@ All English copy comes from `content/<slug>.json`. Section lists below say **whe
   - Set `cleanUrls: true` and `trailingSlash: true`.
 
 ## Navigation (CR-01)
-**Top bar** (lg+, magenta): email · phone (+91 87509 71329) · address (opens Maps). WhatsApp only when confirmed.
+**Top bar** (lg+, magenta): email · phone (+91 92290 88829) · address (opens Maps). WhatsApp only when confirmed.
 
 **Main bar:** logo lockup (real emblem + typeset name + tagline; `site.logoLockup` falls back to the full logo file), then:
 - Home · About Us · Vision & Mission · Loan Products ▾ (the 4 loans + All loans) · Membership · Gallery (only when `gallery.enabled`) · Contact Us

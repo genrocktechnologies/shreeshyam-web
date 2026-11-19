@@ -35,7 +35,7 @@ test.describe('Contact', () => {
   test('details card with the confirmed phone, email, office time and the Maps link', async ({ page }) => {
     await page.goto('/en/contact/');
     const main = page.locator('main');
-    await expect(main.locator('a[href="tel:+918750971329"]')).toHaveText('+91 87509 71329');
+    await expect(main.locator('a[href="tel:+919229088829"]')).toHaveText('+91 92290 88829');
     await expect(main.locator('a[href="mailto:shreeshyamfoundation2026@gmail.com"]').first()).toBeVisible();
     await expect(main).toContainText(common.contact.hours);
     await expect(main.locator('a[href="https://maps.app.goo.gl/CE8evf9puHXMrTCe7"]').first()).toBeVisible();

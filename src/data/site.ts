@@ -67,7 +67,8 @@ export const site: Site = {
   url: 'https://shreeshyamfoundation.in',
   nameKey: 'common.siteName',
   logoLockup: 'typeset',
-  phone: { display: '+91 87509 71329', e164: '+918750971329', href: 'tel:+918750971329' },
+  // Client-confirmed 19 Nov 2026 (replaces +91 87509 71329).
+  phone: { display: '+91 92290 88829', e164: '+919229088829', href: 'tel:+919229088829' },
   // Not confirmed. Switching it on is one line: { e164: '+91…', href: 'https://wa.me/91…' }.
   whatsapp: null,
   email: 'shreeshyamfoundation2026@gmail.com',

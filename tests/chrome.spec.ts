@@ -91,7 +91,7 @@ test.describe('desktop header', () => {
     await page.goto('/en/');
     const bar = page.locator('header .bg-rani-500').first();
     await expect(bar.locator('a[href^="mailto:"]')).toBeVisible();
-    await expect(bar.locator('a[href="tel:+918750971329"]')).toHaveText('+91 87509 71329');
+    await expect(bar.locator('a[href="tel:+919229088829"]')).toHaveText('+91 92290 88829');
     await expect(bar.locator('a[href^="https://maps.app.goo.gl/"]')).toBeVisible();
   });
 

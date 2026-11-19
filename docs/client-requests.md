@@ -3,7 +3,7 @@
 ## ✅ Confirmed by client (use these; they override crawled values)
 | Item | Value | How to use |
 |---|---|---|
-| Phone | **+91 87509 71329** (`tel:+918750971329`) | Utility bar, footer, contact page, MobileActionBar "Call", JSON-LD `telephone` |
+| Phone | **+91 92290 88829** (`tel:+919229088829`); confirmed 19 Nov 2026, replacing +91 87509 71329 | Utility bar, footer, contact page, MobileActionBar "Call", JSON-LD `telephone` |
 | WhatsApp | *not confirmed* | Keep `whatsapp: null` until confirmed. Switching it on is a one-line change in `site.ts`. |
 | Office hours | **9:00 AM – 9:00 PM** (days not specified) | Contact page and footer. Show the time only, with no days, until days are confirmed. JSON-LD `openingHours` is omitted until the days are known. |
 | Display address | Shambu Sah Building Near Transformer, Bariyarpur, Motihari, Bihar – 845401 | Unchanged from the live site; this is the source of truth for the displayed text. |
