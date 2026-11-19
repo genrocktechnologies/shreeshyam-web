@@ -1,5 +1,5 @@
 import AxeBuilder from '@axe-core/playwright';
-import { expect, test, type Page } from '@playwright/test';
+import { chromium, expect, test, type Page } from '@playwright/test';
 
 /** Phase 2 acceptance: layout chrome. Run with `pnpm build && pnpm exec playwright test`. */
 
@@ -95,24 +95,36 @@ test.describe('desktop header', () => {
     await expect(bar.locator('a[href^="https://maps.app.goo.gl/"]')).toBeVisible();
   });
 
-  test('the nav never wraps: one row from 1280px, the hamburger below', async ({ page }) => {
-    for (const width of [1280, 1366, 1440, 1920]) {
-      await page.setViewportSize({ width, height: 900 });
-      await page.goto('/en/');
-      const nav = page.getByRole('navigation', { name: 'Main navigation' }).first();
-      await expect(nav).toBeVisible();
-      const tops = await nav.locator(':scope > ul > li').evaluateAll((lis) => new Set(lis.map((li) => Math.round(li.getBoundingClientRect().top))).size);
-      expect(tops, `${width}px`).toBe(1);
-      const overlap = await page.evaluate(() => {
-        const logo = document.getElementById('site-logo')!.getBoundingClientRect();
-        const nav = document.querySelector('header nav')!.getBoundingClientRect();
-        return logo.right > nav.left;
-      });
-      expect(overlap, `logo overlaps nav at ${width}px`).toBe(false);
+  test('the nav never wraps or touches the logo: one row from 1280px (with Windows scrollbars), the hamburger below', async ({ baseURL }) => {
+    // Headless Chromium hides scrollbars; real Windows Chrome takes ~15px for one, which
+    // made the nav overlap the logo at 1280–1399px. Launch with classic scrollbars.
+    const browser = await chromium.launch({ ignoreDefaultArgs: ['--hide-scrollbars'] });
+    const page = await browser.newPage();
+    for (const locale of ['en', 'hi']) {
+      for (const width of [1280, 1300, 1366, 1400, 1440, 1536, 1920]) {
+        await page.setViewportSize({ width, height: 900 });
+        await page.goto(`${baseURL}/${locale}/`);
+        await expect(page.locator('header nav').first()).toBeVisible();
+        const m = await page.evaluate(() => {
+          const nav = document.querySelector('header nav') as HTMLElement;
+          const items = Array.from(nav.querySelectorAll(':scope > ul > li'));
+          // The logo's text, not its box: a squeezed box can let the text run under the nav.
+          const spans = Array.from(document.querySelectorAll<HTMLElement>('#site-logo span, #site-logo img')).filter((s) => s.offsetWidth > 0);
+          return {
+            rows: new Set(items.map((li) => Math.round(li.getBoundingClientRect().top))).size,
+            logoRight: Math.max(...spans.map((s) => s.getBoundingClientRect().right)),
+            navLeft: nav.getBoundingClientRect().left,
+            scrollbar: window.innerWidth - document.documentElement.clientWidth,
+          };
+        });
+        expect(m.rows, `${locale} ${width}px: nav on one row`).toBe(1);
+        expect(m.logoRight + 8, `${locale} ${width}px: logo text clears the nav (scrollbar ${m.scrollbar}px)`).toBeLessThanOrEqual(m.navLeft);
+      }
     }
     await page.setViewportSize({ width: 1279, height: 900 });
-    await page.goto('/en/');
+    await page.goto(`${baseURL}/en/`);
     await expect(page.locator('button[aria-haspopup="dialog"]')).toBeVisible();
+    await browser.close();
   });
 
   test('mega menu opens on hover and closes on leave', async ({ page }) => {

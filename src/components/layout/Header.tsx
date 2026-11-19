@@ -43,7 +43,7 @@ const ABOUT_SUB = [
 
 /** Desktop nav pill: rounded; the current page is magenta with white text (CR-01). */
 const pill =
-  'inline-flex min-h-tap items-center whitespace-nowrap rounded-full px-4 text-[0.9375rem] font-medium text-ink hover:text-rani-600 aria-[current=page]:bg-rani-500 aria-[current=page]:text-white';
+  'inline-flex min-h-tap items-center whitespace-nowrap rounded-full px-3 text-[0.9375rem] font-medium text-ink hover:text-rani-600 aria-[current=page]:bg-rani-500 aria-[current=page]:text-white';
 const sheetLink = 'flex min-h-tap items-center text-h3 font-semibold text-ink aria-[current=page]:text-rani-600';
 
 export async function Header({ locale }: { locale: Locale }) {
@@ -150,7 +150,8 @@ export async function Header({ locale }: { locale: Locale }) {
 
       <div data-bar className="header-bar relative">
         <div data-bar-inner className="container-header flex h-[var(--bar-h)] items-center justify-between gap-3">
-          <Link id="site-logo" href="/" prefetch={false} className="min-w-0 shrink rounded-lg">
+          {/* Never shrinks: a squeezed lockup let its text run under the nav (Windows scrollbars). */}
+          <Link id="site-logo" href="/" prefetch={false} className="shrink-0 rounded-lg">
             <BrandLockup
               line1={t('common.brand.nameLine1')}
               line2={t('common.brand.nameLine2')}

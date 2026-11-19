@@ -80,7 +80,7 @@ export function MegaMenu({ id, label, activePrefix, children }: MegaMenuProps) {
           setOpen((cur) => (mouse ? id : cur === id ? null : id));
         }}
         className={cx(
-          'inline-flex min-h-tap items-center gap-1 whitespace-nowrap rounded-full px-4 text-[0.9375rem] font-medium',
+          'inline-flex min-h-tap items-center gap-1 whitespace-nowrap rounded-full px-3 text-[0.9375rem] font-medium',
           active ? 'bg-rani-500 text-white' : isOpen ? 'text-rani-600' : 'text-ink hover:text-rani-600',
         )}
       >
