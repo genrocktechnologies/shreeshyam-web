@@ -32,10 +32,11 @@ export function formLabels(t: T): FormLabels {
 }
 
 /**
- * The fields of each form (site-plan, Forms). Names match schemas.ts. No ID numbers, bank
+ * The fields of each form (site-plan, Forms). `options.loan` pre-selects the preferred loan
+ * on the Register form (loan pages). Names match schemas.ts. No ID numbers, bank
  * details or uploads, ever (content rule 7); Careers CVs go by email (a mailto link).
  */
-export function formFields(form: FormName, t: T): FieldSpec[] {
+export function formFields(form: FormName, t: T, options: { loan?: string } = {}): FieldSpec[] {
   const f = (name: string) => t(`common.form.fields.${name}`);
   const name: FieldSpec = { name: 'name', type: 'text', label: f('name'), required: true, autoComplete: 'name', maxLength: LIMITS.name };
   const mobile: FieldSpec = { name: 'mobile', type: 'tel', label: f('mobile'), required: true, autoComplete: 'tel-national', maxLength: 10 };
@@ -53,6 +54,8 @@ export function formFields(form: FormName, t: T): FieldSpec[] {
           label: f('loanProduct'),
           required: true,
           options: [...loans.map((l) => ({ value: l.id, label: t(l.navKey) })), { value: 'notSure', label: f('notSure') }],
+          // A loan page's application form starts on that loan (still changeable).
+          defaultValue: options.loan,
         },
         message(false),
         { name: 'ageConfirm', type: 'checkbox', label: f('ageConfirm'), required: true },

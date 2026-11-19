@@ -95,3 +95,33 @@ test('no placeholder or # links on loan pages', async ({ page }) => {
     expect(bad, path).toEqual([]);
   }
 });
+
+for (const [id, slug] of Object.entries(SLUGS) as [Product, string][]) {
+  test(`${slug}: "Apply for this loan" form with this loan pre-selected; sends the loan in the subject`, async ({ page }) => {
+    await page.goto(`/en/loans/${slug}/`);
+    const section = page.locator('#apply');
+    await expect(section.getByRole('heading', { level: 2 })).toHaveText(loanMessages.apply.heading);
+    // The hero shortcut and the closing band both jump to the form.
+    await expect(page.locator('main a[href="#apply"]')).toHaveCount(2);
+    await page.locator('form[data-hydrated]').waitFor();
+    await expect(page.locator('#register-loanProduct')).toHaveValue(id);
+    // Same registration form as Membership: no ID numbers, bank details or uploads.
+    await expect(section.locator('input[type="file"]')).toHaveCount(0);
+
+    // Web3Forms is mocked: the suite never sends real mail.
+    const sent: Record<string, unknown>[] = [];
+    await page.route('https://api.web3forms.com/**', (route) => {
+      sent.push(route.request().postDataJSON() as Record<string, unknown>);
+      return route.fulfill({ status: 200, contentType: 'application/json', body: '{"success":true}' });
+    });
+    await page.locator('#register-name').fill('Test Applicant');
+    await page.locator('#register-mobile').fill('9876543210');
+    await page.locator('#register-districtVillage').fill('Motihari');
+    await page.locator('#register-ageConfirm').check();
+    await page.locator('#register-consentPhone').check();
+    await section.getByRole('button', { name: 'Submit' }).click();
+    await expect.poll(() => sent.length).toBe(1);
+    expect(sent[0].loan_product).toBe(id);
+    expect(sent[0].subject).toBe(`Registration: ${loanMessages.products[id].name}`);
+  });
+}

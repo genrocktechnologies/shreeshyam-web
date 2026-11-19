@@ -16,6 +16,8 @@ export interface FieldSpec {
   maxLength?: number;
   /** select only: value (English, for the inbox) and translated label. */
   options?: { value: string; label: string }[];
+  /** Pre-selected value (e.g. the loan on a loan page's application form). */
+  defaultValue?: string;
   /** Full row in the two-column grid (textareas always are). */
   wide?: boolean;
 }

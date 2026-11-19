@@ -1,4 +1,6 @@
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
+import { formFields, formLabels } from '@/components/forms/fields';
+import { LazyWebForm } from '@/components/forms/LazyWebForm';
 import { GoldenThread, Reveal } from '@/components/motion';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { PageHero } from '@/components/sections/PageHero';
@@ -14,11 +16,13 @@ import { loanById, loansHubHref, relatedLoans, relatedLoansHeadingKey, type Loan
  * The one template behind the 4 loan product pages (site-plan, Loan product):
  * hero (name + purpose) → the crawled lists in crawled order → KeyFacts (only the fields
  * present) → "documents usually needed" (FAQ Q4, when the product has no documents list
- * of its own) → other loans → Register CTA. The golden thread runs down the page and
- * blooms in the CTA band.
+ * of its own) → "Apply for this loan" (the Membership registration form with this loan
+ * pre-selected, #apply) → other loans → CTA band (to #apply). The hero has a shortcut to
+ * the form.
  */
 export async function LoanPage({ id }: { id: LoanProduct['id'] }) {
   const t = await getTranslations();
+  const locale = await getLocale();
   const loan = loanById(id);
   const name = t(loan.nameKey);
   const kf = loan.keyFacts;
@@ -32,7 +36,14 @@ export async function LoanPage({ id }: { id: LoanProduct['id'] }) {
       <PageHero
         title={name}
         breadcrumbs={[{ label: t('common.nav.loans'), href: loansHubHref }, { label: name }]}
-        intro={<p className="max-w-prose">{t(loan.purposeKey)}</p>}
+        intro={
+          <>
+            <p className="max-w-prose">{t(loan.purposeKey)}</p>
+            <Button href="#apply" arrow className="mt-5">
+              {t('loans.apply.heading')}
+            </Button>
+          </>
+        }
       />
 
       <section className="relative bg-ivory">
@@ -63,6 +74,27 @@ export async function LoanPage({ id }: { id: LoanProduct['id'] }) {
         </div>
       </section>
 
+      {/* The registration form, with this loan pre-selected (the visitor can still change it).
+          Its email subject names the loan, so applications are easy to sort in the inbox. */}
+      <section id="apply" aria-labelledby="apply-heading" className="relative scroll-mt-24 bg-rani-50">
+        <div className="container-site thread-gutter section-pad relative">
+          <GoldenThread className="thread-col inset-y-0 h-full" />
+          <div className="mx-auto max-w-3xl rounded-2xl bg-white p-5 shadow-soft md:p-10">
+            <h2 id="apply-heading">{t('loans.apply.heading')}</h2>
+            <p className="mt-2 font-semibold text-rani-600">{name}</p>
+            <div className="mt-6">
+              <LazyWebForm
+                form="register"
+                fields={formFields('register', t, { loan: loan.id })}
+                labels={formLabels(t)}
+                subject={`${t('register.title')}: ${name}`}
+                locale={locale}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="relative bg-ivory-100">
         <div className="container-site thread-gutter section-pad relative">
           <GoldenThread className="thread-col inset-y-0 h-full" />
@@ -86,7 +118,7 @@ export async function LoanPage({ id }: { id: LoanProduct['id'] }) {
         </div>
       </section>
 
-      <CtaBand />
+      <CtaBand primary={{ label: t('loans.apply.heading'), href: '#apply' }} />
     </>
   );
 }

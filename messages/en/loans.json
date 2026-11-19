@@ -5,6 +5,9 @@
   "related": {
     "heading": "Other loans"
   },
+  "apply": {
+    "heading": "Apply for this loan"
+  },
   "products": {
     "womenEmpowerment": {
       "meta": {

@@ -150,3 +150,9 @@ CR-01 (`docs/cr-01-compact-redesign.md`) follows the client's reference picture.
 | Email subjects (inbox only) | "Registration", "Contact Us", "Apply For Jobs" (crawled page titles/headings) | The `subject` prop on each page's `LazyWebForm`. |
 | Hindi form texts | Drafts of every form label, error and status in `messages/hi/common.json` (`_status: draft-needs-review`) | For the Hindi reviewer (F). |
 | Recipient | All forms deliver to shreeshyamfoundation2026@gmail.com (G24: still needs formal confirmation; review 2, item 24). | Change the recipient in the Web3Forms dashboard (the key decides the inbox). |
+
+## 🆕 Loan application form on every loan page (19 Nov 2026) — client review 2, item 25
+| Item | Wording / change | Revert |
+|---|---|---|
+| `loans.apply.heading` (new) | "Apply for this loan" (section heading, hero button, closing band); Hindi draft "इस लोन के लिए आवेदन करें" | Remove the `#apply` section, the hero button and the CtaBand `primary` in `src/components/sections/loans/LoanPage.tsx`. |
+| Form | The Membership registration form, with the page's loan pre-selected (`formFields('register', t, { loan })`); email subject "Registration: <loan name>" | — |
